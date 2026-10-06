@@ -16,6 +16,10 @@ create table if not exists public.contract_drive_uploads (
   route_segments text[] not null default '{}',
   storage_bucket text,
   storage_path text,
+  content_category text check (content_category in ('contract', 'information', 'payment', 'other')),
+  content_category_folder text,
+  route_segments_labeled text[] not null default '{}',
+  storage_path_under_nc text,
   mime_type text,
   size_bytes bigint,
   error_message text
