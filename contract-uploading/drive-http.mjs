@@ -124,7 +124,12 @@ function supabaseClient() {
 }
 
 function safeSegment(name) {
-  const cleaned = String(name || 'untitled').replace(/[\\#?]/g, '_').replace(/^\/+|\/+$/g, '');
+  const cleaned = String(name || 'untitled')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^\w.\- ()&$@=;:+,?!'~*]/g, '_')
+    .replace(/^\/+|\/+$/g, '')
+    .trim();
   return cleaned || 'untitled';
 }
 
@@ -181,7 +186,8 @@ export function driveHealthLines() {
     `  Drive folder ${driveFolderId()}\n` +
     `  Supabase bucket ${process.env.SUPABASE_STORAGE_BUCKET || 'Contracts'} / ${uploadFolder()}/\n` +
     `  Redirect URI ${redirectUri()}\n` +
-    `  Upload log table ${UPLOAD_LOG_TABLE}\n`
+    `  Upload log table ${UPLOAD_LOG_TABLE}\n` +
+    '  Storage keys: ascii-safe\n'
   );
 }
 
