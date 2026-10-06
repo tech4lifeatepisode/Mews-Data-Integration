@@ -1,0 +1,48 @@
+# Secrets and local env
+.env
+**/.env
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs and local run artifacts
+*.log
+upload_checkpoint.json
+analysis_report.json
+
+# Excel lock files
+~$*
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local extraction outputs (timestamped CSVs)
+**/extracted information saved csv/
+
+# Sandbox test contracts (local PDFs/DOCX)
+**/contract extraction sandbox/contracts/
+
+# Local manual extraction/blinding (personal contract PDFs)
+**/Local Extraction and Blinding/*.pdf
+**/Local Extraction and Blinding/Locally Blinded/
+**/Local Extraction and Blinding/**/*.pdf
+
+# Blinding local data (PDFs, zips, and run outputs)
+**/Blinding_Sandbox/Contracts/
+**/Blinding_Sandbox/Blind Contracts/
+**/Blinding_prod/Contracts/
+**/Blinding_prod/Blind Contracts/
+**/Contracts Zip/
+**/Contracts Extracted/
+**/Blinded Expired Contracts/
+**/B2B NCs/
+**/Pendientes Blinding/
+**/spa.traineddata
