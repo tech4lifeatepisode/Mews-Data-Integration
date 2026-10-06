@@ -128,10 +128,19 @@ function safeSegment(name) {
   const cleaned = String(name || 'untitled')
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^\w.\- ()&$@=;:+,?!'~*]/g, '_')
-    .replace(/^\/+|\/+$/g, '')
+    .replace(/[^\w.\- ]/g, '_')
+    .replace(/\s+/g, ' ')
+    .replace(/_+/g, '_')
+    .replace(/^[\s._-]+|[\s._-]+$/g, '')
     .trim();
   return cleaned || 'untitled';
+}
+
+/** Supabase object path from log route_segments (drops Drive root, keeps NC tree). */
+function storagePathFromRouteSegments(routeSegments) {
+  const prefix = uploadFolder();
+  const parts = (routeSegments || []).slice(1).map(safeSegment).filter(Boolean);
+  return parts.length ? `${prefix}/${parts.join('/')}` : prefix;
 }
 
 function ensureExt(name, ext) {
@@ -189,7 +198,8 @@ export function driveHealthLines() {
     `  Redirect URI ${redirectUri()}\n` +
     `  Upload log table ${UPLOAD_LOG_TABLE}\n` +
     '  Storage keys: ascii-safe\n' +
-    `  NC allowlist: column B unique codes only\n`
+    `  NC allowlist: column B unique codes only\n` +
+    '  POST/GET /drive/retry-failed — re-upload rows with status failed\n'
   );
 }
 
@@ -276,11 +286,20 @@ async function downloadFile(drive, file) {
 }
 
 async function uploadBuffer(supabase, bucket, objectPath, data, contentType) {
-  const { error } = await supabase.storage.from(bucket).upload(objectPath, data, {
-    upsert: true,
-    contentType,
-  });
-  if (error) throw new Error(`${objectPath}: ${error.message}`);
+  const maxAttempts = Number(process.env.STORAGE_UPLOAD_RETRIES) || 4;
+  let lastMsg = '';
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    const { error } = await supabase.storage.from(bucket).upload(objectPath, data, {
+      upsert: true,
+      contentType,
+    });
+    if (!error) return;
+    lastMsg = error.message || 'unknown error';
+    const retryable = /502|503|504|timeout|fetch failed/i.test(lastMsg);
+    if (!retryable || attempt >= maxAttempts) break;
+    await new Promise((r) => setTimeout(r, 500 * attempt * attempt));
+  }
+  throw new Error(`${objectPath}: ${lastMsg}`);
 }
 
 function joinRoute(segments) {
@@ -614,6 +633,141 @@ export async function syncDriveToSupabase() {
   return stats;
 }
 
+/**
+ * Re-download failed rows from Drive and upload with current safe storage keys.
+ * @param {{ sourceSyncId?: string, driveFileIds?: string[], limit?: number }} options
+ */
+export async function retryFailedUploads(options = {}) {
+  if (!authorized()) {
+    throw new Error('Google Drive is not authorized. Open /drive and sign in.');
+  }
+  const bucket = process.env.SUPABASE_STORAGE_BUCKET || 'Contracts';
+  const auth = oauthClient();
+  const drive = google.drive({ version: 'v3', auth });
+  const supabase = supabaseClient();
+  const stats = {
+    syncId: crypto.randomUUID(),
+    retried: 0,
+    uploaded: 0,
+    failed: 0,
+    skipped: 0,
+    account: await signedInAccount(drive),
+    logTable: UPLOAD_LOG_TABLE,
+    logError: null,
+  };
+
+  let query = supabase
+    .from(UPLOAD_LOG_TABLE)
+    .select('*')
+    .eq('status', 'failed')
+    .eq('item_type', 'file')
+    .not('drive_file_id', 'is', null)
+    .order('created_at', { ascending: true })
+    .limit(options.limit || 500);
+  if (options.sourceSyncId) query = query.eq('sync_id', options.sourceSyncId);
+  if (options.driveFileIds?.length) query = query.in('drive_file_id', options.driveFileIds);
+
+  const { data: rows, error } = await query;
+  if (error) throw new Error(`Load failed uploads: ${error.message}`);
+  if (!rows?.length) {
+    stats.message = 'no failed file rows to retry';
+    return stats;
+  }
+
+  for (const row of rows) {
+    stats.retried += 1;
+    const objectPath = storagePathFromRouteSegments(row.route_segments);
+    const routeSegments = row.route_segments || [];
+    const sourceFolderRoute = routeSegments.slice(0, -1).join(' / ');
+    const sourceRoute = routeSegments.join(' / ');
+
+    try {
+      const meta = await drive.files.get({
+        fileId: row.drive_file_id,
+        fields: 'id, name, mimeType, size',
+        supportsAllDrives: true,
+      });
+      const file = meta.data;
+      const size = Number(file.size || row.size_bytes || 0);
+      if (size > MAX_FILE_BYTES) {
+        stats.skipped += 1;
+        await recordTransfer(supabase, stats, {
+          status: 'skipped',
+          itemType: 'file',
+          driveFileId: row.drive_file_id,
+          driveName: file.name || row.drive_name,
+          sourceFolderRoute,
+          sourceRoute,
+          routeSegments,
+          storageBucket: bucket,
+          storagePath: objectPath,
+          mimeType: file.mimeType || row.mime_type,
+          sizeBytes: size,
+          errorMessage: `retry skipped: size ${size} exceeds ${MAX_FILE_BYTES}`,
+        });
+        continue;
+      }
+      const downloaded = await downloadFile(drive, file);
+      if (!downloaded) {
+        stats.skipped += 1;
+        await recordTransfer(supabase, stats, {
+          status: 'skipped',
+          itemType: 'file',
+          driveFileId: row.drive_file_id,
+          driveName: file.name || row.drive_name,
+          sourceFolderRoute,
+          sourceRoute,
+          routeSegments,
+          storageBucket: bucket,
+          storagePath: objectPath,
+          mimeType: file.mimeType || row.mime_type,
+          errorMessage: 'retry skipped: unsupported Google file type',
+        });
+        continue;
+      }
+      const finalPath = storagePathFromRouteSegments([
+        ...routeSegments.slice(0, -1),
+        downloaded.name,
+      ]);
+      await uploadBuffer(supabase, bucket, finalPath, downloaded.data, downloaded.contentType);
+      stats.uploaded += 1;
+      await recordTransfer(supabase, stats, {
+        status: 'uploaded',
+        itemType: 'file',
+        driveFileId: row.drive_file_id,
+        driveName: downloaded.name,
+        sourceFolderRoute,
+        sourceRoute,
+        routeSegments: [...routeSegments.slice(0, -1), downloaded.name],
+        storageBucket: bucket,
+        storagePath: finalPath,
+        mimeType: downloaded.contentType,
+        sizeBytes: downloaded.data.length,
+      });
+      console.log(`Retry uploaded ${finalPath}`);
+    } catch (e) {
+      stats.failed += 1;
+      const message = e instanceof Error ? e.message : String(e);
+      await recordTransfer(supabase, stats, {
+        status: 'failed',
+        itemType: 'file',
+        driveFileId: row.drive_file_id,
+        driveName: row.drive_name,
+        sourceFolderRoute,
+        sourceRoute,
+        routeSegments,
+        storageBucket: bucket,
+        storagePath: objectPath,
+        mimeType: row.mime_type,
+        sizeBytes: row.size_bytes,
+        errorMessage: `retry: ${message}`,
+      });
+      console.error(`Retry failed ${row.drive_name}: ${message}`);
+    }
+  }
+  return stats;
+}
+
 function checkSyncAuth(req, bodyText) {
   const secret = process.env.EXTRACT_TRIGGER_SECRET;
   if (!secret) return true;
@@ -652,6 +806,10 @@ async function homeBody() {
     <form method="post" action="/drive/sync">
       <p><label>Sync secret (only if EXTRACT_TRIGGER_SECRET is set)<br><input name="secret" type="password"></label></p>
       <button type="submit">Sync contracts to Supabase</button>
+    </form>
+    <form method="post" action="/drive/retry-failed">
+      <p><label>Retry failed uploads (same secret if set)<br><input name="secret" type="password"></label></p>
+      <button type="submit">Retry failed uploads from log</button>
     </form>`;
 }
 
@@ -734,6 +892,43 @@ export async function handleDriveHttp(req, res) {
           const message = error instanceof Error ? error.message : String(error);
           lastSync = { ok: false, message, at: new Date().toISOString() };
           console.error('Drive sync failed:', message);
+        })
+        .finally(() => {
+          syncRunning = false;
+        });
+      return true;
+    }
+
+    if (url === '/drive/retry-failed' && (req.method === 'POST' || req.method === 'GET')) {
+      const bodyText = req.method === 'POST' ? await readBody(req) : '';
+      if (!checkSyncAuth(req, bodyText)) {
+        sendJson(res, 401, { ok: false, error: 'unauthorized' });
+        return true;
+      }
+      if (syncRunning) {
+        sendJson(res, 409, { ok: false, error: 'sync_already_running' });
+        return true;
+      }
+      const query = new URL(raw, 'http://localhost').searchParams;
+      const sourceSyncId = query.get('sync_id') || undefined;
+      const driveFileIds = query.get('drive_file_ids')?.split(',').map((s) => s.trim()).filter(Boolean);
+      syncRunning = true;
+      const started = 'Retry of failed Drive uploads started';
+      const formPost = (req.headers['content-type'] || '').includes('application/x-www-form-urlencoded');
+      if (formPost) {
+        sendHtml(res, 202, 'Retry started', `<p>${escapeHtml(started)}</p><p>Check contract_drive_uploads for new rows. <a href="/drive">Back</a></p>`);
+      } else {
+        sendJson(res, 202, { ok: true, accepted: true, message: started });
+      }
+      retryFailedUploads({ sourceSyncId, driveFileIds })
+        .then((stats) => {
+          lastSync = { ok: true, message: JSON.stringify(stats), at: new Date().toISOString() };
+          console.log('Drive retry finished', stats);
+        })
+        .catch((error) => {
+          const message = error instanceof Error ? error.message : String(error);
+          lastSync = { ok: false, message, at: new Date().toISOString() };
+          console.error('Drive retry failed:', message);
         })
         .finally(() => {
           syncRunning = false;
