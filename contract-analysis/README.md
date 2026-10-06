@@ -1,4 +1,4 @@
-# Invoices Comparison to Guest Report
+# Contract analysis
 
 This repository contains monthly operation workbooks (`LIBRO`) and reporting workbooks/scripts (`Report`) used to compare invoices against guest and tenancy data.
 

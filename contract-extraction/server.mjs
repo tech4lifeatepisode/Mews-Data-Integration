@@ -1,17 +1,13 @@
 /**
  * HTTP server for Render Web Service (binds to PORT).
  * Contract extraction: /extract, /extract-all
- * Contract blinding: /blind, /blind-all
+ * Google Drive upload: /drive
  */
 import http from 'http';
 import { runExtractFromSupabaseStorage, isEnvTruthy } from './extract-from-storage.mjs';
 import { runExtractFromSupabaseStorageUntilDone } from './extract-from-storage-batch.mjs';
 import { runNcOcrRerunAllFolders } from './extract-nc-ocr-rerun-all-folders.mjs';
-import {
-  handleBlindRequest,
-  scheduleAutoBlindOnBoot,
-  blindHealthLines,
-} from './blinding-server.mjs';
+import { driveHealthLines, handleDriveHttp } from '../contract-uploading/drive-http.mjs';
 
 const port = Number(process.env.PORT) || 3000;
 
@@ -127,8 +123,10 @@ function extractionHealthLines() {
     '  POST/GET /extract-all — all pending in SUPABASE_STORAGE_FOLDER.\n' +
     '  POST/GET /extract-nc-rerun-all — OCR rerun for filtered NCs across To Fill 1/2/Fill 3.\n' +
     '  AUTO_EXTRACT_FROM_STORAGE=true: on boot, extract-all for one folder.\n' +
-    '  AUTO_NC_OCR_RERUN_FROM_STORAGE=true: on boot, extract-nc-rerun-all (takes priority over blinding).\n' +
-    '  Optional header: X-Extract-Secret: <EXTRACT_TRIGGER_SECRET>\n'
+    '  AUTO_NC_OCR_RERUN_FROM_STORAGE=true: on boot, extract-nc-rerun-all.\n' +
+    '  Optional header: X-Extract-Secret: <EXTRACT_TRIGGER_SECRET>\n' +
+    '\n' +
+    driveHealthLines()
   );
 }
 
@@ -138,11 +136,13 @@ const server = http.createServer(async (req, res) => {
   if (url === '/' || url === '/health') {
     res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
     res.end(
-      'Contract extraction + blinding service OK.\n\n' +
-        extractionHealthLines() +
-        '\n' +
-        blindHealthLines(),
+      'Contract extraction service OK.\n\n' +
+        extractionHealthLines(),
     );
+    return;
+  }
+
+  if (await handleDriveHttp(req, res)) {
     return;
   }
 
@@ -158,16 +158,6 @@ const server = http.createServer(async (req, res) => {
 
   if (url === '/extract-nc-rerun-all' && (req.method === 'POST' || req.method === 'GET')) {
     handleExtractRequest(req, res, 'nc-rerun-all');
-    return;
-  }
-
-  if (url === '/blind' && (req.method === 'POST' || req.method === 'GET')) {
-    handleBlindRequest(req, res, 'single');
-    return;
-  }
-
-  if (url === '/blind-all' && (req.method === 'POST' || req.method === 'GET')) {
-    handleBlindRequest(req, res, 'all');
     return;
   }
 
@@ -195,15 +185,4 @@ server.listen(port, '0.0.0.0', () => {
     });
   }
 
-  // Do not auto-blind on the same boot when extraction is scheduled (they compete for OpenAI/CPU).
-  if (autoNcRerun || autoExtract) {
-    if (isEnvTruthy('AUTO_BLIND_FROM_STORAGE')) {
-      console.warn(
-        'AUTO_BLIND_FROM_STORAGE is set but skipped on this boot because extraction auto-run is active. ' +
-          'Set AUTO_BLIND_FROM_STORAGE=false while running OCR rerun, or trigger /blind-all manually later.',
-      );
-    }
-  } else {
-    scheduleAutoBlindOnBoot();
-  }
 });

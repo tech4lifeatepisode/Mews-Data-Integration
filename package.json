@@ -1,0 +1,13 @@
+{
+  "name": "mews-data-integration",
+  "private": true,
+  "description": "Contract uploading, extraction, and analysis. Render entry point for Contract-extraction.",
+  "scripts": {
+    "postinstall": "npm install --prefix contract-extraction && npm install --prefix contract-uploading",
+    "start": "npm start --prefix contract-extraction",
+    "upload": "npm start --prefix contract-uploading"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

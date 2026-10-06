@@ -5,7 +5,7 @@ OpenAI extraction from Supabase Storage → Postgres + CSV. Runs on Render as an
 ## Setup
 
 ```powershell
-cd "Contract Extraction\contract extraction prod"
+cd contract-extraction
 copy .env.example .env
 npm install
 ```
@@ -36,7 +36,8 @@ Run in Supabase SQL Editor:
 | `POST /extract` | One batch (`MAX_EXTRACTION_FILES`) |
 | `POST /extract-all` | All pending in `SUPABASE_STORAGE_FOLDER` |
 | `POST /extract-nc-rerun-all` | OCR rerun across To Fill 1, To Fill 2, Fill 3 |
-| `POST /blind-all` | Full blinding run (separate pipeline) |
+| `GET /drive` | Google Drive authorize and sync page |
+| `POST /drive/sync` | Copy the Drive contract folder into Supabase Storage |
 
 Optional header: `X-Extract-Secret: <EXTRACT_TRIGGER_SECRET>`
 
@@ -57,7 +58,7 @@ Optional header: `X-Extract-Secret: <EXTRACT_TRIGGER_SECRET>`
 | `SKIP_ALREADY_EXTRACTED` | `true` |
 | `MAX_EXTRACTION_FILES` | `10` |
 | `AUTO_NC_OCR_RERUN_FROM_STORAGE` | `true` on Render to rerun on boot |
-| `AUTO_BLIND_FROM_STORAGE` | `false` while extracting (avoid competing jobs) |
+| `SUPABASE_UPLOAD_FOLDER` | `Google Drive` — destination prefix for contract uploading |
 
 See `.env.example` for the full list.
 
@@ -67,7 +68,7 @@ See `.env.example` for the full list.
 2. Set `EXTRACTION_TABLE=contract_extractions_ocr_rerun`.
 3. Trigger `/extract-nc-rerun-all` or `npm run extract:nc-ocr-rerun`.
 4. Optional: `supabase-dedupe-ocr-rerun.sql` to remove duplicate rows.
-5. Local missing NCs: use `Local Extraction and Blinding/extract-local-to-ocr-rerun.mjs`.
+5. Blinding is not part of this repository. `/blind` is not served by the Render service.
 
 ## File types
 

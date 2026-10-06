@@ -1,0 +1,5 @@
+node_modules/
+.env
+.google-token.json
+upload-checkpoint.json
+*.log

@@ -9,9 +9,7 @@ from datetime import datetime
 from pathlib import Path
 
 import openpyxl
-LIBRO_DIR = Path(
-    r"c:\Users\Claudio\Desktop\Node Living\Invocies comparison to Guest Report 24.12.25 to 24.04.26\LIBRO"
-)
+LIBRO_DIR = Path(__file__).resolve().parent / "LIBRO"
 
 MES_ES = {
     "enero": 1,

@@ -1,0 +1,14 @@
+{
+  "name": "contract-uploading",
+  "private": true,
+  "type": "module",
+  "description": "Google Drive web app that copies contract folders into Supabase Storage.",
+  "scripts": {
+    "start": "node drive-http.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "dotenv": "^16.4.7",
+    "googleapis": "^144.0.0"
+  }
+}

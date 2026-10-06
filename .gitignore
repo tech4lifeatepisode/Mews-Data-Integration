@@ -29,6 +29,13 @@ desktop.ini
 
 # Sandbox test contracts (local PDFs/DOCX)
 **/contract extraction sandbox/contracts/
+contract-extraction/sandbox/contracts/
+
+# Google OAuth client secrets and saved tokens
+client_secret*.json
+**/*.apps.googleusercontent.com.json
+**/.google-token.json
+contract-uploading/upload-checkpoint.json
 
 # Local manual extraction/blinding (personal contract PDFs)
 **/Local Extraction and Blinding/*.pdf

@@ -1,0 +1,30 @@
+# Existing Render Web Service: Contract-extraction
+# Service ID: srv-d7b2bofafjfc739bu4cg
+# https://contract-extraction-joyy.onrender.com
+# Dashboard changes required on that service:
+#   Repository: tech4lifeatepisode/Mews-Data-Integration
+#   Branch: main
+#   Root directory: (empty)
+#   Build command: npm install
+#   Start command: npm start
+services:
+  - type: web
+    name: Contract-extraction
+    runtime: node
+    repo: https://github.com/tech4lifeatepisode/Mews-Data-Integration
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.22.0
+      - key: SUPABASE_URL
+        value: https://jujvtuyksxkoclegjznb.supabase.co
+      - key: SUPABASE_STORAGE_BUCKET
+        value: Contracts
+      - key: SUPABASE_UPLOAD_FOLDER
+        value: Google Drive
+      - key: GOOGLE_DRIVE_FOLDER_ID
+        value: 1yolAv0AGafMmsdNCtc58Qrk8HHJURysS
+      - key: GOOGLE_REDIRECT_URI
+        value: https://contract-extraction-joyy.onrender.com/drive/oauth/callback
