@@ -186,19 +186,36 @@ export function driveHealthLines() {
 async function listChildren(drive, parentId) {
   const files = [];
   let pageToken;
+  const q = `'${String(parentId).replace(/'/g, "\\'")}' in parents and trashed = false`;
   do {
     const res = await drive.files.list({
-      q: `'${String(parentId).replace(/'/g, "\\'")}' in parents and trashed = false`,
-      fields: 'nextPageToken, files(id, name, mimeType, modifiedTime, size, shortcutDetails)',
+      q,
+      fields: 'nextPageToken, files(id, name, mimeType, modifiedTime, size, shortcutDetails, driveId)',
       pageSize: 1000,
       pageToken,
       supportsAllDrives: true,
       includeItemsFromAllDrives: true,
+      corpora: 'allDrives',
     });
     files.push(...(res.data.files || []));
     pageToken = res.data.nextPageToken;
   } while (pageToken);
   return files;
+}
+
+async function signedInAccount(drive) {
+  const about = await drive.about.get({ fields: 'user(emailAddress,displayName)' });
+  return about.data.user?.emailAddress || about.data.user?.displayName || 'unknown';
+}
+
+async function resolveShortcut(drive, file) {
+  if (file.mimeType !== SHORTCUT_MIME || !file.shortcutDetails?.targetId) return file;
+  const target = await drive.files.get({
+    fileId: file.shortcutDetails.targetId,
+    fields: 'id, name, mimeType, modifiedTime, size, shortcutDetails, driveId',
+    supportsAllDrives: true,
+  });
+  return target.data;
 }
 
 async function downloadFile(drive, file) {
@@ -240,15 +257,7 @@ async function walk(drive, supabase, bucket, parentId, prefix, stats) {
     return;
   }
   for (const child of children) {
-    let file = child;
-    if (file.mimeType === SHORTCUT_MIME && file.shortcutDetails?.targetId) {
-      const target = await drive.files.get({
-        fileId: file.shortcutDetails.targetId,
-        fields: 'id, name, mimeType, modifiedTime, size, shortcutDetails',
-        supportsAllDrives: true,
-      });
-      file = target.data;
-    }
+    const file = await resolveShortcut(drive, child);
     if (file.mimeType === FOLDER_MIME) {
       stats.folders += 1;
       await walk(drive, supabase, bucket, file.id, `${prefix}/${safeSegment(file.name)}`, stats);
@@ -282,7 +291,19 @@ export async function syncDriveToSupabase() {
   const auth = oauthClient();
   const drive = google.drive({ version: 'v3', auth });
   const supabase = supabaseClient();
-  const stats = { files: 0, folders: 0, skipped: 0, folder: prefix, bucket };
+  const stats = { files: 0, folders: 0, skipped: 0, folder: prefix, bucket, account: null, rootName: null };
+  stats.account = await signedInAccount(drive);
+
+  const rootMeta = await drive.files.get({
+    fileId: driveFolderId(),
+    fields: 'id, name, mimeType, driveId, shortcutDetails',
+    supportsAllDrives: true,
+  });
+  const root = await resolveShortcut(drive, rootMeta.data);
+  stats.rootName = root.name || rootMeta.data.name || null;
+  console.log(
+    `Drive sync as ${stats.account}: root "${stats.rootName}" (${root.id}) driveId=${root.driveId || 'my-drive'}`,
+  );
 
   await uploadBuffer(
     supabase,
@@ -291,7 +312,12 @@ export async function syncDriveToSupabase() {
     Buffer.from('Contracts fetched from Google Drive.\n'),
     'text/plain',
   );
-  await walk(drive, supabase, bucket, driveFolderId(), prefix, stats);
+  await walk(drive, supabase, bucket, root.id, prefix, stats);
+  if (stats.files === 0) {
+    stats.warning =
+      `No files were visible to ${stats.account}. Re-authorize /drive with an account that can open the Episode contract folder.`;
+    console.warn(stats.warning);
+  }
   return stats;
 }
 
@@ -310,13 +336,23 @@ async function readBody(req) {
   return Buffer.concat(chunks).toString('utf8');
 }
 
-function homeBody() {
+async function homeBody() {
   const ready = authorized() ? 'Google Drive is authorized.' : 'Google Drive is not authorized yet.';
+  let account = '';
+  if (authorized()) {
+    try {
+      const drive = google.drive({ version: 'v3', auth: oauthClient() });
+      account = `<p>Signed in as <code>${escapeHtml(await signedInAccount(drive))}</code>. Use an account that can open the shared contract folder (for example an Episode address on the file’s share list).</p>`;
+    } catch (error) {
+      account = `<p>Could not read the Google account: ${escapeHtml(error instanceof Error ? error.message : String(error))}</p>`;
+    }
+  }
   const last = lastSync
-    ? `<p>Last sync: ${lastSync.ok ? 'ok' : 'failed'} — ${lastSync.message}</p>`
+    ? `<p>Last sync: ${lastSync.ok ? 'ok' : 'failed'} — ${escapeHtml(lastSync.message)}</p>`
     : '';
   return `
     <p>${ready}</p>
+    ${account}
     <p>Source folder <code>${driveFolderId()}</code> uploads into Supabase bucket <code>${process.env.SUPABASE_STORAGE_BUCKET || 'Contracts'}</code>, prefix <code>${uploadFolder()}/</code>.</p>
     ${last}
     <p><a href="/drive/auth">Authorize Google Drive</a></p>
@@ -333,7 +369,7 @@ export async function handleDriveHttp(req, res) {
 
   try {
     if (url === '/drive' && req.method === 'GET') {
-      sendHtml(res, 200, 'Contract uploading', homeBody());
+      sendHtml(res, 200, 'Contract uploading', await homeBody());
       return true;
     }
 
