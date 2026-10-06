@@ -31,6 +31,7 @@ const EXPORTS = {
 };
 
 const pendingStates = new Set();
+const UPLOAD_LOG_TABLE = 'contract_drive_uploads';
 let syncRunning = false;
 let lastSync = null;
 let memoryTokens = null;
@@ -179,8 +180,33 @@ export function driveHealthLines() {
     `  GET /drive — authorize and sync.\n` +
     `  Drive folder ${driveFolderId()}\n` +
     `  Supabase bucket ${process.env.SUPABASE_STORAGE_BUCKET || 'Contracts'} / ${uploadFolder()}/\n` +
-    `  Redirect URI ${redirectUri()}\n`
+    `  Redirect URI ${redirectUri()}\n` +
+    `  Upload log table ${UPLOAD_LOG_TABLE}\n`
   );
+}
+
+async function recordTransfer(supabase, stats, row) {
+  const { error } = await supabase.from(UPLOAD_LOG_TABLE).insert({
+    sync_id: stats.syncId,
+    google_account: stats.account,
+    status: row.status,
+    item_type: row.itemType,
+    drive_file_id: row.driveFileId || null,
+    drive_name: row.driveName || null,
+    parent_drive_id: row.parentDriveId || null,
+    source_folder_route: row.sourceFolderRoute || '',
+    source_route: row.sourceRoute || '',
+    route_segments: row.routeSegments || [],
+    storage_bucket: row.storageBucket || null,
+    storage_path: row.storagePath || null,
+    mime_type: row.mimeType || null,
+    size_bytes: Number.isFinite(row.sizeBytes) ? row.sizeBytes : null,
+    error_message: row.errorMessage || null,
+  });
+  if (error) {
+    stats.logError = error.message;
+    console.error(`${UPLOAD_LOG_TABLE} insert failed:`, error.message);
+  }
 }
 
 async function listChildren(drive, parentId) {
@@ -249,36 +275,220 @@ async function uploadBuffer(supabase, bucket, objectPath, data, contentType) {
   if (error) throw new Error(`${objectPath}: ${error.message}`);
 }
 
-async function walk(drive, supabase, bucket, parentId, prefix, stats) {
-  const children = await listChildren(drive, parentId);
-  if (children.length === 0) {
-    await uploadBuffer(supabase, bucket, `${prefix}/.keep`, Buffer.from('empty-folder\n'), 'text/plain');
-    stats.folders += 1;
+function joinRoute(segments) {
+  return segments.filter(Boolean).join(' / ');
+}
+
+async function walk(drive, supabase, bucket, parentId, prefix, stats, route) {
+  let children;
+  try {
+    children = await listChildren(drive, parentId);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    stats.failed += 1;
+    await recordTransfer(supabase, stats, {
+      status: 'failed',
+      itemType: 'folder',
+      driveFileId: parentId,
+      driveName: route.names.at(-1) || stats.rootName,
+      sourceFolderRoute: joinRoute(route.names),
+      sourceRoute: joinRoute(route.names),
+      routeSegments: route.names,
+      storageBucket: bucket,
+      storagePath: prefix,
+      errorMessage: `list: ${message}`,
+    });
+    console.error(`List failed at ${joinRoute(route.names)}: ${message}`);
     return;
   }
-  for (const child of children) {
-    const file = await resolveShortcut(drive, child);
-    if (file.mimeType === FOLDER_MIME) {
+
+  if (children.length === 0) {
+    const markerPath = `${prefix}/.keep`;
+    try {
+      await uploadBuffer(supabase, bucket, markerPath, Buffer.from('empty-folder\n'), 'text/plain');
       stats.folders += 1;
-      await walk(drive, supabase, bucket, file.id, `${prefix}/${safeSegment(file.name)}`, stats);
+      await recordTransfer(supabase, stats, {
+        status: 'uploaded',
+        itemType: 'file',
+        driveName: '.keep',
+        parentDriveId: parentId,
+        sourceFolderRoute: joinRoute(route.names),
+        sourceRoute: joinRoute([...route.names, '.keep']),
+        routeSegments: [...route.names, '.keep'],
+        storageBucket: bucket,
+        storagePath: markerPath,
+        mimeType: 'text/plain',
+        sizeBytes: 13,
+      });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      stats.failed += 1;
+      await recordTransfer(supabase, stats, {
+        status: 'failed',
+        itemType: 'folder',
+        driveFileId: parentId,
+        driveName: route.names.at(-1) || stats.rootName,
+        sourceFolderRoute: joinRoute(route.names),
+        sourceRoute: joinRoute(route.names),
+        routeSegments: route.names,
+        storageBucket: bucket,
+        storagePath: prefix,
+        errorMessage: `empty folder marker: ${message}`,
+      });
+    }
+    return;
+  }
+
+  for (const child of children) {
+    let file = child;
+    try {
+      file = await resolveShortcut(drive, child);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      stats.failed += 1;
+      await recordTransfer(supabase, stats, {
+        status: 'failed',
+        itemType: 'file',
+        driveFileId: child.id,
+        driveName: child.name,
+        parentDriveId: parentId,
+        sourceFolderRoute: joinRoute(route.names),
+        sourceRoute: joinRoute([...route.names, child.name || child.id]),
+        routeSegments: [...route.names, child.name || child.id],
+        storageBucket: bucket,
+        mimeType: child.mimeType,
+        errorMessage: `shortcut: ${message}`,
+      });
       continue;
     }
+
+    const nextNames = [...route.names, file.name || file.id];
+    if (file.mimeType === FOLDER_MIME) {
+      const folderPrefix = `${prefix}/${safeSegment(file.name)}`;
+      stats.folders += 1;
+      await recordTransfer(supabase, stats, {
+        status: 'listed',
+        itemType: 'folder',
+        driveFileId: file.id,
+        driveName: file.name,
+        parentDriveId: parentId,
+        sourceFolderRoute: joinRoute(route.names),
+        sourceRoute: joinRoute(nextNames),
+        routeSegments: nextNames,
+        storageBucket: bucket,
+        storagePath: folderPrefix,
+        mimeType: file.mimeType,
+      });
+      await walk(drive, supabase, bucket, file.id, folderPrefix, stats, { names: nextNames });
+      continue;
+    }
+
+    const sourceFolderRoute = joinRoute(route.names);
+    const sourceRoute = joinRoute(nextNames);
     const size = Number(file.size || 0);
     if (size > MAX_FILE_BYTES) {
       stats.skipped += 1;
-      console.warn(`Skip ${file.name}: ${size} bytes exceeds ${MAX_FILE_BYTES}`);
+      const message = `size ${size} bytes exceeds ${MAX_FILE_BYTES}`;
+      console.warn(`Skip ${sourceRoute}: ${message}`);
+      await recordTransfer(supabase, stats, {
+        status: 'skipped',
+        itemType: 'file',
+        driveFileId: file.id,
+        driveName: file.name,
+        parentDriveId: parentId,
+        sourceFolderRoute,
+        sourceRoute,
+        routeSegments: nextNames,
+        storageBucket: bucket,
+        mimeType: file.mimeType,
+        sizeBytes: size,
+        errorMessage: message,
+      });
       continue;
     }
-    const downloaded = await downloadFile(drive, file);
+
+    let downloaded;
+    try {
+      downloaded = await downloadFile(drive, file);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      stats.failed += 1;
+      console.error(`Download failed ${sourceRoute}: ${message}`);
+      await recordTransfer(supabase, stats, {
+        status: 'failed',
+        itemType: 'file',
+        driveFileId: file.id,
+        driveName: file.name,
+        parentDriveId: parentId,
+        sourceFolderRoute,
+        sourceRoute,
+        routeSegments: nextNames,
+        storageBucket: bucket,
+        mimeType: file.mimeType,
+        sizeBytes: size || null,
+        errorMessage: `download: ${message}`,
+      });
+      continue;
+    }
     if (!downloaded) {
       stats.skipped += 1;
-      console.warn(`Skip unsupported Google file ${file.name} (${file.mimeType})`);
+      const message = `unsupported Google file type ${file.mimeType || 'unknown'}`;
+      console.warn(`Skip ${sourceRoute}: ${message}`);
+      await recordTransfer(supabase, stats, {
+        status: 'skipped',
+        itemType: 'file',
+        driveFileId: file.id,
+        driveName: file.name,
+        parentDriveId: parentId,
+        sourceFolderRoute,
+        sourceRoute,
+        routeSegments: nextNames,
+        storageBucket: bucket,
+        mimeType: file.mimeType,
+        errorMessage: message,
+      });
       continue;
     }
+
     const objectPath = `${prefix}/${safeSegment(downloaded.name)}`;
-    await uploadBuffer(supabase, bucket, objectPath, downloaded.data, downloaded.contentType);
-    stats.files += 1;
-    console.log(`Uploaded ${objectPath}`);
+    try {
+      await uploadBuffer(supabase, bucket, objectPath, downloaded.data, downloaded.contentType);
+      stats.files += 1;
+      console.log(`Uploaded ${objectPath}`);
+      await recordTransfer(supabase, stats, {
+        status: 'uploaded',
+        itemType: 'file',
+        driveFileId: file.id,
+        driveName: downloaded.name,
+        parentDriveId: parentId,
+        sourceFolderRoute,
+        sourceRoute,
+        routeSegments: [...route.names, downloaded.name],
+        storageBucket: bucket,
+        storagePath: objectPath,
+        mimeType: downloaded.contentType,
+        sizeBytes: downloaded.data.length,
+      });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      stats.failed += 1;
+      console.error(`Upload failed ${sourceRoute}: ${message}`);
+      await recordTransfer(supabase, stats, {
+        status: 'failed',
+        itemType: 'file',
+        driveFileId: file.id,
+        driveName: downloaded.name,
+        parentDriveId: parentId,
+        sourceFolderRoute,
+        sourceRoute,
+        routeSegments: [...route.names, downloaded.name],
+        storageBucket: bucket,
+        storagePath: objectPath,
+        mimeType: downloaded.contentType,
+        sizeBytes: downloaded.data.length,
+        errorMessage: `upload: ${message}`,
+      });
+    }
   }
 }
 
@@ -291,7 +501,19 @@ export async function syncDriveToSupabase() {
   const auth = oauthClient();
   const drive = google.drive({ version: 'v3', auth });
   const supabase = supabaseClient();
-  const stats = { files: 0, folders: 0, skipped: 0, folder: prefix, bucket, account: null, rootName: null };
+  const stats = {
+    files: 0,
+    folders: 0,
+    skipped: 0,
+    failed: 0,
+    folder: prefix,
+    bucket,
+    account: null,
+    rootName: null,
+    syncId: crypto.randomUUID(),
+    logTable: UPLOAD_LOG_TABLE,
+    logError: null,
+  };
   stats.account = await signedInAccount(drive);
 
   const rootMeta = await drive.files.get({
@@ -305,15 +527,25 @@ export async function syncDriveToSupabase() {
     `Drive sync as ${stats.account}: root "${stats.rootName}" (${root.id}) driveId=${root.driveId || 'my-drive'}`,
   );
 
-  await uploadBuffer(
-    supabase,
-    bucket,
-    `${prefix}/.keep`,
-    Buffer.from('Contracts fetched from Google Drive.\n'),
-    'text/plain',
-  );
-  await walk(drive, supabase, bucket, root.id, prefix, stats);
-  if (stats.files === 0) {
+  const rootRoute = [stats.rootName || 'Drive'];
+  await recordTransfer(supabase, stats, {
+    status: 'listed',
+    itemType: 'folder',
+    driveFileId: root.id,
+    driveName: stats.rootName,
+    sourceFolderRoute: '',
+    sourceRoute: joinRoute(rootRoute),
+    routeSegments: rootRoute,
+    storageBucket: bucket,
+    storagePath: prefix,
+    mimeType: root.mimeType,
+  });
+  await walk(drive, supabase, bucket, root.id, prefix, stats, { names: rootRoute });
+  if (stats.logError) {
+    stats.warning =
+      `Upload log was not saved (${stats.logError}). Run contract-uploading/supabase-drive-upload-log.sql in the Supabase SQL editor.`;
+    console.warn(stats.warning);
+  } else if (stats.files === 0) {
     stats.warning =
       `No files were visible to ${stats.account}. Re-authorize /drive with an account that can open the Episode contract folder.`;
     console.warn(stats.warning);
