@@ -10,6 +10,7 @@ import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import { google } from 'googleapis';
 import { createClient } from '@supabase/supabase-js';
+import { loadAllowedNcNumbers, nameMatchesAllowlist, ncNumbersInName } from './nc-allowlist.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.join(here, '.env') });
@@ -187,7 +188,8 @@ export function driveHealthLines() {
     `  Supabase bucket ${process.env.SUPABASE_STORAGE_BUCKET || 'Contracts'} / ${uploadFolder()}/\n` +
     `  Redirect URI ${redirectUri()}\n` +
     `  Upload log table ${UPLOAD_LOG_TABLE}\n` +
-    '  Storage keys: ascii-safe\n'
+    '  Storage keys: ascii-safe\n' +
+    `  NC allowlist: column B unique codes only\n`
   );
 }
 
@@ -309,6 +311,7 @@ async function walk(drive, supabase, bucket, parentId, prefix, stats, route) {
   }
 
   if (children.length === 0) {
+    if (!route.allowed) return;
     const markerPath = `${prefix}/.keep`;
     try {
       await uploadBuffer(supabase, bucket, markerPath, Buffer.from('empty-folder\n'), 'text/plain');
@@ -369,7 +372,33 @@ async function walk(drive, supabase, bucket, parentId, prefix, stats, route) {
     }
 
     const nextNames = [...route.names, file.name || file.id];
+    const ncs = ncNumbersInName(file.name || '');
+    const matchesAllow = nameMatchesAllowlist(file.name || '', stats.allowlist);
     if (file.mimeType === FOLDER_MIME) {
+      if (!route.allowed && ncs.length > 0 && !matchesAllow) {
+        stats.skipped += 1;
+        const message = `skipped: ${ncs.map((nc) => `NC_${nc}`).join(', ')} is not in column B unique code`;
+        console.log(`Skip folder ${joinRoute(nextNames)}: ${message}`);
+        await recordTransfer(supabase, stats, {
+          status: 'skipped',
+          itemType: 'folder',
+          driveFileId: file.id,
+          driveName: file.name,
+          parentDriveId: parentId,
+          sourceFolderRoute: joinRoute(route.names),
+          sourceRoute: joinRoute(nextNames),
+          routeSegments: nextNames,
+          storageBucket: bucket,
+          mimeType: file.mimeType,
+          errorMessage: message,
+        });
+        continue;
+      }
+      const childAllowed = route.allowed || matchesAllow;
+      if (!childAllowed) {
+        await walk(drive, supabase, bucket, file.id, prefix, stats, { names: nextNames, allowed: false });
+        continue;
+      }
       const folderPrefix = `${prefix}/${safeSegment(file.name)}`;
       stats.folders += 1;
       await recordTransfer(supabase, stats, {
@@ -385,7 +414,27 @@ async function walk(drive, supabase, bucket, parentId, prefix, stats, route) {
         storagePath: folderPrefix,
         mimeType: file.mimeType,
       });
-      await walk(drive, supabase, bucket, file.id, folderPrefix, stats, { names: nextNames });
+      await walk(drive, supabase, bucket, file.id, folderPrefix, stats, { names: nextNames, allowed: true });
+      continue;
+    }
+
+    if (!route.allowed && !matchesAllow) {
+      if (ncs.length > 0) {
+        stats.skipped += 1;
+        await recordTransfer(supabase, stats, {
+          status: 'skipped',
+          itemType: 'file',
+          driveFileId: file.id,
+          driveName: file.name,
+          parentDriveId: parentId,
+          sourceFolderRoute: joinRoute(route.names),
+          sourceRoute: joinRoute(nextNames),
+          routeSegments: nextNames,
+          storageBucket: bucket,
+          mimeType: file.mimeType,
+          errorMessage: `skipped: ${ncs.map((nc) => `NC_${nc}`).join(', ')} is not in column B unique code`,
+        });
+      }
       continue;
     }
 
@@ -519,7 +568,11 @@ export async function syncDriveToSupabase() {
     syncId: crypto.randomUUID(),
     logTable: UPLOAD_LOG_TABLE,
     logError: null,
+    allowlist: null,
+    allowlistCount: 0,
   };
+  stats.allowlist = loadAllowedNcNumbers();
+  stats.allowlistCount = stats.allowlist.size;
   stats.account = await signedInAccount(drive);
 
   const rootMeta = await drive.files.get({
@@ -530,10 +583,11 @@ export async function syncDriveToSupabase() {
   const root = await resolveShortcut(drive, rootMeta.data);
   stats.rootName = root.name || rootMeta.data.name || null;
   console.log(
-    `Drive sync as ${stats.account}: root "${stats.rootName}" (${root.id}) driveId=${root.driveId || 'my-drive'}`,
+    `Drive sync as ${stats.account}: root "${stats.rootName}" (${root.id}) driveId=${root.driveId || 'my-drive'} allowlist=${stats.allowlistCount}`,
   );
 
   const rootRoute = [stats.rootName || 'Drive'];
+  const rootAllowed = nameMatchesAllowlist(stats.rootName || '', stats.allowlist);
   await recordTransfer(supabase, stats, {
     status: 'listed',
     itemType: 'folder',
@@ -546,7 +600,7 @@ export async function syncDriveToSupabase() {
     storagePath: prefix,
     mimeType: root.mimeType,
   });
-  await walk(drive, supabase, bucket, root.id, prefix, stats, { names: rootRoute });
+  await walk(drive, supabase, bucket, root.id, prefix, stats, { names: rootRoute, allowed: rootAllowed });
   if (stats.logError) {
     stats.warning =
       `Upload log was not saved (${stats.logError}). Run contract-uploading/supabase-drive-upload-log.sql in the Supabase SQL editor.`;
@@ -556,6 +610,7 @@ export async function syncDriveToSupabase() {
       `No files were visible to ${stats.account}. Re-authorize /drive with an account that can open the Episode contract folder.`;
     console.warn(stats.warning);
   }
+  delete stats.allowlist;
   return stats;
 }
 
