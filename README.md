@@ -32,7 +32,7 @@ Drive files are uploaded under the new prefix `Google Drive/`, keeping the Drive
 1. In Google Cloud Console, add this authorized redirect URI: `https://contract-extraction-joyy.onrender.com/drive/oauth/callback`
 2. On Render, set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` from the OAuth web client. Do not commit the client secret JSON.
 3. Set `SUPABASE_SERVICE_ROLE_KEY`.
-4. Run `contract-uploading/supabase-drive-upload-log.sql` in the Supabase SQL editor. Each file and folder is then written to `contract_drive_uploads` with its Drive route, storage path, status (`uploaded`, `failed`, `skipped`, or `listed`), and the error text when a copy does not succeed.
+4. Run `contract-uploading/supabase-drive-upload-log.sql` in the Supabase SQL editor (or `supabase-drive-upload-log-migration-path-columns.sql` if the table already exists). Each row gets `path_category` (Information / Contracts / Payments / Other), `nc_number`, and `ai_extraction` (`Yes` only for **Contracts** with **NC_0574+**).
 5. Open `/drive`, authorize, then start the sync.
 
 Source folder: https://drive.google.com/drive/folders/1yolAv0AGafMmsdNCtc58Qrk8HHJURysS
