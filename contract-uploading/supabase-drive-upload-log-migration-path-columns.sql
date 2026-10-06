@@ -5,7 +5,9 @@ alter table public.contract_drive_uploads
     check (path_category in ('Information', 'Contracts', 'Payments', 'Other')),
   add column if not exists ai_extraction text
     check (ai_extraction in ('Yes', 'No')),
-  add column if not exists nc_number text;
+  add column if not exists nc_number text,
+  add column if not exists file_format text
+    check (file_format is null or file_format in ('PDF', 'DOCX', 'Other'));
 
 comment on column public.contract_drive_uploads.path_category is
   'Drive subtree: Information, Contracts, Payments, or Other (from route_segments / storage_path).';

@@ -19,6 +19,7 @@ create table if not exists public.contract_drive_uploads (
   path_category text check (path_category in ('Information', 'Contracts', 'Payments', 'Other')),
   ai_extraction text check (ai_extraction in ('Yes', 'No')),
   nc_number text,
+  file_format text check (file_format is null or file_format in ('PDF', 'DOCX', 'Other')),
   mime_type text,
   size_bytes bigint,
   error_message text
@@ -31,7 +32,10 @@ comment on column public.contract_drive_uploads.path_category is
   'Information, Contracts, Payments, or Other — from folder names in route_segments / storage_path.';
 
 comment on column public.contract_drive_uploads.ai_extraction is
-  'Yes when path_category is Contracts and nc_number >= 574 (NC_0574+). Otherwise No.';
+  'Yes for the contract file(s) chosen for AI extraction: Contracts + NC_0574+, one file per folder or PDF/DOCX rules when multiple.';
+
+comment on column public.contract_drive_uploads.file_format is
+  'PDF, DOCX, or Other (from mime_type and drive_name). Null for folders.';
 
 create index if not exists contract_drive_uploads_sync_id_idx
   on public.contract_drive_uploads (sync_id, created_at);

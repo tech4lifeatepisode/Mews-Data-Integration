@@ -11,7 +11,7 @@ import dotenv from 'dotenv';
 import { google } from 'googleapis';
 import { createClient } from '@supabase/supabase-js';
 import { loadAllowedNcNumbers, nameMatchesAllowlist, ncNumbersInName } from './nc-allowlist.mjs';
-import { deriveUploadMetadata } from './upload-route-classify.mjs';
+import { deriveUploadMetadata, reconcileAiExtractionForSync } from './upload-route-classify.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.join(here, '.env') });
@@ -207,7 +207,13 @@ export function driveHealthLines() {
 async function recordTransfer(supabase, stats, row) {
   const routeSegments = row.routeSegments || [];
   const storagePath = row.storagePath || '';
-  const meta = deriveUploadMetadata(routeSegments, storagePath);
+  const meta = deriveUploadMetadata(
+    routeSegments,
+    storagePath,
+    row.mimeType,
+    row.driveName,
+    row.itemType,
+  );
   const { error } = await supabase.from(UPLOAD_LOG_TABLE).insert({
     sync_id: stats.syncId,
     google_account: stats.account,
@@ -224,6 +230,7 @@ async function recordTransfer(supabase, stats, row) {
     path_category: meta.path_category,
     ai_extraction: meta.ai_extraction,
     nc_number: meta.nc_number,
+    file_format: meta.file_format,
     mime_type: row.mimeType || null,
     size_bytes: Number.isFinite(row.sizeBytes) ? row.sizeBytes : null,
     error_message: row.errorMessage || null,
@@ -636,6 +643,13 @@ export async function syncDriveToSupabase() {
       `No files were visible to ${stats.account}. Re-authorize /drive with an account that can open the Episode contract folder.`;
     console.warn(stats.warning);
   }
+  if (!stats.logError) {
+    try {
+      stats.aiExtraction = await reconcileAiExtractionForSync(supabase, UPLOAD_LOG_TABLE, stats.syncId);
+    } catch (e) {
+      console.error('ai_extraction reconcile failed:', e);
+    }
+  }
   delete stats.allowlist;
   return stats;
 }
@@ -770,6 +784,13 @@ export async function retryFailedUploads(options = {}) {
         errorMessage: `retry: ${message}`,
       });
       console.error(`Retry failed ${row.drive_name}: ${message}`);
+    }
+  }
+  if (!stats.logError) {
+    try {
+      stats.aiExtraction = await reconcileAiExtractionForSync(supabase, UPLOAD_LOG_TABLE, stats.syncId);
+    } catch (e) {
+      console.error('ai_extraction reconcile failed:', e);
     }
   }
   return stats;
