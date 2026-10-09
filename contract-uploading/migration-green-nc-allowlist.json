@@ -1,0 +1,17 @@
+{
+  "source": "Revisión contratos MEWS migracion (1).xlsx",
+  "rule": "column F fill green (FF6AA84F or FF93C47D) and column C category B2C or B2B2C",
+  "nc_numbers": [
+    "1767",
+    "1858",
+    "1862",
+    "1883",
+    "1898",
+    "1936",
+    "1942",
+    "1952",
+    "2033",
+    "2071",
+    "2072"
+  ]
+}

@@ -6,11 +6,13 @@
   "scripts": {
     "start": "node drive-http.mjs",
     "retry-failed": "node retry-failed-uploads.mjs",
-    "reconcile-ai": "node reconcile-ai-extraction.mjs"
+    "reconcile-ai": "node reconcile-ai-extraction.mjs",
+    "sync-migration": "node sync-migration-xlsx.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.1",
     "dotenv": "^16.4.7",
+    "exceljs": "^4.4.0",
     "googleapis": "^144.0.0"
   }
 }

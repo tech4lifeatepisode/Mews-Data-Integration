@@ -11,6 +11,7 @@ import dotenv from 'dotenv';
 import { google } from 'googleapis';
 import { createClient } from '@supabase/supabase-js';
 import { loadAllowedNcNumbers, nameMatchesAllowlist, ncNumbersInName } from './nc-allowlist.mjs';
+import { resolveMigrationGreenAllowlist } from './migration-xlsx-allowlist.mjs';
 import { deriveUploadMetadata, reconcileAiExtractionForSync } from './upload-route-classify.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -201,7 +202,8 @@ export function driveHealthLines() {
     '  Storage keys: ascii-safe\n' +
     `  NC allowlist: column B unique codes only\n` +
     '  POST/GET /drive/retry-failed — re-upload rows with status failed\n' +
-    '  POST/GET /drive/reconcile-ai?sync_id= — fix ai_extraction on an existing sync\n'
+    '  POST/GET /drive/reconcile-ai?sync_id= — fix ai_extraction on an existing sync\n' +
+    '  POST/GET /drive/sync-migration — upload NCs with green F + B2C/B2B2C in migration xlsx\n'
   );
 }
 
@@ -581,7 +583,10 @@ async function walk(drive, supabase, bucket, parentId, prefix, stats, route) {
   }
 }
 
-export async function syncDriveToSupabase() {
+/**
+ * @param {{ allowlist?: Set<string>, allowlistLabel?: string }} [options]
+ */
+export async function syncDriveToSupabase(options = {}) {
   if (!authorized()) {
     throw new Error('Google Drive is not authorized. Open /drive and sign in.');
   }
@@ -604,8 +609,9 @@ export async function syncDriveToSupabase() {
     logError: null,
     allowlist: null,
     allowlistCount: 0,
+    allowlistSource: options.allowlistLabel || 'csv',
   };
-  stats.allowlist = loadAllowedNcNumbers();
+  stats.allowlist = options.allowlist ?? loadAllowedNcNumbers();
   stats.allowlistCount = stats.allowlist.size;
   stats.account = await signedInAccount(drive);
 
@@ -652,6 +658,22 @@ export async function syncDriveToSupabase() {
     }
   }
   delete stats.allowlist;
+  return stats;
+}
+
+/** Upload only NC folders listed as green (column F) + B2C/B2B2C in the migration workbook. */
+export async function syncMigrationReviewXlsx() {
+  const { allowlist, rows, xlsxPath, jsonPath } = await resolveMigrationGreenAllowlist();
+  if (allowlist.size === 0) {
+    throw new Error(`No eligible green migration NCs (xlsx: ${xlsxPath || 'n/a'}, json: ${jsonPath || 'n/a'})`);
+  }
+  const stats = await syncDriveToSupabase({
+    allowlist,
+    allowlistLabel: 'migration-xlsx-green',
+  });
+  stats.migrationXlsx = xlsxPath || null;
+  stats.migrationAllowlistJson = jsonPath || null;
+  stats.migrationNcRows = rows;
   return stats;
 }
 
@@ -843,6 +865,10 @@ async function homeBody() {
     <form method="post" action="/drive/reconcile-ai">
       <p><label>Reconcile AI flags for sync_id (optional query on URL)<br><input name="sync_id" placeholder="e5a3b2a2-..."></label></p>
       <button type="submit">Reconcile ai_extraction</button>
+    </form>
+    <form method="post" action="/drive/sync-migration">
+      <p><label>Migration xlsx sync secret (if set)<br><input name="secret" type="password"></label></p>
+      <button type="submit">Sync green migration NCs (xlsx column F)</button>
     </form>`;
 }
 
@@ -925,6 +951,46 @@ export async function handleDriveHttp(req, res) {
           const message = error instanceof Error ? error.message : String(error);
           lastSync = { ok: false, message, at: new Date().toISOString() };
           console.error('Drive sync failed:', message);
+        })
+        .finally(() => {
+          syncRunning = false;
+        });
+      return true;
+    }
+
+    if (url === '/drive/sync-migration' && (req.method === 'POST' || req.method === 'GET')) {
+      const bodyText = req.method === 'POST' ? await readBody(req) : '';
+      if (!checkSyncAuth(req, bodyText)) {
+        sendJson(res, 401, { ok: false, error: 'unauthorized' });
+        return true;
+      }
+      if (syncRunning) {
+        sendJson(res, 409, { ok: false, error: 'sync_already_running' });
+        return true;
+      }
+      syncRunning = true;
+      const started =
+        'Migration xlsx sync started (green column F, B2C/B2B2C only)';
+      const formPost = (req.headers['content-type'] || '').includes('application/x-www-form-urlencoded');
+      if (formPost) {
+        sendHtml(
+          res,
+          202,
+          'Migration sync started',
+          `<p>${escapeHtml(started)}</p><p>Progress is in the Render logs. <a href="/drive">Back</a></p>`,
+        );
+      } else {
+        sendJson(res, 202, { ok: true, accepted: true, message: started });
+      }
+      syncMigrationReviewXlsx()
+        .then((stats) => {
+          lastSync = { ok: true, message: JSON.stringify(stats), at: new Date().toISOString() };
+          console.log('Migration xlsx sync finished', stats);
+        })
+        .catch((error) => {
+          const message = error instanceof Error ? error.message : String(error);
+          lastSync = { ok: false, message, at: new Date().toISOString() };
+          console.error('Migration xlsx sync failed:', message);
         })
         .finally(() => {
           syncRunning = false;
