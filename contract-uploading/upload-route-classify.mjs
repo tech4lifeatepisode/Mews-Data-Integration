@@ -99,6 +99,12 @@ export function deriveUploadMetadata(
  * @param {string} syncId
  */
 export async function reconcileAiExtractionForSync(supabase, tableName, syncId) {
+  await supabase
+    .from(tableName)
+    .update({ ai_extraction: 'No' })
+    .eq('sync_id', syncId)
+    .eq('item_type', 'folder');
+
   const { data: rows, error } = await supabase
     .from(tableName)
     .select('id, nc_number, path_category, item_type, file_format, source_folder_route, drive_name')
@@ -128,7 +134,7 @@ export async function reconcileAiExtractionForSync(supabase, tableName, syncId) 
     }
     const pdfs = sorted.filter((m) => m.file_format === 'PDF');
     if (pdfs.length > 0) {
-      pdfs.forEach((m) => yesIds.add(m.id));
+      for (const pdf of pdfs) yesIds.add(pdf.id);
       continue;
     }
     const docxs = sorted.filter((m) => m.file_format === 'DOCX');

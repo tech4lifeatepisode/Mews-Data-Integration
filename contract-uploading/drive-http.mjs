@@ -200,7 +200,8 @@ export function driveHealthLines() {
     `  Upload log table ${UPLOAD_LOG_TABLE}\n` +
     '  Storage keys: ascii-safe\n' +
     `  NC allowlist: column B unique codes only\n` +
-    '  POST/GET /drive/retry-failed — re-upload rows with status failed\n'
+    '  POST/GET /drive/retry-failed — re-upload rows with status failed\n' +
+    '  POST/GET /drive/reconcile-ai?sync_id= — fix ai_extraction on an existing sync\n'
   );
 }
 
@@ -838,6 +839,10 @@ async function homeBody() {
     <form method="post" action="/drive/retry-failed">
       <p><label>Retry failed uploads (same secret if set)<br><input name="secret" type="password"></label></p>
       <button type="submit">Retry failed uploads from log</button>
+    </form>
+    <form method="post" action="/drive/reconcile-ai">
+      <p><label>Reconcile AI flags for sync_id (optional query on URL)<br><input name="sync_id" placeholder="e5a3b2a2-..."></label></p>
+      <button type="submit">Reconcile ai_extraction</button>
     </form>`;
 }
 
@@ -961,6 +966,33 @@ export async function handleDriveHttp(req, res) {
         .finally(() => {
           syncRunning = false;
         });
+      return true;
+    }
+
+    if (url === '/drive/reconcile-ai' && (req.method === 'POST' || req.method === 'GET')) {
+      const bodyText = req.method === 'POST' ? await readBody(req) : '';
+      if (!checkSyncAuth(req, bodyText)) {
+        sendJson(res, 401, { ok: false, error: 'unauthorized' });
+        return true;
+      }
+      const query = new URL(raw, 'http://localhost').searchParams;
+      const params = new URLSearchParams(bodyText || '');
+      const syncId =
+        query.get('sync_id')?.trim() ||
+        params.get('sync_id')?.trim() ||
+        process.env.DRIVE_LAST_SYNC_ID?.trim();
+      if (!syncId) {
+        sendJson(res, 400, { ok: false, error: 'sync_id required' });
+        return true;
+      }
+      try {
+        const supabase = supabaseClient();
+        const result = await reconcileAiExtractionForSync(supabase, UPLOAD_LOG_TABLE, syncId);
+        sendJson(res, 200, { ok: true, sync_id: syncId, ...result });
+      } catch (e) {
+        const message = e instanceof Error ? e.message : String(e);
+        sendJson(res, 500, { ok: false, error: message });
+      }
       return true;
     }
   } catch (error) {

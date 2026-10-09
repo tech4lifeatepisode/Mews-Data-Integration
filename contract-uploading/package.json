@@ -5,7 +5,8 @@
   "description": "Google Drive web app that copies contract folders into Supabase Storage.",
   "scripts": {
     "start": "node drive-http.mjs",
-    "retry-failed": "node retry-failed-uploads.mjs"
+    "retry-failed": "node retry-failed-uploads.mjs",
+    "reconcile-ai": "node reconcile-ai-extraction.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.1",

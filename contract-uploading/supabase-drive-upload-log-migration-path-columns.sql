@@ -38,15 +38,9 @@ set
     limit 1
   ),
   ai_extraction = case
-    when (
-      coalesce(source_route, '') ilike '%CONTRACT%' or coalesce(storage_path, '') ilike '%CONTRACT%'
-    )
-    and (
-      select coalesce((regexp_match(seg, 'NC[_\s-]*(\d+)', 'i'))[1]::int, 0)
-      from unnest(route_segments) as seg
-      where seg ~* 'NC[_\s-]*\d+'
-      limit 1
-    ) >= 574 then 'Yes'
+    when item_type = 'folder' then 'No'
     else 'No'
   end
 where path_category is null or ai_extraction is null;
+
+-- After this migration, run reconcile-ai per sync_id so file rows get the correct Yes/No.
