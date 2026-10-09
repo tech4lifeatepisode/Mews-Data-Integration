@@ -16,6 +16,10 @@ __pycache__/
 upload_checkpoint.json
 analysis_report.json
 
+# Excel workbooks (local review/migration; NC allowlist is tracked as CSV)
+**/*.xlsx
+**/*.xlsm
+
 # Excel lock files
 ~$*
 
