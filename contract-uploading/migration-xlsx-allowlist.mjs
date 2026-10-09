@@ -31,9 +31,22 @@ function normalizeArgb(fgColor) {
   return String(argb).toUpperCase().replace(/^#/, '');
 }
 
-function cellFillArgb(cell) {
+/** Excel theme index 9 is accent 6, the default green used on most migration rows. */
+const THEME_GREEN_INDEX = 9;
+
+function isGreenFill(cell) {
   const fill = cell?.fill;
-  if (!fill || fill.type !== 'pattern' || fill.pattern !== 'solid') return null;
+  if (!fill || fill.type !== 'pattern' || fill.pattern !== 'solid') return false;
+  const theme = fill.fgColor?.theme;
+  if (theme === THEME_GREEN_INDEX) return true;
+  const argb = normalizeArgb(fill.fgColor);
+  return Boolean(argb && MIGRATION_GREEN_ARGB.has(argb));
+}
+
+function fillLabel(cell) {
+  const fill = cell?.fill;
+  if (!fill || fill.type !== 'pattern') return null;
+  if (fill.fgColor?.theme != null) return `theme:${fill.fgColor.theme}`;
   return normalizeArgb(fill.fgColor);
 }
 
@@ -70,14 +83,14 @@ export async function migrationGreenAllowlistFromXlsx(xlsxPath = process.env.MIG
       .toUpperCase();
     if (!ELIGIBLE_CATEGORIES.has(category)) return;
 
-    const argb = cellFillArgb(row.getCell(6));
-    if (!argb || !MIGRATION_GREEN_ARGB.has(argb)) return;
+    const cellF = row.getCell(6);
+    if (!isGreenFill(cellF)) return;
 
     const nc = ncFromRow(row);
     if (!nc) return;
 
     allowlist.add(nc);
-    rows.push({ nc, row: rowNumber, category, argb });
+    rows.push({ nc, row: rowNumber, category, argb: fillLabel(cellF) });
   });
 
   return { allowlist, rows, xlsxPath, sheetName: sheet.name };
