@@ -109,7 +109,7 @@ function handleExtractRequest(req, res, mode) {
 
   const message =
     mode === 'drive-ai'
-      ? 'Drive ai_extraction=Yes batch started in background'
+      ? 'Drive ai_extraction=Yes extraction started until every pending file is saved'
       : mode === 'nc-rerun-all'
         ? 'OCR rerun (filtered NCs across To Fill 1, To Fill 2, Fill 3) started in background'
         : mode === 'all'
@@ -151,7 +151,7 @@ function extractionHealthLines() {
     '  POST/GET /extract — one batch (MAX_EXTRACTION_FILES).\n' +
     '  POST/GET /extract-all — all pending in SUPABASE_STORAGE_FOLDER.\n' +
     '  POST/GET /extract-nc-rerun-all — OCR rerun for filtered NCs across To Fill 1/2/Fill 3.\n' +
-    `  POST/GET /extract-drive-ai — ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE}.\n` +
+    `  POST/GET /extract-drive-ai — all ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE}.\n` +
     `  Log table ${DRIVE_EXTRACTION_LOG_TABLE}.\n` +
     '  AUTO_EXTRACT_FROM_STORAGE=true: on boot, extract-all for one folder.\n' +
     '  AUTO_NC_OCR_RERUN_FROM_STORAGE=true: on boot, extract-nc-rerun-all.\n' +

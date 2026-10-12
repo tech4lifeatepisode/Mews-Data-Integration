@@ -140,15 +140,25 @@ export async function runDriveAiExtraction() {
   const uploads = (await yesUploadRows(supabase)).filter((row) =>
     inGoogleDriveFolder(row.storage_path, folder),
   );
-  const done = skipDone ? await alreadySuccessful(supabase) : new Set();
-  const pending = uploads.filter(
-    (row) => !done.has(row.storage_path) && !done.has(row.drive_name),
-  );
-  const batch = pending.slice(0, limit);
-
+  const attempted = new Set();
   let success = 0;
   let failed = 0;
-  for (const upload of batch) {
+  let remaining = uploads.length;
+
+  while (true) {
+    const done = skipDone ? await alreadySuccessful(supabase) : new Set();
+    const pending = uploads.filter((row) => {
+      const key = row.storage_path || row.drive_name;
+      if (!key || attempted.has(key)) return false;
+      return !done.has(row.storage_path) && !done.has(row.drive_name);
+    });
+    remaining = pending.length;
+    const batch = pending.slice(0, limit);
+    if (!batch.length) break;
+    console.log(`Drive AI extraction: ${batch.length} in this batch, ${pending.length} still pending`);
+
+    for (const upload of batch) {
+      attempted.add(upload.storage_path || upload.drive_name);
     const started = Date.now();
     const fileName = upload.drive_name || path.basename(upload.storage_path || 'document');
     const mimeType = upload.mime_type || mimeFromName(fileName) || 'application/pdf';
@@ -222,13 +232,14 @@ export async function runDriveAiExtraction() {
       console.error(`FAIL: ${upload.storage_path} — ${message}`);
     }
   }
+  }
 
   return {
     ok: true,
     folder,
     eligible: uploads.length,
-    pending: pending.length,
-    attempted: batch.length,
+    pending: remaining,
+    attempted: attempted.size,
     success,
     failed,
     extractionTable: DRIVE_EXTRACTION_TABLE,
