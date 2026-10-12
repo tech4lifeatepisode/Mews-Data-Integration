@@ -202,7 +202,7 @@ export function driveHealthLines() {
     '  Storage keys: ascii-safe\n' +
     `  NC allowlist: column B unique codes only\n` +
     '  POST/GET /drive/retry-failed — re-upload rows with status failed\n' +
-    '  POST/GET /drive/reconcile-ai?sync_id= — fix ai_extraction on an existing sync\n' +
+    '  POST/GET /drive/reconcile-ai?sync_id= — fix ai_extraction for every file row in a sync\n' +
     '  POST/GET /drive/sync-migration — upload NCs with green F + B2C/B2B2C in migration xlsx\n'
   );
 }

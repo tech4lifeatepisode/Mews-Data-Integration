@@ -98,6 +98,38 @@ export function deriveUploadMetadata(
  * @param {string} tableName
  * @param {string} syncId
  */
+const FILE_PAGE_SIZE = 1000;
+const UPDATE_CHUNK = 100;
+
+async function fetchSyncFiles(supabase, tableName, syncId) {
+  const rows = [];
+  for (let from = 0; ; from += FILE_PAGE_SIZE) {
+    const { data, error } = await supabase
+      .from(tableName)
+      .select('id, nc_number, path_category, file_format, source_folder_route, drive_name, ai_extraction')
+      .eq('sync_id', syncId)
+      .eq('item_type', 'file')
+      .order('id', { ascending: true })
+      .range(from, from + FILE_PAGE_SIZE - 1);
+    if (error) throw new Error(`reconcile ai_extraction: ${error.message}`);
+    if (!data?.length) break;
+    rows.push(...data);
+    if (data.length < FILE_PAGE_SIZE) break;
+  }
+  return rows;
+}
+
+async function setAiExtraction(supabase, tableName, ids, value) {
+  let updated = 0;
+  for (let i = 0; i < ids.length; i += UPDATE_CHUNK) {
+    const chunk = ids.slice(i, i + UPDATE_CHUNK);
+    const { error } = await supabase.from(tableName).update({ ai_extraction: value }).in('id', chunk);
+    if (error) throw new Error(`reconcile ai_extraction update: ${error.message}`);
+    updated += chunk.length;
+  }
+  return updated;
+}
+
 export async function reconcileAiExtractionForSync(supabase, tableName, syncId) {
   await supabase
     .from(tableName)
@@ -105,13 +137,8 @@ export async function reconcileAiExtractionForSync(supabase, tableName, syncId) 
     .eq('sync_id', syncId)
     .eq('item_type', 'folder');
 
-  const { data: rows, error } = await supabase
-    .from(tableName)
-    .select('id, nc_number, path_category, item_type, file_format, source_folder_route, drive_name')
-    .eq('sync_id', syncId)
-    .eq('item_type', 'file');
-  if (error) throw new Error(`reconcile ai_extraction: ${error.message}`);
-  if (!rows?.length) return { updated: 0, yes: 0 };
+  const rows = await fetchSyncFiles(supabase, tableName, syncId);
+  if (!rows.length) return { updated: 0, yes: 0, files: 0 };
 
   const groups = new Map();
   for (const row of rows) {
@@ -145,11 +172,17 @@ export async function reconcileAiExtractionForSync(supabase, tableName, syncId) 
     yesIds.add(sorted[0].id);
   }
 
-  let updated = 0;
+  const yesToWrite = [];
+  const noToWrite = [];
   for (const row of rows) {
     const ai = yesIds.has(row.id) ? 'Yes' : 'No';
-    const { error: upErr } = await supabase.from(tableName).update({ ai_extraction: ai }).eq('id', row.id);
-    if (!upErr) updated += 1;
+    if (row.ai_extraction === ai) continue;
+    if (ai === 'Yes') yesToWrite.push(row.id);
+    else noToWrite.push(row.id);
   }
-  return { updated, yes: yesIds.size };
+
+  const updated =
+    (await setAiExtraction(supabase, tableName, yesToWrite, 'Yes')) +
+    (await setAiExtraction(supabase, tableName, noToWrite, 'No'));
+  return { updated, yes: yesIds.size, files: rows.length };
 }
