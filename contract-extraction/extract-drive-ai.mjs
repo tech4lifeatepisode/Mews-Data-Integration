@@ -26,8 +26,9 @@ export const DRIVE_EXTRACTION_TABLE = 'Contracts_Extraction_12_10_2026';
 export const DRIVE_EXTRACTION_LOG_TABLE = 'Logged_Extractions_12_10_2026';
 
 const PAGE = 1000;
-/** 24MB file peaked at 224MB RSS in a local run. 32MB stays under a 512MB instance even if two copies overlap. */
-const MAX_EXTRACT_BYTES = 32 * 1024 * 1024;
+/** A 23.7MB file peaked near 224MB RSS. The next file, 30.8MB, killed the 512MB process before a failure row could be saved. */
+const MAX_EXTRACT_BYTES = 25 * 1024 * 1024;
+const MODEL_TIMEOUT_MS = 5 * 60 * 1000;
 
 function supabaseClient() {
   const url = process.env.SUPABASE_URL;
@@ -133,7 +134,11 @@ async function insertRow(supabase, table, record) {
 export async function runDriveAiExtraction() {
   if (!process.env.OPENAI_API_KEY) throw new Error('OPENAI_API_KEY not set');
   const supabase = supabaseClient();
-  const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  const client = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+    timeout: MODEL_TIMEOUT_MS,
+    maxRetries: 0,
+  });
   const folder = storageFolder();
   const bucketDefault = process.env.SUPABASE_STORAGE_BUCKET || 'Contracts';
   const limit = Math.max(1, Number(process.env.MAX_EXTRACTION_FILES) || 10);
