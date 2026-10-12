@@ -9,6 +9,7 @@
     "extract:storage": "node extract-from-storage.mjs",
     "extract:storage:all": "node extract-from-storage-batch.mjs",
     "extract:nc-ocr-rerun": "node extract-nc-ocr-rerun-all-folders.mjs",
+    "extract:drive-ai": "node extract-drive-ai.mjs",
     "verify:extraction": "node verify-extraction-status.mjs"
   },
   "dependencies": {

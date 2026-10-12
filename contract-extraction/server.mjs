@@ -5,6 +5,7 @@
  */
 import http from 'http';
 import { runExtractFromSupabaseStorage, isEnvTruthy } from './extract-from-storage.mjs';
+import { runDriveAiExtraction, DRIVE_EXTRACTION_TABLE, DRIVE_EXTRACTION_LOG_TABLE } from './extract-drive-ai.mjs';
 import { runExtractFromSupabaseStorageUntilDone } from './extract-from-storage-batch.mjs';
 import { runNcOcrRerunAllFolders } from './extract-nc-ocr-rerun-all-folders.mjs';
 import { driveHealthLines, handleDriveHttp } from '../contract-uploading/drive-http.mjs';
@@ -58,6 +59,24 @@ async function safeRunExtractAll(label) {
   }
 }
 
+async function safeRunDriveAi(label) {
+  if (extractionRunning) {
+    console.warn(`[${label}] Extraction already running, skip.`);
+    return { ok: false, skipped: true, message: 'already_running' };
+  }
+  extractionRunning = true;
+  try {
+    const result = await runDriveAiExtraction();
+    console.log(`[${label}] Drive AI extraction finished:`, result);
+    return result;
+  } catch (error) {
+    console.error(`[${label}] Drive AI extraction failed:`, error);
+    return { ok: false, error: error instanceof Error ? error.message : String(error) };
+  } finally {
+    extractionRunning = false;
+  }
+}
+
 async function safeRunNcOcrRerunAll(label) {
   if (extractionRunning) {
     console.warn(`[${label}] Extraction already running, skip.`);
@@ -89,20 +108,30 @@ function handleExtractRequest(req, res, mode) {
   }
 
   const message =
-    mode === 'nc-rerun-all'
-      ? 'OCR rerun (filtered NCs across To Fill 1, To Fill 2, Fill 3) started in background'
-      : mode === 'all'
-        ? 'full extraction (all pending batches) started in background'
-        : 'extraction started in background';
+    mode === 'drive-ai'
+      ? 'Drive ai_extraction=Yes batch started in background'
+      : mode === 'nc-rerun-all'
+        ? 'OCR rerun (filtered NCs across To Fill 1, To Fill 2, Fill 3) started in background'
+        : mode === 'all'
+          ? 'full extraction (all pending batches) started in background'
+          : 'extraction started in background';
 
   const modeKey =
-    mode === 'nc-rerun-all' ? 'extract-nc-rerun-all' : mode === 'all' ? 'extract-all' : 'extract';
+    mode === 'drive-ai'
+      ? 'extract-drive-ai'
+      : mode === 'nc-rerun-all'
+        ? 'extract-nc-rerun-all'
+        : mode === 'all'
+          ? 'extract-all'
+          : 'extract';
 
   res.writeHead(202, { 'Content-Type': 'application/json; charset=utf-8' });
   res.end(JSON.stringify({ ok: true, accepted: true, message, mode: modeKey }));
 
   setImmediate(() => {
-    if (mode === 'nc-rerun-all') {
+    if (mode === 'drive-ai') {
+      safeRunDriveAi('http').catch((e) => console.error(e));
+    } else if (mode === 'nc-rerun-all') {
       safeRunNcOcrRerunAll('http').catch((e) => console.error(e));
     } else if (mode === 'all') {
       safeRunExtractAll('http').catch((e) => console.error(e));
@@ -122,6 +151,8 @@ function extractionHealthLines() {
     '  POST/GET /extract — one batch (MAX_EXTRACTION_FILES).\n' +
     '  POST/GET /extract-all — all pending in SUPABASE_STORAGE_FOLDER.\n' +
     '  POST/GET /extract-nc-rerun-all — OCR rerun for filtered NCs across To Fill 1/2/Fill 3.\n' +
+    `  POST/GET /extract-drive-ai — ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE}.\n` +
+    `  Log table ${DRIVE_EXTRACTION_LOG_TABLE}.\n` +
     '  AUTO_EXTRACT_FROM_STORAGE=true: on boot, extract-all for one folder.\n' +
     '  AUTO_NC_OCR_RERUN_FROM_STORAGE=true: on boot, extract-nc-rerun-all.\n' +
     '  Optional header: X-Extract-Secret: <EXTRACT_TRIGGER_SECRET>\n' +
@@ -158,6 +189,11 @@ const server = http.createServer(async (req, res) => {
 
   if (url === '/extract-nc-rerun-all' && (req.method === 'POST' || req.method === 'GET')) {
     handleExtractRequest(req, res, 'nc-rerun-all');
+    return;
+  }
+
+  if (url === '/extract-drive-ai' && (req.method === 'POST' || req.method === 'GET')) {
+    handleExtractRequest(req, res, 'drive-ai');
     return;
   }
 

@@ -14,8 +14,8 @@ dotenv.config({ path: path.join(here, '.env') });
 const MODEL = process.env.OPENAI_MODEL_DEFAULT || 'gpt-5.2-2025-12-11';
 const CONTRACTS_DIR = path.join(here, 'contracts');
 const OUTPUT_DIR = path.join(here, 'sandbox outputs');
-const CUSTOMERS_CSV = path.join(OUTPUT_DIR, 'mews-customers.csv');
-const COMPANIES_CSV = path.join(OUTPUT_DIR, 'mews-companies.csv');
+let CUSTOMERS_CSV = path.join(OUTPUT_DIR, 'mews-customers.csv');
+let COMPANIES_CSV = path.join(OUTPUT_DIR, 'mews-companies.csv');
 const LOG_CSV = path.join(OUTPUT_DIR, 'extraction-log.csv');
 
 const DOCX_MIME =
@@ -32,7 +32,7 @@ const FILE_TYPES = new Map([
 ]);
 
 /** Exact column order from Mews_import_v2.10.0.xlsx → Customers. */
-const CUSTOMER_HEADERS = [
+export const CUSTOMER_HEADERS = [
   'Email',
   'Last Name(*)',
   'First Name',
@@ -115,7 +115,7 @@ const CUSTOMER_HEADERS = [
 ];
 
 /** Exact column order from Mews_import_v2.10.0.xlsx → Companies. */
-const COMPANY_HEADERS = [
+export const COMPANY_HEADERS = [
   'Company Name(*)',
   'Telephone',
   'Contact Person',
@@ -149,7 +149,7 @@ const COMPANY_HEADERS = [
   'Project Code (CUP)',
 ];
 
-const LOG_HEADERS = [
+export const LOG_HEADERS = [
   'timestamp',
   'document',
   'file_format',
@@ -291,12 +291,12 @@ function blankRow(headers) {
   return Object.fromEntries(headers.map((header) => [header, '']));
 }
 
-function ncFromFileName(fileName) {
+export function ncFromFileName(fileName) {
   const match = path.basename(fileName).match(/NC[_\s-]*(\d+)/i);
   return match ? String(parseInt(match[1], 10)) : '';
 }
 
-function fileFormat(fileName) {
+export function fileFormat(fileName) {
   const ext = path.extname(fileName).toLowerCase();
   if (ext === '.pdf' || /_pdf$/i.test(path.basename(fileName))) return 'PDF';
   if (ext === '.docx' || ext === '.doc') return 'DOCX';
@@ -304,7 +304,7 @@ function fileFormat(fileName) {
   return 'Other';
 }
 
-function mimeFromName(fileName) {
+export function mimeFromName(fileName) {
   const base = path.basename(fileName);
   const ext = path.extname(base).toLowerCase();
   if (FILE_TYPES.has(ext)) return FILE_TYPES.get(ext);
@@ -387,7 +387,7 @@ function buildReservationNotes(parsed, tenancyDays) {
   return lines.join(' | ');
 }
 
-function toCustomerRow(parsed, fileName) {
+export function toCustomerRow(parsed, fileName) {
   const row = blankRow(CUSTOMER_HEADERS);
   const people = Math.max(1, Number(parsed.number_of_people) || 1);
   const companions = (Array.isArray(parsed.other_guests) ? parsed.other_guests : [])
@@ -437,7 +437,7 @@ function toCustomerRow(parsed, fileName) {
   return { row, tenancyDays, companions };
 }
 
-function toCompanyRow(parsed) {
+export function toCompanyRow(parsed) {
   if (!text(parsed.company_name)) return null;
   const row = blankRow(COMPANY_HEADERS);
   row['Company Name(*)'] = text(parsed.company_name);
@@ -451,11 +451,11 @@ function toCompanyRow(parsed) {
   return row;
 }
 
-function filledCount(row) {
+export function filledCount(row) {
   return Object.values(row).filter((value) => text(value)).length;
 }
 
-function missingKeyFields(row, parsed) {
+export function missingKeyFields(row, parsed) {
   const missing = [];
   if (!row['Last Name(*)']) missing.push('Last Name');
   if (!row['First Name']) missing.push('First Name');
@@ -463,6 +463,40 @@ function missingKeyFields(row, parsed) {
   if (!row['Departure Date(*)']) missing.push('Departure Date');
   if (!row['Allocated Room Category(*)']) missing.push('Unit');
   return missing.join('; ');
+}
+
+async function useUnlockedCopy(filePath) {
+  try {
+    const handle = await fs.open(filePath, 'a');
+    await handle.close();
+    return filePath;
+  } catch (error) {
+    if (error?.code !== 'EBUSY') throw error;
+    const alt = filePath.replace(/\.csv$/i, '-latest.csv');
+    try {
+      await fs.access(alt);
+    } catch {
+      const existing = await fs.readFile(filePath);
+      await fs.writeFile(alt, existing);
+    }
+    console.log(`File is open elsewhere, writing ${path.basename(alt)} instead.`);
+    return alt;
+  }
+}
+
+async function successfulDocuments() {
+  try {
+    const text = await fs.readFile(LOG_CSV, 'utf8');
+    const done = new Set();
+    for (const line of text.replace(/^\uFEFF/, '').split(/\r?\n/).slice(1)) {
+      if (!line) continue;
+      const cols = line.split(',');
+      if (cols[4] === 'success' && cols[1]) done.add(cols[1]);
+    }
+    return done;
+  } catch {
+    return new Set();
+  }
 }
 
 async function ensureCsv(filePath, headers) {
@@ -479,7 +513,7 @@ async function appendCsv(filePath, headers, row) {
   await fs.appendFile(filePath, `${toCsvLine(values)}\r\n`, 'utf8');
 }
 
-async function extractContract(client, fileName, fileBuffer, mimeType) {
+export async function extractContract(client, fileName, fileBuffer, mimeType) {
   const instructions = `Extract a Spanish NODE / Episode lodging contract into the JSON schema. Use only text in the document. Use null when a value is absent. Do not guess.
 
 Primary sources:
@@ -537,16 +571,19 @@ async function main() {
 
   await fs.mkdir(CONTRACTS_DIR, { recursive: true });
   await fs.mkdir(OUTPUT_DIR, { recursive: true });
+  CUSTOMERS_CSV = await useUnlockedCopy(CUSTOMERS_CSV);
+  COMPANIES_CSV = await useUnlockedCopy(COMPANIES_CSV);
   await ensureCsv(CUSTOMERS_CSV, CUSTOMER_HEADERS);
   await ensureCsv(COMPANIES_CSV, COMPANY_HEADERS);
   await ensureCsv(LOG_CSV, LOG_HEADERS);
 
+  const done = await successfulDocuments();
   const names = (await fs.readdir(CONTRACTS_DIR))
-    .filter((name) => name !== '.gitkeep' && !name.startsWith('~$'))
+    .filter((name) => name !== '.gitkeep' && !name.startsWith('~$') && !done.has(name))
     .sort((a, b) => a.localeCompare(b));
 
   if (names.length === 0) {
-    console.log(`No files in ${CONTRACTS_DIR}. Add PDF or DOCX contracts, then run npm run extract.`);
+    console.log(`No new contract files in ${CONTRACTS_DIR}. Already extracted files are left as they are.`);
     return;
   }
 
@@ -647,7 +684,12 @@ async function main() {
   console.log(`Log: ${LOG_CSV}`);
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+const isSandboxCli =
+  process.argv[1] && path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url));
+
+if (isSandboxCli) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}
