@@ -1,0 +1,13 @@
+{
+  "name": "extraction-sandbox",
+  "private": true,
+  "type": "module",
+  "description": "Local contract extraction into Mews import CSVs. Reads ./contracts and writes ./sandbox outputs.",
+  "scripts": {
+    "extract": "node extract.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "openai": "^4.85.0"
+  }
+}

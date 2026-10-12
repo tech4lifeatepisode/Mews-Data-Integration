@@ -31,9 +31,13 @@ desktop.ini
 # Local extraction outputs (timestamped CSVs)
 **/extracted information saved csv/
 
-# Sandbox test contracts (local PDFs/DOCX)
+# Sandbox test contracts (local PDFs/DOCX) and extracted outputs
 **/contract extraction sandbox/contracts/
 contract-extraction/sandbox/contracts/
+contract-extraction/extraction sandbox/contracts/*
+!contract-extraction/extraction sandbox/contracts/.gitkeep
+contract-extraction/extraction sandbox/sandbox outputs/*
+!contract-extraction/extraction sandbox/sandbox outputs/.gitkeep
 
 # Google OAuth client secrets and saved tokens
 client_secret*.json
