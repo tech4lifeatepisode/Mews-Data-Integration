@@ -206,6 +206,9 @@ server.listen(port, '0.0.0.0', () => {
 
   const autoNcRerun = isEnvTruthy('AUTO_NC_OCR_RERUN_FROM_STORAGE');
   const autoExtract = isEnvTruthy('AUTO_EXTRACT_FROM_STORAGE');
+  // #region agent log
+  fetch('http://127.0.0.1:7786/ingest/4229d02c-1770-4fd5-9da6-3795ca151e32',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'002cbb'},body:JSON.stringify({sessionId:'002cbb',hypothesisId:'E',location:'server.mjs:listen',message:'boot extraction flags',data:{autoExtract,autoNcRerun,rss:process.memoryUsage().rss,heapUsed:process.memoryUsage().heapUsed},timestamp:Date.now()})}).catch(()=>{});
+  // #endregion
 
   if (autoNcRerun) {
     console.log(

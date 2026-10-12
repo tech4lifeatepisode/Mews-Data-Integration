@@ -26,6 +26,8 @@ export const DRIVE_EXTRACTION_TABLE = 'Contracts_Extraction_12_10_2026';
 export const DRIVE_EXTRACTION_LOG_TABLE = 'Logged_Extractions_12_10_2026';
 
 const PAGE = 1000;
+/** 24MB file peaked at 224MB RSS in a local run. 32MB stays under a 512MB instance even if two copies overlap. */
+const MAX_EXTRACT_BYTES = 32 * 1024 * 1024;
 
 function supabaseClient() {
   const url = process.env.SUPABASE_URL;
@@ -159,6 +161,9 @@ export async function runDriveAiExtraction() {
 
     for (const upload of batch) {
       attempted.add(upload.storage_path || upload.drive_name);
+      // #region agent log
+      fetch('http://127.0.0.1:7786/ingest/4229d02c-1770-4fd5-9da6-3795ca151e32',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'002cbb'},body:JSON.stringify({sessionId:'002cbb',hypothesisId:'B',location:'extract-drive-ai.mjs:loop-start',message:'before file',data:{bytes:upload.size_bytes??null,pending:pending.length,rss:process.memoryUsage().rss,heapUsed:process.memoryUsage().heapUsed},timestamp:Date.now()})}).catch(()=>{});
+      // #endregion
     const started = Date.now();
     const fileName = upload.drive_name || path.basename(upload.storage_path || 'document');
     const mimeType = upload.mime_type || mimeFromName(fileName) || 'application/pdf';
@@ -172,10 +177,24 @@ export async function runDriveAiExtraction() {
       storage_path: upload.storage_path,
     };
     try {
+      if (upload.size_bytes != null && Number(upload.size_bytes) > MAX_EXTRACT_BYTES) {
+        throw new Error(
+          `File is ${upload.size_bytes} bytes, over the ${MAX_EXTRACT_BYTES} byte limit for a 512MB instance`,
+        );
+      }
       const bucket = upload.storage_bucket || bucketDefault;
-      const bytes = await downloadObject(supabase, bucket, upload.storage_path);
+      let bytes = await downloadObject(supabase, bucket, upload.storage_path);
       baseLog.file_bytes = String(bytes.length);
+      if (bytes.length > MAX_EXTRACT_BYTES) {
+        const size = bytes.length;
+        bytes = null;
+        throw new Error(`File is ${size} bytes, over the ${MAX_EXTRACT_BYTES} byte limit for a 512MB instance`);
+      }
+      // #region agent log
+      fetch('http://127.0.0.1:7786/ingest/4229d02c-1770-4fd5-9da6-3795ca151e32',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'002cbb'},body:JSON.stringify({sessionId:'002cbb',hypothesisId:'A',location:'extract-drive-ai.mjs:after-download',message:'file downloaded',data:{bytes:bytes.length,rss:process.memoryUsage().rss,heapUsed:process.memoryUsage().heapUsed},timestamp:Date.now()})}).catch(()=>{});
+      // #endregion
       const parsed = await extractContract(client, fileName, bytes, mimeType);
+      bytes = null;
       const { record, row, tenancyDays, companions } = customerRecord(parsed, fileName, upload);
       await insertRow(supabase, DRIVE_EXTRACTION_TABLE, record);
       await insertRow(
@@ -229,6 +248,9 @@ export async function runDriveAiExtraction() {
       } catch (logError) {
         console.error('Could not write extraction log:', logError instanceof Error ? logError.message : logError);
       }
+      // #region agent log
+      fetch('http://127.0.0.1:7786/ingest/4229d02c-1770-4fd5-9da6-3795ca151e32',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'002cbb'},body:JSON.stringify({sessionId:'002cbb',runId:'post-fix',hypothesisId:'A',location:'extract-drive-ai.mjs:catch',message:'file failed',data:{bytes:baseLog.file_bytes,overLimit:message.includes('512MB'),rss:process.memoryUsage().rss,heapUsed:process.memoryUsage().heapUsed},timestamp:Date.now()})}).catch(()=>{});
+      // #endregion
       console.error(`FAIL: ${upload.storage_path} — ${message}`);
     }
   }
