@@ -7,7 +7,7 @@ import http from 'http';
 import { runExtractFromSupabaseStorage, isEnvTruthy } from './extract-from-storage.mjs';
 import { runDriveAiExtraction, DRIVE_EXTRACTION_TABLE, DRIVE_EXTRACTION_LOG_TABLE } from './extract-drive-ai.mjs';
 import { runExtractFromSupabaseStorageUntilDone } from './extract-from-storage-batch.mjs';
-import { runNcOcrRerunAllFolders } from './extract-nc-ocr-rerun-all-folders.mjs';
+import { runB2bDriveExtraction, B2B_COMPANIES_TABLE } from './extract-b2b-drive.mjs';
 import { driveHealthLines, handleDriveHttp } from '../contract-uploading/drive-http.mjs';
 
 const port = Number(process.env.PORT) || 3000;
@@ -95,6 +95,24 @@ async function safeRunNcOcrRerunAll(label) {
   }
 }
 
+async function safeRunB2b(label) {
+  if (extractionRunning) {
+    console.warn(`[${label}] Extraction already running, skip.`);
+    return { ok: false, skipped: true, message: 'already_running' };
+  }
+  extractionRunning = true;
+  try {
+    const result = await runB2bDriveExtraction();
+    console.log(`[${label}] B2B extraction finished:`, result);
+    return result;
+  } catch (error) {
+    console.error(`[${label}] B2B extraction failed:`, error);
+    return { ok: false, error: error instanceof Error ? error.message : String(error) };
+  } finally {
+    extractionRunning = false;
+  }
+}
+
 function handleExtractRequest(req, res, mode) {
   if (!checkExtractAuth(req)) {
     res.writeHead(401, { 'Content-Type': 'application/json; charset=utf-8' });
@@ -108,28 +126,34 @@ function handleExtractRequest(req, res, mode) {
   }
 
   const message =
-    mode === 'drive-ai'
-      ? 'Drive ai_extraction=Yes extraction started until every pending file is saved'
-      : mode === 'nc-rerun-all'
-        ? 'OCR rerun (filtered NCs across To Fill 1, To Fill 2, Fill 3) started in background'
-        : mode === 'all'
-          ? 'full extraction (all pending batches) started in background'
-          : 'extraction started in background';
+    mode === 'b2b'
+      ? `B2B ai_extraction=Yes extraction started into ${DRIVE_EXTRACTION_TABLE} and ${B2B_COMPANIES_TABLE}`
+      : mode === 'drive-ai'
+        ? 'Drive ai_extraction=Yes extraction started until every pending file is saved'
+        : mode === 'nc-rerun-all'
+          ? 'OCR rerun (filtered NCs across To Fill 1, To Fill 2, Fill 3) started in background'
+          : mode === 'all'
+            ? 'full extraction (all pending batches) started in background'
+            : 'extraction started in background';
 
   const modeKey =
-    mode === 'drive-ai'
-      ? 'extract-drive-ai'
-      : mode === 'nc-rerun-all'
-        ? 'extract-nc-rerun-all'
-        : mode === 'all'
-          ? 'extract-all'
-          : 'extract';
+    mode === 'b2b'
+      ? 'extract-b2b'
+      : mode === 'drive-ai'
+        ? 'extract-drive-ai'
+        : mode === 'nc-rerun-all'
+          ? 'extract-nc-rerun-all'
+          : mode === 'all'
+            ? 'extract-all'
+            : 'extract';
 
   res.writeHead(202, { 'Content-Type': 'application/json; charset=utf-8' });
   res.end(JSON.stringify({ ok: true, accepted: true, message, mode: modeKey }));
 
   setImmediate(() => {
-    if (mode === 'drive-ai') {
+    if (mode === 'b2b') {
+      safeRunB2b('http').catch((e) => console.error(e));
+    } else if (mode === 'drive-ai') {
       safeRunDriveAi('http').catch((e) => console.error(e));
     } else if (mode === 'nc-rerun-all') {
       safeRunNcOcrRerunAll('http').catch((e) => console.error(e));
@@ -152,6 +176,7 @@ function extractionHealthLines() {
     '  POST/GET /extract-all — all pending in SUPABASE_STORAGE_FOLDER.\n' +
     '  POST/GET /extract-nc-rerun-all — OCR rerun for filtered NCs across To Fill 1/2/Fill 3.\n' +
     `  POST/GET /extract-drive-ai — all ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE}. Files over 25MB are skipped.\n` +
+    `  POST/GET /extract-b2b — B2B ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE} and ${B2B_COMPANIES_TABLE}.\n` +
     `  Log table ${DRIVE_EXTRACTION_LOG_TABLE}.\n` +
     '  AUTO_EXTRACT_FROM_STORAGE=true: on boot, extract-all for one folder.\n' +
     '  AUTO_NC_OCR_RERUN_FROM_STORAGE=true: on boot, extract-nc-rerun-all.\n' +
@@ -189,6 +214,11 @@ const server = http.createServer(async (req, res) => {
 
   if (url === '/extract-nc-rerun-all' && (req.method === 'POST' || req.method === 'GET')) {
     handleExtractRequest(req, res, 'nc-rerun-all');
+    return;
+  }
+
+  if (url === '/extract-b2b' && (req.method === 'POST' || req.method === 'GET')) {
+    handleExtractRequest(req, res, 'b2b');
     return;
   }
 
