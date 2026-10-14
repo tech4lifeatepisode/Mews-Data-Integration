@@ -2,9 +2,10 @@
   "name": "extraction-sandbox",
   "private": true,
   "type": "module",
-  "description": "Local contract extraction into Mews import CSVs. Reads ./contracts and writes ./sandbox outputs.",
+  "description": "Local B2C and B2B contract extraction into Mews import CSVs.",
   "scripts": {
-    "extract": "node extract.mjs"
+    "extract": "node extract.mjs",
+    "extract:b2b": "node extract-b2b.mjs"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

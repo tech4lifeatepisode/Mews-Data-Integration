@@ -36,8 +36,20 @@ desktop.ini
 contract-extraction/sandbox/contracts/
 contract-extraction/extraction sandbox/contracts/*
 !contract-extraction/extraction sandbox/contracts/.gitkeep
+!contract-extraction/extraction sandbox/contracts/B2C contracts/
+contract-extraction/extraction sandbox/contracts/B2C contracts/*
+!contract-extraction/extraction sandbox/contracts/B2C contracts/.gitkeep
+!contract-extraction/extraction sandbox/contracts/B2B contracts/
+contract-extraction/extraction sandbox/contracts/B2B contracts/*
+!contract-extraction/extraction sandbox/contracts/B2B contracts/.gitkeep
 contract-extraction/extraction sandbox/sandbox outputs/*
 !contract-extraction/extraction sandbox/sandbox outputs/.gitkeep
+!contract-extraction/extraction sandbox/sandbox outputs/B2C extracts/
+contract-extraction/extraction sandbox/sandbox outputs/B2C extracts/*
+!contract-extraction/extraction sandbox/sandbox outputs/B2C extracts/.gitkeep
+!contract-extraction/extraction sandbox/sandbox outputs/B2B extracts/
+contract-extraction/extraction sandbox/sandbox outputs/B2B extracts/*
+!contract-extraction/extraction sandbox/sandbox outputs/B2B extracts/.gitkeep
 
 # Google OAuth client secrets and saved tokens
 client_secret*.json
