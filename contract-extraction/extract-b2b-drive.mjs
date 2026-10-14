@@ -92,7 +92,7 @@ export async function runB2bDriveExtraction() {
     .sort((a, b) => (/ADENDA|CONSTANCIA/i.test(a.drive_name || '') ? 1 : 0) - (/ADENDA|CONSTANCIA/i.test(b.drive_name || '') ? 1 : 0));
 
   const saved = await selectAll(supabase, (from, to) =>
-    supabase.from(CUSTOMERS).select('Group Code').range(from, to),
+    supabase.from(CUSTOMERS).select('"Group Code"').range(from, to),
   );
   const seenNcs = new Set();
   for (const row of saved) {
@@ -126,7 +126,7 @@ export async function runB2bDriveExtraction() {
         const { data: existingCompany, error: companyReadError } = await supabase
           .from(B2B_COMPANIES_TABLE)
           .select('id')
-          .eq('Company Name(*)', companyName)
+          .eq('"Company Name(*)"', companyName)
           .limit(1);
         if (companyReadError) throw new Error(companyReadError.message);
         if (!existingCompany?.length) {
