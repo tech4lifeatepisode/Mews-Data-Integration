@@ -23,8 +23,10 @@ import {
 } from './extraction sandbox/extract.mjs';
 
 /** Dots are not usable in PostgREST table names, so 12.10.2026 is written with underscores. */
-export const DRIVE_EXTRACTION_TABLE = 'Contracts_Extraction_12_10_2026';
+/** Legacy name in docs; production Supabase table is Customers_Contracts_Extraction_12_10_2026. */
 export const CUSTOMERS_CONTRACTS_TABLE = 'Customers_Contracts_Extraction_12_10_2026';
+export const DRIVE_EXTRACTION_TABLE =
+  process.env.DRIVE_EXTRACTION_TABLE || CUSTOMERS_CONTRACTS_TABLE;
 export const DRIVE_EXTRACTION_LOG_TABLE = 'Logged_Extractions_12_10_2026';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -128,6 +130,14 @@ function inGoogleDriveFolder(storagePath, folder) {
   return pathValue === folder || pathValue.startsWith(`${folder}/`);
 }
 
+function isExtractableUpload(row) {
+  const name = String(row.drive_name || path.basename(row.storage_path || '')).trim();
+  if (!name || name === '.keep' || name.endsWith('/.keep')) return false;
+  if (row.file_format === 'Other') return false;
+  if (row.file_format && row.file_format !== 'PDF' && row.file_format !== 'DOCX') return false;
+  return true;
+}
+
 async function downloadObject(supabase, bucket, objectPath) {
   const { data, error } = await supabase.storage.from(bucket).download(objectPath);
   if (error) throw new Error(error.message);
@@ -187,8 +197,8 @@ export async function runDriveAiExtraction(options = {}) {
       ? await existingNcNumbersInTable(supabase, extractionTable)
       : new Set();
 
-  let uploads = (await yesUploadRows(supabase)).filter((row) =>
-    inGoogleDriveFolder(row.storage_path, folder),
+  let uploads = (await yesUploadRows(supabase)).filter(
+    (row) => inGoogleDriveFolder(row.storage_path, folder) && isExtractableUpload(row),
   );
   if (options.ncAllowlist?.size) {
     uploads = uploads.filter((row) => options.ncAllowlist.has(String(row.nc_number)));

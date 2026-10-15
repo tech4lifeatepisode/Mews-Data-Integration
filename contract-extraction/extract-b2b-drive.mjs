@@ -18,7 +18,8 @@ import {
 } from './extraction sandbox/extract-b2b.mjs';
 
 export const B2B_COMPANIES_TABLE = 'Companies_Extraction_12_10_2026';
-const CUSTOMERS = 'Contracts_Extraction_12_10_2026';
+const CUSTOMERS =
+  process.env.DRIVE_EXTRACTION_TABLE || 'Customers_Contracts_Extraction_12_10_2026';
 const LOG = 'Logged_Extractions_12_10_2026';
 const MAX_EXTRACT_BYTES = 25 * 1024 * 1024;
 
