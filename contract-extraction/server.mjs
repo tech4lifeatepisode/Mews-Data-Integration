@@ -5,7 +5,13 @@
  */
 import http from 'http';
 import { runExtractFromSupabaseStorage, isEnvTruthy } from './extract-from-storage.mjs';
-import { runDriveAiExtraction, DRIVE_EXTRACTION_TABLE, DRIVE_EXTRACTION_LOG_TABLE } from './extract-drive-ai.mjs';
+import {
+  runDriveAiExtraction,
+  runMissingFromReviewDriveExtraction,
+  DRIVE_EXTRACTION_TABLE,
+  CUSTOMERS_CONTRACTS_TABLE,
+  DRIVE_EXTRACTION_LOG_TABLE,
+} from './extract-drive-ai.mjs';
 import { runExtractFromSupabaseStorageUntilDone } from './extract-from-storage-batch.mjs';
 import { runB2bDriveExtraction, B2B_COMPANIES_TABLE } from './extract-b2b-drive.mjs';
 import { driveHealthLines, handleDriveHttp } from '../contract-uploading/drive-http.mjs';
@@ -77,6 +83,24 @@ async function safeRunDriveAi(label) {
   }
 }
 
+async function safeRunMissingFromReview(label) {
+  if (extractionRunning) {
+    console.warn(`[${label}] Extraction already running, skip.`);
+    return { ok: false, skipped: true, message: 'already_running' };
+  }
+  extractionRunning = true;
+  try {
+    const result = await runMissingFromReviewDriveExtraction();
+    console.log(`[${label}] Missing-from-review extraction finished:`, result);
+    return result;
+  } catch (error) {
+    console.error(`[${label}] Missing-from-review extraction failed:`, error);
+    return { ok: false, error: error instanceof Error ? error.message : String(error) };
+  } finally {
+    extractionRunning = false;
+  }
+}
+
 async function safeRunNcOcrRerunAll(label) {
   if (extractionRunning) {
     console.warn(`[${label}] Extraction already running, skip.`);
@@ -128,7 +152,9 @@ function handleExtractRequest(req, res, mode) {
   const message =
     mode === 'b2b'
       ? `B2B ai_extraction=Yes extraction started into ${DRIVE_EXTRACTION_TABLE} and ${B2B_COMPANIES_TABLE}`
-      : mode === 'drive-ai'
+      : mode === 'missing-from-review'
+        ? `Missing-from-review ai_extraction=Yes extraction started into ${CUSTOMERS_CONTRACTS_TABLE}`
+        : mode === 'drive-ai'
         ? 'Drive ai_extraction=Yes extraction started until every pending file is saved'
         : mode === 'nc-rerun-all'
           ? 'OCR rerun (filtered NCs across To Fill 1, To Fill 2, Fill 3) started in background'
@@ -139,6 +165,8 @@ function handleExtractRequest(req, res, mode) {
   const modeKey =
     mode === 'b2b'
       ? 'extract-b2b'
+      : mode === 'missing-from-review'
+        ? 'extract-missing-from-review'
       : mode === 'drive-ai'
         ? 'extract-drive-ai'
         : mode === 'nc-rerun-all'
@@ -153,6 +181,8 @@ function handleExtractRequest(req, res, mode) {
   setImmediate(() => {
     if (mode === 'b2b') {
       safeRunB2b('http').catch((e) => console.error(e));
+    } else if (mode === 'missing-from-review') {
+      safeRunMissingFromReview('http').catch((e) => console.error(e));
     } else if (mode === 'drive-ai') {
       safeRunDriveAi('http').catch((e) => console.error(e));
     } else if (mode === 'nc-rerun-all') {
@@ -176,6 +206,7 @@ function extractionHealthLines() {
     '  POST/GET /extract-all — all pending in SUPABASE_STORAGE_FOLDER.\n' +
     '  POST/GET /extract-nc-rerun-all — OCR rerun for filtered NCs across To Fill 1/2/Fill 3.\n' +
     `  POST/GET /extract-drive-ai — all ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE}. Files over 25MB are skipped.\n` +
+    `  POST/GET /extract-missing-from-review — allowlisted NCs with ai_extraction=Yes into ${CUSTOMERS_CONTRACTS_TABLE} (skip NCs already there).\n` +
     `  POST/GET /extract-b2b — B2B ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE} and ${B2B_COMPANIES_TABLE}.\n` +
     `  Log table ${DRIVE_EXTRACTION_LOG_TABLE}.\n` +
     '  AUTO_EXTRACT_FROM_STORAGE=true: on boot, extract-all for one folder.\n' +
@@ -224,6 +255,11 @@ const server = http.createServer(async (req, res) => {
 
   if (url === '/extract-drive-ai' && (req.method === 'POST' || req.method === 'GET')) {
     handleExtractRequest(req, res, 'drive-ai');
+    return;
+  }
+
+  if (url === '/extract-missing-from-review' && (req.method === 'POST' || req.method === 'GET')) {
+    handleExtractRequest(req, res, 'missing-from-review');
     return;
   }
 

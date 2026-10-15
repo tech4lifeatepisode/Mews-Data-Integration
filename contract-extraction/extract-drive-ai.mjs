@@ -3,6 +3,7 @@
  * Google Drive folder in Supabase Storage, using the sandbox Mews prompt.
  */
 import 'dotenv/config';
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { createClient } from '@supabase/supabase-js';
@@ -23,7 +24,16 @@ import {
 
 /** Dots are not usable in PostgREST table names, so 12.10.2026 is written with underscores. */
 export const DRIVE_EXTRACTION_TABLE = 'Contracts_Extraction_12_10_2026';
+export const CUSTOMERS_CONTRACTS_TABLE = 'Customers_Contracts_Extraction_12_10_2026';
 export const DRIVE_EXTRACTION_LOG_TABLE = 'Logged_Extractions_12_10_2026';
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const MISSING_FROM_REVIEW_ALLOWLIST_JSON = path.join(
+  here,
+  '..',
+  'contract-uploading',
+  'missing-from-review-644-allowlist.json',
+);
 
 const PAGE = 1000;
 /** A 23.7MB file peaked near 224MB RSS. The next file, 30.8MB, killed the 512MB process before a failure row could be saved. */
@@ -75,6 +85,26 @@ async function yesUploadRows(supabase) {
       .order('storage_path', { ascending: true })
       .range(from, to),
   );
+}
+
+async function existingNcNumbersInTable(supabase, tableName) {
+  const rows = await selectAll(supabase, (from, to) =>
+    supabase.from(tableName).select('"Group Code"').range(from, to),
+  );
+  const seen = new Set();
+  for (const row of rows) {
+    const match = String(row['Group Code'] || '').match(/(\d+)/);
+    if (match) seen.add(Number(match[1]));
+  }
+  return seen;
+}
+
+function loadMissingFromReviewAllowlist() {
+  if (!fs.existsSync(MISSING_FROM_REVIEW_ALLOWLIST_JSON)) {
+    throw new Error(`Missing allowlist: ${MISSING_FROM_REVIEW_ALLOWLIST_JSON}`);
+  }
+  const numbers = JSON.parse(fs.readFileSync(MISSING_FROM_REVIEW_ALLOWLIST_JSON, 'utf8'));
+  return new Set(numbers.map((n) => String(n)));
 }
 
 async function alreadySuccessful(supabase) {
@@ -131,8 +161,16 @@ async function insertRow(supabase, table, record) {
   if (error) throw new Error(`${table}: ${error.message}`);
 }
 
-export async function runDriveAiExtraction() {
+/**
+ * @param {{
+ *   extractionTable?: string,
+ *   ncAllowlist?: Set<string>,
+ *   skipNcAlreadyInExtractionTable?: boolean,
+ * }} [options]
+ */
+export async function runDriveAiExtraction(options = {}) {
   if (!process.env.OPENAI_API_KEY) throw new Error('OPENAI_API_KEY not set');
+  const extractionTable = options.extractionTable || DRIVE_EXTRACTION_TABLE;
   const supabase = supabaseClient();
   const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
@@ -144,12 +182,28 @@ export async function runDriveAiExtraction() {
   const limit = Math.max(1, Number(process.env.MAX_EXTRACTION_FILES) || 10);
   const skipDone = isEnvTruthy('SKIP_ALREADY_EXTRACTED') || process.env.SKIP_ALREADY_EXTRACTED == null;
 
-  const uploads = (await yesUploadRows(supabase)).filter((row) =>
+  const ncAlreadyExtracted =
+    options.skipNcAlreadyInExtractionTable === true
+      ? await existingNcNumbersInTable(supabase, extractionTable)
+      : new Set();
+
+  let uploads = (await yesUploadRows(supabase)).filter((row) =>
     inGoogleDriveFolder(row.storage_path, folder),
   );
+  if (options.ncAllowlist?.size) {
+    uploads = uploads.filter((row) => options.ncAllowlist.has(String(row.nc_number)));
+  }
+  if (options.skipNcAlreadyInExtractionTable) {
+    uploads = uploads.filter((row) => {
+      const nc = Number(row.nc_number);
+      return Number.isFinite(nc) && !ncAlreadyExtracted.has(nc);
+    });
+  }
+
   const attempted = new Set();
   let success = 0;
   let failed = 0;
+  let skippedNc = ncAlreadyExtracted.size;
   let remaining = uploads.length;
 
   while (true) {
@@ -166,9 +220,10 @@ export async function runDriveAiExtraction() {
 
     for (const upload of batch) {
       attempted.add(upload.storage_path || upload.drive_name);
-      // #region agent log
-      fetch('http://127.0.0.1:7786/ingest/4229d02c-1770-4fd5-9da6-3795ca151e32',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'002cbb'},body:JSON.stringify({sessionId:'002cbb',hypothesisId:'B',location:'extract-drive-ai.mjs:loop-start',message:'before file',data:{bytes:upload.size_bytes??null,pending:pending.length,rss:process.memoryUsage().rss,heapUsed:process.memoryUsage().heapUsed},timestamp:Date.now()})}).catch(()=>{});
-      // #endregion
+      const ncNum = Number(upload.nc_number);
+      if (options.skipNcAlreadyInExtractionTable && Number.isFinite(ncNum) && ncAlreadyExtracted.has(ncNum)) {
+        continue;
+      }
     const started = Date.now();
     const fileName = upload.drive_name || path.basename(upload.storage_path || 'document');
     const mimeType = upload.mime_type || mimeFromName(fileName) || 'application/pdf';
@@ -195,13 +250,11 @@ export async function runDriveAiExtraction() {
         bytes = null;
         throw new Error(`File is ${size} bytes, over the ${MAX_EXTRACT_BYTES} byte limit for a 512MB instance`);
       }
-      // #region agent log
-      fetch('http://127.0.0.1:7786/ingest/4229d02c-1770-4fd5-9da6-3795ca151e32',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'002cbb'},body:JSON.stringify({sessionId:'002cbb',hypothesisId:'A',location:'extract-drive-ai.mjs:after-download',message:'file downloaded',data:{bytes:bytes.length,rss:process.memoryUsage().rss,heapUsed:process.memoryUsage().heapUsed},timestamp:Date.now()})}).catch(()=>{});
-      // #endregion
       const parsed = await extractContract(client, fileName, bytes, mimeType);
       bytes = null;
       const { record, row, tenancyDays, companions } = customerRecord(parsed, fileName, upload);
-      await insertRow(supabase, DRIVE_EXTRACTION_TABLE, record);
+      await insertRow(supabase, extractionTable, record);
+      if (Number.isFinite(ncNum)) ncAlreadyExtracted.add(ncNum);
       await insertRow(
         supabase,
         DRIVE_EXTRACTION_LOG_TABLE,
@@ -253,9 +306,6 @@ export async function runDriveAiExtraction() {
       } catch (logError) {
         console.error('Could not write extraction log:', logError instanceof Error ? logError.message : logError);
       }
-      // #region agent log
-      fetch('http://127.0.0.1:7786/ingest/4229d02c-1770-4fd5-9da6-3795ca151e32',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'002cbb'},body:JSON.stringify({sessionId:'002cbb',runId:'post-fix',hypothesisId:'A',location:'extract-drive-ai.mjs:catch',message:'file failed',data:{bytes:baseLog.file_bytes,overLimit:message.includes('512MB'),rss:process.memoryUsage().rss,heapUsed:process.memoryUsage().heapUsed},timestamp:Date.now()})}).catch(()=>{});
-      // #endregion
       console.error(`FAIL: ${upload.storage_path} — ${message}`);
     }
   }
@@ -269,9 +319,20 @@ export async function runDriveAiExtraction() {
     attempted: attempted.size,
     success,
     failed,
-    extractionTable: DRIVE_EXTRACTION_TABLE,
+    skippedNcAlreadyInTable: skippedNc,
+    extractionTable,
     logTable: DRIVE_EXTRACTION_LOG_TABLE,
   };
+}
+
+/** Missing-from-review allowlist → Customers_Contracts_Extraction_12_10_2026; skip NCs already extracted. */
+export async function runMissingFromReviewDriveExtraction() {
+  const ncAllowlist = loadMissingFromReviewAllowlist();
+  return runDriveAiExtraction({
+    extractionTable: CUSTOMERS_CONTRACTS_TABLE,
+    ncAllowlist,
+    skipNcAlreadyInExtractionTable: true,
+  });
 }
 
 const isCli =
