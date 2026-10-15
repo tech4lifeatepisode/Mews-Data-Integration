@@ -16,6 +16,10 @@ __pycache__/
 upload_checkpoint.json
 analysis_report.json
 
+# One-off local Supabase/analysis scripts (keep tracked upload/build scripts)
+contract-extraction/tmp-*.mjs
+contract-uploading/tmp-*.mjs
+
 # Excel workbooks (local review/migration; NC allowlist is tracked as CSV)
 **/*.xlsx
 **/*.xlsm
