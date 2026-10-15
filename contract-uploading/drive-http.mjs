@@ -17,7 +17,11 @@ import {
   CUSTOMER_DRIVE_FOLDER_ID,
   loadMissingFromReviewAllowlist,
 } from './missing-from-review-allowlist.mjs';
-import { deriveUploadMetadata, reconcileAiExtractionForSync } from './upload-route-classify.mjs';
+import {
+  deriveUploadMetadata,
+  reconcileAiExtractionAll,
+  reconcileAiExtractionForSync,
+} from './upload-route-classify.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.join(here, '.env') });
@@ -208,6 +212,7 @@ export function driveHealthLines() {
     `  NC allowlist: column B unique codes only\n` +
     '  POST/GET /drive/retry-failed — re-upload rows with status failed\n' +
     '  POST/GET /drive/reconcile-ai?sync_id= — fix ai_extraction for every file row in a sync\n' +
+    '  POST/GET /drive/reconcile-ai?all=1 — fix ai_extraction for all Contracts files (NC_0574+)\n' +
     '  POST/GET /drive/sync-migration — upload NCs with green F + B2C/B2B2C in migration xlsx\n' +
     '  POST/GET /drive/sync-missing-from-review — upload NCs not on review sheets (644 allowlist)\n'
   );
@@ -1132,18 +1137,30 @@ export async function handleDriveHttp(req, res) {
       }
       const query = new URL(raw, 'http://localhost').searchParams;
       const params = new URLSearchParams(bodyText || '');
+      const reconcileAll =
+        query.get('all') === '1' ||
+        params.get('all') === '1' ||
+        query.get('scope') === 'all' ||
+        params.get('scope') === 'all';
       const syncId =
         query.get('sync_id')?.trim() ||
         params.get('sync_id')?.trim() ||
         process.env.DRIVE_LAST_SYNC_ID?.trim();
-      if (!syncId) {
-        sendJson(res, 400, { ok: false, error: 'sync_id required' });
+      if (!reconcileAll && !syncId) {
+        sendJson(res, 400, { ok: false, error: 'sync_id required (or pass all=1)' });
         return true;
       }
       try {
         const supabase = supabaseClient();
-        const result = await reconcileAiExtractionForSync(supabase, UPLOAD_LOG_TABLE, syncId);
-        sendJson(res, 200, { ok: true, sync_id: syncId, ...result });
+        const result = reconcileAll
+          ? await reconcileAiExtractionAll(supabase, UPLOAD_LOG_TABLE)
+          : await reconcileAiExtractionForSync(supabase, UPLOAD_LOG_TABLE, syncId);
+        sendJson(res, 200, {
+          ok: true,
+          scope: reconcileAll ? 'all' : 'sync',
+          sync_id: reconcileAll ? null : syncId,
+          ...result,
+        });
       } catch (e) {
         const message = e instanceof Error ? e.message : String(e);
         sendJson(res, 500, { ok: false, error: message });

@@ -130,16 +130,8 @@ async function setAiExtraction(supabase, tableName, ids, value) {
   return updated;
 }
 
-export async function reconcileAiExtractionForSync(supabase, tableName, syncId) {
-  await supabase
-    .from(tableName)
-    .update({ ai_extraction: 'No' })
-    .eq('sync_id', syncId)
-    .eq('item_type', 'folder');
-
-  const rows = await fetchSyncFiles(supabase, tableName, syncId);
-  if (!rows.length) return { updated: 0, yes: 0, files: 0 };
-
+/** Pick ai_extraction=Yes file ids per NC contract folder (Contracts, NC_0574+). */
+export function pickAiExtractionYesIds(rows) {
   const groups = new Map();
   for (const row of rows) {
     if (row.path_category !== 'Contracts') continue;
@@ -171,18 +163,63 @@ export async function reconcileAiExtractionForSync(supabase, tableName, syncId) 
     }
     yesIds.add(sorted[0].id);
   }
+  return yesIds;
+}
 
+async function applyAiExtractionPicks(supabase, tableName, rows, yesIds) {
   const yesToWrite = [];
   const noToWrite = [];
   for (const row of rows) {
+    if (row.path_category !== 'Contracts') continue;
+    const nc = row.nc_number ? Number(row.nc_number) : NaN;
+    if (!Number.isFinite(nc) || nc < AI_EXTRACTION_MIN_NC) continue;
     const ai = yesIds.has(row.id) ? 'Yes' : 'No';
     if (row.ai_extraction === ai) continue;
     if (ai === 'Yes') yesToWrite.push(row.id);
     else noToWrite.push(row.id);
   }
-
   const updated =
     (await setAiExtraction(supabase, tableName, yesToWrite, 'Yes')) +
     (await setAiExtraction(supabase, tableName, noToWrite, 'No'));
   return { updated, yes: yesIds.size, files: rows.length };
+}
+
+async function fetchAllContractFiles(supabase, tableName) {
+  const rows = [];
+  for (let from = 0; ; from += FILE_PAGE_SIZE) {
+    const { data, error } = await supabase
+      .from(tableName)
+      .select('id, nc_number, path_category, file_format, source_folder_route, drive_name, ai_extraction')
+      .eq('item_type', 'file')
+      .eq('path_category', 'Contracts')
+      .order('id', { ascending: true })
+      .range(from, from + FILE_PAGE_SIZE - 1);
+    if (error) throw new Error(`reconcile ai_extraction (all): ${error.message}`);
+    if (!data?.length) break;
+    rows.push(...data);
+    if (data.length < FILE_PAGE_SIZE) break;
+  }
+  return rows;
+}
+
+export async function reconcileAiExtractionForSync(supabase, tableName, syncId) {
+  await supabase
+    .from(tableName)
+    .update({ ai_extraction: 'No' })
+    .eq('sync_id', syncId)
+    .eq('item_type', 'folder');
+
+  const rows = await fetchSyncFiles(supabase, tableName, syncId);
+  if (!rows.length) return { updated: 0, yes: 0, files: 0 };
+
+  const yesIds = pickAiExtractionYesIds(rows);
+  return applyAiExtractionPicks(supabase, tableName, rows, yesIds);
+}
+
+/** Reconcile ai_extraction for every Contracts file row (NC_0574+) in the upload log. */
+export async function reconcileAiExtractionAll(supabase, tableName) {
+  const rows = await fetchAllContractFiles(supabase, tableName);
+  if (!rows.length) return { updated: 0, yes: 0, files: 0 };
+  const yesIds = pickAiExtractionYesIds(rows);
+  return applyAiExtractionPicks(supabase, tableName, rows, yesIds);
 }

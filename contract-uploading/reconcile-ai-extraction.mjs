@@ -1,10 +1,11 @@
 import 'dotenv/config';
 import { createClient } from '@supabase/supabase-js';
-import { reconcileAiExtractionForSync } from './upload-route-classify.mjs';
+import { reconcileAiExtractionAll, reconcileAiExtractionForSync } from './upload-route-classify.mjs';
 
-const syncId = process.argv[2] || process.env.SYNC_ID;
-if (!syncId) {
-  console.error('Usage: node reconcile-ai-extraction.mjs <sync_id>');
+const arg = process.argv[2] || process.env.SYNC_ID;
+const reconcileAll = arg === '--all' || process.env.RECONCILE_ALL === '1';
+if (!reconcileAll && !arg) {
+  console.error('Usage: node reconcile-ai-extraction.mjs <sync_id> | --all');
   process.exit(1);
 }
 
@@ -16,5 +17,7 @@ if (!url || !key) {
 }
 
 const supabase = createClient(url, key);
-const result = await reconcileAiExtractionForSync(supabase, 'contract_drive_uploads', syncId);
+const result = reconcileAll
+  ? await reconcileAiExtractionAll(supabase, 'contract_drive_uploads')
+  : await reconcileAiExtractionForSync(supabase, 'contract_drive_uploads', arg);
 console.log(JSON.stringify(result, null, 2));
