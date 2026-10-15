@@ -12,6 +12,11 @@ import { google } from 'googleapis';
 import { createClient } from '@supabase/supabase-js';
 import { loadAllowedNcNumbers, nameMatchesAllowlist, ncNumbersInName } from './nc-allowlist.mjs';
 import { resolveMigrationGreenAllowlist } from './migration-xlsx-allowlist.mjs';
+import {
+  B2B_DRIVE_FOLDER_ID,
+  CUSTOMER_DRIVE_FOLDER_ID,
+  loadMissingFromReviewAllowlist,
+} from './missing-from-review-allowlist.mjs';
 import { deriveUploadMetadata, reconcileAiExtractionForSync } from './upload-route-classify.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -203,7 +208,8 @@ export function driveHealthLines() {
     `  NC allowlist: column B unique codes only\n` +
     '  POST/GET /drive/retry-failed — re-upload rows with status failed\n' +
     '  POST/GET /drive/reconcile-ai?sync_id= — fix ai_extraction for every file row in a sync\n' +
-    '  POST/GET /drive/sync-migration — upload NCs with green F + B2C/B2B2C in migration xlsx\n'
+    '  POST/GET /drive/sync-migration — upload NCs with green F + B2C/B2B2C in migration xlsx\n' +
+    '  POST/GET /drive/sync-missing-from-review — upload NCs not on review sheets (644 allowlist)\n'
   );
 }
 
@@ -677,6 +683,46 @@ export async function syncMigrationReviewXlsx() {
   return stats;
 }
 
+/** Upload NC folders from customer + B2B Drive roots using missing-from-review allowlist. */
+export async function syncMissingFromReviewNcFolders() {
+  const allowlist = loadMissingFromReviewAllowlist();
+  if (allowlist.size === 0) {
+    throw new Error('Missing-from-review allowlist is empty');
+  }
+  const folders = [
+    [CUSTOMER_DRIVE_FOLDER_ID, 'customers'],
+    [B2B_DRIVE_FOLDER_ID, 'contracts'],
+  ];
+  const previousFolderId = process.env.GOOGLE_DRIVE_FOLDER_ID;
+  const results = [];
+  try {
+    for (const [folderId, label] of folders) {
+      process.env.GOOGLE_DRIVE_FOLDER_ID = folderId;
+      const stats = await syncDriveToSupabase({
+        allowlist,
+        allowlistLabel: `missing-from-review-${label}`,
+      });
+      results.push({
+        label,
+        driveFolderId: folderId,
+        syncId: stats.syncId,
+        files: stats.files,
+        folders: stats.folders,
+        skipped: stats.skipped,
+        failed: stats.failed,
+        yes: stats.aiExtraction?.yes ?? null,
+        rootName: stats.rootName,
+        warning: stats.warning ?? null,
+      });
+      console.log('MISSING_FROM_REVIEW_FOLDER_DONE', JSON.stringify(results.at(-1)));
+    }
+  } finally {
+    if (previousFolderId !== undefined) process.env.GOOGLE_DRIVE_FOLDER_ID = previousFolderId;
+    else delete process.env.GOOGLE_DRIVE_FOLDER_ID;
+  }
+  return results;
+}
+
 /**
  * Re-download failed rows from Drive and upload with current safe storage keys.
  * @param {{ sourceSyncId?: string, driveFileIds?: string[], limit?: number }} options
@@ -869,6 +915,10 @@ async function homeBody() {
     <form method="post" action="/drive/sync-migration">
       <p><label>Migration xlsx sync secret (if set)<br><input name="secret" type="password"></label></p>
       <button type="submit">Sync green migration NCs (xlsx column F)</button>
+    </form>
+    <form method="post" action="/drive/sync-missing-from-review">
+      <p><label>Missing-from-review sync secret (if set)<br><input name="secret" type="password"></label></p>
+      <button type="submit">Sync NCs missing from review sheets (644 allowlist)</button>
     </form>`;
 }
 
@@ -991,6 +1041,45 @@ export async function handleDriveHttp(req, res) {
           const message = error instanceof Error ? error.message : String(error);
           lastSync = { ok: false, message, at: new Date().toISOString() };
           console.error('Migration xlsx sync failed:', message);
+        })
+        .finally(() => {
+          syncRunning = false;
+        });
+      return true;
+    }
+
+    if (url === '/drive/sync-missing-from-review' && (req.method === 'POST' || req.method === 'GET')) {
+      const bodyText = req.method === 'POST' ? await readBody(req) : '';
+      if (!checkSyncAuth(req, bodyText)) {
+        sendJson(res, 401, { ok: false, error: 'unauthorized' });
+        return true;
+      }
+      if (syncRunning) {
+        sendJson(res, 409, { ok: false, error: 'sync_already_running' });
+        return true;
+      }
+      syncRunning = true;
+      const started = 'Missing-from-review Drive sync started (644 allowlist, both Drive roots)';
+      const formPost = (req.headers['content-type'] || '').includes('application/x-www-form-urlencoded');
+      if (formPost) {
+        sendHtml(
+          res,
+          202,
+          'Missing-from-review sync started',
+          `<p>${escapeHtml(started)}</p><p>Progress is in the Render logs. <a href="/drive">Back</a></p>`,
+        );
+      } else {
+        sendJson(res, 202, { ok: true, accepted: true, message: started });
+      }
+      syncMissingFromReviewNcFolders()
+        .then((results) => {
+          lastSync = { ok: true, message: JSON.stringify(results), at: new Date().toISOString() };
+          console.log('Missing-from-review sync finished', results);
+        })
+        .catch((error) => {
+          const message = error instanceof Error ? error.message : String(error);
+          lastSync = { ok: false, message, at: new Date().toISOString() };
+          console.error('Missing-from-review sync failed:', message);
         })
         .finally(() => {
           syncRunning = false;
