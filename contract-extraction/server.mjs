@@ -65,14 +65,14 @@ async function safeRunExtractAll(label) {
   }
 }
 
-async function safeRunDriveAi(label) {
+async function safeRunDriveAi(label, options = {}) {
   if (extractionRunning) {
     console.warn(`[${label}] Extraction already running, skip.`);
     return { ok: false, skipped: true, message: 'already_running' };
   }
   extractionRunning = true;
   try {
-    const result = await runDriveAiExtraction();
+    const result = await runDriveAiExtraction(options);
     console.log(`[${label}] Drive AI extraction finished:`, result);
     return result;
   } catch (error) {
@@ -137,6 +137,22 @@ async function safeRunB2b(label) {
   }
 }
 
+function parseDriveAiOptions(reqUrl) {
+  const query = new URL(reqUrl || '/', 'http://localhost').searchParams;
+  const ncRaw = query.get('nc') || query.get('ncs') || '';
+  const ncs = ncRaw
+    .split(/[,;\s]+/)
+    .map((s) => s.trim().replace(/^NC_/i, ''))
+    .filter(Boolean);
+  if (!ncs.length) return {};
+  const useCustomers = query.get('table') !== 'legacy';
+  return {
+    extractionTable: useCustomers ? CUSTOMERS_CONTRACTS_TABLE : DRIVE_EXTRACTION_TABLE,
+    ncAllowlist: new Set(ncs),
+    skipNcAlreadyInExtractionTable: query.get('force') !== '1',
+  };
+}
+
 function handleExtractRequest(req, res, mode) {
   if (!checkExtractAuth(req)) {
     res.writeHead(401, { 'Content-Type': 'application/json; charset=utf-8' });
@@ -184,7 +200,8 @@ function handleExtractRequest(req, res, mode) {
     } else if (mode === 'missing-from-review') {
       safeRunMissingFromReview('http').catch((e) => console.error(e));
     } else if (mode === 'drive-ai') {
-      safeRunDriveAi('http').catch((e) => console.error(e));
+      const driveOpts = parseDriveAiOptions(req.url);
+      safeRunDriveAi('http', driveOpts).catch((e) => console.error(e));
     } else if (mode === 'nc-rerun-all') {
       safeRunNcOcrRerunAll('http').catch((e) => console.error(e));
     } else if (mode === 'all') {
@@ -205,7 +222,7 @@ function extractionHealthLines() {
     '  POST/GET /extract — one batch (MAX_EXTRACTION_FILES).\n' +
     '  POST/GET /extract-all — all pending in SUPABASE_STORAGE_FOLDER.\n' +
     '  POST/GET /extract-nc-rerun-all — OCR rerun for filtered NCs across To Fill 1/2/Fill 3.\n' +
-    `  POST/GET /extract-drive-ai — all ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE}. Files over 25MB are skipped.\n` +
+    `  POST/GET /extract-drive-ai — all ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE}. Optional ?nc=1796 (comma-separated) targets NCs into ${CUSTOMERS_CONTRACTS_TABLE}. Files over 25MB are skipped.\n` +
     `  POST/GET /extract-missing-from-review — allowlisted NCs with ai_extraction=Yes into ${CUSTOMERS_CONTRACTS_TABLE} (skip NCs already there).\n` +
     `  POST/GET /extract-b2b — B2B ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE} and ${B2B_COMPANIES_TABLE}.\n` +
     `  Log table ${DRIVE_EXTRACTION_LOG_TABLE}.\n` +
