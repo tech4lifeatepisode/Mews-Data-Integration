@@ -1,0 +1,4 @@
+-- Too large for Supabase SQL Editor (1700+ INSERTs).
+-- Use instead:
+--   1) supabase-matching-across-final-format-15-10-2026-ddl.sql  (paste in SQL editor)
+--   2) cd contract-extraction && node upload-matching-across-final-format-15-10-2026.mjs

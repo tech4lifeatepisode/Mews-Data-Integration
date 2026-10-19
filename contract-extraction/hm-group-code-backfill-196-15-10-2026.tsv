@@ -1,0 +1,132 @@
+seg_nc	guest	hm_row_id	hm_guest	score	from_group_code	hm_arrival	hm_departure
+NC_0875	Carlos Alberto Rodriguez	a37ee352-17d9-4b97-97c1-a2c1186f73ff	Carlos Alberto Rodríguez Hernández, Ana Bertha Gomez de la Torre	615	(blank)	2025-12-31	2026-12-29
+NC_1212	Nataly del Carmen Arnedo	671662b3-fee9-4eaf-97b2-daf24e8e9aee	Nataly del Carmen Arnedo Zurita, Leonardo Tabeira Silveira	600	NC_1212	2026-03-30	2026-12-31
+NC_0643	Carmen Gloria Villacura	960dedef-becc-46bb-b29d-da724471c56b	Carmen Gloria Villacura Cruz	575	NC_0643	2025-11-03	2026-11-01
+NC_0670	Lisbeth Carolina Rada	f130642b-3a84-4ecd-bd18-42272945b971	Lisbeth Carolina Rada Pérez	575	NC_0670	2025-11-01	2026-10-29
+NC_0843	Manuel Enrique Arteaga	b3e5ed70-2fa8-4b01-a2d2-80601057d522	Manuel Enrique Arteaga Pachon	575	NC_0843	2026-02-22	2027-02-20
+NC_0912	Carlos Enrique Correa	436de9d9-a3a8-4e91-8c2c-70fc81a01c94	Carlos Enrique Correa del Viso, Susana Alonso Sanz	575	NC_0912	2026-01-15	2026-10-31
+NC_0966	Jesús Alberto López	e9265ded-2e22-44e6-ac18-279ce5937029	Jesus Alberto López Celemín	575	NC_0966	2026-01-31	2026-11-01
+NC_0973	Rogelio José Riestra	306a1ece-1f7b-41cd-8079-5fdb1f603c62	Rogelio José Riestra Galicia, Jose Maria Riestra Marques	575	NC_0973	2026-03-01	2027-02-26
+NC_0974	José Antonio Riestra	eba916f1-8b24-4ea0-b19f-bd58750a39b0	José Antonio Riestra Galicia	575	NC_0974	2026-03-01	2027-02-26
+NC_0991	Erbin del Risco	b88317d8-fc21-40db-ada4-e7cf09b8fe06	Erbin del Risco Rodriguez, Olga Dorner	575	NC_0991	2026-05-08	2026-11-08
+NC_0992	Eduardo José Petit	d73b02da-2d3b-4159-937c-f2c6bf2fddb1	Eduardo José Petit García	575	NC_0992	2026-02-15	2027-02-13
+NC_1037	Francisco Luis de la Barrera	cff14382-1518-4b6f-9c88-1f338c4f554c	Francisco Luís De La Barrera Cid	575	NC_1037	2026-03-01	2026-12-01
+NC_1048	José Iván Heredia	d22f4bbc-cb2b-4945-86c9-b34d6d1c488b	José Iván Heredia Pérez, Angela Barrios Arroyave	575	NC_1048	2026-02-26	2027-02-24
+NC_1054	María Fernanda Iñigo	41984b84-3bb1-4e84-a447-f1bf9d91cfa1	Maria Fernanda Iñigo Herrera, Alan Isaac Romero Navarro	575	NC_1054	2026-04-11	2027-01-12
+NC_1059	Claudia Marcela Salcedo	b0071e6c-2965-417b-8d9f-ba1b16908ee7	Claudia Marcela Salcedo Ortega, Jenny Lorena Zuñiga Castillo	575	NC_1059	2026-02-27	2027-02-25
+NC_1071	Marcos Antonio Cortés	044894c3-7427-4b4b-9928-cc919dba6692	Marcos Antonio Cortes Mateos	575	NC_1071	2026-03-02	2026-12-03
+NC_1085	Leticia Ana Moreno	c7f126f9-0b7b-4275-901d-8f333eea3c3a	Leticia Ana Moreno Serrano	575	NC_1085	2026-03-01	2026-12-02
+NC_1124	María Guadalupe Gómez	0f52b607-0c2d-455a-a975-7fddc12a0476	Maria Guadalupe Gomez Castro, Michelina Grasso	575	NC_1124	2026-06-30	2027-06-28
+NC_1126	Ana Lucía Palacio	a84419a5-3380-49bb-9541-6d6df627ce32	Ana Lucia Palacio Marinkovich	575	NC_1126	2026-03-30	2027-03-28
+NC_1145	Diana-Mihaela Man	fb29ea2d-505f-47aa-90df-0496c50b1ceb	Diana-Mihaela Man	575	NC_1145	2026-04-21	2027-01-22
+NC_1199	Jose Luis Collado	899b866a-4276-48d1-9beb-b03600734c51	Jose luis Collado Garcia	575	NC_1199	2026-03-31	2026-12-31
+NC_1322	Francisco Javier Sánchez	16be12b1-7ec0-417e-b1a8-7fb7fc17bb15	Francisco Javier Sanchez Mazo	575	NC_1322	2026-05-02	2027-02-03
+NC_1352	Sophia dos Santos	6e425b9d-408a-45f5-96b9-92601fe18e00	Sophia Amorim Dos Santos	575	NC_1352	2026-09-01	2027-08-29
+NC_1356	Diego Andrés Carmona	455018ee-44f6-4300-b187-03c592613f38	Diego Andrés Carmona López	575	NC_1356	2026-05-06	2027-05-04
+NC_0622	Mara Beun	dfae32f0-0189-450f-93b5-1fef82b6dc56	Mara Beun	550	NC_0622	2025-11-03	2026-10-31
+NC_0624	Marlene Anahi	85d0f6da-a114-4fc5-8018-693f350de01a	Marlene Anahi Calix Garcia	550	NC_0624	2025-10-22	2026-10-20
+NC_0692	Moad Sati	472ab024-db19-4838-bf46-39c66cefafc6	Moad Sati	550	NC_0692	2025-12-31	2026-12-29
+NC_0695	Luis Furnells	7673ed8f-cd71-4ae6-ad43-8010bd0a3d13	Lluis Furnells Ribas	550	NC_0695	2025-10-31	2026-10-29
+NC_0712	Ibrahim Aman	b033f962-9c92-4999-bd75-e06329f7f2d2	Aman Allah Ibrahim Derkaoui	550	NC_0712	2025-11-05	2026-11-03
+NC_0767	Elvira Candeira	8048751f-4b5f-4ad4-9f08-4908678d755f	Elvira Candeira Morera	550	NC_0767	2025-12-01	2026-11-29
+NC_0808	Cristian Alcahud	02992f91-38fc-48e6-b47a-c7623f87d67f	Cristian Alcahud Sanchez, Ciprian Razvan Ceapaliga	550	NC_0808	2026-01-11	2026-10-31
+NC_0815	Aleksandr Novozhilov	41921f08-89bd-4228-b160-4cecd90d6d26	Aleksandr Novozhilov	550	NC_0815	2026-02-16	2026-11-26
+NC_0822	Gloria Viel	02d46c7c-8a06-4faa-9abe-2b159e257080	Gloria Viel	550	NC_0822	2026-02-08	2027-02-06
+NC_0828	Mohmad Raed	ed13f576-2e2f-4062-8e84-063588334ec3	Mohmad Raed Rafiq AlSaafen	550	NC_0828	2026-02-08	2027-02-06
+NC_0837	Enol Suárez	1820bac8-45ed-46f4-8aea-c5d3ad3b9e19	Enol Suárez Liste	550	NC_0837	2026-01-16	2026-11-16
+NC_0838	Nahia Barandiarán	d3dbd402-bf97-4aff-a457-a887e396e7f4	Nahia Barandiaran de la Concepcion	550	NC_0838	2026-09-12	2027-06-15
+NC_0845	Carla Graciela	ea7e2bdb-64ab-4e4e-a89b-9472c7d22b31	Carla Graciela Alvarez y Leonetti	550	NC_0845	2026-02-24	2027-02-22
+NC_0850	David Bricio	c71fd61d-133a-4f02-b6ba-edd445388f94	David Bricio Richart	550	NC_0850	2025-12-30	2026-12-28
+NC_0852	Francisco Medrano	f4813482-c105-4102-a776-e71363cdf64a	Francisco Medrano Case, Jean Carlo Toro Castrillon	550	NC_0852	2026-01-15	2026-10-16
+NC_0853	Safae Talhi	6d38cf4c-4a1e-4e33-bacd-9ef0c35f1a16	Safae Talhi, Wissal Talhi	550	NC_0853	2025-12-26	2026-12-24
+NC_0866	Marisol Padilla	6beef777-3e98-43d9-8262-462e9eb07d3e	Marisol Padilla Leger, Einsbell Esterlin Perez Padilla	550	NC_0866	2026-01-08	2027-01-06
+NC_0872	Cristian Daniel	f03a5f7b-9a35-402d-9125-204565e352a2	Cristian Daniel Massardo Villanueva	550	NC_0872	2026-03-01	2027-02-27
+NC_0880	Jesús González	541b451d-b413-4546-9ed7-dedd1265d576	Jesús González Jiménez	550	NC_0880	2026-04-29	2027-04-27
+NC_0887	Rowan Saliba	4efd1f3f-4d50-404b-bfbd-6c51484a624e	Rowan Saliba	550	NC_0887	2026-02-25	2027-02-23
+NC_0891	Ignacio Moliner	c21bf102-f8e0-4d68-b814-6604aaa8815d	Ignacio Moliner del Campo	550	NC_0891	2026-04-21	2027-04-20
+NC_0894	Antonio Álvarez	54adb902-0419-4262-8800-d3499d05d812	Antonio Alvarez Marron	550	NC_0894	2026-07-01	2027-06-30
+NC_0895	Catalina Paz	e2b5479e-b0e1-40f0-a455-0606dcd7f846	Catalina Paz McCarthy Burgos, Veronica Espinosa Rodriguez	550	NC_0895	2026-02-24	2026-11-30
+NC_0897	Javier García	3a969f19-7b64-4b6d-9f5e-da4ad48b041e	Javier Garcia Ramil	550	NC_0897	2026-05-31	2027-04-28
+NC_0902	Mer Mustafa	6de114c6-1502-42b4-8df7-b2f8a35f867a	Mer Mustafa Mumtaz Mumtaz	550	NC_0902	2026-01-26	2026-10-27
+NC_0908	Gabriel-Iulian Dan	cfe6048a-b437-4f9a-a129-b84b642bf13f	Gabriel Julian Dan	550	NC_0908	2026-04-20	2027-04-18
+NC_0918	Santiago Fidel	ff48365f-73f7-4d0a-b81c-d321a10e1627	Santiago Fidel Ariño Lopez	550	NC_0918	2026-02-15	2027-02-13
+NC_0919	John Jairo Ramirez	ce4c0959-60c0-47fc-bfa4-7cfe357a3a4e	John Ramirez Foronda, Yelitza Vanegas Florez	550	NC_0919	2026-04-29	2027-04-27
+NC_0920	Sungho Choi	ecb6a344-e50a-4c38-baca-e74ccde9a239	Sungho Choi	550	NC_0920	2026-01-31	2026-11-01
+NC_0933	Panagiota Bompoli	4328c9ef-7af8-4d53-a6cc-1f1e81b61a3e	Panagiota Bompoli	550	NC_0933	2026-02-14	2026-11-15
+NC_0935	Carmen Merchán	fc509ee5-ccc8-45ba-ac19-31a3bbb292bc	Carmen Merchán Aguilar	550	NC_0935	2026-01-22	2027-01-20
+NC_0950	Uros Pavlovic	2c8e152d-a238-43e9-8d08-852c2ffbfa31	Uros Pavlovic	550	NC_0950	2026-07-27	2027-05-27
+NC_0951	Laurie Marie	c0fe4ca2-db4c-4413-8662-2edd5a4dd877	Laurie Marie Fortin, Brandon Camilo Aragon Mangones	550	NC_0951	2026-02-28	2027-01-31
+NC_0953	Alhasan Murtadha	07c03572-e74e-4f70-99e9-2ed0aada58f0	Alhasan Murtadha Jabbar Al - Baidhani	550	NC_0953	2026-01-28	2026-11-30
+NC_0965	Francisco Rivas	aedf4a41-4b45-4900-b06f-b5d051e623c6	Francisco Rivas Ramirez	550	NC_0965	2026-02-03	2027-02-01
+NC_0975	Valentín Serrano	0771a171-ec23-4507-9b1a-99264870d178	Amelia Delgado Delgado, Valentín Serrano Sojo	550	NC_0975	2026-02-05	2027-02-03
+NC_0980	Marco Augusto	35138ef0-3435-4c80-9d48-f759902e4c62	Marco Augusto Ramos Alvarez	550	NC_0980	2026-02-27	2027-02-01
+NC_1011	Ahmed Anes	a209eadc-f796-451b-8cc0-bf3a6ca5b7e9	Ahmed Anes Chiali, Lilia - Yasmine Belhadj	550	NC_1011	2026-02-28	2027-01-28
+NC_1025	Patricia Peinado	b18da9d4-0bba-4a71-bb3f-70a890341afd	Patricia Peinado Recio, Alex Sebastian Mejia Jimenez	550	NC_1025	2026-04-21	2027-01-22
+NC_1026	Cinthia González	c2aab910-82b7-4a65-9d49-00b5488b1b26	Cinthia Gonzalez Morales	550	NC_1026	2026-03-22	2027-03-20
+NC_1027	Alba Poza	2ae17394-1480-474d-96f3-797043581055	Alba Poza Palacios	550	NC_1027	2026-04-20	2027-04-18
+NC_1032	Rojina Boroughani	3c0bbe09-b495-442b-b84e-d6986bd030ed	Rojina Boroughani, Avina Baghernia	550	NC_1032	2026-02-26	2026-12-26
+NC_1042	Javier Gómez	0f937b2a-7bad-4413-8eb6-dde3cd612f03	Javier Gomez Camacho	550	NC_1042	2026-05-31	2027-05-29
+NC_1043	Gazal Haytham	2080543a-e8c3-4d4f-8c7a-5750606c29ca	Gazal Haytham Mahmoud Ibrahim	550	NC_1043	2026-05-30	2027-05-28
+NC_1055	Robbie Meijer	816aef3f-2567-4f1b-b815-82ba1cc298cd	Robbie Meijer	550	NC_1055	2026-05-18	2027-05-16
+NC_1077	Mauricio Javier	243f2959-05b2-4059-ba2f-b91e4944f3aa	Mauricio Javier Sellan Junco	550	NC_1077	2026-02-27	2026-11-28
+NC_1086	Marvin David	5ae5210d-1226-4137-9414-ff23e5bd472e	Marvin David Escobar Escobar, Claudia Roxana Corrales Aguilar	550	NC_1086	2026-02-28	2027-02-26
+NC_1109	David Ruiz	b46b2476-1c69-41e9-a036-300abcbdd51c	null Nova Urbella S.L , María José Gabriel Valerio	550	NC_1109	2026-04-04	2027-04-02
+NC_1111	Alessandro de Angelis	c10f3ba4-0db8-4b52-9120-950af7854653	Alessandro De Angelis, Jennifer Esmeralda Mercado Rodriguez	550	NC_1111	2026-03-27	2027-03-25
+NC_1116	Catalina Santa	9659c8b5-8d68-4d59-8f10-5686a8cb263e	Catalina Santa Mazo, Juan Esteban Burgos Santa	550	NC_1116	2026-05-27	2027-02-28
+NC_1117	Sajin Chandra	d66f832e-817d-4c1c-955f-b6ef86c82447	Sajin Chandra Sekar	550	NC_1117	2026-03-10	2027-03-08
+NC_1131	Khalil Anane	84000c99-d4ae-4226-b9ab-a9e9d619ae2c	Khalil Anane	550	NC_1131	2026-06-14	2027-06-12
+NC_1133	Lorena Paola	3c3940c4-2db4-4a90-9cea-1d613bae8561	Lorena Paola Perez Oyola, Jose Manuel Leon Mena	550	NC_1133	2026-07-30	2027-07-28
+NC_1135	Eleazar Iván Gómez	e363f320-561a-4d18-8ef1-96f9baa0f137	Eleazar Gomez Ruiz	550	NC_1135	2026-06-12	2027-03-13
+NC_1139	Caroline Da Silva	a292063d-80c7-4a7f-9655-b4aabbeaca6d	Caroline Da Silva Pereira	550	NC_1139	2026-04-23	2027-01-24
+NC_1141	Roger Gabriel	16491659-dd9e-4227-83bc-a8e51f20af51	Roger Gabriel Geronimo Zegarra	550	NC_1141	2026-05-01	2027-04-29
+NC_1149	Natalia Nocua	e3abac46-bdd6-4941-b628-7faab8a6aff7	Natalia Nocua Pinto, Alvaro Quinche Guevara	550	NC_1149	2026-10-01	2027-07-31
+NC_1158	Zein Almoien	60704245-f64f-43d1-bc42-0234ebae2bc1	Zein Almoien	550	NC_1158	2026-08-25	2027-06-25
+NC_1159	Pablo Calzón	8477e88f-a179-4a5a-898e-51f2fa2d4392	Pablo José Calzón García	550	NC_1159	2026-06-01	2026-10-31
+NC_1161	Pilar Jauregi	a7931ff2-95d3-4f20-91de-7f25b94735e4	Pilar Jauregi Muñoz	550	NC_1161	2026-07-31	2027-07-29
+NC_1177	Leticia Fonseca	b32e885a-9018-4f7d-ab6d-b12f681e575f	Leticia Fonseca Lobato	550	NC_1177	2026-05-01	2027-03-01
+NC_1178	Jesús Alejandro	a4017bb5-6a5f-4ca4-aaa3-8458f498bd03	Jesús Alejandro Zambrano Contreras	550	NC_1178	2026-04-24	2027-02-24
+NC_1184	Santiago José	1d65f4de-a571-45d9-882e-730d1e3e6f55	Santiago Jose Jimenez Buendia	550	NC_1184	2026-05-05	2027-02-06
+NC_1185	Giseth Chaid	e562b6fd-e5fa-4f3e-a0e7-3022543b518d	Giseth Chaid Ramos Redondo	550	NC_1185	2026-07-01	2027-04-02
+NC_1187	Walhams Wilmer	dd291e40-2737-4184-ac7d-2d6e5b2d8821	Yajure Reyes Walhams Wilmer, Lindsay Andreina Colina Flores	550	NC_1187	2026-03-31	2027-01-01
+NC_1200	Mohamed Anouar	fe2705a4-35a7-43b5-b458-e4b84b4cbdc5	Mohamed Anouar Berrada Gouzi, Lamiaa Benhammou	550	NC_1200	2026-04-09	2027-04-07
+NC_1202	Santiago Vidal	6bb45930-5eff-4982-8186-5d58163fa51c	Santiago Vidal Mendez	550	NC_1202	2026-04-19	2027-01-20
+NC_1204	Javier Molina	b16045f9-4906-427c-aa7a-c6ba779103ed	Javier Molina Garcia	550	NC_1204	2026-03-28	2027-03-26
+NC_1207	Lina Malki	1346b24c-a38d-44f2-859c-030e8f2c853d	Lina Malki	550	NC_1207	2026-05-27	2027-05-25
+NC_1223	Sandra Liliana	c730b5e7-45c6-4105-bf3c-0908fb66454d	Sandra Liliana Roman Cardona, Emerson Caceres Navarro	550	NC_1223	2026-04-01	2027-03-30
+NC_1233	Alex James	aaaf71cd-ae36-4a84-9474-2cb095418e64	Alex James Mclaughlin	550	NC_1233	2026-08-22	2027-05-31
+NC_1236	Othman Badr	c315390d-29c7-4324-a5e8-35e9ebe91ec4	Othman Badr Samir Elmidani	550	NC_1236	2026-04-01	2027-01-02
+NC_1237	Cristina Rodríguez	30057767-1bf7-43d9-a3b1-885c38156c00	Cristina Rodriguez Gonzalez	550	NC_1237	2026-05-31	2027-03-31
+NC_1242	Javier Moreno	1389cdbd-e677-4ad1-9953-75d2eb5e02fa	Javier Moreno Reyes	550	NC_1242	2026-06-30	2027-06-28
+NC_1248	Maria Magdalena	ef374f71-edfc-43de-a675-24c7985e2d46	María Magdalena Sebastian	550	NC_1248	2026-04-30	2027-02-03
+NC_1304	Neel Sanjay	5b445371-7a5a-4ab4-a97c-03a78f6e5690	Neel Sanjay Raja	550	NC_1304	2026-07-16	2027-07-14
+NC_1307	Yumary Yesenia Guerra	c9cff753-fb2e-4a5b-b844-87b54fbaca49	Yumary Guerra Escalona, Salvador Sosa Suárez	550	NC_1307	2026-09-01	2027-06-30
+NC_1316	Joshua Drozda	212dd5b8-a80e-434b-953a-f8644e5564da	Joshua Drozda	550	NC_1316	2026-10-20	2027-10-18
+NC_1318	Beatriz Esther	f793b334-87e5-4399-97db-288b61227f42	null FARMAAHORRO 24 SL , Jose Manuel Pazos Fernandez	550	NC_1318	2026-05-01	2027-04-29
+NC_1326	Victor David	fda8f5fb-bf66-4d83-8a9a-eed51f7abb8f	Víctor David Manzanares	550	NC_1326	2026-08-30	2027-08-28
+NC_1330	Luis Miguel	ae2363a3-63de-4177-9c06-3b8819944fe2	null Vilor Infraestructuras S.L. , Alex Federico Salinas	550	NC_1330	2026-05-22	2027-05-20
+NC_1345	María Franco	1552712d-2183-407c-8647-2169d0d729d2	Maria Franco Ruiz, Natalia Miranda Perello	550	NC_1345	2026-08-29	2027-06-30
+NC_1351	Orlain Alexis	890f6571-ada6-4917-8853-64b20c705c3d	Orlain Alexis Arango Quintero	550	NC_1351	2026-07-14	2027-07-12
+NC_1363	María Cerezo	a8a257ca-f21d-4d01-822f-30bfdfda3612	Maria Cerezo Rodriguez, Ander Rico Picabea	550	NC_1363	2026-05-17	2027-05-15
+NC_0956	Peter Francis	399fc86f-36c8-492f-8ac2-575587ba4fc6	Peter Crawley	525	NC_0956	2026-02-22	2026-12-22
+NC_0981	Wing Ho	0efce85b-cc35-47ee-a0cd-b566d0b09328	Wing Ho Tang	525	NC_0981	2026-02-14	2027-01-31
+NC_1058	Francisco Emilio	27b0a146-84aa-4a46-aeea-5f99093f427a	Francisco Almazán Guisado	525	NC_1058	2026-02-28	2026-11-29
+NC_1136	Ayoub El	78725d87-bde1-42fc-9327-4bd54851c040	Ayoub El Otmany	525	NC_1136	2026-03-31	2027-03-29
+NC_1144	Fateme Mahdikani	71dc27e5-7dd3-4860-8339-1464fc5ad179	Fateme Mahdikhani, Hasti Padash	525	NC_1144	2026-03-18	2027-02-18
+NC_1176	Diana Marcela	9d03811a-a60c-4d9e-ba02-0be6e352373b	Diana Cediel Ramirez	525	NC_1176	2026-03-25	2026-12-26
+NC_1235	Alan Misael	b36a5900-ee1a-4a3c-acdd-81b8531d7a04	Alan Ludueña Lezcano, Carolina Liliana Lezcano	525	NC_1235	2026-06-15	2027-06-13
+NC_1372	Danilto de	74cd2296-e713-4106-8c42-d6b6b88dffcf	Danilto Danilto De Toni De Toni	525	NC_1372	2026-05-16	2027-05-14
+NC_1574	Juan Pablo Aguilar	00a45848-f2a4-4a26-bdf6-02a8ecebd205	null OTIS MOBILITY S.A , CHAOMING BI	515	NC_1574	2026-09-19	2027-09-13
+NC_0903	Nikita Belyankov	bfc658cc-fde4-4b84-87f3-63c625536f0b	Nikita Belyankov	490	NC_0903	2026-02-20	2026-12-20
+NC_1319	Federico Pedroza	3cab6077-aaa0-44a3-a065-c5d6bd106ca3	Federico Pedroza	450	NC_1319	2026-08-20	2027-06-15
+NC_1321	Zyad Ahmed	5fa839b3-543a-40f3-a36a-0f96ba03a453	Zyad Ahmed Basha Aboubasha	450	NC_1321	2026-08-23	2027-01-29
+NC_1963	Fundación Mamá Cumbé	17a85bfb-4d6a-46fe-983d-f69ca8c5ac08	null Fundacion Mama Cumbe	375	NC_1963	2026-09-23	2026-10-23
+NC_1964	Fundación Mamá Cumbé	c280cc38-40fd-4545-a534-2dad0e1ba10c	null Fundacion Mama Cumbe , Eduardo Guzman	375	NC_1964	2026-09-23	2026-10-23
+NC_1965	Fundación Mamá Cumbé	9642bb8a-9539-4514-b2c2-26296d0a5398	null Fundacion Mama Cumbe , Felipe Alberto Molinares Gonzalez	375	NC_1965	2026-09-23	2026-10-23
+NC_1165	Viktoriia Vasilevskaia	9fe8084a-8a45-44ab-b6d1-d2aece127220	Viktoriia Vasilevskaia	370	NC_1165	2026-09-01	2027-06-30
+NC_1355	Noor Chebbi	b56e201d-483d-44ab-a392-90e558c5df5f	Noor Chebbi	350	NC_1355	2026-08-24	2027-06-23
+NC_1214	Amari Kaleim	7d698588-ba6a-44f7-bf05-c1b512f83069	Amari Williams	345	NC_1214	2026-06-23	2027-05-27
+NC_1966	Fundación Mamá Cumbé	1bbfaeaf-6e64-4e02-9402-a18a9821b17c	null INGHO Facility Management, S.L. , SILVIA MIGUELES AGUILAR	235	(blank)	2026-10-13	2026-10-15
+NC_1967	Fundación Mamá Cumbé	3b471f3b-e52f-4c1a-b600-81051c51f40a	null Juan Manuel Cassini De La Torre, INGHO Facility Management, S.L.	235	(blank)	2026-10-13	2026-10-15
+NC_1968	Fundación Mamá Cumbé	e592bb49-22d3-4bda-a4c8-90b30707b98a	null PUCHE BALDOMERO MORENO , INGHO Facility Management, S.L.	235	(blank)	2026-10-13	2026-10-15
+NC_1256	Ali Cherif	cc1af17e-6527-4f43-b2eb-41966f481e52	Diego Saez De Urabain Azon, Natalia Azon Rodrigo	185	(blank)	2026-08-26	2027-06-02
+NC_1927	John Mulcahy	2ffae0d6-19d5-46c7-a9f8-0d07bb9b6c63	Jo Kassandra Balanay	185	(blank)	2026-08-25	2026-10-17

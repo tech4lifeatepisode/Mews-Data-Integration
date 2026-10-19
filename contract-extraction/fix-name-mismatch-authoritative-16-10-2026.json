@@ -1,0 +1,249 @@
+{
+  "dryRun": false,
+  "count": 9,
+  "results": [
+    {
+      "nc_code": "NC_0904",
+      "rule": "contract_to_hm_seg",
+      "name_customers_before": "Fernando José Paulo",
+      "name_housemonk_before": "María Begoña Etxenagusia Atutxa",
+      "name_seguimiento_before": "Fernando Jose Fernando Jose",
+      "updates": [
+        {
+          "table": "Final_Format_HouseMonk_15_10_2026",
+          "id": "f211d06b-46fd-47bc-92f1-5d8ea05920ef",
+          "patch": {
+            "First Name": "Fernando",
+            "Last Name(*)": "José",
+            "Second Last Name": "Paulo"
+          }
+        },
+        {
+          "table": "Final_Format_Seguimiento_15_10_2026",
+          "id": "d72ca2da-3a1d-4d63-a386-daf07992fa6c",
+          "patch": {
+            "First Name": "Fernando",
+            "Last Name(*)": "José",
+            "Second Last Name": "Paulo"
+          }
+        }
+      ],
+      "name_after": "Fernando José Paulo"
+    },
+    {
+      "nc_code": "NC_1435",
+      "rule": "contract_to_hm_seg",
+      "name_customers_before": "Patricia Sarmiento Rivero",
+      "name_housemonk_before": "Juan Luis Garcia Ampudia",
+      "name_seguimiento_before": "Patricia Ruiz Alonso Ruiz Alonso",
+      "updates": [
+        {
+          "table": "Final_Format_HouseMonk_15_10_2026",
+          "id": "6ad02eaf-2fd3-4f8b-a6e5-08a39a07ecfd",
+          "patch": {
+            "First Name": "Patricia",
+            "Last Name(*)": "Sarmiento",
+            "Second Last Name": "Rivero"
+          }
+        },
+        {
+          "table": "Final_Format_Seguimiento_15_10_2026",
+          "id": "c709b0cd-3528-4296-9459-459d8cc60bb4",
+          "patch": {
+            "First Name": "Patricia",
+            "Last Name(*)": "Sarmiento",
+            "Second Last Name": "Rivero"
+          }
+        }
+      ],
+      "name_after": "Patricia Sarmiento Rivero"
+    },
+    {
+      "nc_code": "NC_1587",
+      "rule": "housemonk_to_contract_seg",
+      "name_customers_before": null,
+      "name_housemonk_before": "Jaime Suárez Rodríguez, Aida Rodriguez Valencia",
+      "name_seguimiento_before": "Jaime Rodriguez Valencia Rodriguez Valencia",
+      "updates": [
+        {
+          "table": "Final_Format_Customers_Contracts_Extraction_15_10_2026",
+          "id": "9080ead8-ad86-45e6-afff-2da4c99b5844",
+          "patch": {
+            "First Name": "Jaime",
+            "Last Name(*)": "Suárez Rodríguez, Aida Rodriguez Valencia",
+            "Second Last Name": null
+          }
+        },
+        {
+          "table": "Final_Format_Seguimiento_15_10_2026",
+          "id": "338039b7-915b-4ee4-805d-98bb57e1cf0a",
+          "patch": {
+            "First Name": "Jaime",
+            "Last Name(*)": "Suárez Rodríguez, Aida Rodriguez Valencia",
+            "Second Last Name": null
+          }
+        }
+      ],
+      "name_after": "Jaime Suárez Rodríguez, Aida Rodriguez Valencia"
+    },
+    {
+      "nc_code": "NC_1605",
+      "rule": "contract_to_hm_seg",
+      "name_customers_before": "Antonio Medrano Ballesteros",
+      "name_housemonk_before": "2230 Management SL",
+      "name_seguimiento_before": "Antonio",
+      "updates": [
+        {
+          "table": "Final_Format_HouseMonk_15_10_2026",
+          "id": "d308ca76-a39d-407e-8e24-12c0915ebc5d",
+          "patch": {
+            "First Name": "Antonio",
+            "Last Name(*)": "Medrano",
+            "Second Last Name": "Ballesteros"
+          }
+        },
+        {
+          "table": "Final_Format_Seguimiento_15_10_2026",
+          "id": "7a0861af-0cce-4e90-958e-1fa1b0fd04c7",
+          "patch": {
+            "First Name": "Antonio",
+            "Last Name(*)": "Medrano",
+            "Second Last Name": "Ballesteros"
+          }
+        }
+      ],
+      "name_after": "Antonio Medrano Ballesteros"
+    },
+    {
+      "nc_code": "NC_1609",
+      "rule": "contract_to_hm_seg",
+      "name_customers_before": "Jordi Joan Moya Rosello",
+      "name_housemonk_before": "Abel Tomas D J Gonzalez Abreu",
+      "name_seguimiento_before": null,
+      "updates": [
+        {
+          "table": "Final_Format_HouseMonk_15_10_2026",
+          "id": "0828c81c-fef1-43a7-acef-185a96b9f164",
+          "patch": {
+            "First Name": "Jordi",
+            "Last Name(*)": "Joan",
+            "Second Last Name": "Moya Rosello"
+          }
+        }
+      ],
+      "name_after": "Jordi Joan Moya Rosello"
+    },
+    {
+      "nc_code": "NC_1927",
+      "rule": "contract_to_hm_seg",
+      "name_customers_before": "John Mulcahy",
+      "name_housemonk_before": "Jo Kassandra Balanay",
+      "name_seguimiento_before": "John D John D",
+      "updates": [
+        {
+          "table": "Final_Format_HouseMonk_15_10_2026",
+          "id": "2ffae0d6-19d5-46c7-a9f8-0d07bb9b6c63",
+          "patch": {
+            "First Name": "John",
+            "Last Name(*)": "Mulcahy",
+            "Second Last Name": null
+          }
+        },
+        {
+          "table": "Final_Format_Seguimiento_15_10_2026",
+          "id": "d8899c69-a8be-49d5-bda5-65fa883c8541",
+          "patch": {
+            "First Name": "John",
+            "Last Name(*)": "Mulcahy",
+            "Second Last Name": null
+          }
+        }
+      ],
+      "name_after": "John Mulcahy"
+    },
+    {
+      "nc_code": "NC_1935",
+      "rule": "contract_to_hm_seg",
+      "name_customers_before": "María Ángeles Pérez San Román",
+      "name_housemonk_before": "Sebastián Del Moral Mesa",
+      "name_seguimiento_before": "Sebastian Sebastian",
+      "updates": [
+        {
+          "table": "Final_Format_HouseMonk_15_10_2026",
+          "id": "3ac3e3ae-d413-4cb8-aa24-a18dbf9000b9",
+          "patch": {
+            "First Name": "María",
+            "Last Name(*)": "Ángeles",
+            "Second Last Name": "Pérez San Román"
+          }
+        },
+        {
+          "table": "Final_Format_Seguimiento_15_10_2026",
+          "id": "522bcc4a-a104-4f52-a939-3a28b69958f5",
+          "patch": {
+            "First Name": "María",
+            "Last Name(*)": "Ángeles",
+            "Second Last Name": "Pérez San Román"
+          }
+        }
+      ],
+      "name_after": "María Ángeles Pérez San Román"
+    },
+    {
+      "nc_code": "NC_1937",
+      "rule": "contract_to_hm_seg",
+      "name_customers_before": "Rodrigo Antonio Suárez Putzeys",
+      "name_housemonk_before": "Diego Garcia Lozano",
+      "name_seguimiento_before": "Rodrigo Antonio Rodrigo Antonio",
+      "updates": [
+        {
+          "table": "Final_Format_HouseMonk_15_10_2026",
+          "id": "7983370e-e25a-47ba-8f8e-eb38e23fb0f0",
+          "patch": {
+            "First Name": "Rodrigo",
+            "Last Name(*)": "Antonio",
+            "Second Last Name": "Suárez Putzeys"
+          }
+        },
+        {
+          "table": "Final_Format_Seguimiento_15_10_2026",
+          "id": "583458a1-cedf-410d-b4c8-30f2d8aedd49",
+          "patch": {
+            "First Name": "Rodrigo",
+            "Last Name(*)": "Antonio",
+            "Second Last Name": "Suárez Putzeys"
+          }
+        }
+      ],
+      "name_after": "Rodrigo Antonio Suárez Putzeys"
+    },
+    {
+      "nc_code": "NC_1943",
+      "rule": "contract_to_hm_seg",
+      "name_customers_before": "Tiffany Salazar Tobón",
+      "name_housemonk_before": "Yajayra Lesly Barzola Velasquez, Karen Fiorella Barzola Velasquez",
+      "name_seguimiento_before": "Tiffany Tiffany",
+      "updates": [
+        {
+          "table": "Final_Format_HouseMonk_15_10_2026",
+          "id": "64cd368d-7aff-42d4-b61f-ddfa84a6a452",
+          "patch": {
+            "First Name": "Tiffany",
+            "Last Name(*)": "Salazar",
+            "Second Last Name": "Tobón"
+          }
+        },
+        {
+          "table": "Final_Format_Seguimiento_15_10_2026",
+          "id": "1655d196-860e-45af-9cfd-5741aaa8f6fa",
+          "patch": {
+            "First Name": "Tiffany",
+            "Last Name(*)": "Salazar",
+            "Second Last Name": "Tobón"
+          }
+        }
+      ],
+      "name_after": "Tiffany Salazar Tobón"
+    }
+  ]
+}

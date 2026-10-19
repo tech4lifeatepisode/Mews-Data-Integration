@@ -1,0 +1,47 @@
+{
+  "asOf": "2026-10-15",
+  "appliedToSupabase": true,
+  "tables": [
+    "Final_Format_Customers_Contracts_Extraction_15_10_2026",
+    "Final_Format_Seguimiento_15_10_2026",
+    "Final_Format_HouseMonk_15_10_2026",
+    "Missing_HouseMonk_NCs_Seguimiento_Contracts_15_10_2026"
+  ],
+  "uniqueNcRemovedFromFinalFormat": [
+    "NC_929",
+    "NC_0979",
+    "NC_1057",
+    "NC_1064",
+    "NC_1169",
+    "NC_1203",
+    "NC_1205",
+    "NC_1749",
+    "NC_2036",
+    "NC_0731"
+  ],
+  "noteNc731": "Customers row may use Group Code NC_731 (same guest as NC_0731)",
+  "missingTableAfter": [],
+  "removedFinalFormat_15Oct_userConfirmed": [
+    { "nc": "NC_0644", "guest": "Daniela Paola Mendoza", "reason": "early move-out" },
+    { "nc": "NC_0826", "guest": "Eileen María Dávila", "reason": "cancelled" }
+  ],
+  "removedFromMissingB2bOnly": ["NC_1565"],
+  "removedFromMissingAdditional": ["NC_0731", "NC_1203"],
+  "details": [
+    { "nc": "NC_1749", "guest": "Lucciana El Khoury", "reason": "audit — invoice Moved Out (HM 14929); early move-out ~Sep 2026" },
+    { "nc": "NC_2036", "guest": "Carmen Rodriguez", "reason": "audit — invoice Moved Out Sep/Oct 2026" },
+    { "nc": "NC_0979", "guest": "Jovan Francis", "reason": "audit — Seguimiento Cancelled; prior lifecycle exclusion" },
+    { "nc": "NC_1057", "guest": "Manuel Mihaita", "reason": "audit — Seguimiento Cancelled (desistimiento)" },
+    { "nc": "NC_0731", "guest": "Daniel Caballero", "reason": "audit — invoice Moved Out on HM Carabanchel through Aug 2026; no active stay" },
+    { "nc": "NC_1203", "guest": "David Salvadores", "reason": "audit — invoice Moved Out through Sep 2026; no active HM/Tenancy row" },
+    { "nc": "NC_929", "guest": "Kevin Andrés", "reason": "invoice_moved_out — no active Tenancy/HM for doc Y5916647A" },
+    { "nc": "NC_1064", "guest": "Andrés Armando", "reason": "invoice_moved_out — doc 35654684S" },
+    { "nc": "NC_1169", "guest": "Matias Carrizo", "reason": "invoice_moved_out — doc 51163769Q (duplicate customer rows removed)" },
+    { "nc": "NC_1205", "guest": "Nikita Isakov", "reason": "seguimiento_cancelled — Seguimiento export Cancelled/Cancelled" }
+  ],
+  "notRemovedFromFinalFormat": {
+    "note": "NC_1366, NC_0904, NC_1123 were removed from Missing only earlier (active in HM; not lifecycle exits). They remain in Final_Format tables."
+  },
+  "customersFinalRowCountAfter": 610,
+  "scanRemainingLifecycleMatches": 0
+}

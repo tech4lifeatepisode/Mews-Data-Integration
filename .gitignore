@@ -20,6 +20,13 @@ analysis_report.json
 contract-extraction/tmp-*.mjs
 contract-uploading/tmp-*.mjs
 
+# Cursor agent transcripts (may contain secrets)
+**/.cursor/**/agent-transcripts/
+
+# Regenerated upload run summaries
+contract-extraction/mews-import-*-summary.json
+contract-extraction/matching-across-final-format-*-summary.json
+
 # Excel workbooks (local review/migration; NC allowlist is tracked as CSV)
 **/*.xlsx
 **/*.xlsm

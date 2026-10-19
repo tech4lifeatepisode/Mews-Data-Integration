@@ -1,0 +1,90 @@
+{
+  "total": 11,
+  "byWhy": {
+    "invoice_moved_out": [
+      "NC_929",
+      "NC_1064",
+      "NC_1169",
+      "NC_1169"
+    ],
+    "audit_lifecycle": [
+      "NC_979",
+      "NC_1749",
+      "NC_2036",
+      "NC_731",
+      "NC_1057",
+      "NC_1203"
+    ],
+    "seguimiento_cancelled": [
+      "NC_1205"
+    ]
+  },
+  "hits": [
+    {
+      "nc": "NC_929",
+      "guest": "Kevin Andrés",
+      "doc": "Y5916647A",
+      "why": "invoice_moved_out"
+    },
+    {
+      "nc": "NC_979",
+      "guest": "Jovan Francis",
+      "doc": "21DH98428",
+      "why": "audit_lifecycle"
+    },
+    {
+      "nc": "NC_1064",
+      "guest": "Andrés Armando",
+      "doc": "35654684S",
+      "why": "invoice_moved_out"
+    },
+    {
+      "nc": "NC_1169",
+      "guest": "Matias Carrizo",
+      "doc": "51163769Q",
+      "why": "invoice_moved_out"
+    },
+    {
+      "nc": "NC_1169",
+      "guest": "Matias Carrizo",
+      "doc": "51163769Q",
+      "why": "invoice_moved_out"
+    },
+    {
+      "nc": "NC_1749",
+      "guest": "Lucciana El",
+      "doc": "RL 4230379",
+      "why": "audit_lifecycle"
+    },
+    {
+      "nc": "NC_2036",
+      "guest": "Carmen Rodriguez",
+      "doc": "51109254B",
+      "why": "audit_lifecycle"
+    },
+    {
+      "nc": "NC_731",
+      "guest": "Daniel Caballero",
+      "doc": "Z2378167H",
+      "why": "audit_lifecycle"
+    },
+    {
+      "nc": "NC_1057",
+      "guest": "Manuel Mihaita",
+      "doc": "12482150G",
+      "why": "audit_lifecycle"
+    },
+    {
+      "nc": "NC_1203",
+      "guest": "David Salvadores",
+      "doc": "71508082R",
+      "why": "audit_lifecycle"
+    },
+    {
+      "nc": "NC_1205",
+      "guest": "Nikita Isakov",
+      "doc": "Y3619778Y",
+      "why": "seguimiento_cancelled"
+    }
+  ]
+}

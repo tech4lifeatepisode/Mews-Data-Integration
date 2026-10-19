@@ -1,0 +1,269 @@
+{
+  "fixCount": 24,
+  "fixes": [
+    {
+      "nc": 922,
+      "field": "Allocated Rate",
+      "before": "1103.00",
+      "after": "950",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1065,
+      "field": "Allocated Rate",
+      "before": "786.00",
+      "after": "925",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1147,
+      "field": "Allocated Rate",
+      "before": "1487.00",
+      "after": "1565",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1326,
+      "field": "Allocated Rate",
+      "before": "864.00",
+      "after": "960",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1395,
+      "field": "Allocated Rate",
+      "before": "860.00",
+      "after": "955",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1554,
+      "field": "Allocated Rate",
+      "before": "864.00",
+      "after": "960",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1558,
+      "field": "Allocated Rate",
+      "before": "873.00",
+      "after": "970",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1560,
+      "field": "Allocated Rate",
+      "before": "879.00",
+      "after": "925",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1578,
+      "field": "Allocated Rate",
+      "before": "824.50",
+      "after": "970",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1582,
+      "field": "Allocated Rate",
+      "before": "816.00",
+      "after": "960",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1600,
+      "field": "Allocated Rate",
+      "before": "930.00",
+      "after": "1030",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1640,
+      "field": "Allocated Rate",
+      "before": "873.00",
+      "after": "1285",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1661,
+      "field": "Allocated Rate",
+      "before": "922.00",
+      "after": "970",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1669,
+      "field": "Allocated Rate",
+      "before": "829",
+      "after": "975",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1677,
+      "field": "Allocated Rate",
+      "before": "878.00",
+      "after": "975",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1712,
+      "field": "Allocated Rate",
+      "before": "873.00",
+      "after": "970",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1786,
+      "field": "Allocated Rate",
+      "before": "873.00",
+      "after": "970",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1795,
+      "field": "Allocated Rate",
+      "before": "829",
+      "after": "975",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1819,
+      "field": "Allocated Rate",
+      "before": "825.00",
+      "after": "970",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1845,
+      "field": "Allocated Rate",
+      "before": "825.00",
+      "after": "970",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1852,
+      "field": "Allocated Rate",
+      "before": "873.00",
+      "after": "970",
+      "reason": "company_operational_rent_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1065,
+      "field": "Prepaid Amount",
+      "before": "/925.00/",
+      "after": "1081",
+      "reason": "company_operational_deposit_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1560,
+      "field": "Prepaid Amount",
+      "before": "879.00",
+      "after": "925",
+      "reason": "company_operational_deposit_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    },
+    {
+      "nc": 1712,
+      "field": "Prepaid Amount",
+      "before": "873.00",
+      "after": "970",
+      "reason": "company_operational_deposit_seg_hm",
+      "error": null,
+      "ext": {
+        "ok": true
+      }
+    }
+  ]
+}

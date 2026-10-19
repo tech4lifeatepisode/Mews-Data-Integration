@@ -1,0 +1,2600 @@
+{
+  "summary": {
+    "noPairNameMismatchTotal": 193,
+    "withCompaniesExtractionMatch": 82,
+    "likelyCompanyLabelHeuristic": 26,
+    "likelyCompanyAndMatched": 12,
+    "matchedButNotHeuristicLabel": 70,
+    "noCompanyMatch": 111
+  },
+  "rows": [
+    {
+      "nc_code": "NC_1966",
+      "nc_number": 1966,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": "INGHO Facility Management, S.L. , SILVIA MIGUELES AGUILAR",
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1967",
+      "nc_number": 1967,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": "Juan Manuel Cassini De La Torre, INGHO Facility Management, S.L.",
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_0975",
+      "nc_number": 975,
+      "name_customers": "Valentín Serrano Sojo",
+      "name_seguimiento": "Valentin Delgado Delgado Delgado Delgado",
+      "name_housemonk": "Amelia Delgado Delgado, Valentín Serrano Sojo",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1968",
+      "nc_number": 1968,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": "PUCHE BALDOMERO MORENO , INGHO Facility Management, S.L.",
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1969",
+      "nc_number": 1969,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1980",
+      "nc_number": 1980,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1970",
+      "nc_number": 1970,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1927",
+      "nc_number": 1927,
+      "name_customers": "John Mulcahy",
+      "name_seguimiento": "John D John D",
+      "name_housemonk": "Jo Kassandra Balanay",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1981",
+      "nc_number": 1981,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1889",
+      "nc_number": 1889,
+      "name_customers": "Daniel Focsa",
+      "name_seguimiento": "Daniel Daniel",
+      "name_housemonk": "Dan Focsa",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1982",
+      "nc_number": 1982,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1814",
+      "nc_number": 1814,
+      "name_customers": "North Retail Solutions SL",
+      "name_seguimiento": "North Retail Solutions",
+      "name_housemonk": "Andres Nicolas Prisiceanu Moraru, North Retail Solutions SL",
+      "partner_company": "North Retail Solutions SL",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1983",
+      "nc_number": 1983,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1890",
+      "nc_number": 1890,
+      "name_customers": "Integra Ascensores S.L",
+      "name_seguimiento": "Integra Ascensores SL",
+      "name_housemonk": "Integra Ascensores S.L , Jia Junfu",
+      "partner_company": "Integra Ascensores S.L",
+      "likely_company_label": true,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:B83336891",
+          "company_name_substring"
+        ],
+        "company_name": "Integra Ascensores S.L",
+        "company_id": "b7f92b4f-b710-4d32-bc5c-61e54b099f71"
+      }
+    },
+    {
+      "nc_code": "NC_2082",
+      "nc_number": 2082,
+      "name_customers": "Caranorte Ingenieros S.L.",
+      "name_seguimiento": "Caranorte Ingenieros SL",
+      "name_housemonk": "Caranorte Ingenieros SL , Jhon Esneider Florez Florez",
+      "partner_company": "Caranorte Ingenieros S.L.",
+      "likely_company_label": true,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:B50844109",
+          "company_name_substring"
+        ],
+        "company_name": "Caranorte Ingenieros S.L.",
+        "company_id": "2224ccda-dba9-4a61-b1d6-c5690027e3ed"
+      }
+    },
+    {
+      "nc_code": "NC_1984",
+      "nc_number": 1984,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1891",
+      "nc_number": 1891,
+      "name_customers": "Integra Ascensores S.L",
+      "name_seguimiento": "Integra Ascensores SL",
+      "name_housemonk": "Integra Ascensores S.L , Chen Xiandeng",
+      "partner_company": "Integra Ascensores S.L",
+      "likely_company_label": true,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:B83336891",
+          "company_name_substring"
+        ],
+        "company_name": "Integra Ascensores S.L",
+        "company_id": "b7f92b4f-b710-4d32-bc5c-61e54b099f71"
+      }
+    },
+    {
+      "nc_code": "NC_1507",
+      "nc_number": 1507,
+      "name_customers": "/ / /",
+      "name_seguimiento": "LIVE FISH 1915 IMPORT & EXPORT SL",
+      "name_housemonk": "Daniela Sanchez Lopez, Daniel Ingram",
+      "partner_company": "LIVE FISH 1915 IMPORT & EXPORT S.L.",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1985",
+      "nc_number": 1985,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1838",
+      "nc_number": 1838,
+      "name_customers": "Romain Pierre",
+      "name_seguimiento": "Romain Romain",
+      "name_housemonk": "Pierre Romain",
+      "partner_company": "CHAMARI ITG, S.L.U",
+      "likely_company_label": true,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_2083",
+      "nc_number": 2083,
+      "name_customers": "Caranorte Ingenieros S.L.",
+      "name_seguimiento": "Caranorte Ingenieros SL",
+      "name_housemonk": "Caranorte Ingenieros SL , Andres David Castro Galeano",
+      "partner_company": "Caranorte Ingenieros S.L.",
+      "likely_company_label": true,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:B50844109",
+          "company_name_substring"
+        ],
+        "company_name": "Caranorte Ingenieros S.L.",
+        "company_id": "2224ccda-dba9-4a61-b1d6-c5690027e3ed"
+      }
+    },
+    {
+      "nc_code": "NC_1880",
+      "nc_number": 1880,
+      "name_customers": "Pranat Thakar",
+      "name_seguimiento": "Pranat",
+      "name_housemonk": "Pranit Ad Thakkar",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1869",
+      "nc_number": 1869,
+      "name_customers": "Walhams Wilmer Yajure Reyes",
+      "name_seguimiento": "Walhams Wilmer Colina Flores Colina Flores",
+      "name_housemonk": "Yajure Reyes Walhams Wilmer, Lindsay Andreina Colina Flores",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1892",
+      "nc_number": 1892,
+      "name_customers": "Integra Ascensores S.L",
+      "name_seguimiento": "Integra Ascensores SL",
+      "name_housemonk": null,
+      "partner_company": "Integra Ascensores S.L",
+      "likely_company_label": true,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:B83336891",
+          "company_name_substring"
+        ],
+        "company_name": "Integra Ascensores S.L",
+        "company_id": "b7f92b4f-b710-4d32-bc5c-61e54b099f71"
+      }
+    },
+    {
+      "nc_code": "NC_1941",
+      "nc_number": 1941,
+      "name_customers": "Integra Ascensores S.L",
+      "name_seguimiento": "Integra Ascensores SL",
+      "name_housemonk": null,
+      "partner_company": "Integra Ascensores S.L",
+      "likely_company_label": true,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:B83336891",
+          "company_name_substring"
+        ],
+        "company_name": "Integra Ascensores S.L",
+        "company_id": "b7f92b4f-b710-4d32-bc5c-61e54b099f71"
+      }
+    },
+    {
+      "nc_code": "NC_1882",
+      "nc_number": 1882,
+      "name_customers": "Damini Guillan Carames",
+      "name_seguimiento": "Damni Jose Noetzlin Vargas Noetzlin Vargas",
+      "name_housemonk": "Erika Noetzlin Vargas, Damni Jose Guillan Carames",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1921",
+      "nc_number": 1921,
+      "name_customers": "Rubén García Martín",
+      "name_seguimiento": "Anna Filomena Baiz Baiz",
+      "name_housemonk": "Transportes Pepe Trucks  Madrid S.L. , Mentor Zaberxhaj, Ruben Garcia Martin, Limpiezas Industriales Pepelimp SL",
+      "partner_company": "Transportes Pepe Trucks Madrid S.L.",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1912",
+      "nc_number": 1912,
+      "name_customers": "GOOD MOOD SERIES SL",
+      "name_seguimiento": "Goodmood Series SL",
+      "name_housemonk": null,
+      "partner_company": "GOOD MOOD SERIES SL",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:B67717538",
+          "company_name_substring"
+        ],
+        "company_name": "GOOD MOOD SERIES SL",
+        "company_id": "654e9d7b-5766-4fc1-8c1e-5ad09a47a649"
+      }
+    },
+    {
+      "nc_code": "NC_1929",
+      "nc_number": 1929,
+      "name_customers": "Neville Awele",
+      "name_seguimiento": "Neville",
+      "name_housemonk": "Neville Awelle",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1930",
+      "nc_number": 1930,
+      "name_customers": "Diana Huerta",
+      "name_seguimiento": "Diana Kang Kang",
+      "name_housemonk": "Daeyeon Kang, Diana Huerta Martinez",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1933",
+      "nc_number": 1933,
+      "name_customers": "Carmen Blanco Garrote",
+      "name_seguimiento": "Carmen Arranz Parra Arranz Parra",
+      "name_housemonk": "Maria Carmen Blanco Garrote, Gerardo Arranz Parra",
+      "partner_company": "/",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1938",
+      "nc_number": 1938,
+      "name_customers": "Diego Garcia Lozano",
+      "name_seguimiento": "Diego",
+      "name_housemonk": null,
+      "partner_company": "/",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1943",
+      "nc_number": 1943,
+      "name_customers": "Tiffany Salazar Tobón",
+      "name_seguimiento": "Tiffany Tiffany",
+      "name_housemonk": "Yajayra Lesly Barzola Velasquez, Karen Fiorella Barzola Velasquez",
+      "partner_company": "/",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1952",
+      "nc_number": 1952,
+      "name_customers": "Miroslava Potocek",
+      "name_seguimiento": "Miroslav Miroslav",
+      "name_housemonk": "Miroslav Potocek",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1956",
+      "nc_number": 1956,
+      "name_customers": "Charafeddine Azzaoui",
+      "name_seguimiento": "Charaffedine Charaffedine",
+      "name_housemonk": "Charaf Eddine Azzaoui",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1913",
+      "nc_number": 1913,
+      "name_customers": "GOOD MOOD SERIES SL",
+      "name_seguimiento": "Goodmood Series SL",
+      "name_housemonk": "GOOD MOOD SERIES SL , Ander Santamaria Cueva",
+      "partner_company": "GOOD MOOD SERIES SL",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:B67717538",
+          "company_name_substring"
+        ],
+        "company_name": "GOOD MOOD SERIES SL",
+        "company_id": "654e9d7b-5766-4fc1-8c1e-5ad09a47a649"
+      }
+    },
+    {
+      "nc_code": "NC_1330",
+      "nc_number": 1330,
+      "name_customers": "Luis Miguel Alonso Carbo",
+      "name_seguimiento": "Vilor Infraestructuras SL",
+      "name_housemonk": "Vilor Infraestructuras S.L. , Alex Federico Salinas",
+      "partner_company": "Vilor Infraestructuras S.L.",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1963",
+      "nc_number": 1963,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": "Fundacion Mama Cumbe",
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2069",
+      "nc_number": 2069,
+      "name_customers": "Tommaso Dellanoce",
+      "name_seguimiento": "Tomasso Arismendi Ramos Arismendi Ramos",
+      "name_housemonk": "Tommaso Della Noce, Iara Arismendi Ramos",
+      "partner_company": "CHAMARI ITG, S.L.U",
+      "likely_company_label": true,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1964",
+      "nc_number": 1964,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": "Fundacion Mama Cumbe , Eduardo Guzman",
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1977",
+      "nc_number": 1977,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2078",
+      "nc_number": 2078,
+      "name_customers": "Rafael garcia melendez",
+      "name_seguimiento": "Rafael Rafael",
+      "name_housemonk": "Carlos Rafael Garcia Melendez",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_2079",
+      "nc_number": 2079,
+      "name_customers": "Yesmina Yazek",
+      "name_seguimiento": "Yesmina Yesmina",
+      "name_housemonk": "Yesmina Zayek",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1965",
+      "nc_number": 1965,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": "Fundacion Mama Cumbe , Felipe Alberto Molinares Gonzalez",
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1978",
+      "nc_number": 1978,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1979",
+      "nc_number": 1979,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1778",
+      "nc_number": 1778,
+      "name_customers": "Doppelmayr Ibérica S.A.U.",
+      "name_seguimiento": "Doppelmayr Iberica SAU",
+      "name_housemonk": "Doppelmayr Ibérica SAU , Ana Arminio",
+      "partner_company": "Doppelmayr Ibérica S.A.U.",
+      "likely_company_label": true,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1971",
+      "nc_number": 1971,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1972",
+      "nc_number": 1972,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1973",
+      "nc_number": 1973,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1974",
+      "nc_number": 1974,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1975",
+      "nc_number": 1975,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1976",
+      "nc_number": 1976,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1986",
+      "nc_number": 1986,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1987",
+      "nc_number": 1987,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1988",
+      "nc_number": 1988,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1989",
+      "nc_number": 1989,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1990",
+      "nc_number": 1990,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1991",
+      "nc_number": 1991,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1992",
+      "nc_number": 1992,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1993",
+      "nc_number": 1993,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1994",
+      "nc_number": 1994,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1995",
+      "nc_number": 1995,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1996",
+      "nc_number": 1996,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1997",
+      "nc_number": 1997,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1998",
+      "nc_number": 1998,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_1999",
+      "nc_number": 1999,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2000",
+      "nc_number": 2000,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2001",
+      "nc_number": 2001,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2002",
+      "nc_number": 2002,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2003",
+      "nc_number": 2003,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2004",
+      "nc_number": 2004,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2005",
+      "nc_number": 2005,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2006",
+      "nc_number": 2006,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2007",
+      "nc_number": 2007,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2008",
+      "nc_number": 2008,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2009",
+      "nc_number": 2009,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2010",
+      "nc_number": 2010,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2011",
+      "nc_number": 2011,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2012",
+      "nc_number": 2012,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2013",
+      "nc_number": 2013,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2014",
+      "nc_number": 2014,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2015",
+      "nc_number": 2015,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2016",
+      "nc_number": 2016,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2017",
+      "nc_number": 2017,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2018",
+      "nc_number": 2018,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2019",
+      "nc_number": 2019,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2020",
+      "nc_number": 2020,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2021",
+      "nc_number": 2021,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2022",
+      "nc_number": 2022,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2023",
+      "nc_number": 2023,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2024",
+      "nc_number": 2024,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2025",
+      "nc_number": 2025,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2026",
+      "nc_number": 2026,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2027",
+      "nc_number": 2027,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2028",
+      "nc_number": 2028,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2029",
+      "nc_number": 2029,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2030",
+      "nc_number": 2030,
+      "name_customers": "Fundación Mamá Cumbé",
+      "name_seguimiento": "Fundacion Mama Cumbe",
+      "name_housemonk": null,
+      "partner_company": "Fundación Mamá Cumbé",
+      "likely_company_label": false,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:9020703101",
+          "company_name_substring"
+        ],
+        "company_name": "Fundación Mamá Cumbé",
+        "company_id": "5a83a508-1e7e-4d2d-967d-227ce0546c32"
+      }
+    },
+    {
+      "nc_code": "NC_2084",
+      "nc_number": 2084,
+      "name_customers": "Caranorte Ingenieros S.L.",
+      "name_seguimiento": "Caranorte Ingenieros SL",
+      "name_housemonk": "Caranorte Ingenieros SL , Juan David Ceballos Buitrago",
+      "partner_company": "Caranorte Ingenieros S.L.",
+      "likely_company_label": true,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:B50844109",
+          "company_name_substring"
+        ],
+        "company_name": "Caranorte Ingenieros S.L.",
+        "company_id": "2224ccda-dba9-4a61-b1d6-c5690027e3ed"
+      }
+    },
+    {
+      "nc_code": "NC_2085",
+      "nc_number": 2085,
+      "name_customers": "Caranorte Ingenieros S.L.",
+      "name_seguimiento": "Caranorte Ingenieros SL",
+      "name_housemonk": null,
+      "partner_company": "Caranorte Ingenieros S.L.",
+      "likely_company_label": true,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:B50844109",
+          "company_name_substring"
+        ],
+        "company_name": "Caranorte Ingenieros S.L.",
+        "company_id": "2224ccda-dba9-4a61-b1d6-c5690027e3ed"
+      }
+    },
+    {
+      "nc_code": "NC_1928",
+      "nc_number": 1928,
+      "name_customers": "RCC HABILITACION DE ESPACIOS COMERCIALES SL",
+      "name_seguimiento": "RCC HABILITACION DE ESPACIOS COMERCIALES SL",
+      "name_housemonk": null,
+      "partner_company": "RCC HABILITACION DE ESPACIOS COMERCIALES SL",
+      "likely_company_label": true,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:B70527833",
+          "company_name_substring"
+        ],
+        "company_name": "RCC HABILITACION DE ESPACIOS COMERCIALES SL",
+        "company_id": "10c95c9a-ce88-462b-8903-0ccb23b8100f"
+      }
+    },
+    {
+      "nc_code": "NC_0681",
+      "nc_number": 681,
+      "name_customers": "Issa Fares",
+      "name_seguimiento": "Issa Issa",
+      "name_housemonk": null,
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_0695",
+      "nc_number": 695,
+      "name_customers": "Luis Furnells Ribas",
+      "name_seguimiento": "Lluis",
+      "name_housemonk": "Lluis Furnells Ribas",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1661",
+      "nc_number": 1661,
+      "name_customers": "Susana García Cruz",
+      "name_seguimiento": "Solagar Arquitectura y Urbanismo",
+      "name_housemonk": "Solagar Arquitectura y Urbanismo SL , Pedro Solina Molinero",
+      "partner_company": "Solagar Arquitectura y Urbanismo SL",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_0712",
+      "nc_number": 712,
+      "name_customers": "Ibrahim Aman Allah Derkaoui",
+      "name_seguimiento": "Ibrahim Aman Allah",
+      "name_housemonk": "Aman Allah Ibrahim Derkaoui",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_0898",
+      "nc_number": 898,
+      "name_customers": "Lisa Michele McTigue",
+      "name_seguimiento": "Lisa Michelle Lisa Michelle",
+      "name_housemonk": null,
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_0957",
+      "nc_number": 957,
+      "name_customers": "",
+      "name_seguimiento": "Cellular Line SLU",
+      "name_housemonk": "Cellular Spain S.L.U. , Mattia Marchesa",
+      "partner_company": "Cellular Spain S.L.U",
+      "likely_company_label": true,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1012",
+      "nc_number": 1012,
+      "name_customers": "Diego Dorta Bencomo",
+      "name_seguimiento": "Diego Diego",
+      "name_housemonk": "Raquel Bencomo Diaz, DIEGO BENCOMO DORTA",
+      "partner_company": "/",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1024",
+      "nc_number": 1024,
+      "name_customers": "Lina El Ibrahimi",
+      "name_seguimiento": "Lina Lina",
+      "name_housemonk": "El Ibrahimi Lina",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1109",
+      "nc_number": 1109,
+      "name_customers": "David Ruiz Urda",
+      "name_seguimiento": "Nova Urbella SL",
+      "name_housemonk": "Nova Urbella S.L , María José Gabriel Valerio",
+      "partner_company": "Nova Urbella S.L.",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1060",
+      "nc_number": 1060,
+      "name_customers": "",
+      "name_seguimiento": "Oysergo SL",
+      "name_housemonk": "Obras y Servicios Riquelme Gonzalez SL , Jose Ivan Riquelme Gonzalez",
+      "partner_company": "Obras y Servicios Riquelme SL",
+      "likely_company_label": true,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1609",
+      "nc_number": 1609,
+      "name_customers": "Jordi Joan Moya Rosello",
+      "name_seguimiento": null,
+      "name_housemonk": "Abel Tomas D J Gonzalez Abreu",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1123",
+      "nc_number": 1123,
+      "name_customers": "Luis Guillermo Paredes Hernández",
+      "name_seguimiento": "Luis Guillermo Luis Guillermo",
+      "name_housemonk": null,
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1090",
+      "nc_number": 1090,
+      "name_customers": "Antonio Jose Dias de Fraga Brum",
+      "name_seguimiento": "Lappi CPM SA",
+      "name_housemonk": "Antonio Jose Dias De Fraga Brum, Lappi CPM SA",
+      "partner_company": "/",
+      "likely_company_label": true,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1147",
+      "nc_number": 1147,
+      "name_customers": "Jorge Manuel Rodrigues Jesus",
+      "name_seguimiento": "JJ Activos",
+      "name_housemonk": "JJActivos España, S.L. , Jorge Manuel Rodrigues Jesus, Rui Miguel Lopes Sanches, Olivia Figueira",
+      "partner_company": "JJ Activos España S.L",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1187",
+      "nc_number": 1187,
+      "name_customers": "Walhams Wilmer Yajure Reyes",
+      "name_seguimiento": "Walhams Wilmer Colina Flores Colina Flores",
+      "name_housemonk": "Yajure Reyes Walhams Wilmer, Lindsay Andreina Colina Flores",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1210",
+      "nc_number": 1210,
+      "name_customers": "Abdellah Bakhtari",
+      "name_seguimiento": "Abdellah Abdellah",
+      "name_housemonk": "Mustapha Bakhtari, Mustapha Bakhtari",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1295",
+      "nc_number": 1295,
+      "name_customers": "",
+      "name_seguimiento": "Alstom Transporte SA",
+      "name_housemonk": "ALSTOM MOVILIDAD S L , Pedro Ruiz Navas",
+      "partner_company": "Alstom Movilidad SL",
+      "likely_company_label": true,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1336",
+      "nc_number": 1336,
+      "name_customers": "Diego Saéz de Urbain Azón",
+      "name_seguimiento": "Diego",
+      "name_housemonk": null,
+      "partner_company": null,
+      "likely_company_label": true,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1313",
+      "nc_number": 1313,
+      "name_customers": "Eiden Tur González",
+      "name_seguimiento": "Eiden Eiden",
+      "name_housemonk": null,
+      "partner_company": "/",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1318",
+      "nc_number": 1318,
+      "name_customers": "Beatriz Esther Figueira Mancebo",
+      "name_seguimiento": "FARMAAHORRO 24 SL",
+      "name_housemonk": "FARMAAHORRO 24 SL , Jose Manuel Pazos Fernandez",
+      "partner_company": "FARMAAHORRO 24 SL",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1365",
+      "nc_number": 1365,
+      "name_customers": "",
+      "name_seguimiento": "Alstom Movilidad SL",
+      "name_housemonk": null,
+      "partner_company": "Alstom Movilidad SL",
+      "likely_company_label": true,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1369",
+      "nc_number": 1369,
+      "name_customers": "Juan Jesús Mora López",
+      "name_seguimiento": "Juan Jesus Nardelli Jimeno Nardelli Jimeno",
+      "name_housemonk": "Anna Nardelli Jimeno, Juan Jesus Mora Lopez",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1389",
+      "nc_number": 1389,
+      "name_customers": "Yonscar Gutiérrez Pérez",
+      "name_seguimiento": "Yonscar Escobar Cedeño Escobar Cedeño",
+      "name_housemonk": "Yisselh Escobar Cedeno, Yonscar Gutierrez Perez",
+      "partner_company": "CHAMARI ITG, S.L.U",
+      "likely_company_label": true,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1413",
+      "nc_number": 1413,
+      "name_customers": "",
+      "name_seguimiento": "GRUPO DE RESTAURACION TENI IRU SL",
+      "name_housemonk": "GRUPO DE RESTAURACION TENI IRU SL , Maria Alejandra Paez Martinez, Jose Francisco Montelongo Ojeda",
+      "partner_company": "GRUPO DE RESTAURACION TENI IRU S.L.",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1435",
+      "nc_number": 1435,
+      "name_customers": "Patricia Sarmiento Rivero",
+      "name_seguimiento": "Patricia Ruiz Alonso Ruiz Alonso",
+      "name_housemonk": "Juan Luis Garcia Ampudia",
+      "partner_company": "/",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1505",
+      "nc_number": 1505,
+      "name_customers": "Elena González Sánchez",
+      "name_seguimiento": "Elena Elena",
+      "name_housemonk": null,
+      "partner_company": "/CHAMARI ITG, S.L.U/",
+      "likely_company_label": true,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1560",
+      "nc_number": 1560,
+      "name_customers": "Marcos Delgado Ramírez",
+      "name_seguimiento": "Corte y Confeccion Lonatec SL",
+      "name_housemonk": "Marcos Navarro Delgado, Corte y Confeccion Lonatec SL",
+      "partner_company": "Corte y Confección Lonatec S.L.",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1514",
+      "nc_number": 1514,
+      "name_customers": "María del Pilar Lamas Borja",
+      "name_seguimiento": "Maria Del Pilar",
+      "name_housemonk": "Pilar Lamas Barja",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1535",
+      "nc_number": 1535,
+      "name_customers": "Juan Luis García Ampudia",
+      "name_seguimiento": "Juan Luis",
+      "name_housemonk": null,
+      "partner_company": "CHAMARI ITG, S.L.U",
+      "likely_company_label": true,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1539",
+      "nc_number": 1539,
+      "name_customers": "Antonio Tiebo Abal",
+      "name_seguimiento": "Antonio",
+      "name_housemonk": null,
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1558",
+      "nc_number": 1558,
+      "name_customers": "Heliodoro Gómez Maroto",
+      "name_seguimiento": "Corredores de Negocios SL",
+      "name_housemonk": "Heliodoro Gomez Maroto, Corredores de Negocios SL",
+      "partner_company": "Corredores de Negocios S.L.",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1565",
+      "nc_number": 1565,
+      "name_customers": "Antonio José Piédrola Gónzalez",
+      "name_seguimiento": "Integra Ascensores SL",
+      "name_housemonk": "Integra Ascensores S.L , Gong Hongwei, Luo Liangguang",
+      "partner_company": "Integra Ascensores S.L",
+      "likely_company_label": true,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:B83336891",
+          "tax_id:05278560Z",
+          "company_name_substring",
+          "contact_person:1.00"
+        ],
+        "company_name": "Integra Ascensores S.L",
+        "company_id": "b7f92b4f-b710-4d32-bc5c-61e54b099f71"
+      }
+    },
+    {
+      "nc_code": "NC_1574",
+      "nc_number": 1574,
+      "name_customers": "Juan Pablo Aguilar",
+      "name_seguimiento": "OTIS Mobility SA",
+      "name_housemonk": "Nariman Osman, Panayiotis Pilavakis",
+      "partner_company": "OTIS Mobility S.A",
+      "likely_company_label": true,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1604",
+      "nc_number": 1604,
+      "name_customers": "Cesar José Robredo",
+      "name_seguimiento": "Cesar Jose Lauria Rojas Lauria Rojas",
+      "name_housemonk": null,
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1605",
+      "nc_number": 1605,
+      "name_customers": "Antonio Medrano Ballesteros",
+      "name_seguimiento": "Antonio",
+      "name_housemonk": "2230 Management SL",
+      "partner_company": "/",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1640",
+      "nc_number": 1640,
+      "name_customers": "Rubén Matilla González",
+      "name_seguimiento": "Impulso Slow SL",
+      "name_housemonk": "Ruben Matilla Gonzalez, Impulso Slow S.L",
+      "partner_company": "Impulso Slow S.L",
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1729",
+      "nc_number": 1729,
+      "name_customers": "Marta Marcucci",
+      "name_seguimiento": "Marta Marta",
+      "name_housemonk": null,
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1010",
+      "nc_number": 1010,
+      "name_customers": null,
+      "name_seguimiento": "NIshika NIshika",
+      "name_housemonk": "Nishika Bharadwaj",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1272",
+      "nc_number": 1272,
+      "name_customers": null,
+      "name_seguimiento": "Sara Sara",
+      "name_housemonk": "Sara Colume Azzouzi Idrissi",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1281",
+      "nc_number": 1281,
+      "name_customers": null,
+      "name_seguimiento": "Eneko Eneko",
+      "name_housemonk": "Eneko Gutierrez Sanchez",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1416",
+      "nc_number": 1416,
+      "name_customers": null,
+      "name_seguimiento": "Jose Nicolas",
+      "name_housemonk": "Jose Nicolas Monteagudo Lopez",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1417",
+      "nc_number": 1417,
+      "name_customers": null,
+      "name_seguimiento": "Elisur",
+      "name_housemonk": "Elisur Hernández Galván",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1432",
+      "nc_number": 1432,
+      "name_customers": null,
+      "name_seguimiento": "Nayeli",
+      "name_housemonk": "Nayeli Ojeda Marin",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1438",
+      "nc_number": 1438,
+      "name_customers": null,
+      "name_seguimiento": "Jaime",
+      "name_housemonk": "Jaime Morán Pellitero",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1442",
+      "nc_number": 1442,
+      "name_customers": null,
+      "name_seguimiento": "Jose",
+      "name_housemonk": "Jose De Juan De Juan",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1453",
+      "nc_number": 1453,
+      "name_customers": null,
+      "name_seguimiento": "Jose Luis",
+      "name_housemonk": "José Luis Tomás Roca",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1468",
+      "nc_number": 1468,
+      "name_customers": null,
+      "name_seguimiento": "Malak Malak",
+      "name_housemonk": "Malak Messour Messour",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1516",
+      "nc_number": 1516,
+      "name_customers": null,
+      "name_seguimiento": "Jesus",
+      "name_housemonk": "Jesus Galera Fuentes",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1519",
+      "nc_number": 1519,
+      "name_customers": null,
+      "name_seguimiento": "Adrian",
+      "name_housemonk": "Adrian Boza Ivern",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1529",
+      "nc_number": 1529,
+      "name_customers": null,
+      "name_seguimiento": "Yasin Mohamed",
+      "name_housemonk": "Yasin Mohamed Ahmed",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1534",
+      "nc_number": 1534,
+      "name_customers": null,
+      "name_seguimiento": "Ricardo",
+      "name_housemonk": "Ricardo Sancho Rodriguez",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1579",
+      "nc_number": 1579,
+      "name_customers": null,
+      "name_seguimiento": "Ricardo Lorenzo",
+      "name_housemonk": "Ricardo Lorenzo Martinez Alvarez",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1596",
+      "nc_number": 1596,
+      "name_customers": null,
+      "name_seguimiento": "Franziska Franziska",
+      "name_housemonk": "Franziska Schradi",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1606",
+      "nc_number": 1606,
+      "name_customers": null,
+      "name_seguimiento": "Diya Diya",
+      "name_housemonk": "Diya Aswani",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1608",
+      "nc_number": 1608,
+      "name_customers": null,
+      "name_seguimiento": "Imke Johanna Maria Soeters Soeters",
+      "name_housemonk": "Jade Veerle Soeters, Imke Johanna Mari Wassercordt",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1622",
+      "nc_number": 1622,
+      "name_customers": null,
+      "name_seguimiento": "Manuel Luis",
+      "name_housemonk": "Manuel Luis Jones Camacho",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1652",
+      "nc_number": 1652,
+      "name_customers": null,
+      "name_seguimiento": "Paula Paula",
+      "name_housemonk": "Paula Vera Cantalejo",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1664",
+      "nc_number": 1664,
+      "name_customers": null,
+      "name_seguimiento": "Veronica Veronica",
+      "name_housemonk": "Verónica Callón González",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1695",
+      "nc_number": 1695,
+      "name_customers": null,
+      "name_seguimiento": "Adnan",
+      "name_housemonk": "Adnan Hable",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1702",
+      "nc_number": 1702,
+      "name_customers": null,
+      "name_seguimiento": "Yaiza Yaiza",
+      "name_housemonk": "Yaiza Blanco Porras",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1706",
+      "nc_number": 1706,
+      "name_customers": null,
+      "name_seguimiento": "Daniel Daniel",
+      "name_housemonk": "Daniel Almeida",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1707",
+      "nc_number": 1707,
+      "name_customers": null,
+      "name_seguimiento": "Pablo Pablo",
+      "name_housemonk": "Pablo Ortega Perez",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1710",
+      "nc_number": 1710,
+      "name_customers": null,
+      "name_seguimiento": "Sebastian Leon Cañon Leon Cañon",
+      "name_housemonk": "Bayron Sebastian Leon Cañon, Laura Katherynne Leon Cañon",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1712",
+      "nc_number": 1712,
+      "name_customers": null,
+      "name_seguimiento": "Brightside Leadership Development",
+      "name_housemonk": "Brightside Leadership Development SRL , Stefan Radu Petrescu",
+      "partner_company": null,
+      "likely_company_label": true,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1716",
+      "nc_number": 1716,
+      "name_customers": null,
+      "name_seguimiento": "Monique Ariza Trujilo Ariza Trujilo",
+      "name_housemonk": "Isabella Ariza Trujillo, Monique Flandorffer",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1756",
+      "nc_number": 1756,
+      "name_customers": null,
+      "name_seguimiento": "Claudia Claudia",
+      "name_housemonk": "Claudia Torrubia Campa",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1760",
+      "nc_number": 1760,
+      "name_customers": null,
+      "name_seguimiento": "Arturo Arturo",
+      "name_housemonk": "Arturo Torres Velazquez",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1765",
+      "nc_number": 1765,
+      "name_customers": null,
+      "name_seguimiento": "Nils",
+      "name_housemonk": "Nils Lang",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1766",
+      "nc_number": 1766,
+      "name_customers": null,
+      "name_seguimiento": "Manuel Manuel",
+      "name_housemonk": "Manuel Ortega Nebro",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1772",
+      "nc_number": 1772,
+      "name_customers": null,
+      "name_seguimiento": "Noe",
+      "name_housemonk": "Noe Fernandez Vivancos",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1828",
+      "nc_number": 1828,
+      "name_customers": null,
+      "name_seguimiento": "Giovanna",
+      "name_housemonk": "Giovanna Aldonza Rios Lopez",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1831",
+      "nc_number": 1831,
+      "name_customers": null,
+      "name_seguimiento": "Mireya",
+      "name_housemonk": "Mireya Nuñez Manchado",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1846",
+      "nc_number": 1846,
+      "name_customers": null,
+      "name_seguimiento": "Sohaib Sohaib",
+      "name_housemonk": "Sohaib El Nel",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1895",
+      "nc_number": 1895,
+      "name_customers": null,
+      "name_seguimiento": "Danylo Emelyanova Emelyanova",
+      "name_housemonk": "Eva Emelyanova, Danylo Istomin",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1898",
+      "nc_number": 1898,
+      "name_customers": null,
+      "name_seguimiento": "Angel Mariano",
+      "name_housemonk": "Angel Mariano Cabrera Vanegas",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1902",
+      "nc_number": 1902,
+      "name_customers": null,
+      "name_seguimiento": "Siamatech Soluciones Integrales en Agua y Medio Ambiente",
+      "name_housemonk": "Luis Gerardo Ávila Macías, Siamatech Soluciones Integrales en Agua y Medio Ambiente",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1908",
+      "nc_number": 1908,
+      "name_customers": null,
+      "name_seguimiento": "Ibrahim Ibrahim",
+      "name_housemonk": "Ibrahim Lotfi",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1916",
+      "nc_number": 1916,
+      "name_customers": null,
+      "name_seguimiento": "Cristina Cristina",
+      "name_housemonk": "Cristina Cejudo Barbolla",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_1940",
+      "nc_number": 1940,
+      "name_customers": null,
+      "name_seguimiento": "Aidar",
+      "name_housemonk": "Integra Ascensores S.L , Cesar Andres Perez Mendoza",
+      "partner_company": null,
+      "likely_company_label": true,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:B83336891",
+          "company_name_substring"
+        ],
+        "company_name": "Integra Ascensores S.L",
+        "company_id": "b7f92b4f-b710-4d32-bc5c-61e54b099f71"
+      }
+    },
+    {
+      "nc_code": "NC_1960",
+      "nc_number": 1960,
+      "name_customers": null,
+      "name_seguimiento": "Joao",
+      "name_housemonk": "Joao Pedro Caeiro Rosado da Silva Pissarra, Lorena De Castro Elias",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_2031",
+      "nc_number": 2031,
+      "name_customers": null,
+      "name_seguimiento": "Alejandro Alejandro",
+      "name_housemonk": "Alejandro Pinzón Pulido",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_2063",
+      "nc_number": 2063,
+      "name_customers": null,
+      "name_seguimiento": "Viajes Puerta de Sevilla SL",
+      "name_housemonk": "Viajes Puerta de Sevilla SL",
+      "partner_company": null,
+      "likely_company_label": true,
+      "companies_match": {
+        "tier": "strong",
+        "signals": [
+          "tax_id:B91555417",
+          "company_name_substring"
+        ],
+        "company_name": "Viajes Puerta de Sevilla SL",
+        "company_id": "ceca7217-5f2b-492f-9d44-0ef8edde8e26"
+      }
+    },
+    {
+      "nc_code": "NC_2081",
+      "nc_number": 2081,
+      "name_customers": null,
+      "name_seguimiento": "Melody Melody",
+      "name_housemonk": "Melody Zafar Gholizadeh",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_2092",
+      "nc_number": 2092,
+      "name_customers": null,
+      "name_seguimiento": "Eduardo Eduardo",
+      "name_housemonk": "Eduardo Vazquez Talavera",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_2093",
+      "nc_number": 2093,
+      "name_customers": null,
+      "name_seguimiento": "Amandine Amandine",
+      "name_housemonk": "Amandine Ferreira Do Vale",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_2095",
+      "nc_number": 2095,
+      "name_customers": null,
+      "name_seguimiento": "Dilan Dilan",
+      "name_housemonk": "Dilan Boeer",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_2096",
+      "nc_number": 2096,
+      "name_customers": null,
+      "name_seguimiento": "Sergio Sergio",
+      "name_housemonk": "Sergio Quintanilla Cantu",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_2099",
+      "nc_number": 2099,
+      "name_customers": null,
+      "name_seguimiento": "Patrick Isaak",
+      "name_housemonk": "Patrick Labrijn",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_2101",
+      "nc_number": 2101,
+      "name_customers": null,
+      "name_seguimiento": "Astrid Astrid",
+      "name_housemonk": "Astrid Matehius",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_2105",
+      "nc_number": 2105,
+      "name_customers": null,
+      "name_seguimiento": "Daniel Daniel",
+      "name_housemonk": "Daniel Chen",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_2108",
+      "nc_number": 2108,
+      "name_customers": null,
+      "name_seguimiento": "Teresa Teresa",
+      "name_housemonk": "Maria Teresa Drago Abellon",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    },
+    {
+      "nc_code": "NC_2109",
+      "nc_number": 2109,
+      "name_customers": null,
+      "name_seguimiento": "Gabriel Gabriel",
+      "name_housemonk": "Gabriel Blanquez De La Fuente",
+      "partner_company": null,
+      "likely_company_label": false,
+      "companies_match": null
+    }
+  ]
+}

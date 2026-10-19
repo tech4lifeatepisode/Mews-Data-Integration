@@ -1,0 +1,365 @@
+{
+  "asOf": "2026-10-15",
+  "results": [
+    {
+      "nc": "NC_0644",
+      "guest": "Daniela Paola",
+      "document": "G38868743",
+      "contractStay": "2025-10-27 → 2026-10-25",
+      "seguimiento": {
+        "cancelled": false
+      },
+      "tenancy": [],
+      "housemonkCsv": [],
+      "invoice": [],
+      "recommendation": "keep_in_missing_cohort",
+      "reason": "No HM Group Code; no evidence of cancel/early move-out in HM exports"
+    },
+    {
+      "nc": "NC_0731",
+      "guest": "Daniel Caballero",
+      "document": "Z2378167H",
+      "contractStay": "2025-12-25 → 2026-11-30",
+      "seguimiento": {
+        "cancelled": false
+      },
+      "tenancy": [],
+      "housemonkCsv": [],
+      "invoice": [],
+      "recommendation": "keep_in_missing_cohort",
+      "reason": "No HM Group Code; no evidence of cancel/early move-out in HM exports"
+    },
+    {
+      "nc": "NC_0826",
+      "guest": "Eileen María Dávila",
+      "document": "A9818019",
+      "contractStay": "2026-01-19 → 2027-01-17",
+      "seguimiento": {
+        "cancelled": false
+      },
+      "tenancy": [
+        {
+          "contractId": "14952",
+          "ncOnRow": "1939",
+          "status": "Booked",
+          "start": "2026-09-17",
+          "moveOut": "2026-10-31",
+          "contractEnd": "2026-10-31",
+          "endedBeforeAsOf": false,
+          "earlyMoveOut": false,
+          "cancelled": false,
+          "movedOut": false,
+          "shifted": false,
+          "underNotice": false,
+          "tenant": "Aidar Shapirov"
+        }
+      ],
+      "housemonkCsv": [
+        {
+          "groupCode": "NC_1939",
+          "status": "Booked",
+          "name": "Aidar Shapirov"
+        }
+      ],
+      "invoice": [],
+      "recommendation": "remove_from_missing_hm_backfill",
+      "reason": "Guest in HouseMonk CSV as active Occupied/Booked but Group Code may be blank — HM backfill not lifecycle exit"
+    },
+    {
+      "nc": "NC_0904",
+      "guest": "Fernando José",
+      "document": "GL906809",
+      "contractStay": "2026-02-10 → 2026-12-10",
+      "seguimiento": {
+        "cancelled": false
+      },
+      "tenancy": [
+        {
+          "contractId": "14952",
+          "ncOnRow": "1939",
+          "status": "Booked",
+          "start": "2026-09-17",
+          "moveOut": "2026-10-31",
+          "contractEnd": "2026-10-31",
+          "endedBeforeAsOf": false,
+          "earlyMoveOut": false,
+          "cancelled": false,
+          "movedOut": false,
+          "shifted": false,
+          "underNotice": false,
+          "tenant": "Aidar Shapirov"
+        },
+        {
+          "contractId": "7776",
+          "ncOnRow": "",
+          "status": "Occupied",
+          "start": "2026-02-10",
+          "moveOut": "2026-12-10",
+          "contractEnd": "2026-12-10",
+          "endedBeforeAsOf": false,
+          "earlyMoveOut": false,
+          "cancelled": false,
+          "movedOut": false,
+          "shifted": false,
+          "underNotice": false,
+          "tenant": "Fernando José Paulo"
+        },
+        {
+          "contractId": "17284",
+          "ncOnRow": "1850",
+          "status": "Occupied",
+          "start": "2026-08-27",
+          "moveOut": "2026-11-28",
+          "contractEnd": "2026-11-28",
+          "endedBeforeAsOf": false,
+          "earlyMoveOut": false,
+          "cancelled": false,
+          "movedOut": false,
+          "shifted": false,
+          "underNotice": false,
+          "tenant": "Vilmaris Andreina Justo, Fernando Jose Ulloa Dominguez"
+        }
+      ],
+      "housemonkCsv": [
+        {
+          "groupCode": "",
+          "status": "Occupied",
+          "name": "Fernando José Paulo"
+        },
+        {
+          "groupCode": "NC_1850",
+          "status": "Occupied",
+          "name": "Vilmaris Andreina Justo, Fernando Jose Ulloa Dominguez"
+        },
+        {
+          "groupCode": "NC_1939",
+          "status": "Booked",
+          "name": "Aidar Shapirov"
+        }
+      ],
+      "invoice": [],
+      "recommendation": "remove_from_missing_hm_backfill",
+      "reason": "Guest in HouseMonk CSV as active Occupied/Booked but Group Code may be blank — HM backfill not lifecycle exit"
+    },
+    {
+      "nc": "NC_1123",
+      "guest": "Luis Guillermo Paredes",
+      "document": "N09369485",
+      "contractStay": "2026-03-15 → 2026-12-16",
+      "seguimiento": {
+        "cancelled": false
+      },
+      "tenancy": [
+        {
+          "contractId": "14952",
+          "ncOnRow": "1939",
+          "status": "Booked",
+          "start": "2026-09-17",
+          "moveOut": "2026-10-31",
+          "contractEnd": "2026-10-31",
+          "endedBeforeAsOf": false,
+          "earlyMoveOut": false,
+          "cancelled": false,
+          "movedOut": false,
+          "shifted": false,
+          "underNotice": false,
+          "tenant": "Aidar Shapirov"
+        },
+        {
+          "contractId": "18532",
+          "ncOnRow": "2110",
+          "status": "Occupied",
+          "start": "2026-10-13",
+          "moveOut": "2027-07-13",
+          "contractEnd": "2027-07-13",
+          "endedBeforeAsOf": false,
+          "earlyMoveOut": false,
+          "cancelled": false,
+          "movedOut": false,
+          "shifted": false,
+          "underNotice": false,
+          "tenant": "Luis Guillermo Paredes Hernández, Janier Humberto Sanchez Duran"
+        }
+      ],
+      "housemonkCsv": [
+        {
+          "groupCode": "NC_1939",
+          "status": "Booked",
+          "name": "Aidar Shapirov"
+        },
+        {
+          "groupCode": "NC_2110",
+          "status": "Occupied",
+          "name": "Luis Guillermo Paredes Hernández, Janier Humberto Sanchez Duran"
+        }
+      ],
+      "invoice": [],
+      "recommendation": "remove_from_missing_hm_backfill",
+      "reason": "Guest in HouseMonk CSV as active Occupied/Booked but Group Code may be blank — HM backfill not lifecycle exit"
+    },
+    {
+      "nc": "NC_1203",
+      "guest": "David Salvadores",
+      "document": "71508082R",
+      "contractStay": "2026-04-01 → 2027-01-02",
+      "seguimiento": {
+        "cancelled": false
+      },
+      "tenancy": [
+        {
+          "contractId": "14952",
+          "ncOnRow": "1939",
+          "status": "Booked",
+          "start": "2026-09-17",
+          "moveOut": "2026-10-31",
+          "contractEnd": "2026-10-31",
+          "endedBeforeAsOf": false,
+          "earlyMoveOut": false,
+          "cancelled": false,
+          "movedOut": false,
+          "shifted": false,
+          "underNotice": false,
+          "tenant": "Aidar Shapirov"
+        }
+      ],
+      "housemonkCsv": [
+        {
+          "groupCode": "NC_1939",
+          "status": "Booked",
+          "name": "Aidar Shapirov"
+        }
+      ],
+      "invoice": [],
+      "recommendation": "remove_from_missing_hm_backfill",
+      "reason": "Guest in HouseMonk CSV as active Occupied/Booked but Group Code may be blank — HM backfill not lifecycle exit"
+    },
+    {
+      "nc": "NC_1366",
+      "guest": "Alcione Teixeira",
+      "document": "131010311",
+      "contractStay": "2026-05-22 → 2026-11-22",
+      "seguimiento": {
+        "cancelled": false
+      },
+      "tenancy": [
+        {
+          "contractId": "14952",
+          "ncOnRow": "1939",
+          "status": "Booked",
+          "start": "2026-09-17",
+          "moveOut": "2026-10-31",
+          "contractEnd": "2026-10-31",
+          "endedBeforeAsOf": false,
+          "earlyMoveOut": false,
+          "cancelled": false,
+          "movedOut": false,
+          "shifted": false,
+          "underNotice": false,
+          "tenant": "Aidar Shapirov"
+        },
+        {
+          "contractId": "12940",
+          "ncOnRow": "",
+          "status": "Occupied",
+          "start": "2026-05-22",
+          "moveOut": "2026-11-22",
+          "contractEnd": "2026-11-22",
+          "endedBeforeAsOf": false,
+          "earlyMoveOut": false,
+          "cancelled": false,
+          "movedOut": false,
+          "shifted": false,
+          "underNotice": false,
+          "tenant": "Alcione Teixeira Djalo"
+        }
+      ],
+      "housemonkCsv": [
+        {
+          "groupCode": "",
+          "status": "Occupied",
+          "name": "Alcione Teixeira Djalo"
+        },
+        {
+          "groupCode": "NC_1939",
+          "status": "Booked",
+          "name": "Aidar Shapirov"
+        }
+      ],
+      "invoice": [],
+      "recommendation": "remove_from_missing_hm_backfill",
+      "reason": "Guest in HouseMonk CSV as active Occupied/Booked but Group Code may be blank — HM backfill not lifecycle exit"
+    },
+    {
+      "nc": "NC_1565",
+      "guest": "Antonio José Piédrola",
+      "document": "05278560Z",
+      "contractStay": "2026-09-15 → 2027-09-13",
+      "seguimiento": {
+        "cancelled": false
+      },
+      "tenancy": [
+        {
+          "contractId": "14952",
+          "ncOnRow": "1939",
+          "status": "Booked",
+          "start": "2026-09-17",
+          "moveOut": "2026-10-31",
+          "contractEnd": "2026-10-31",
+          "endedBeforeAsOf": false,
+          "earlyMoveOut": false,
+          "cancelled": false,
+          "movedOut": false,
+          "shifted": false,
+          "underNotice": false,
+          "tenant": "Aidar Shapirov"
+        }
+      ],
+      "housemonkCsv": [
+        {
+          "groupCode": "NC_1939",
+          "status": "Booked",
+          "name": "Aidar Shapirov"
+        }
+      ],
+      "invoice": [],
+      "recommendation": "remove_from_missing_hm_backfill",
+      "reason": "Guest in HouseMonk CSV as active Occupied/Booked but Group Code may be blank — HM backfill not lifecycle exit"
+    },
+    {
+      "nc": "NC_1749",
+      "guest": "Lucciana El",
+      "document": "RL 4230379",
+      "contractStay": "2026-09-01 → 2027-06-30",
+      "seguimiento": {
+        "cancelled": false
+      },
+      "tenancy": [
+        {
+          "contractId": "14952",
+          "ncOnRow": "1939",
+          "status": "Booked",
+          "start": "2026-09-17",
+          "moveOut": "2026-10-31",
+          "contractEnd": "2026-10-31",
+          "endedBeforeAsOf": false,
+          "earlyMoveOut": false,
+          "cancelled": false,
+          "movedOut": false,
+          "shifted": false,
+          "underNotice": false,
+          "tenant": "Aidar Shapirov"
+        }
+      ],
+      "housemonkCsv": [
+        {
+          "groupCode": "NC_1939",
+          "status": "Booked",
+          "name": "Aidar Shapirov"
+        }
+      ],
+      "invoice": [],
+      "recommendation": "remove_from_missing_hm_backfill",
+      "reason": "Guest in HouseMonk CSV as active Occupied/Booked but Group Code may be blank — HM backfill not lifecycle exit"
+    }
+  ]
+}

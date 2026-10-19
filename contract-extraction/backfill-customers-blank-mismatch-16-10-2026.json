@@ -1,0 +1,25 @@
+{
+  "summary": {
+    "totalBlankCustomerMismatchNcs": 26,
+    "fromCustomersExtraction1210": 14,
+    "notInExtraction1210_syntheticSegHm": 12,
+    "inB2b2cExtractionTable": 0,
+    "insertedIntoFinalFormatCustomers": 26,
+    "mismatchTablesBlankCustomersAfterRebuild": 0
+  },
+  "notInCustomersExtraction1210": [
+    "NC_1208",
+    "NC_1403",
+    "NC_1608",
+    "NC_1713",
+    "NC_1716",
+    "NC_1760",
+    "NC_1766",
+    "NC_1773",
+    "NC_1905",
+    "NC_1940",
+    "NC_2102",
+    "NC_2110"
+  ],
+  "note": "12 NCs have Seguimiento+HouseMonk only (no row in Customers_Contracts_Extraction_12_10_2026). Customer final rows were synthesized from operational data; likely B2B2C / no PDF contract in extraction pipeline."
+}

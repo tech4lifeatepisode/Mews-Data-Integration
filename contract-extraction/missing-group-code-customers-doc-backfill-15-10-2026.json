@@ -1,0 +1,510 @@
+{
+  "dryRun": false,
+  "missingRowsBefore": 56,
+  "applied": 15,
+  "skipped": 41,
+  "appliedRows": [
+    {
+      "row_number": 1,
+      "housemonk_final_id": "64dfa38f-512a-4817-8d11-4b0a877da1ea",
+      "missing_table_id": "f2ce0636-d05f-46ab-88a5-5d296d458c63",
+      "guest": "Francisco Luís De La Barrera Cid",
+      "matched_doc": "05283139Q",
+      "group_code": "NC_1037",
+      "customers_final_id": "022bd1eb-8e79-4a0c-a578-d14e65b8180e",
+      "hm_arrival": "2025-03-01",
+      "cust_arrival": "2026-03-01"
+    },
+    {
+      "row_number": 2,
+      "housemonk_final_id": "c387a05e-d207-4d51-ae25-2d2c2cfa121e",
+      "missing_table_id": "7c190df6-2cac-46b9-a542-7f29147b0b84",
+      "guest": "Marcela Noelia Perazzo Torres",
+      "matched_doc": "C291189",
+      "group_code": "NC_0711",
+      "customers_final_id": "a98235f5-8144-49d2-b3a2-8c07e44f4ae0",
+      "hm_arrival": "2025-11-24",
+      "cust_arrival": "2025-11-24"
+    },
+    {
+      "row_number": 3,
+      "housemonk_final_id": "ad3c2285-c6a2-4250-b9b7-6a04755dcb1e",
+      "missing_table_id": "2adf7bf8-fbc9-4a13-9ae6-6af8ca7c58d5",
+      "guest": "Carlos Alberto Rodríguez Hernández, Ana Bertha Gomez de la Torre",
+      "matched_doc": "N02213671",
+      "group_code": "NC_0875",
+      "customers_final_id": "bd703214-f9fa-42dc-9715-7c9d49c440f3",
+      "hm_arrival": "2026-01-02",
+      "cust_arrival": "2025-12-31"
+    },
+    {
+      "row_number": 4,
+      "housemonk_final_id": "f211d06b-46fd-47bc-92f1-5d8ea05920ef",
+      "missing_table_id": "98b964bc-aaff-424a-b0fb-c0ffd06cc749",
+      "guest": "María Begoña Etxenagusia Atutxa",
+      "matched_doc": "30630953J",
+      "group_code": "NC_0904",
+      "customers_final_id": "1df70a22-a536-47b8-8f31-df43b620cf13",
+      "hm_arrival": "2026-01-11",
+      "cust_arrival": "2026-01-11"
+    },
+    {
+      "row_number": 5,
+      "housemonk_final_id": "d9e007a6-1c9e-4111-a727-ced0955aa23f",
+      "missing_table_id": "114ab642-f620-4daa-b3d9-ed0b24abf214",
+      "guest": "Sajin Chandra Sekar",
+      "matched_doc": "C8549066",
+      "group_code": "NC_1117",
+      "customers_final_id": "47c092c1-f178-4b9c-8267-c88735f521ee",
+      "hm_arrival": "2026-01-11",
+      "cust_arrival": "2026-03-10"
+    },
+    {
+      "row_number": 17,
+      "housemonk_final_id": "98e3bd76-f883-4044-9caa-243a5cb6f057",
+      "missing_table_id": "21732cc7-90c4-4fcd-9d42-9036232c6e83",
+      "guest": "Ryan Guy Kayombya",
+      "matched_doc": "PC580508",
+      "group_code": "NC_1062",
+      "customers_final_id": "e67c44f8-29e8-4c5d-832a-defbdeff2676",
+      "hm_arrival": "2026-07-13",
+      "cust_arrival": "2026-07-13"
+    },
+    {
+      "row_number": 18,
+      "housemonk_final_id": "2136761d-d195-4ab8-a510-689ed3f032f5",
+      "missing_table_id": "6bac2351-5553-4e0c-9ec9-d66165e843b4",
+      "guest": "Anna Malsagova",
+      "matched_doc": "Y7414233J",
+      "group_code": "NC_1492",
+      "customers_final_id": "e73230a6-27e0-4871-a22d-838f4d4bb728",
+      "hm_arrival": "2026-07-15",
+      "cust_arrival": "2026-07-15"
+    },
+    {
+      "row_number": 22,
+      "housemonk_final_id": "cf2883fe-06da-4681-b15c-b1f878b2599d",
+      "missing_table_id": "c22c87f3-87a9-44c2-8956-5223e2587c36",
+      "guest": "Paulette Mosqueira Medal, Ana Fernanda De la Mora Reyes",
+      "matched_doc": "N21319800",
+      "group_code": "NC_1310",
+      "customers_final_id": "fb6c17b8-3177-4916-8d9c-b1bca18bb363",
+      "hm_arrival": "2026-08-27",
+      "cust_arrival": "2026-08-27"
+    },
+    {
+      "row_number": 28,
+      "housemonk_final_id": "9fb211c6-7c1b-4760-b893-25ed1e0d3d13",
+      "missing_table_id": "eb773adb-fb97-40f1-a0d5-28604efc8a24",
+      "guest": "Yumary Guerra Escalona, Salvador Sosa Suárez",
+      "matched_doc": "163515836",
+      "group_code": "NC_1307",
+      "customers_final_id": "113c329f-6419-483c-869e-ef27d7b6f00a",
+      "hm_arrival": "2026-09-01",
+      "cust_arrival": "2026-09-01"
+    },
+    {
+      "row_number": 29,
+      "housemonk_final_id": "88bd12b3-e536-4593-848d-bf4ff1d0bfe6",
+      "missing_table_id": "bd27a094-817b-42fe-a2ea-cfb1e4e20933",
+      "guest": "Lennyra Helena Martins Goncalves",
+      "matched_doc": "8PLGPKRTA",
+      "group_code": "NC_1049",
+      "customers_final_id": "905d6b91-7a1b-48a8-8155-786dc7c8e2b8",
+      "hm_arrival": "2026-09-01",
+      "cust_arrival": "2026-09-01"
+    },
+    {
+      "row_number": 50,
+      "housemonk_final_id": "679f8f45-a619-4077-8ca7-b5a579438e63",
+      "missing_table_id": "d528589d-de34-411d-a867-6d939c17181e",
+      "guest": "Maria Susana Roa Chejin",
+      "matched_doc": "B1041638",
+      "group_code": "NC_1194",
+      "customers_final_id": "4ba1deb5-9596-4374-b4f8-720bf1e6b20a",
+      "hm_arrival": "2026-10-21",
+      "cust_arrival": "2026-10-21"
+    },
+    {
+      "row_number": 34,
+      "housemonk_final_id": "bb104c62-857a-4fdf-9750-0c6633e5f037",
+      "missing_table_id": "b9c751f0-fab6-4ef1-8d0d-5725a1fd79f4",
+      "guest": "Alberto Fernandez Martin, Luis Maria de Prado Fernandez",
+      "matched_doc": "71474940W",
+      "group_code": "NC_0989",
+      "customers_final_id": "ac2edb29-8d35-41d6-a897-f553bac3bdda",
+      "hm_arrival": "2026-09-23",
+      "cust_arrival": "2026-09-23"
+    },
+    {
+      "row_number": 36,
+      "housemonk_final_id": "2ed28934-ee81-4a05-bfb8-5f965a3f9b37",
+      "missing_table_id": "a8de84cf-f09a-4a8e-8018-ab689fc28e2b",
+      "guest": "Antonio Peñas Rodriguez",
+      "matched_doc": "52374602Z",
+      "group_code": "NC_1862",
+      "customers_final_id": "b7852086-69fd-43b2-bbd7-99a9d0c1f4ea",
+      "hm_arrival": "2026-09-30",
+      "cust_arrival": "2026-09-30"
+    },
+    {
+      "row_number": 38,
+      "housemonk_final_id": "91e2218e-dcf6-4d45-939a-783dcd513d98",
+      "missing_table_id": "12e0b061-94c0-48a5-a503-58c3eb70e35e",
+      "guest": "Natalia Nocua Pinto, Alvaro Quinche Guevara",
+      "matched_doc": "AW989745",
+      "group_code": "NC_1149",
+      "customers_final_id": "95ffd288-8459-4d2d-89fa-a2956984d971",
+      "hm_arrival": "2026-10-01",
+      "cust_arrival": "2026-10-01"
+    },
+    {
+      "row_number": 41,
+      "housemonk_final_id": "e26d5fac-4612-4195-8b28-7295a5df9728",
+      "missing_table_id": "2f5e0b5c-c8a8-4779-9e7d-640903781286",
+      "guest": "Miguel Gomez Pena",
+      "matched_doc": "42873689X",
+      "group_code": "NC_1532",
+      "customers_final_id": "02648dc1-63f8-4666-902f-e49cd9210e31",
+      "hm_arrival": "2026-10-12",
+      "cust_arrival": "2026-10-12"
+    }
+  ],
+  "skippedRows": [
+    {
+      "row_number": 6,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "N09699830"
+      ],
+      "housemonk_final_id": "da3da051-6ca2-49a2-9639-754edca995b2"
+    },
+    {
+      "row_number": 7,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "Y7372821R"
+      ],
+      "housemonk_final_id": "f1b95be2-4a2e-494c-a67c-bc9afa0009a5"
+    },
+    {
+      "row_number": 8,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "AT666554"
+      ],
+      "housemonk_final_id": "4db0b1ec-cf4a-45a0-88e9-43bd797048e9"
+    },
+    {
+      "row_number": 9,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "50210600J"
+      ],
+      "housemonk_final_id": "9896323e-6bc0-469c-8a38-ded041082955"
+    },
+    {
+      "row_number": 10,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "Z4160991C"
+      ],
+      "housemonk_final_id": "62af6fd9-0c6e-4716-8bc7-f1958c632a07"
+    },
+    {
+      "row_number": 11,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "F677F0296"
+      ],
+      "housemonk_final_id": "75ee04ed-3b26-4a77-8be8-9ae51009c829"
+    },
+    {
+      "row_number": 12,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "224405596"
+      ],
+      "housemonk_final_id": "d77f7989-efad-4c65-9b36-7ae3444deaa9"
+    },
+    {
+      "row_number": 13,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "Z1107063D"
+      ],
+      "housemonk_final_id": "d8a93b0d-ff0e-4fad-8abc-8c590c843bfd"
+    },
+    {
+      "row_number": 14,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "CF782311"
+      ],
+      "housemonk_final_id": "aa454649-2c2a-4103-b0db-6c73be4bb8de"
+    },
+    {
+      "row_number": 15,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "Z3650538Y"
+      ],
+      "housemonk_final_id": "d8fc3f23-3671-49bf-adcd-a152e276d54a"
+    },
+    {
+      "row_number": 16,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "Z3648480H"
+      ],
+      "housemonk_final_id": "a73ecc38-1d70-4464-a381-5433ba0008cc"
+    },
+    {
+      "row_number": 19,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "R08558351"
+      ],
+      "housemonk_final_id": "bbe1ae53-4b6b-429c-9ad7-ffa2779a97d5"
+    },
+    {
+      "row_number": 20,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "212174334"
+      ],
+      "housemonk_final_id": "1ec6f280-6ef6-4d58-8f2b-f1304ebe191b"
+    },
+    {
+      "row_number": 21,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "AX196772"
+      ],
+      "housemonk_final_id": "66a6c305-0e4e-4ba5-ad2a-6a98f2fb9f3d"
+    },
+    {
+      "row_number": 23,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "P616921PE"
+      ],
+      "housemonk_final_id": "fc835c80-33cd-4da5-8e02-7f39bc8b6527"
+    },
+    {
+      "row_number": 24,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "LR3547654"
+      ],
+      "housemonk_final_id": "79375539-0f54-435a-8987-0ecae9514360"
+    },
+    {
+      "row_number": 25,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "GL095458"
+      ],
+      "housemonk_final_id": "b6c86aee-bc6a-42d3-8e45-3ac2e54a6704"
+    },
+    {
+      "row_number": 26,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "79298702S"
+      ],
+      "housemonk_final_id": "acf27f58-8151-43d3-b84e-e32dd391c6f6"
+    },
+    {
+      "row_number": 27,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "YD2677450"
+      ],
+      "housemonk_final_id": "9341e77d-e7f2-4a82-a8d7-72c5c50cbfea"
+    },
+    {
+      "row_number": 30,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "584401361"
+      ],
+      "housemonk_final_id": "5d409c39-d3e2-4ee0-9275-e86784a25713"
+    },
+    {
+      "row_number": 31,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "12458535X"
+      ],
+      "housemonk_final_id": "44d92335-288e-4abe-bded-69462a04d8f1"
+    },
+    {
+      "row_number": 32,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "DS"
+      ],
+      "housemonk_final_id": "515fde06-784b-46b4-9ef4-8b2d7cc8a1fe"
+    },
+    {
+      "row_number": 33,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "MI364095"
+      ],
+      "housemonk_final_id": "7d69e0db-9176-4180-86f8-88e51467af07"
+    },
+    {
+      "row_number": 35,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "431"
+      ],
+      "housemonk_final_id": "9fb34b0e-5098-40e0-8e8c-8e4899e55e71"
+    },
+    {
+      "row_number": 37,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "79293773P"
+      ],
+      "housemonk_final_id": "07d8116a-bc1a-40c2-bcaa-d453295236be"
+    },
+    {
+      "row_number": 39,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "PBA713898",
+        "241973229"
+      ],
+      "housemonk_final_id": "eea60bd7-564b-430d-ac30-3b6c9f5af7b0"
+    },
+    {
+      "row_number": 40,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "31685174Y"
+      ],
+      "housemonk_final_id": "975e87b3-91f3-4b84-a828-dc0bc3ffb209"
+    },
+    {
+      "row_number": 42,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "45458223B"
+      ],
+      "housemonk_final_id": "e022f105-86ad-4aff-a011-8f0ef829648e"
+    },
+    {
+      "row_number": 43,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "43793728A"
+      ],
+      "housemonk_final_id": "9f817450-423b-4476-9017-c5d6783675c1"
+    },
+    {
+      "row_number": 44,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "16254553Q",
+        "16260494T"
+      ],
+      "housemonk_final_id": "92f21a5a-5e48-4ab2-b7a2-78bf33621b42"
+    },
+    {
+      "row_number": 45,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "73995189A"
+      ],
+      "housemonk_final_id": "2aa514e0-ee7e-48cb-a565-3d99552fc0d5"
+    },
+    {
+      "row_number": 46,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "300540612ZV5",
+        "096693797ZY7",
+        "17379"
+      ],
+      "housemonk_final_id": "bc91b86d-fc1a-4116-9d4f-9ca1de667ac7"
+    },
+    {
+      "row_number": 47,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "300540612ZV5",
+        "17377"
+      ],
+      "housemonk_final_id": "21525bb4-5cba-48fe-ab63-a524c3d55edf"
+    },
+    {
+      "row_number": 48,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "149578336",
+        "150503390"
+      ],
+      "housemonk_final_id": "487ad0a4-95e3-40b4-afc7-36010f13d22e"
+    },
+    {
+      "row_number": 49,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "Y7227840N"
+      ],
+      "housemonk_final_id": "fc74c972-5b33-4aea-aa72-551a68d35c57"
+    },
+    {
+      "row_number": 51,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "432"
+      ],
+      "housemonk_final_id": "f202f78e-3fa4-4cc2-b182-4c7a6acc3dd2"
+    },
+    {
+      "row_number": 52,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "75796082L"
+      ],
+      "housemonk_final_id": "26e98931-5d3b-4d4e-93fc-1a6782539ee0"
+    },
+    {
+      "row_number": 53,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "75922788H",
+        "CA97747GZZ"
+      ],
+      "housemonk_final_id": "1bd910a8-8d9d-43ad-9feb-6eefbb789d69"
+    },
+    {
+      "row_number": 54,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "43544740J"
+      ],
+      "housemonk_final_id": "eb3cdba1-5465-4cbe-94b7-62f126c3bea9"
+    },
+    {
+      "row_number": 55,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "FI28629935"
+      ],
+      "housemonk_final_id": "4a2f7aa1-e913-4485-8f32-3b48da965072"
+    },
+    {
+      "row_number": 56,
+      "reason": "no_customer_doc_match",
+      "docs": [
+        "YD1562553"
+      ],
+      "housemonk_final_id": "46a75894-b060-415e-bc05-d9e210876b9f"
+    }
+  ]
+}

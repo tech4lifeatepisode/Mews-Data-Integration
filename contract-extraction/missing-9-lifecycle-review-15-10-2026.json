@@ -1,0 +1,125 @@
+{
+  "asOf": "2026-10-15",
+  "sources": [
+    "Tenancy-14-10-2026-044225.csv",
+    "HouseMonk_data_14.10.2026.csv",
+    "Invoice-CreditNote-Pro Forma Invoice-14-10-2026-044357.csv",
+    "Current Seguirmento data 15.10.2026.csv"
+  ],
+  "summary": {
+    "removeFromMissing_lifecycleOrEnded": ["NC_1749"],
+    "removeFromMissing_activeInHmNoNcLabel": ["NC_1366", "NC_0904", "NC_1123"],
+    "removedFromMissing_confirmedLifecycle": ["NC_0731", "NC_1203"],
+    "keepInMissing_noHmEvidence": ["NC_0644", "NC_0826", "NC_1565"]
+  },
+  "guests": [
+    {
+      "nc": "NC_1749",
+      "guest": "Lucciana El Khoury",
+      "document": "RL 4230379",
+      "contractStay": "2026-09-01 → 2027-06-30",
+      "seguimiento": "Let / Let (still Let in Seguimiento export — likely not updated)",
+      "tenancy14Oct": "No row (contract 14929 / doc RL4230379 absent from tenancy extract)",
+      "housemonk14Oct": "No row with NC_1749 or RL4230379",
+      "invoice": "Moved Out — HM contract 14929, unit door 2162, Carabanchel Episode (Aug 2026 invoice batch)",
+      "verdict": "REMOVE from Missing — early departure / moved out in HouseMonk billing before 15 Oct; aligns with ops note move-out ~07 Sep 2026 (tenancy row dropped post-checkout)",
+      "cohortAction": "remove"
+    },
+    {
+      "nc": "NC_1366",
+      "guest": "Alcione Teixeira Djalo",
+      "document": "131010311 (contract) / CF782311 (HM tenancy ID)",
+      "contractStay": "2026-05-22 → 2026-11-22",
+      "seguimiento": "Let",
+      "tenancy14Oct": "Occupied — contract 12940, start 2026-05-22, end 2026-11-22, NC column blank",
+      "housemonk14Oct": "Occupied — The Standard with Terrace, unit -1010, HM contract 12940, Group Code empty",
+      "invoice": "No Moved Out hit on doc",
+      "verdict": "REMOVE from Missing — guest is active in HM; gap is empty Group Code / NC backfill only",
+      "cohortAction": "remove_hm_backfill"
+    },
+    {
+      "nc": "NC_0904",
+      "guest": "Fernando José Paulo",
+      "document": "GL906809 (contract) / Z4160991C (HM)",
+      "contractStay": "2026-02-10 → 2026-12-10",
+      "seguimiento": "Let",
+      "tenancy14Oct": "Occupied — contract 7776, 2026-02-10 → 2026-12-10, Carabanchel (NODE contract in Seguimiento; HM on Episode terrace unit -1088)",
+      "housemonk14Oct": "Occupied — contract 7776, Group Code empty",
+      "invoice": "No clear Moved Out on GL906809 / Z4160991C in latest period",
+      "verdict": "REMOVE from Missing — active HM tenancy; not cancelled / not moved out",
+      "cohortAction": "remove_hm_backfill"
+    },
+    {
+      "nc": "NC_1123",
+      "guest": "Luis Guillermo Paredes Hernández",
+      "document": "N09369485 (contract) / Z0718781J (HM invoices)",
+      "contractStay": "2026-03-15 → 2026-12-16",
+      "seguimiento": "Let",
+      "tenancy14Oct": "Occupied — contract 18532, NC 2110 on row, start 2026-10-13 → 2027-07-13 (renewal chain; not NC_1123 on HM row)",
+      "housemonk14Oct": "Occupied — Group Code NC_2110, same guest name",
+      "invoice": "Older segments on unit 132 show Moved Out; Oct 2026 billing still on old contract 7626 — new tenancy 18532 started 13 Oct",
+      "verdict": "REMOVE from Missing — still in residence under renewal NC_2110; not a cancel/early exit of current stay",
+      "cohortAction": "remove_hm_backfill"
+    },
+    {
+      "nc": "NC_1203",
+      "guest": "David Salvadores González",
+      "document": "71508082R",
+      "contractStay": "2026-04-01 → 2027-01-02",
+      "seguimiento": "Let (NODE Studio Comfort)",
+      "tenancy14Oct": "No matching row",
+      "housemonk14Oct": "No row",
+      "invoice": "Multiple lines through Sep 2026 with Tenancy Status Moved Out — HM contracts on Carabanchel unit 4018 (may be legacy HM account vs NODE Seguimiento contract)",
+      "verdict": "REVIEW — Seguimiento still Let but invoice export shows Moved Out; confirm with ops whether NODE NC_1203 is still active",
+      "cohortAction": "keep_pending_review"
+    },
+    {
+      "nc": "NC_0731",
+      "guest": "Daniel Caballero Villarpando",
+      "document": "Z2378167H",
+      "contractStay": "2025-12-25 → 2026-11-30",
+      "seguimiento": "Let (NODE Studio Standard)",
+      "tenancy14Oct": "No row (NODE not in Carabanchel tenancy export)",
+      "housemonk14Oct": "No row",
+      "invoice": "Moved Out through Aug 2026 on HM contract 5963 / Carabanchel unit 2156 — may be prior Episode stay vs current NODE NC_0731",
+      "verdict": "REVIEW — Seguimiento Let on NODE; HM Moved Out may refer to different property/contract",
+      "cohortAction": "keep_pending_review"
+    },
+    {
+      "nc": "NC_0644",
+      "guest": "Daniela Paola Mendoza Sagrero",
+      "document": "G38868743",
+      "contractStay": "2025-10-27 → 2026-10-25",
+      "seguimiento": "Let (NODE)",
+      "tenancy14Oct": "No row",
+      "housemonk14Oct": "No row",
+      "invoice": "No hit on G38868743",
+      "verdict": "KEEP — no cancel/move-out evidence in HM exports; true NODE / HM gap",
+      "cohortAction": "keep"
+    },
+    {
+      "nc": "NC_0826",
+      "guest": "Eileen María Dávila Luk",
+      "document": "A9818019",
+      "contractStay": "2026-01-19 → 2027-01-17",
+      "seguimiento": "Let (NODE)",
+      "tenancy14Oct": "No row",
+      "housemonk14Oct": "No row",
+      "invoice": "Apr 2026 Carabanchel rent/CN only (historical); no Moved Out on current NODE window",
+      "verdict": "KEEP — Seguimiento Let; no evidence of early exit on NC_0826",
+      "cohortAction": "keep"
+    },
+    {
+      "nc": "NC_1565",
+      "guest": "Antonio José Piédrola (Integra bundle)",
+      "document": "05278560Z",
+      "contractStay": "2026-09-15 → 2027-09-13",
+      "seguimiento": "Let — row NC_1565 is Integra Ascensores SL (B2B bundle); individual on Missing table",
+      "tenancy14Oct": "Integra corporate units Occupied (e.g. contract 14716, NC 1646) — no Piédrola doc on tenancy row",
+      "housemonk14Oct": "No row for Piédrola / 05278560Z",
+      "invoice": "No hit on 05278560Z",
+      "verdict": "KEEP — no move-out/cancel signal; HM gap for this occupant NC",
+      "cohortAction": "keep"
+    }
+  ]
+}

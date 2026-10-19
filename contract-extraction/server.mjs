@@ -15,6 +15,7 @@ import {
 import { runExtractFromSupabaseStorageUntilDone } from './extract-from-storage-batch.mjs';
 import { runB2bDriveExtraction, B2B_COMPANIES_TABLE } from './extract-b2b-drive.mjs';
 import { driveHealthLines, handleDriveHttp } from '../contract-uploading/drive-http.mjs';
+import { runReextractRentMismatch } from './reextract-rent-mismatch.mjs';
 
 const port = Number(process.env.PORT) || 3000;
 
@@ -137,6 +138,33 @@ async function safeRunB2b(label) {
   }
 }
 
+function parseReextractRentMismatchOptions(reqUrl) {
+  const query = new URL(reqUrl || '/', 'http://localhost').searchParams;
+  return {
+    dryRun: query.get('dry_run') === '1' || query.get('dryRun') === '1',
+    force: query.get('force') === '1' || query.get('force') === 'true',
+    concurrency: Math.min(8, Math.max(1, Number(query.get('concurrency')) || 4)),
+  };
+}
+
+async function safeRunReextractRentMismatch(label, options = {}) {
+  if (extractionRunning) {
+    console.warn(`[${label}] Extraction already running, skip.`);
+    return { ok: false, skipped: true, message: 'already_running' };
+  }
+  extractionRunning = true;
+  try {
+    const result = await runReextractRentMismatch(options);
+    console.log(`[${label}] Rent mismatch re-extraction finished:`, result);
+    return result;
+  } catch (error) {
+    console.error(`[${label}] Rent mismatch re-extraction failed:`, error);
+    return { ok: false, error: error instanceof Error ? error.message : String(error) };
+  } finally {
+    extractionRunning = false;
+  }
+}
+
 function parseDriveAiOptions(reqUrl) {
   const query = new URL(reqUrl || '/', 'http://localhost').searchParams;
   const ncRaw = query.get('nc') || query.get('ncs') || '';
@@ -172,6 +200,8 @@ function handleExtractRequest(req, res, mode) {
         ? `Missing-from-review ai_extraction=Yes extraction started into ${CUSTOMERS_CONTRACTS_TABLE}`
         : mode === 'drive-ai'
         ? 'Drive ai_extraction=Yes extraction started until every pending file is saved'
+        : mode === 'rent-mismatch'
+          ? 'Rent f)/g) re-extraction for Final_Format_Mismatch_Rent NCs started (updates Allocated Rate on Final_Format customers)'
         : mode === 'nc-rerun-all'
           ? 'OCR rerun (filtered NCs across To Fill 1, To Fill 2, Fill 3) started in background'
           : mode === 'all'
@@ -185,6 +215,8 @@ function handleExtractRequest(req, res, mode) {
         ? 'extract-missing-from-review'
       : mode === 'drive-ai'
         ? 'extract-drive-ai'
+        : mode === 'rent-mismatch'
+          ? 'extract-rent-mismatch'
         : mode === 'nc-rerun-all'
           ? 'extract-nc-rerun-all'
           : mode === 'all'
@@ -202,6 +234,9 @@ function handleExtractRequest(req, res, mode) {
     } else if (mode === 'drive-ai') {
       const driveOpts = parseDriveAiOptions(req.url);
       safeRunDriveAi('http', driveOpts).catch((e) => console.error(e));
+    } else if (mode === 'rent-mismatch') {
+      const rentOpts = parseReextractRentMismatchOptions(req.url);
+      safeRunReextractRentMismatch('http', rentOpts).catch((e) => console.error(e));
     } else if (mode === 'nc-rerun-all') {
       safeRunNcOcrRerunAll('http').catch((e) => console.error(e));
     } else if (mode === 'all') {
@@ -224,6 +259,7 @@ function extractionHealthLines() {
     '  POST/GET /extract-nc-rerun-all — OCR rerun for filtered NCs across To Fill 1/2/Fill 3.\n' +
     `  POST/GET /extract-drive-ai — all ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE}. Optional ?nc=1796 (comma-separated) targets NCs into ${CUSTOMERS_CONTRACTS_TABLE}. Files over 25MB are skipped.\n` +
     `  POST/GET /extract-missing-from-review — allowlisted NCs with ai_extraction=Yes into ${CUSTOMERS_CONTRACTS_TABLE} (skip NCs already there).\n` +
+    '  POST/GET /extract-rent-mismatch — re-read f) Precio / g) Descuento from Google Drive PDFs for NCs in Final_Format_Mismatch_Rent_15_10_2026; updates Final_Format customers + Customers_Contracts_Extraction_12_10_2026 Allocated Rate. ?force=1 reprocesses all; ?dry_run=1 no DB writes.\n' +
     `  POST/GET /extract-b2b — B2B ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE} and ${B2B_COMPANIES_TABLE}.\n` +
     `  Log table ${DRIVE_EXTRACTION_LOG_TABLE}.\n` +
     '  AUTO_EXTRACT_FROM_STORAGE=true: on boot, extract-all for one folder.\n' +
@@ -277,6 +313,11 @@ const server = http.createServer(async (req, res) => {
 
   if (url === '/extract-missing-from-review' && (req.method === 'POST' || req.method === 'GET')) {
     handleExtractRequest(req, res, 'missing-from-review');
+    return;
+  }
+
+  if (url === '/extract-rent-mismatch' && (req.method === 'POST' || req.method === 'GET')) {
+    handleExtractRequest(req, res, 'rent-mismatch');
     return;
   }
 

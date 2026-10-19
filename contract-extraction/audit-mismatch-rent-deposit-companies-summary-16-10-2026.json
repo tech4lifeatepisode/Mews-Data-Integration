@@ -1,0 +1,16 @@
+{
+  "conclusion": "After Mamá Cumbé (1441→1310), manual deposit fixes, company-linked operational align (24 rows), and build rules (B2B + Seg=HM → trust HM): no remaining rent/deposit mismatches where Seg and HM agree AND the contract is company-linked.",
+  "remainingRentMismatches": 148,
+  "remainingDepositMismatches": 25,
+  "remainingRentBreakdown": {
+    "seg_hm_also_differ": 80,
+    "individual_contract_extraction_vs_seg_hm": 68
+  },
+  "remainingDepositBreakdown": {
+    "seg_hm_also_differ": 16,
+    "individual_contract_extraction_vs_seg_hm": 9
+  },
+  "companyLinkedOperationalFixesApplied": 24,
+  "detailAuditFile": "audit-mismatch-rent-deposit-companies-16-10-2026.json",
+  "fixLog": "fix-company-operational-rent-deposit-16-10-2026.json"
+}

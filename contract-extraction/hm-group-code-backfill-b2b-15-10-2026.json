@@ -1,0 +1,16 @@
+{
+  "dryRun": false,
+  "b2bProfiles": 281,
+  "blankHmBefore": 178,
+  "matchedAndUpdated": 8,
+  "appliedUpdates": 8,
+  "errors": [],
+  "remainingBlank": 170,
+  "byCompany": {
+    "OTIS Mobility SA": 1,
+    "LIVE FISH 1915 IMPORT & EXPORT SL": 2,
+    "Cellular Line SLU": 1,
+    "Oysergo SL": 1,
+    "Integra Ascensores SL": 3
+  }
+}

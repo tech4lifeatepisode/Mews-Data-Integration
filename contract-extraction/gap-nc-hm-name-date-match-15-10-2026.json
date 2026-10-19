@@ -1,0 +1,3175 @@
+{
+  "summary": {
+    "asOf": "2026-10-15",
+    "gapDistinctNcs": 102,
+    "buckets": {
+      "guest_in_housemonk_no_nc_on_row": 21,
+      "current_nc_only_no_hm": 12,
+      "guest_in_housemonk_different_nc": 69
+    },
+    "hmFinalRowsBlankGroupCode": 184,
+    "namePlusDateMatches": {
+      "bucket196": {
+        "total": 21,
+        "withAtLeastOneHmMatch": 21,
+        "withoutNameDateMatch": 0
+      },
+      "bucketNoHm": {
+        "total": 12,
+        "withAtLeastOneHmMatch": 5,
+        "withoutNameDateMatch": 7
+      },
+      "anyGapNcMatchingBlankHmRow": 26
+    },
+    "corroborationAmong196Matches": {
+      "withDocOnHmOrExport": 13,
+      "withTenancy": 19,
+      "withInvoice": 21,
+      "withHmCsv": 21
+    }
+  },
+  "noMatch196": [],
+  "noMatchNoHm": [
+    {
+      "nc": "NC_2085",
+      "ncNum": 2085,
+      "firstName": "",
+      "lastName": "Caranorte Ingenieros S.L.",
+      "documentNumber": "",
+      "email": "",
+      "telephone": "",
+      "arrival": "2026-10-05",
+      "departure": "2026-11-05",
+      "unit": "The Comfort",
+      "bucket": "current_nc_only_no_hm",
+      "activeHmDocNameCount": 0
+    },
+    {
+      "nc": "NC_1928",
+      "ncNum": 1928,
+      "firstName": "",
+      "lastName": "RCC HABILITACION DE ESPACIOS COMERCIALES SL",
+      "documentNumber": "",
+      "email": "",
+      "telephone": "",
+      "arrival": "2026-09-16",
+      "departure": "2026-10-16",
+      "unit": "The Comfort",
+      "bucket": "current_nc_only_no_hm",
+      "activeHmDocNameCount": 0
+    },
+    {
+      "nc": "NC_0681",
+      "ncNum": 681,
+      "firstName": "Issa",
+      "lastName": "Fares",
+      "documentNumber": "RL4038393",
+      "email": "",
+      "telephone": "",
+      "arrival": "2025-11-02",
+      "departure": "2026-10-31",
+      "unit": "Studio Rooftop",
+      "bucket": "current_nc_only_no_hm",
+      "activeHmDocNameCount": 0
+    },
+    {
+      "nc": "NC_0957",
+      "ncNum": 957,
+      "firstName": "",
+      "lastName": "",
+      "documentNumber": "",
+      "email": "privacy@cellularline.com",
+      "telephone": "916 44 88 18",
+      "arrival": "2026-02-18",
+      "departure": "2026-11-19",
+      "unit": "Studio Comfort",
+      "bucket": "current_nc_only_no_hm",
+      "activeHmDocNameCount": 0
+    },
+    {
+      "nc": "NC_1060",
+      "ncNum": 1060,
+      "firstName": "",
+      "lastName": "",
+      "documentNumber": "",
+      "email": "oysergo@outlook.es",
+      "telephone": "+34 670 82 48 38",
+      "arrival": "2026-03-02",
+      "departure": "2027-02-28",
+      "unit": "Studio Comfort",
+      "bucket": "current_nc_only_no_hm",
+      "activeHmDocNameCount": 0
+    },
+    {
+      "nc": "NC_1123",
+      "ncNum": 1123,
+      "firstName": "Luis Guillermo",
+      "lastName": "Paredes",
+      "documentNumber": "N09369485",
+      "email": "",
+      "telephone": "",
+      "arrival": "2026-03-15",
+      "departure": "2026-12-16",
+      "unit": "Studio Standard with Terrace",
+      "bucket": "current_nc_only_no_hm",
+      "activeHmDocNameCount": 0
+    },
+    {
+      "nc": "NC_1365",
+      "ncNum": 1365,
+      "firstName": "",
+      "lastName": "",
+      "documentNumber": "",
+      "email": "ioana.ciupe@alstomgroup.com",
+      "telephone": "+40 364 821 352",
+      "arrival": "2026-05-15",
+      "departure": "2027-05-13",
+      "unit": "Studio Standard with Terrace",
+      "bucket": "current_nc_only_no_hm",
+      "activeHmDocNameCount": 0
+    }
+  ],
+  "matches196Sample": [
+    {
+      "nc": "NC_0989",
+      "guest": "Alberto Fernández",
+      "dates": "2026-09-23 → 2027-09-21",
+      "top": {
+        "hmId": "bb104c62-857a-4fdf-9750-0c6633e5f037",
+        "hmGuest": "Alberto Fernandez Martin, Luis Maria de Prado Fernandez",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-09-23",
+        "hmDeparture": "2027-09-21",
+        "hmDoc": "71474940W | 09803776A",
+        "hmContract": "",
+        "nameHits": [
+          "first",
+          "last"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": false,
+          "email": false,
+          "phone": false
+        },
+        "score": 205
+      }
+    },
+    {
+      "nc": "NC_1862",
+      "guest": "Antonio Peñas",
+      "dates": "2026-09-30 → 2027-06-30",
+      "top": {
+        "hmId": "2ed28934-ee81-4a05-bfb8-5f965a3f9b37",
+        "hmGuest": "Antonio Peñas Rodriguez",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-09-30",
+        "hmDeparture": "2027-06-30",
+        "hmDoc": "52374602Z",
+        "hmContract": "18243",
+        "nameHits": [
+          "first",
+          "last"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": true,
+          "email": false,
+          "phone": false
+        },
+        "score": 255
+      }
+    },
+    {
+      "nc": "NC_1862",
+      "guest": "Antonio Peñas",
+      "dates": "2026-09-30 → 2027-06-30",
+      "top": {
+        "hmId": "2ed28934-ee81-4a05-bfb8-5f965a3f9b37",
+        "hmGuest": "Antonio Peñas Rodriguez",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-09-30",
+        "hmDeparture": "2027-06-30",
+        "hmDoc": "52374602Z",
+        "hmContract": "18243",
+        "nameHits": [
+          "first",
+          "last"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": true,
+          "email": false,
+          "phone": false
+        },
+        "score": 255
+      }
+    },
+    {
+      "nc": "NC_1938",
+      "guest": "Diego Garcia",
+      "dates": "2026-10-10 → 2027-10-08",
+      "top": {
+        "hmId": "7983370e-e25a-47ba-8f8e-eb38e23fb0f0",
+        "hmGuest": "Diego Garcia Lozano",
+        "hmGroupCode": "NC_1937",
+        "hmArrival": "2026-10-10",
+        "hmDeparture": "2027-10-08",
+        "hmDoc": "76057140G",
+        "hmContract": "12879",
+        "nameHits": [
+          "first",
+          "last"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": true,
+          "email": false,
+          "phone": false
+        },
+        "score": 255
+      }
+    },
+    {
+      "nc": "NC_1049",
+      "guest": "Lennyra Helena",
+      "dates": "2026-09-01 → 2027-06-02",
+      "top": {
+        "hmId": "88bd12b3-e536-4593-848d-bf4ff1d0bfe6",
+        "hmGuest": "Lennyra Helena Martins Goncalves",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-09-01",
+        "hmDeparture": "2027-06-02",
+        "hmDoc": "8PLGPKRTA",
+        "hmContract": "2922",
+        "nameHits": [
+          "first",
+          "last"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": true,
+          "email": false,
+          "phone": false
+        },
+        "score": 255
+      }
+    },
+    {
+      "nc": "NC_0898",
+      "guest": "Lisa Michele",
+      "dates": "2026-06-16 → 2027-04-01",
+      "top": {
+        "hmId": "d8fc3f23-3671-49bf-adcd-a152e276d54a",
+        "hmGuest": "Lisa Mc Tigue",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-06-16",
+        "hmDeparture": "2027-04-01",
+        "hmDoc": "Z3650538Y",
+        "hmContract": "13714",
+        "nameHits": [
+          "first"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": false,
+          "email": false,
+          "phone": false
+        },
+        "score": 165
+      }
+    },
+    {
+      "nc": "NC_0899",
+      "guest": "Laura Joelle",
+      "dates": "2026-06-16 → 2027-04-01",
+      "top": {
+        "hmId": "a73ecc38-1d70-4464-a381-5433ba0008cc",
+        "hmGuest": "Laura Mctigue",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-06-16",
+        "hmDeparture": "2027-04-01",
+        "hmDoc": "Z3648480H",
+        "hmContract": "13715",
+        "nameHits": [
+          "first"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": false,
+          "email": false,
+          "phone": false
+        },
+        "score": 165
+      }
+    },
+    {
+      "nc": "NC_0904",
+      "guest": "Fernando José",
+      "dates": "2026-02-10 → 2026-12-10",
+      "top": {
+        "hmId": "62af6fd9-0c6e-4716-8bc7-f1958c632a07",
+        "hmGuest": "Fernando José Paulo",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-02-10",
+        "hmDeparture": "2026-12-10",
+        "hmDoc": "Z4160991C",
+        "hmContract": "7776",
+        "nameHits": [
+          "first",
+          "last"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": false,
+          "email": false,
+          "phone": false
+        },
+        "score": 205
+      }
+    },
+    {
+      "nc": "NC_0904",
+      "guest": "María Begoña",
+      "dates": "2026-01-11 → 2026-12-22",
+      "top": {
+        "hmId": "f211d06b-46fd-47bc-92f1-5d8ea05920ef",
+        "hmGuest": "María Begoña Etxenagusia Atutxa",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-01-11",
+        "hmDeparture": "2026-12-22",
+        "hmDoc": "30630953J",
+        "hmContract": "7775",
+        "nameHits": [
+          "first",
+          "last"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": true,
+          "email": false,
+          "phone": false
+        },
+        "score": 255
+      }
+    },
+    {
+      "nc": "NC_1047",
+      "guest": "Jorge Schcolnik",
+      "dates": "2026-09-16 → 2027-06-30",
+      "top": {
+        "hmId": "2ffae0d6-19d5-46c7-a9f8-0d07bb9b6c63",
+        "hmGuest": "Jo Kassandra Balanay",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-08-25",
+        "hmDeparture": "2026-10-17",
+        "hmDoc": "P2549043B",
+        "hmContract": "15951",
+        "nameHits": [
+          "first"
+        ],
+        "dateTier": "loose_60d",
+        "dateDelta": {
+          "arrivalDays": 22,
+          "departureDays": 256
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": false,
+          "email": false,
+          "phone": false
+        },
+        "score": 110
+      }
+    },
+    {
+      "nc": "NC_1062",
+      "guest": "Ryan Guy",
+      "dates": "2026-07-13 → 2027-07-11",
+      "top": {
+        "hmId": "98e3bd76-f883-4044-9caa-243a5cb6f057",
+        "hmGuest": "Ryan Guy Kayombya",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-07-13",
+        "hmDeparture": "2027-07-11",
+        "hmDoc": "PC580508",
+        "hmContract": "",
+        "nameHits": [
+          "first",
+          "last"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": true,
+          "email": false,
+          "phone": false
+        },
+        "score": 255
+      }
+    },
+    {
+      "nc": "NC_1194",
+      "guest": "María Susana",
+      "dates": "2026-10-21 → 2027-08-30",
+      "top": {
+        "hmId": "679f8f45-a619-4077-8ca7-b5a579438e63",
+        "hmGuest": "Maria Susana Roa Chejin",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-10-21",
+        "hmDeparture": "2027-08-30",
+        "hmDoc": "B1041638",
+        "hmContract": "11605",
+        "nameHits": [
+          "first",
+          "last"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": true,
+          "email": false,
+          "phone": false
+        },
+        "score": 255
+      }
+    },
+    {
+      "nc": "NC_1336",
+      "guest": "Diego Saéz",
+      "dates": "2026-08-26 → 2027-06-02",
+      "top": {
+        "hmId": "cc1af17e-6527-4f43-b2eb-41966f481e52",
+        "hmGuest": "Diego Saez De Urabain Azon, Natalia Azon Rodrigo",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-08-26",
+        "hmDeparture": "2027-06-02",
+        "hmDoc": "73162501F",
+        "hmContract": "13796",
+        "nameHits": [
+          "first",
+          "last"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": false,
+          "invoice": true,
+          "doc": true,
+          "email": false,
+          "phone": false
+        },
+        "score": 245
+      }
+    },
+    {
+      "nc": "NC_1310",
+      "guest": "Paulette Mosqueira",
+      "dates": "2026-08-27 → 2027-02-02",
+      "top": {
+        "hmId": "cf2883fe-06da-4681-b15c-b1f878b2599d",
+        "hmGuest": "Paulette Mosqueira Medal, Ana Fernanda De la Mora Reyes",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-08-27",
+        "hmDeparture": "2027-02-02",
+        "hmDoc": "N21319800",
+        "hmContract": "12765",
+        "nameHits": [
+          "first",
+          "last"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": false,
+          "invoice": true,
+          "doc": true,
+          "email": false,
+          "phone": false
+        },
+        "score": 245
+      }
+    },
+    {
+      "nc": "NC_1366",
+      "guest": "Alcione Teixeira",
+      "dates": "2026-05-22 → 2026-11-22",
+      "top": {
+        "hmId": "aa454649-2c2a-4103-b0db-6c73be4bb8de",
+        "hmGuest": "Alcione Teixeira Djalo",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-05-22",
+        "hmDeparture": "2026-11-22",
+        "hmDoc": "CF782311",
+        "hmContract": "12940",
+        "nameHits": [
+          "first",
+          "last"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": false,
+          "email": false,
+          "phone": false
+        },
+        "score": 205
+      }
+    }
+  ],
+  "matchesNoHmSample": [
+    {
+      "nc": "NC_1892",
+      "guest": " Integra Ascensores S.L",
+      "top": {
+        "hmId": "79e24616-e972-48b2-8d1e-2fb34df6164d",
+        "hmGuest": "null Integra Ascensores S.L , BEI MO, Mo Menglong",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-09-15",
+        "hmDeparture": "2027-09-13",
+        "hmDoc": "B83336891 | Z5249433X | Z5358418K",
+        "hmContract": "",
+        "nameHits": [
+          "last"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": false,
+          "email": false,
+          "phone": false
+        },
+        "score": 165
+      }
+    },
+    {
+      "nc": "NC_1941",
+      "guest": " Integra Ascensores S.L",
+      "top": {
+        "hmId": "79e24616-e972-48b2-8d1e-2fb34df6164d",
+        "hmGuest": "null Integra Ascensores S.L , BEI MO, Mo Menglong",
+        "hmGroupCode": "(blank)",
+        "hmArrival": "2026-09-15",
+        "hmDeparture": "2027-09-13",
+        "hmDoc": "B83336891 | Z5249433X | Z5358418K",
+        "hmContract": "",
+        "nameHits": [
+          "last"
+        ],
+        "dateTier": "exact",
+        "dateDelta": {
+          "arrivalDays": 0,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": false,
+          "email": false,
+          "phone": false
+        },
+        "score": 165
+      }
+    },
+    {
+      "nc": "NC_1912",
+      "guest": " GOOD MOOD SERIES SL",
+      "top": {
+        "hmId": "3adb9bd3-6fee-43d1-8181-8474732f64ed",
+        "hmGuest": "null GOOD MOOD SERIES SL , Ander Santamaria Cueva",
+        "hmGroupCode": "NC_1913",
+        "hmArrival": "2026-09-20",
+        "hmDeparture": "2026-10-31",
+        "hmDoc": "B67717538",
+        "hmContract": "9486",
+        "nameHits": [
+          "last"
+        ],
+        "dateTier": "within_7d",
+        "dateDelta": {
+          "arrivalDays": 6,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": false,
+          "email": false,
+          "phone": false
+        },
+        "score": 145
+      }
+    },
+    {
+      "nc": "NC_1313",
+      "guest": "Eiden Tur",
+      "top": {
+        "hmId": "2f39a2e5-0829-4cb6-a3bc-f93913148212",
+        "hmGuest": "Toprak Erturk",
+        "hmGroupCode": "NC_1600",
+        "hmArrival": "2026-09-01",
+        "hmDeparture": "2027-06-30",
+        "hmDoc": "U33030200",
+        "hmContract": "14452",
+        "nameHits": [
+          "last"
+        ],
+        "dateTier": "within_7d",
+        "dateDelta": {
+          "arrivalDays": 1,
+          "departureDays": 0
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": false,
+          "email": false,
+          "phone": false
+        },
+        "score": 145
+      }
+    },
+    {
+      "nc": "NC_1565",
+      "guest": "Antonio José Piédrola",
+      "top": {
+        "hmId": "176314a9-5b05-455e-bf15-45671515b229",
+        "hmGuest": "Jose Daniel Jativa Montalvo",
+        "hmGroupCode": "NC_1631",
+        "hmArrival": "2026-09-01",
+        "hmDeparture": "2026-10-29",
+        "hmDoc": "YB8153041",
+        "hmContract": "15172",
+        "nameHits": [
+          "first"
+        ],
+        "dateTier": "loose_60d",
+        "dateDelta": {
+          "arrivalDays": 14,
+          "departureDays": 319
+        },
+        "corroboration": {
+          "hmCsv": true,
+          "tenancy": true,
+          "invoice": true,
+          "doc": false,
+          "email": false,
+          "phone": false
+        },
+        "score": 110
+      }
+    }
+  ],
+  "full196": [
+    {
+      "profile": {
+        "nc": "NC_0989",
+        "ncNum": 989,
+        "firstName": "Alberto",
+        "lastName": "Fernández",
+        "documentNumber": "71474940W",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-09-23",
+        "departure": "2027-09-21",
+        "unit": "2 Bedroom (Double / Single)",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 2
+      },
+      "matchCount": 8,
+      "topMatches": [
+        {
+          "hmId": "bb104c62-857a-4fdf-9750-0c6633e5f037",
+          "hmGuest": "Alberto Fernandez Martin, Luis Maria de Prado Fernandez",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-09-23",
+          "hmDeparture": "2027-09-21",
+          "hmDoc": "71474940W | 09803776A",
+          "hmContract": "",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 205
+        },
+        {
+          "hmId": "1ef66de7-77a1-4eef-8036-27bd9f5a9828",
+          "hmGuest": "Ignacio Fernandez Rafales",
+          "hmGroupCode": "NC_1551",
+          "hmArrival": "2026-08-01",
+          "hmDeparture": "2027-06-02",
+          "hmDoc": "73022895B",
+          "hmContract": "14353",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 53,
+            "departureDays": 111
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "e1e3ae83-8ca2-49eb-924a-5a84c4f0c42e",
+          "hmGuest": "Violeta Fernández Vila",
+          "hmGroupCode": "NC_1636",
+          "hmArrival": "2026-08-31",
+          "hmDeparture": "2027-06-30",
+          "hmDoc": "43579074P",
+          "hmContract": "14644",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 23,
+            "departureDays": 83
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1862",
+        "ncNum": 1862,
+        "firstName": "Antonio",
+        "lastName": "Peñas",
+        "documentNumber": "52374602Z",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-09-30",
+        "departure": "2027-06-30",
+        "unit": "The Comfort",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 5
+      },
+      "matchCount": 5,
+      "topMatches": [
+        {
+          "hmId": "2ed28934-ee81-4a05-bfb8-5f965a3f9b37",
+          "hmGuest": "Antonio Peñas Rodriguez",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-09-30",
+          "hmDeparture": "2027-06-30",
+          "hmDoc": "52374602Z",
+          "hmContract": "18243",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": true,
+            "email": false,
+            "phone": false
+          },
+          "score": 255
+        },
+        {
+          "hmId": "c017575f-e2f9-42a0-b007-3fe2094e8065",
+          "hmGuest": "Antonio Manuel Luna Rodríguez",
+          "hmGroupCode": "NC_1550",
+          "hmArrival": "2026-10-12",
+          "hmDeparture": "2026-12-04",
+          "hmDoc": "29084984N",
+          "hmContract": "13728",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 12,
+            "departureDays": 208
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "c5899052-14ab-48c7-933c-e18efb51dc0a",
+          "hmGuest": "Antonio Medrano Ballesteros",
+          "hmGroupCode": "NC_1605",
+          "hmArrival": "2026-10-12",
+          "hmDeparture": "2026-12-08",
+          "hmDoc": "26490819V",
+          "hmContract": "14550",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 12,
+            "departureDays": 204
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1862",
+        "ncNum": 1862,
+        "firstName": "Antonio",
+        "lastName": "Peñas",
+        "documentNumber": "52374602Z",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-09-30",
+        "departure": "2027-06-30",
+        "unit": "The Comfort",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 5
+      },
+      "matchCount": 5,
+      "topMatches": [
+        {
+          "hmId": "2ed28934-ee81-4a05-bfb8-5f965a3f9b37",
+          "hmGuest": "Antonio Peñas Rodriguez",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-09-30",
+          "hmDeparture": "2027-06-30",
+          "hmDoc": "52374602Z",
+          "hmContract": "18243",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": true,
+            "email": false,
+            "phone": false
+          },
+          "score": 255
+        },
+        {
+          "hmId": "c017575f-e2f9-42a0-b007-3fe2094e8065",
+          "hmGuest": "Antonio Manuel Luna Rodríguez",
+          "hmGroupCode": "NC_1550",
+          "hmArrival": "2026-10-12",
+          "hmDeparture": "2026-12-04",
+          "hmDoc": "29084984N",
+          "hmContract": "13728",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 12,
+            "departureDays": 208
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "c5899052-14ab-48c7-933c-e18efb51dc0a",
+          "hmGuest": "Antonio Medrano Ballesteros",
+          "hmGroupCode": "NC_1605",
+          "hmArrival": "2026-10-12",
+          "hmDeparture": "2026-12-08",
+          "hmDoc": "26490819V",
+          "hmContract": "14550",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 12,
+            "departureDays": 204
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1938",
+        "ncNum": 1938,
+        "firstName": "Diego",
+        "lastName": "Garcia",
+        "documentNumber": "76057140G",
+        "email": "/",
+        "telephone": "/",
+        "arrival": "2026-10-10",
+        "departure": "2027-10-08",
+        "unit": "The Comfort",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 7
+      },
+      "matchCount": 25,
+      "topMatches": [
+        {
+          "hmId": "7983370e-e25a-47ba-8f8e-eb38e23fb0f0",
+          "hmGuest": "Diego Garcia Lozano",
+          "hmGroupCode": "NC_1937",
+          "hmArrival": "2026-10-10",
+          "hmDeparture": "2027-10-08",
+          "hmDoc": "76057140G",
+          "hmContract": "12879",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": true,
+            "email": false,
+            "phone": false
+          },
+          "score": 255
+        },
+        {
+          "hmId": "acf27f58-8151-43d3-b84e-e32dd391c6f6",
+          "hmGuest": "Diego Salado Garcia-Parra",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-08-31",
+          "hmDeparture": "2027-06-30",
+          "hmDoc": "79298702S",
+          "hmContract": "11647",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 40,
+            "departureDays": 100
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 150
+        },
+        {
+          "hmId": "6be79a46-32fa-4114-a472-64634e217c37",
+          "hmGuest": "Diego Tomas Barber Franced",
+          "hmGroupCode": "NC_1590",
+          "hmArrival": "2026-10-01",
+          "hmDeparture": "2027-09-29",
+          "hmDoc": "PAV905087",
+          "hmContract": "14435",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "within_14d",
+          "dateDelta": {
+            "arrivalDays": 9,
+            "departureDays": 9
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 130
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1049",
+        "ncNum": 1049,
+        "firstName": "Lennyra",
+        "lastName": "Helena",
+        "documentNumber": "8PLGPKRTA",
+        "email": "/hola.car@episode.life",
+        "telephone": "/",
+        "arrival": "2026-09-01",
+        "departure": "2027-06-02",
+        "unit": "The Rooftop",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 1
+      },
+      "matchCount": 3,
+      "topMatches": [
+        {
+          "hmId": "88bd12b3-e536-4593-848d-bf4ff1d0bfe6",
+          "hmGuest": "Lennyra Helena Martins Goncalves",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-09-01",
+          "hmDeparture": "2027-06-02",
+          "hmDoc": "8PLGPKRTA",
+          "hmContract": "2922",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": true,
+            "email": false,
+            "phone": false
+          },
+          "score": 255
+        },
+        {
+          "hmId": "ff6587c2-0d25-4da6-9876-efd493bd87a9",
+          "hmGuest": "Jill Van Kooten, Mira Helena Rasica, Doris Baselier",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-08-15",
+          "hmDeparture": "2027-01-20",
+          "hmDoc": "NPHJ1J9K1 | NW5C321B7 | NW8745153",
+          "hmContract": "15446",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 17,
+            "departureDays": 133
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "63bd1078-35ad-4acb-840c-0a205ca4791f",
+          "hmGuest": "Lenny Jay King Garcia, Ariadna Sierra Martinez",
+          "hmGroupCode": "NC_2067",
+          "hmArrival": "2026-10-01",
+          "hmDeparture": "2026-11-30",
+          "hmDoc": "43200675M",
+          "hmContract": "17987",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 30,
+            "departureDays": 184
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_0898",
+        "ncNum": 898,
+        "firstName": "Lisa",
+        "lastName": "Michele",
+        "documentNumber": "555317682",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-06-16",
+        "departure": "2027-04-01",
+        "unit": "Studio Comfort",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 2
+      },
+      "matchCount": 1,
+      "topMatches": [
+        {
+          "hmId": "d8fc3f23-3671-49bf-adcd-a152e276d54a",
+          "hmGuest": "Lisa Mc Tigue",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-06-16",
+          "hmDeparture": "2027-04-01",
+          "hmDoc": "Z3650538Y",
+          "hmContract": "13714",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 165
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_0899",
+        "ncNum": 899,
+        "firstName": "Laura",
+        "lastName": "Joelle",
+        "documentNumber": "A35300710",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-06-16",
+        "departure": "2027-04-01",
+        "unit": "Studio Standard with Terrace",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 4
+      },
+      "matchCount": 1,
+      "topMatches": [
+        {
+          "hmId": "a73ecc38-1d70-4464-a381-5433ba0008cc",
+          "hmGuest": "Laura Mctigue",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-06-16",
+          "hmDeparture": "2027-04-01",
+          "hmDoc": "Z3648480H",
+          "hmContract": "13715",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 165
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_0904",
+        "ncNum": 904,
+        "firstName": "Fernando",
+        "lastName": "José",
+        "documentNumber": "GL906809",
+        "email": ".",
+        "telephone": ".",
+        "arrival": "2026-02-10",
+        "departure": "2026-12-10",
+        "unit": "Studio Standard with Terrace",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 28
+      },
+      "matchCount": 35,
+      "topMatches": [
+        {
+          "hmId": "62af6fd9-0c6e-4716-8bc7-f1958c632a07",
+          "hmGuest": "Fernando José Paulo",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-02-10",
+          "hmDeparture": "2026-12-10",
+          "hmDoc": "Z4160991C",
+          "hmContract": "7776",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 205
+        },
+        {
+          "hmId": "d73b02da-2d3b-4159-937c-f2c6bf2fddb1",
+          "hmGuest": "Eduardo José Petit García",
+          "hmGroupCode": "NC_0992",
+          "hmArrival": "2026-02-15",
+          "hmDeparture": "2027-02-13",
+          "hmDoc": "195050619",
+          "hmContract": "",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 5,
+            "departureDays": 65
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "899b866a-4276-48d1-9beb-b03600734c51",
+          "hmGuest": "Jose luis Collado Garcia",
+          "hmGroupCode": "NC_1199",
+          "hmArrival": "2026-03-31",
+          "hmDeparture": "2026-12-31",
+          "hmDoc": "02243292X",
+          "hmContract": "11402",
+          "nameHits": [
+            "last_eq_hm_first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 49,
+            "departureDays": 21
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_0904",
+        "ncNum": 904,
+        "firstName": "María",
+        "lastName": "Begoña",
+        "documentNumber": "30630953J",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-01-11",
+        "departure": "2026-12-22",
+        "unit": "Studio Comfort",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 21
+      },
+      "matchCount": 14,
+      "topMatches": [
+        {
+          "hmId": "f211d06b-46fd-47bc-92f1-5d8ea05920ef",
+          "hmGuest": "María Begoña Etxenagusia Atutxa",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-01-11",
+          "hmDeparture": "2026-12-22",
+          "hmDoc": "30630953J",
+          "hmContract": "7775",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": true,
+            "email": false,
+            "phone": false
+          },
+          "score": 255
+        },
+        {
+          "hmId": "9896323e-6bc0-469c-8a38-ded041082955",
+          "hmGuest": "Maria Carmen Heredia Moreno",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-02-03",
+          "hmDeparture": "2026-11-03",
+          "hmDoc": "50210600J",
+          "hmContract": "",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 23,
+            "departureDays": 49
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "41984b84-3bb1-4e84-a447-f1bf9d91cfa1",
+          "hmGuest": "Maria Fernanda Iñigo Herrera, Alan Isaac Romero Navarro",
+          "hmGroupCode": "NC_1054",
+          "hmArrival": "2026-04-11",
+          "hmDeparture": "2027-01-12",
+          "hmDoc": "Z2502007A",
+          "hmContract": "10261",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 90,
+            "departureDays": 21
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1047",
+        "ncNum": 1047,
+        "firstName": "Jorge",
+        "lastName": "Schcolnik",
+        "documentNumber": "N04564356",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-09-16",
+        "departure": "2027-06-30",
+        "unit": "2 Bedroom (Double / Single)",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 6
+      },
+      "matchCount": 5,
+      "topMatches": [
+        {
+          "hmId": "2ffae0d6-19d5-46c7-a9f8-0d07bb9b6c63",
+          "hmGuest": "Jo Kassandra Balanay",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-08-25",
+          "hmDeparture": "2026-10-17",
+          "hmDoc": "P2549043B",
+          "hmContract": "15951",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 22,
+            "departureDays": 256
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "353ffb88-06f2-4673-b1ab-dd6f16f1cf08",
+          "hmGuest": "Jorge Gallego Perez",
+          "hmGroupCode": "NC_1544",
+          "hmArrival": "2026-07-22",
+          "hmDeparture": "2027-04-23",
+          "hmDoc": "47515256Q",
+          "hmContract": "14398",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 56,
+            "departureDays": 68
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "c21ce6a9-f089-4943-932b-2f3f9671ead2",
+          "hmGuest": "Jorge Alberto Cepeda Villareal",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-07-23",
+          "hmDeparture": "2027-01-31",
+          "hmDoc": "60118178L",
+          "hmContract": "14616",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 55,
+            "departureDays": 150
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1062",
+        "ncNum": 1062,
+        "firstName": "Ryan",
+        "lastName": "Guy",
+        "documentNumber": "PC580508",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-07-13",
+        "departure": "2027-07-11",
+        "unit": "The Comfort",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 2
+      },
+      "matchCount": 1,
+      "topMatches": [
+        {
+          "hmId": "98e3bd76-f883-4044-9caa-243a5cb6f057",
+          "hmGuest": "Ryan Guy Kayombya",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-07-13",
+          "hmDeparture": "2027-07-11",
+          "hmDoc": "PC580508",
+          "hmContract": "",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": true,
+            "email": false,
+            "phone": false
+          },
+          "score": 255
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1194",
+        "ncNum": 1194,
+        "firstName": "María",
+        "lastName": "Susana",
+        "documentNumber": "B1041638",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-10-21",
+        "departure": "2027-08-30",
+        "unit": "The Comfort",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 22
+      },
+      "matchCount": 15,
+      "topMatches": [
+        {
+          "hmId": "679f8f45-a619-4077-8ca7-b5a579438e63",
+          "hmGuest": "Maria Susana Roa Chejin",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-10-21",
+          "hmDeparture": "2027-08-30",
+          "hmDoc": "B1041638",
+          "hmContract": "11605",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": true,
+            "email": false,
+            "phone": false
+          },
+          "score": 255
+        },
+        {
+          "hmId": "8ce22faa-da81-429d-98ef-07b1008fc5ac",
+          "hmGuest": "Maria Cornelia Slinning, Sigrid Marie Østhagen Haukås",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-08-26",
+          "hmDeparture": "2026-12-19",
+          "hmDoc": "CCC608071 | 33296179",
+          "hmContract": "15967",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 56,
+            "departureDays": 254
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "fadc10ee-fd12-4b19-9979-bd18440c175f",
+          "hmGuest": "Maria Elisavet Stasinopoulou",
+          "hmGroupCode": "NC_1840",
+          "hmArrival": "2026-08-27",
+          "hmDeparture": "2026-12-31",
+          "hmDoc": "351075TE",
+          "hmContract": "",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 55,
+            "departureDays": 242
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1336",
+        "ncNum": 1336,
+        "firstName": "Diego",
+        "lastName": "Saéz",
+        "documentNumber": "73162501F",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-08-26",
+        "departure": "2027-06-02",
+        "unit": "The Two Bedroom (2+1)",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 7
+      },
+      "matchCount": 7,
+      "topMatches": [
+        {
+          "hmId": "cc1af17e-6527-4f43-b2eb-41966f481e52",
+          "hmGuest": "Diego Saez De Urabain Azon, Natalia Azon Rodrigo",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-08-26",
+          "hmDeparture": "2027-06-02",
+          "hmDoc": "73162501F",
+          "hmContract": "13796",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": false,
+            "invoice": true,
+            "doc": true,
+            "email": false,
+            "phone": false
+          },
+          "score": 245
+        },
+        {
+          "hmId": "cd89225a-144e-4ad9-8e90-a440022cbf0a",
+          "hmGuest": "Diego Alberto Lares Barboza",
+          "hmGroupCode": "NC_1078",
+          "hmArrival": "2026-05-30",
+          "hmDeparture": "2027-06-16",
+          "hmDoc": "Y9867657G",
+          "hmContract": "6767",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 88,
+            "departureDays": 14
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "acf27f58-8151-43d3-b84e-e32dd391c6f6",
+          "hmGuest": "Diego Salado Garcia-Parra",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-08-31",
+          "hmDeparture": "2027-06-30",
+          "hmDoc": "79298702S",
+          "hmContract": "11647",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "within_30d",
+          "dateDelta": {
+            "arrivalDays": 5,
+            "departureDays": 28
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1310",
+        "ncNum": 1310,
+        "firstName": "Paulette",
+        "lastName": "Mosqueira",
+        "documentNumber": "N21319800",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-08-27",
+        "departure": "2027-02-02",
+        "unit": "The Two Bedroom (2+1)",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 1
+      },
+      "matchCount": 2,
+      "topMatches": [
+        {
+          "hmId": "cf2883fe-06da-4681-b15c-b1f878b2599d",
+          "hmGuest": "Paulette Mosqueira Medal, Ana Fernanda De la Mora Reyes",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-08-27",
+          "hmDeparture": "2027-02-02",
+          "hmDoc": "N21319800",
+          "hmContract": "12765",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": false,
+            "invoice": true,
+            "doc": true,
+            "email": false,
+            "phone": false
+          },
+          "score": 245
+        },
+        {
+          "hmId": "5796b34a-14c6-4a11-9fa9-398a6d20e5fa",
+          "hmGuest": "Paul Moreau",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-09-08",
+          "hmDeparture": "2026-10-21",
+          "hmDoc": "C89410464",
+          "hmContract": "17423",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 12,
+            "departureDays": 104
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1366",
+        "ncNum": 1366,
+        "firstName": "Alcione",
+        "lastName": "Teixeira",
+        "documentNumber": "131010311",
+        "email": "/hola.car@nodeliving.es/",
+        "telephone": "/",
+        "arrival": "2026-05-22",
+        "departure": "2026-11-22",
+        "unit": "Studio Standard with Terrace",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 1
+      },
+      "matchCount": 2,
+      "topMatches": [
+        {
+          "hmId": "aa454649-2c2a-4103-b0db-6c73be4bb8de",
+          "hmGuest": "Alcione Teixeira Djalo",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-05-22",
+          "hmDeparture": "2026-11-22",
+          "hmDoc": "CF782311",
+          "hmContract": "12940",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 205
+        },
+        {
+          "hmId": "b36d0592-ac4e-47e7-ab50-73da3b3da275",
+          "hmGuest": "Leticia Caldeira Teixeira Reis, Charlotte Eide, Katja-Sophia Schwendinger",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-05-31",
+          "hmDeparture": "2027-04-30",
+          "hmDoc": "FV060705 | CCF651443 | U6024296",
+          "hmContract": "8105",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 9,
+            "departureDays": 159
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": false,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 100
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1492",
+        "ncNum": 1492,
+        "firstName": "Anna",
+        "lastName": "Malsagova",
+        "documentNumber": "Y7414233J",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-07-15",
+        "departure": "2027-06-15",
+        "unit": "The Standard with Terrace",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 3
+      },
+      "matchCount": 4,
+      "topMatches": [
+        {
+          "hmId": "2136761d-d195-4ab8-a510-689ed3f032f5",
+          "hmGuest": "Anna Malsagova",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-07-15",
+          "hmDeparture": "2027-06-15",
+          "hmDoc": "Y7414233J",
+          "hmContract": "14073",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": true,
+            "email": false,
+            "phone": false
+          },
+          "score": 255
+        },
+        {
+          "hmId": "c7fad159-a42d-454d-92de-e32f1aa9f9db",
+          "hmGuest": "Panna Pócsik",
+          "hmGroupCode": "NC_1711",
+          "hmArrival": "2026-08-15",
+          "hmDeparture": "2027-02-15",
+          "hmDoc": "BU0777383",
+          "hmContract": "14757",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 31,
+            "departureDays": 120
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "adec1c9b-039f-4030-9383-b41f5e13715e",
+          "hmGuest": "Giovanna Aldonza Rios Lopez",
+          "hmGroupCode": "NC_1828",
+          "hmArrival": "2026-08-30",
+          "hmDeparture": "2026-10-30",
+          "hmDoc": "G30172819",
+          "hmContract": "",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 46,
+            "departureDays": 228
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1532",
+        "ncNum": 1532,
+        "firstName": "Miguel",
+        "lastName": "Gómez",
+        "documentNumber": "42873689X",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-10-12",
+        "departure": "2026-12-04",
+        "unit": "The Comfort",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 5
+      },
+      "matchCount": 11,
+      "topMatches": [
+        {
+          "hmId": "e26d5fac-4612-4195-8b28-7295a5df9728",
+          "hmGuest": "Miguel Gomez Pena",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-10-12",
+          "hmDeparture": "2026-12-04",
+          "hmDoc": "42873689X",
+          "hmContract": "14646",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": true,
+            "email": false,
+            "phone": false
+          },
+          "score": 255
+        },
+        {
+          "hmId": "d8a8f82c-2168-41ae-8498-9862b08934ce",
+          "hmGuest": "Miguel Angel Gomez Gordo",
+          "hmGroupCode": "NC_1557",
+          "hmArrival": "2026-09-13",
+          "hmDeparture": "2026-12-12",
+          "hmDoc": "08870155K",
+          "hmContract": "14282",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "within_30d",
+          "dateDelta": {
+            "arrivalDays": 29,
+            "departureDays": 8
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 150
+        },
+        {
+          "hmId": "6238a5a6-a271-4f2f-8e3e-7e0a8d758b63",
+          "hmGuest": "Miguel Angel Gómez Jiménez",
+          "hmGroupCode": "NC_1506",
+          "hmArrival": "2026-09-30",
+          "hmDeparture": "2027-04-02",
+          "hmDoc": "50164036R",
+          "hmContract": "14096",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 12,
+            "departureDays": 119
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 150
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1539",
+        "ncNum": 1539,
+        "firstName": "Antonio",
+        "lastName": "Tiebo",
+        "documentNumber": "78737382X",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-10-12",
+        "departure": "2026-12-04",
+        "unit": "The Comfort",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 5
+      },
+      "matchCount": 4,
+      "topMatches": [
+        {
+          "hmId": "03dd4a16-9bed-459b-b571-bb09f75f74e6",
+          "hmGuest": "Antonio Tiebo Abal",
+          "hmGroupCode": "NC_1538",
+          "hmArrival": "2026-10-12",
+          "hmDeparture": "2026-12-04",
+          "hmDoc": "78737382x",
+          "hmContract": "14258",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": true,
+            "email": false,
+            "phone": false
+          },
+          "score": 255
+        },
+        {
+          "hmId": "c017575f-e2f9-42a0-b007-3fe2094e8065",
+          "hmGuest": "Antonio Manuel Luna Rodríguez",
+          "hmGroupCode": "NC_1550",
+          "hmArrival": "2026-10-12",
+          "hmDeparture": "2026-12-04",
+          "hmDoc": "29084984N",
+          "hmContract": "13728",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 165
+        },
+        {
+          "hmId": "c5899052-14ab-48c7-933c-e18efb51dc0a",
+          "hmGuest": "Antonio Medrano Ballesteros",
+          "hmGroupCode": "NC_1605",
+          "hmArrival": "2026-10-12",
+          "hmDeparture": "2026-12-08",
+          "hmDoc": "26490819V",
+          "hmContract": "14550",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "within_7d",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 4
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 145
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1604",
+        "ncNum": 1604,
+        "firstName": "Cesar",
+        "lastName": "José",
+        "documentNumber": "30586164M",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-07-07",
+        "departure": "2027-07-05",
+        "unit": "The Two Bedroom (2+1)",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 23
+      },
+      "matchCount": 15,
+      "topMatches": [
+        {
+          "hmId": "9e17b6e5-d68c-4ba4-a546-e17a57e28176",
+          "hmGuest": "Laurel Grace Stewart, Alexis Blu Shuffler, Joseana Beatriz Lara",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-06-09",
+          "hmDeparture": "2026-11-15",
+          "hmDoc": "A50757010 | P085659BI | P575460NG",
+          "hmContract": "10873",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 28,
+            "departureDays": 232
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "a14d5f86-1e6d-454d-893b-92af455ff028",
+          "hmGuest": "Sebastian Alejandro Yauri Pala, Jose Vicente Guerra Yalta",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-06-19",
+          "hmDeparture": "2026-12-20",
+          "hmDoc": "1252509022 | 125728890",
+          "hmContract": "14970",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 18,
+            "departureDays": 197
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "ab084134-108e-4bdc-85c5-270a32a36687",
+          "hmGuest": "José Germán Rodríguez Bermeo",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-07-01",
+          "hmDeparture": "2026-12-31",
+          "hmDoc": "BG478321",
+          "hmContract": "12491",
+          "nameHits": [
+            "last_eq_hm_first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 6,
+            "departureDays": 186
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1607",
+        "ncNum": 1607,
+        "firstName": "Carlos",
+        "lastName": "Arturo",
+        "documentNumber": "AV541558",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-06-19",
+        "departure": "2027-06-17",
+        "unit": "The Comfort",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 12
+      },
+      "matchCount": 5,
+      "topMatches": [
+        {
+          "hmId": "663ba7d2-7cda-4534-b4e4-7c9d45675856",
+          "hmGuest": "Carlos Arturo Arismendi Castaño",
+          "hmGroupCode": "NC_1507",
+          "hmArrival": "2026-06-19",
+          "hmDeparture": "2027-06-17",
+          "hmDoc": "AV541558",
+          "hmContract": "10832",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": true,
+            "email": false,
+            "phone": false
+          },
+          "score": 255
+        },
+        {
+          "hmId": "0ee3cccd-00f2-415f-b135-d2e97190f148",
+          "hmGuest": "Carlos Aguilar Lopez",
+          "hmGroupCode": "NC_1835",
+          "hmArrival": "2026-08-31",
+          "hmDeparture": "2027-05-31",
+          "hmDoc": "79087712G",
+          "hmContract": "17264",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 73,
+            "departureDays": 17
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "07d8116a-bc1a-40c2-bcaa-d453295236be",
+          "hmGuest": "Carlos Navarro Castaño",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-10-01",
+          "hmDeparture": "2027-07-02",
+          "hmDoc": "79293773P",
+          "hmContract": "451",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 104,
+            "departureDays": 15
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1729",
+        "ncNum": 1729,
+        "firstName": "Marta",
+        "lastName": "Marcucci",
+        "documentNumber": "0115473",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-09-02",
+        "departure": "2026-11-02",
+        "unit": "The Standard with Terrace",
+        "bucket": "guest_in_housemonk_no_nc_on_row",
+        "activeHmDocNameCount": 4
+      },
+      "matchCount": 3,
+      "topMatches": [
+        {
+          "hmId": "e9f267b2-2a15-4a2b-8b93-23aa54a9a2af",
+          "hmGuest": "Marta Marcucci",
+          "hmGroupCode": "NC_2114",
+          "hmArrival": "2026-11-02",
+          "hmDeparture": "2026-12-02",
+          "hmDoc": "O115473",
+          "hmContract": "18510",
+          "nameHits": [
+            "first",
+            "last"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 61,
+            "departureDays": 30
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 150
+        },
+        {
+          "hmId": "751df658-91d4-4815-88f0-edd4fff3ce5f",
+          "hmGuest": "Marta Liu De La Huerga Alvarez",
+          "hmGroupCode": "NC_1552",
+          "hmArrival": "2026-10-01",
+          "hmDeparture": "2027-06-30",
+          "hmDoc": "71471478J",
+          "hmContract": "13567",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 29,
+            "departureDays": 240
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "100e218a-c483-4ca0-a86e-af88521374d3",
+          "hmGuest": "Marta Jaworska, Marek Topolewski",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-07-01",
+          "hmDeparture": "2026-11-30",
+          "hmDoc": "FC0363614 | EU1685323",
+          "hmContract": "14875",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 63,
+            "departureDays": 28
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": false,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 100
+        }
+      ]
+    }
+  ],
+  "fullNoHm": [
+    {
+      "profile": {
+        "nc": "NC_1892",
+        "ncNum": 1892,
+        "firstName": "",
+        "lastName": "Integra Ascensores S.L",
+        "documentNumber": "",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-09-15",
+        "departure": "2027-09-13",
+        "unit": "The Comfort",
+        "bucket": "current_nc_only_no_hm",
+        "activeHmDocNameCount": 0
+      },
+      "matchCount": 6,
+      "topMatches": [
+        {
+          "hmId": "79e24616-e972-48b2-8d1e-2fb34df6164d",
+          "hmGuest": "null Integra Ascensores S.L , BEI MO, Mo Menglong",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-09-15",
+          "hmDeparture": "2027-09-13",
+          "hmDoc": "B83336891 | Z5249433X | Z5358418K",
+          "hmContract": "",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 165
+        },
+        {
+          "hmId": "ed41e4d1-50f6-449f-a323-fa62d69db703",
+          "hmGuest": "null Integra Ascensores S.L , Chen Xiandeng",
+          "hmGroupCode": "NC_1891",
+          "hmArrival": "2026-09-15",
+          "hmDeparture": "2027-09-13",
+          "hmDoc": "B83336891 | Z5358630A",
+          "hmContract": "10278",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 165
+        },
+        {
+          "hmId": "988157ac-b685-453a-b88f-71b85bd9d1b8",
+          "hmGuest": "null Integra Ascensores S.L , Gong Hongwei, Luo Liangguang",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-09-15",
+          "hmDeparture": "2027-09-13",
+          "hmDoc": "B83336891 | Z5253090X | Z5253025Z",
+          "hmContract": "",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 165
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1941",
+        "ncNum": 1941,
+        "firstName": "",
+        "lastName": "Integra Ascensores S.L",
+        "documentNumber": "",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-09-15",
+        "departure": "2027-09-13",
+        "unit": "The Comfort",
+        "bucket": "current_nc_only_no_hm",
+        "activeHmDocNameCount": 0
+      },
+      "matchCount": 6,
+      "topMatches": [
+        {
+          "hmId": "79e24616-e972-48b2-8d1e-2fb34df6164d",
+          "hmGuest": "null Integra Ascensores S.L , BEI MO, Mo Menglong",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-09-15",
+          "hmDeparture": "2027-09-13",
+          "hmDoc": "B83336891 | Z5249433X | Z5358418K",
+          "hmContract": "",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 165
+        },
+        {
+          "hmId": "ed41e4d1-50f6-449f-a323-fa62d69db703",
+          "hmGuest": "null Integra Ascensores S.L , Chen Xiandeng",
+          "hmGroupCode": "NC_1891",
+          "hmArrival": "2026-09-15",
+          "hmDeparture": "2027-09-13",
+          "hmDoc": "B83336891 | Z5358630A",
+          "hmContract": "10278",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 165
+        },
+        {
+          "hmId": "988157ac-b685-453a-b88f-71b85bd9d1b8",
+          "hmGuest": "null Integra Ascensores S.L , Gong Hongwei, Luo Liangguang",
+          "hmGroupCode": "(blank)",
+          "hmArrival": "2026-09-15",
+          "hmDeparture": "2027-09-13",
+          "hmDoc": "B83336891 | Z5253090X | Z5253025Z",
+          "hmContract": "",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "exact",
+          "dateDelta": {
+            "arrivalDays": 0,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 165
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1912",
+        "ncNum": 1912,
+        "firstName": "",
+        "lastName": "GOOD MOOD SERIES SL",
+        "documentNumber": "",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-09-14",
+        "departure": "2026-10-31",
+        "unit": "The Comfort",
+        "bucket": "current_nc_only_no_hm",
+        "activeHmDocNameCount": 0
+      },
+      "matchCount": 1,
+      "topMatches": [
+        {
+          "hmId": "3adb9bd3-6fee-43d1-8181-8474732f64ed",
+          "hmGuest": "null GOOD MOOD SERIES SL , Ander Santamaria Cueva",
+          "hmGroupCode": "NC_1913",
+          "hmArrival": "2026-09-20",
+          "hmDeparture": "2026-10-31",
+          "hmDoc": "B67717538",
+          "hmContract": "9486",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "within_7d",
+          "dateDelta": {
+            "arrivalDays": 6,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 145
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_2085",
+        "ncNum": 2085,
+        "firstName": "",
+        "lastName": "Caranorte Ingenieros S.L.",
+        "documentNumber": "",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-10-05",
+        "departure": "2026-11-05",
+        "unit": "The Comfort",
+        "bucket": "current_nc_only_no_hm",
+        "activeHmDocNameCount": 0
+      },
+      "matchCount": 0,
+      "topMatches": []
+    },
+    {
+      "profile": {
+        "nc": "NC_1928",
+        "ncNum": 1928,
+        "firstName": "",
+        "lastName": "RCC HABILITACION DE ESPACIOS COMERCIALES SL",
+        "documentNumber": "",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-09-16",
+        "departure": "2026-10-16",
+        "unit": "The Comfort",
+        "bucket": "current_nc_only_no_hm",
+        "activeHmDocNameCount": 0
+      },
+      "matchCount": 0,
+      "topMatches": []
+    },
+    {
+      "profile": {
+        "nc": "NC_0681",
+        "ncNum": 681,
+        "firstName": "Issa",
+        "lastName": "Fares",
+        "documentNumber": "RL4038393",
+        "email": "",
+        "telephone": "",
+        "arrival": "2025-11-02",
+        "departure": "2026-10-31",
+        "unit": "Studio Rooftop",
+        "bucket": "current_nc_only_no_hm",
+        "activeHmDocNameCount": 0
+      },
+      "matchCount": 0,
+      "topMatches": []
+    },
+    {
+      "profile": {
+        "nc": "NC_0957",
+        "ncNum": 957,
+        "firstName": "",
+        "lastName": "",
+        "documentNumber": "",
+        "email": "privacy@cellularline.com",
+        "telephone": "916 44 88 18",
+        "arrival": "2026-02-18",
+        "departure": "2026-11-19",
+        "unit": "Studio Comfort",
+        "bucket": "current_nc_only_no_hm",
+        "activeHmDocNameCount": 0
+      },
+      "matchCount": 0,
+      "topMatches": []
+    },
+    {
+      "profile": {
+        "nc": "NC_1060",
+        "ncNum": 1060,
+        "firstName": "",
+        "lastName": "",
+        "documentNumber": "",
+        "email": "oysergo@outlook.es",
+        "telephone": "+34 670 82 48 38",
+        "arrival": "2026-03-02",
+        "departure": "2027-02-28",
+        "unit": "Studio Comfort",
+        "bucket": "current_nc_only_no_hm",
+        "activeHmDocNameCount": 0
+      },
+      "matchCount": 0,
+      "topMatches": []
+    },
+    {
+      "profile": {
+        "nc": "NC_1123",
+        "ncNum": 1123,
+        "firstName": "Luis Guillermo",
+        "lastName": "Paredes",
+        "documentNumber": "N09369485",
+        "email": "",
+        "telephone": "",
+        "arrival": "2026-03-15",
+        "departure": "2026-12-16",
+        "unit": "Studio Standard with Terrace",
+        "bucket": "current_nc_only_no_hm",
+        "activeHmDocNameCount": 0
+      },
+      "matchCount": 0,
+      "topMatches": []
+    },
+    {
+      "profile": {
+        "nc": "NC_1313",
+        "ncNum": 1313,
+        "firstName": "Eiden",
+        "lastName": "Tur",
+        "documentNumber": "48199078W",
+        "email": "hola.car@nodeliving.es",
+        "telephone": "/",
+        "arrival": "2026-08-31",
+        "departure": "2027-06-30",
+        "unit": "Studio Comfort",
+        "bucket": "current_nc_only_no_hm",
+        "activeHmDocNameCount": 0
+      },
+      "matchCount": 4,
+      "topMatches": [
+        {
+          "hmId": "2f39a2e5-0829-4cb6-a3bc-f93913148212",
+          "hmGuest": "Toprak Erturk",
+          "hmGroupCode": "NC_1600",
+          "hmArrival": "2026-09-01",
+          "hmDeparture": "2027-06-30",
+          "hmDoc": "U33030200",
+          "hmContract": "14452",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "within_7d",
+          "dateDelta": {
+            "arrivalDays": 1,
+            "departureDays": 0
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 145
+        },
+        {
+          "hmId": "663ba7d2-7cda-4534-b4e4-7c9d45675856",
+          "hmGuest": "Carlos Arturo Arismendi Castaño",
+          "hmGroupCode": "NC_1507",
+          "hmArrival": "2026-06-19",
+          "hmDeparture": "2027-06-17",
+          "hmDoc": "AV541558",
+          "hmContract": "10832",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 73,
+            "departureDays": 13
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "dcdc3510-ffab-4759-8e52-0cae8e2616b6",
+          "hmGuest": "null Solagar Arquitectura y Urbanismo SL , Pedro Solina Molinero",
+          "hmGroupCode": "NC_1661",
+          "hmArrival": "2026-07-10",
+          "hmDeparture": "2027-07-08",
+          "hmDoc": "B13833181",
+          "hmContract": "15236",
+          "nameHits": [
+            "last"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 52,
+            "departureDays": 8
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": false,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 100
+        }
+      ]
+    },
+    {
+      "profile": {
+        "nc": "NC_1365",
+        "ncNum": 1365,
+        "firstName": "",
+        "lastName": "",
+        "documentNumber": "",
+        "email": "ioana.ciupe@alstomgroup.com",
+        "telephone": "+40 364 821 352",
+        "arrival": "2026-05-15",
+        "departure": "2027-05-13",
+        "unit": "Studio Standard with Terrace",
+        "bucket": "current_nc_only_no_hm",
+        "activeHmDocNameCount": 0
+      },
+      "matchCount": 0,
+      "topMatches": []
+    },
+    {
+      "profile": {
+        "nc": "NC_1565",
+        "ncNum": 1565,
+        "firstName": "Antonio José",
+        "lastName": "Piédrola",
+        "documentNumber": "05278560Z",
+        "email": "Irene.delSol@ascensoresintegra.es",
+        "telephone": "639 301 922",
+        "arrival": "2026-09-15",
+        "departure": "2027-09-13",
+        "unit": "The Two Bedroom (2+1)",
+        "bucket": "current_nc_only_no_hm",
+        "activeHmDocNameCount": 0
+      },
+      "matchCount": 22,
+      "topMatches": [
+        {
+          "hmId": "176314a9-5b05-455e-bf15-45671515b229",
+          "hmGuest": "Jose Daniel Jativa Montalvo",
+          "hmGroupCode": "NC_1631",
+          "hmArrival": "2026-09-01",
+          "hmDeparture": "2026-10-29",
+          "hmDoc": "YB8153041",
+          "hmContract": "15172",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 14,
+            "departureDays": 319
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "8fea353b-5835-4ce4-9572-892d0252f1c1",
+          "hmGuest": "Jose Daniel Martin Suarez",
+          "hmGroupCode": "NC_1861",
+          "hmArrival": "2026-09-03",
+          "hmDeparture": "2027-06-15",
+          "hmDoc": "72332082A",
+          "hmContract": "14407",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 12,
+            "departureDays": 90
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        },
+        {
+          "hmId": "49fc1613-b857-43bf-9976-4720437f890c",
+          "hmGuest": "Jose Martin Cadena Zapata",
+          "hmGroupCode": "NC_1392",
+          "hmArrival": "2026-09-01",
+          "hmDeparture": "2027-07-01",
+          "hmDoc": "A9093896",
+          "hmContract": "2911",
+          "nameHits": [
+            "first"
+          ],
+          "dateTier": "loose_60d",
+          "dateDelta": {
+            "arrivalDays": 14,
+            "departureDays": 74
+          },
+          "corroboration": {
+            "hmCsv": true,
+            "tenancy": true,
+            "invoice": true,
+            "doc": false,
+            "email": false,
+            "phone": false
+          },
+          "score": 110
+        }
+      ]
+    }
+  ]
+}
