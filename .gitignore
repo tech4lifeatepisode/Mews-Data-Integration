@@ -25,6 +25,7 @@ contract-uploading/tmp-*.mjs
 
 # Regenerated upload run summaries
 contract-extraction/mews-import-*-summary.json
+contract-extraction/v2-mews-import-*-summary.json
 contract-extraction/matching-across-final-format-*-summary.json
 
 # Excel workbooks (local review/migration; NC allowlist is tracked as CSV)

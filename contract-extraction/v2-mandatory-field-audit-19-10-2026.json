@@ -1,0 +1,167 @@
+{
+  "table": "V2_Final_Format_All_Fields_Match_Mews_Import_19_10_2026",
+  "rowCount": 505,
+  "b2bRowsTotal": 69,
+  "mandatoryFieldDefinitions": 10,
+  "rowsWithMandatoryGaps": {
+    "total": 0,
+    "b2b": 0,
+    "nonB2b": 0
+  },
+  "mandatoryGapsByFieldB2bSplit": {
+    "last_name": {
+      "label": "Last name",
+      "missingTotal": 0,
+      "b2b": 0,
+      "nonB2b": 0,
+      "b2bNcs": [],
+      "nonB2bNcs": []
+    },
+    "dni": {
+      "label": "DNI / document number",
+      "missingTotal": 0,
+      "b2b": 0,
+      "nonB2b": 0,
+      "b2bNcs": [],
+      "nonB2bNcs": []
+    },
+    "arrival": {
+      "label": "Arrival date",
+      "missingTotal": 0,
+      "b2b": 0,
+      "nonB2b": 0,
+      "b2bNcs": [],
+      "nonB2bNcs": []
+    },
+    "departure": {
+      "label": "Departure date",
+      "missingTotal": 0,
+      "b2b": 0,
+      "nonB2b": 0,
+      "b2bNcs": [],
+      "nonB2bNcs": []
+    },
+    "person_count": {
+      "label": "Person count",
+      "missingTotal": 0,
+      "b2b": 0,
+      "nonB2b": 0,
+      "b2bNcs": [],
+      "nonB2bNcs": []
+    },
+    "child_count": {
+      "label": "Child count",
+      "missingTotal": 0,
+      "b2b": 0,
+      "nonB2b": 0,
+      "b2bNcs": [],
+      "nonB2bNcs": []
+    },
+    "room_category": {
+      "label": "Room category",
+      "missingTotal": 0,
+      "b2b": 0,
+      "nonB2b": 0,
+      "b2bNcs": [],
+      "nonB2bNcs": []
+    },
+    "billing_address": {
+      "label": "Billing — complete address (line 1 + city)",
+      "missingTotal": 0,
+      "b2b": 0,
+      "nonB2b": 0,
+      "b2bNcs": [],
+      "nonB2bNcs": []
+    },
+    "deposit": {
+      "label": "Deposit",
+      "missingTotal": 0,
+      "b2b": 0,
+      "nonB2b": 0,
+      "b2bNcs": [],
+      "nonB2bNcs": []
+    },
+    "rent": {
+      "label": "Rent",
+      "missingTotal": 0,
+      "b2b": 0,
+      "nonB2b": 0,
+      "b2bNcs": [],
+      "nonB2bNcs": []
+    }
+  },
+  "optionalIncludedProducts": {
+    "emptyRows": 290,
+    "filledRows": 215,
+    "note": "Included Products is optional — only populated when something is included."
+  },
+  "totalMissingFieldInstances": 0,
+  "rowsWithAtLeastOneMissing": 0,
+  "rowsFullyComplete": 505,
+  "billingStrictWithCountryCode": {
+    "missingRows": 0,
+    "pct": 0
+  },
+  "perField": {
+    "last_name": {
+      "label": "Last name",
+      "missingRows": 0,
+      "pct": 0,
+      "sampleNcs": []
+    },
+    "dni": {
+      "label": "DNI / document number",
+      "missingRows": 0,
+      "pct": 0,
+      "sampleNcs": []
+    },
+    "arrival": {
+      "label": "Arrival date",
+      "missingRows": 0,
+      "pct": 0,
+      "sampleNcs": []
+    },
+    "departure": {
+      "label": "Departure date",
+      "missingRows": 0,
+      "pct": 0,
+      "sampleNcs": []
+    },
+    "person_count": {
+      "label": "Person count",
+      "missingRows": 0,
+      "pct": 0,
+      "sampleNcs": []
+    },
+    "child_count": {
+      "label": "Child count",
+      "missingRows": 0,
+      "pct": 0,
+      "sampleNcs": []
+    },
+    "room_category": {
+      "label": "Room category",
+      "missingRows": 0,
+      "pct": 0,
+      "sampleNcs": []
+    },
+    "billing_address": {
+      "label": "Billing — complete address (line 1 + city)",
+      "missingRows": 0,
+      "pct": 0,
+      "sampleNcs": []
+    },
+    "deposit": {
+      "label": "Deposit",
+      "missingRows": 0,
+      "pct": 0,
+      "sampleNcs": []
+    },
+    "rent": {
+      "label": "Rent",
+      "missingRows": 0,
+      "pct": 0,
+      "sampleNcs": []
+    }
+  }
+}

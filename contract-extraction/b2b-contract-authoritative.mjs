@@ -4,8 +4,10 @@ import { fileURLToPath } from 'url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const DEFAULT_NC_JSON = path.join(here, 'b2b-contract-authoritative-ncs-16-10-2026.json');
+const SEGUIMIENTO_NC_JSON = path.join(here, 'b2b-seguimiento-ncs-20-10-2026.json');
 
 let cachedSet = null;
+let cachedAllB2bSet = null;
 
 export function loadB2bContractAuthoritativeNcs(jsonPath = DEFAULT_NC_JSON) {
   if (cachedSet && jsonPath === DEFAULT_NC_JSON) return cachedSet;
@@ -13,6 +15,16 @@ export function loadB2bContractAuthoritativeNcs(jsonPath = DEFAULT_NC_JSON) {
   const set = new Set(nums.map((n) => Number(n)).filter(Number.isFinite));
   if (jsonPath === DEFAULT_NC_JSON) cachedSet = set;
   return set;
+}
+
+export function loadAllB2bNcs() {
+  if (cachedAllB2bSet) return cachedAllB2bSet;
+  const a = loadB2bContractAuthoritativeNcs();
+  const b = fs.existsSync(SEGUIMIENTO_NC_JSON)
+    ? JSON.parse(fs.readFileSync(SEGUIMIENTO_NC_JSON, 'utf8')).map((n) => Number(n))
+    : [];
+  cachedAllB2bSet = new Set([...a, ...b].filter(Number.isFinite));
+  return cachedAllB2bSet;
 }
 
 export function ncLabel(n) {

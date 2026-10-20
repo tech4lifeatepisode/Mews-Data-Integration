@@ -1,0 +1,4752 @@
+{
+  "auditDate": "2026-10-20",
+  "nonB2b": {
+    "missingBillingAddress": {
+      "count": 18,
+      "recoverableFromHmOrCust": 0,
+      "stillMissingAfterLookup": 18,
+      "ncs": [
+        {
+          "nc": 989,
+          "ncLabel": "NC_0989",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-09-23",
+          "departure": "2027-09-21",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "71474940W",
+            "addressComplete": false,
+            "addressLine1": "urbanización Monteleón 65",
+            "city": "Carbajal de la Legua, Sariegos, León",
+            "postalCode": null,
+            "prepaidAmount": "1225",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "71474940W | 09803776A",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1225",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": "71474940W",
+            "addressComplete": false,
+            "addressLine1": "urbanización Monteleón 65",
+            "city": "Carbajal de la Legua, Sariegos, León",
+            "postalCode": null,
+            "prepaidAmount": "1225",
+            "hasDeposit": true
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "71474940W",
+            "hasDeposit": true,
+            "prepaidAmount": "1225",
+            "addressComplete": false,
+            "addressLine1": "urbanización Monteleón 65",
+            "city": "Carbajal de la Legua, Sariegos, León",
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1047,
+          "ncLabel": "NC_1047",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-09-16",
+          "departure": "2027-06-30",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "N04564356",
+            "addressComplete": false,
+            "addressLine1": "Pirámides 124 entre Tebas y río nilo, colonia campestre",
+            "city": "La Paz Baja California Sur",
+            "postalCode": null,
+            "prepaidAmount": "1225.00",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": "N04564356",
+            "addressComplete": false,
+            "addressLine1": "Pirámides 124 entre Tebas y río nilo, colonia campestre",
+            "city": "La Paz Baja California Sur",
+            "postalCode": null,
+            "prepaidAmount": "1225.00",
+            "hasDeposit": true
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "N04564356",
+            "hasDeposit": true,
+            "prepaidAmount": "1225.00",
+            "addressComplete": false,
+            "addressLine1": "Pirámides 124 entre Tebas y río nilo, colonia campestre",
+            "city": "La Paz Baja California Sur",
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1308,
+          "ncLabel": "NC_1308",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-06-30",
+          "departure": "2027-06-28",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "Z1563764E",
+            "addressComplete": false,
+            "addressLine1": "Calle Virgen de la Fuencisla 26 SSO IZQ",
+            "city": "Madrid",
+            "postalCode": null,
+            "prepaidAmount": "955",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "Z1563764E | AAL224102",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "955",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": "Z1563764E",
+            "addressComplete": false,
+            "addressLine1": "Calle Virgen de la Fuencisla 26 SSO IZQ",
+            "city": "Madrid",
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "Z1563764E",
+            "hasDeposit": true,
+            "prepaidAmount": "955",
+            "addressComplete": false,
+            "addressLine1": "Calle Virgen de la Fuencisla 26 SSO IZQ",
+            "city": "Madrid",
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1313,
+          "ncLabel": "NC_1313",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-08-31",
+          "departure": "2027-06-30",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "48199078W",
+            "addressComplete": false,
+            "addressLine1": "Crr. Ceramista Joan Daifa 2",
+            "city": "Elvissa",
+            "postalCode": null,
+            "prepaidAmount": "1055.00",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": "48199078W",
+            "addressComplete": false,
+            "addressLine1": "Crr. Ceramista Joan Daifa 2",
+            "city": "Elvissa",
+            "postalCode": null,
+            "prepaidAmount": "1055.00",
+            "hasDeposit": true
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "48199078W",
+            "hasDeposit": true,
+            "prepaidAmount": "1055.00",
+            "addressComplete": false,
+            "addressLine1": "Crr. Ceramista Joan Daifa 2",
+            "city": "Elvissa",
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1403,
+          "ncLabel": "NC_1403",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-10-06",
+          "departure": "2027-06-30",
+          "source": "Seguimiento+HouseMonk backfill",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "P12370756",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "925",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "P12370756",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "925",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": "P12370756",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "925",
+            "hasDeposit": true
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "P12370756",
+            "hasDeposit": true,
+            "prepaidAmount": "925",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1477,
+          "ncLabel": "NC_1477",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-06-24",
+          "departure": "2026-12-24",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "46861525Z",
+            "addressComplete": false,
+            "addressLine1": "Calle Rufino Rejon 8 P01 A",
+            "city": "Madrid",
+            "postalCode": null,
+            "prepaidAmount": "1190",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "Viene con su madre. | 46861525Z",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1190",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": "46861525Z",
+            "addressComplete": false,
+            "addressLine1": "Calle Rufino Rejon 8 P01 A",
+            "city": "Madrid",
+            "postalCode": null,
+            "prepaidAmount": "1190",
+            "hasDeposit": true
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "46861525Z",
+            "hasDeposit": true,
+            "prepaidAmount": "1190",
+            "addressComplete": false,
+            "addressLine1": "Calle Rufino Rejon 8 P01 A",
+            "city": "Madrid",
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1516,
+          "ncLabel": "NC_1516",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-10-12",
+          "departure": "2026-12-12",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "27484775M",
+            "addressComplete": false,
+            "addressLine1": "Calle Montañas del Fuego 13",
+            "city": "Yaiza",
+            "postalCode": null,
+            "prepaidAmount": "647.50",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "27484775M",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "647.50",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": "27484775M",
+            "addressComplete": false,
+            "addressLine1": "Calle Montañas del Fuego 13",
+            "city": "Yaiza",
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "27484775M",
+            "hasDeposit": true,
+            "prepaidAmount": "647.50",
+            "addressComplete": false,
+            "addressLine1": "Calle Montañas del Fuego 13",
+            "city": "Yaiza",
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1520,
+          "ncLabel": "NC_1520",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-09-20",
+          "departure": "2027-06-30",
+          "source": "HouseMonk",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "QT2019463",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "960",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "QT2019463",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "960",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "QT2019463",
+            "hasDeposit": true,
+            "prepaidAmount": "960",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1606,
+          "ncLabel": "NC_1606",
+          "b2b": false,
+          "stayPhase": "future",
+          "arrival": "2026-11-01",
+          "departure": "2027-06-30",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "NMPBH4FK9",
+            "addressComplete": false,
+            "addressLine1": "Sunset Heights",
+            "city": "Willemstad",
+            "postalCode": null,
+            "prepaidAmount": "970",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "NMPBH4FK9",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "970",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "NMPBH4FK9",
+            "hasDeposit": true,
+            "prepaidAmount": "970",
+            "addressComplete": false,
+            "addressLine1": "Sunset Heights",
+            "city": "Willemstad",
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1716,
+          "ncLabel": "NC_1716",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-08-31",
+          "departure": "2027-08-01",
+          "source": "Seguimiento+HouseMonk backfill",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "BA207964 | BT9815751",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1065",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "BA207964 | BT9815751",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1065",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": "BA207964 | BT9815751",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1065",
+            "hasDeposit": true
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "BA207964 | BT9815751",
+            "hasDeposit": true,
+            "prepaidAmount": "1065",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1771,
+          "ncLabel": "NC_1771",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-09-02",
+          "departure": "2027-05-31",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "PR2935597",
+            "addressComplete": false,
+            "addressLine1": "15 Mount Eustace Crecent Tyrellstown",
+            "city": "Dublin",
+            "postalCode": null,
+            "prepaidAmount": "1070",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "PR2935597 | PG6692783",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1070",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": "PR2935597",
+            "addressComplete": false,
+            "addressLine1": "15 Mount Eustace Crecent Tyrellstown",
+            "city": "Dublin",
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "PR2935597",
+            "hasDeposit": true,
+            "prepaidAmount": "1070",
+            "addressComplete": false,
+            "addressLine1": "15 Mount Eustace Crecent Tyrellstown",
+            "city": "Dublin",
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1922,
+          "ncLabel": "NC_1922",
+          "b2b": false,
+          "stayPhase": "future",
+          "arrival": "2026-12-14",
+          "departure": "2027-01-14",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "XDE848392",
+            "addressComplete": false,
+            "addressLine1": "Calle Violeta Colinas de la California, 118 Quinta villa mi sueño 1071",
+            "city": "Caracas",
+            "postalCode": null,
+            "prepaidAmount": "930",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "XDE848392 | YB2533205",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "705",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": "XDE848392",
+            "addressComplete": false,
+            "addressLine1": "Calle Violeta Colinas de la California, 118 Quinta villa mi sueño 1071",
+            "city": "Caracas",
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "XDE848392",
+            "hasDeposit": true,
+            "prepaidAmount": "930",
+            "addressComplete": false,
+            "addressLine1": "Calle Violeta Colinas de la California, 118 Quinta villa mi sueño 1071",
+            "city": "Caracas",
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1944,
+          "ncLabel": "NC_1944",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-10-02",
+          "departure": "2027-07-02",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "125709995",
+            "addressComplete": false,
+            "addressLine1": "Urbanización Alameda de Ate 2",
+            "city": "Lima",
+            "postalCode": null,
+            "prepaidAmount": "975",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": "125709995",
+            "addressComplete": false,
+            "addressLine1": "Urbanización Alameda de Ate 2",
+            "city": "Lima",
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "125709995",
+            "hasDeposit": true,
+            "prepaidAmount": "975",
+            "addressComplete": false,
+            "addressLine1": "Urbanización Alameda de Ate 2",
+            "city": "Lima",
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 2081,
+          "ncLabel": "NC_2081",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-10-01",
+          "departure": "2027-07-01",
+          "source": "HouseMonk",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "T97643036",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1530",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "T97643036",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1530",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "T97643036",
+            "hasDeposit": true,
+            "prepaidAmount": "1530",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 2095,
+          "ncLabel": "NC_2095",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-10-13",
+          "departure": "2027-07-31",
+          "source": "HouseMonk",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "C7NJL65X6",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "940",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "C7NJL65X6",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "940",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "C7NJL65X6",
+            "hasDeposit": true,
+            "prepaidAmount": "940",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 2098,
+          "ncLabel": "NC_2098",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-10-09",
+          "departure": "2027-04-09",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "YC4682997 | AX628172",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1225",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "YC4682997 | AX628172",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1225",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "YC4682997 | AX628172",
+            "hasDeposit": true,
+            "prepaidAmount": "1225",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 2101,
+          "ncLabel": "NC_2101",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-10-08",
+          "departure": "2026-11-08",
+          "source": "B2B2C signed — synced from HouseMonk 16-10-2026",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "A80751660",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "0",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "A80751660",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "0",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": "A80751660",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "0",
+            "hasDeposit": true
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "A80751660",
+            "hasDeposit": true,
+            "prepaidAmount": "0",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 2110,
+          "ncLabel": "NC_2110",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-10-13",
+          "departure": "2027-07-13",
+          "source": "Seguimiento+HouseMonk backfill",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "Z0718781J | AX738398",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "955",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "Z0718781J | AX738398",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "955",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": "Z0718781J | AX738398",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "955",
+            "hasDeposit": true
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "Z0718781J | AX738398",
+            "hasDeposit": true,
+            "prepaidAmount": "955",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        }
+      ]
+    },
+    "missingDeposit": {
+      "count": 1,
+      "recoverableFromHmOrCust": 0,
+      "stillMissingAfterLookup": 1,
+      "ncs": [
+        {
+          "nc": 1535,
+          "ncLabel": "NC_1535",
+          "b2b": false,
+          "stayPhase": "current",
+          "arrival": "2026-09-12",
+          "departure": "2026-12-13",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "10860064Q",
+            "addressComplete": true,
+            "addressLine1": "calle Corin Tellado 26 P01 B",
+            "city": "Gijón Asturias",
+            "postalCode": "/28044/",
+            "prepaidAmount": "/una mensualidad/",
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": "10860064Q",
+            "addressComplete": true,
+            "addressLine1": "calle Corin Tellado 26 P01 B",
+            "city": "Gijón Asturias",
+            "postalCode": "/28044/",
+            "prepaidAmount": "/una mensualidad/",
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "V2",
+              "Customers",
+              "HouseMonk"
+            ],
+            "documentNumber": "10860064Q",
+            "hasDeposit": false,
+            "prepaidAmount": "/una mensualidad/",
+            "addressComplete": true,
+            "addressLine1": "calle Corin Tellado 26 P01 B",
+            "city": "Gijón Asturias",
+            "postalCode": "/28044/"
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        }
+      ]
+    }
+  },
+  "b2b": {
+    "missingDocumentNumber": {
+      "total": 26,
+      "futureReservations": 0,
+      "currentInHouseReservations": 26,
+      "count": 26,
+      "recoverableFromHmOrCust": 0,
+      "stillMissingAfterLookup": 26,
+      "futureNcs": [],
+      "currentNcs": [
+        {
+          "nc": 957,
+          "arrival": "2026-02-18",
+          "departure": "2026-11-19",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "hmDoc": null,
+          "custDoc": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1060,
+          "arrival": "2026-03-02",
+          "departure": "2027-02-28",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "hmDoc": null,
+          "custDoc": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1091,
+          "arrival": "2026-03-02",
+          "departure": "2027-02-28",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1295,
+          "arrival": "2026-05-31",
+          "departure": "2027-05-29",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "hmDoc": null,
+          "custDoc": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1365,
+          "arrival": "2026-05-15",
+          "departure": "2027-05-13",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "hmDoc": null,
+          "custDoc": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1413,
+          "arrival": "2026-05-21",
+          "departure": "2027-05-19",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "hmDoc": null,
+          "custDoc": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1566,
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1567,
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1568,
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1569,
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1570,
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1571,
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1572,
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1573,
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1575,
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1646,
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1661,
+          "arrival": "2026-07-10",
+          "departure": "2027-07-08",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "hmDoc": null,
+          "custDoc": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1778,
+          "arrival": "2026-08-28",
+          "departure": "2026-11-29",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "hmDoc": null,
+          "custDoc": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1814,
+          "arrival": "2026-09-06",
+          "departure": "2027-01-31",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "hmDoc": null,
+          "custDoc": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1890,
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "hmDoc": null,
+          "custDoc": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1891,
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "hmDoc": null,
+          "custDoc": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1892,
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "hmDoc": null,
+          "custDoc": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 1941,
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "hmDoc": null,
+          "custDoc": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 2083,
+          "arrival": "2026-10-05",
+          "departure": "2026-11-05",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "hmDoc": null,
+          "custDoc": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 2084,
+          "arrival": "2026-10-05",
+          "departure": "2026-11-05",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "hmDoc": null,
+          "custDoc": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        },
+        {
+          "nc": 2085,
+          "arrival": "2026-10-05",
+          "departure": "2026-11-05",
+          "recoverableDni": false,
+          "mergedDocumentNumber": null,
+          "hmDoc": null,
+          "custDoc": null,
+          "recoverableBilling": false,
+          "recoverableDeposit": false
+        }
+      ],
+      "all": [
+        {
+          "nc": 957,
+          "ncLabel": "NC_0957",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-02-18",
+          "departure": "2026-11-19",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Calle Newton Número 1, Bloque 3, Puerta 1 Polígono Industrial M-50 Sur Neinor - LEGANÉS 28914, Madrid",
+            "city": "Madrid",
+            "postalCode": "28914",
+            "prepaidAmount": "845",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Calle Newton Número 1 - Bloque 3 - Puerta 1 Polígono Industrial M-50 Sur Neinor -\nLEGANÉS",
+            "city": "Madrid",
+            "postalCode": "28914",
+            "prepaidAmount": "845.00",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Calle Newton Número 1, Bloque 3, Puerta 1 Polígono Industrial M-50 Sur Neinor - LEGANÉS 28914, Madrid",
+            "city": "Madrid",
+            "postalCode": "28914",
+            "prepaidAmount": "845.00",
+            "hasDeposit": true
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "845.00",
+            "addressComplete": true,
+            "addressLine1": "Calle Newton Número 1 - Bloque 3 - Puerta 1 Polígono Industrial M-50 Sur Neinor -\nLEGANÉS",
+            "city": "Madrid",
+            "postalCode": "28914"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1060,
+          "ncLabel": "NC_1060",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-03-02",
+          "departure": "2027-02-28",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Calle Partida Solana Alta 12",
+            "city": "La Romana, Alicante",
+            "postalCode": "03669",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Calle Partida Solana Alta 12",
+            "city": "La Romana, Alicante",
+            "postalCode": "03669",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Calle Partida Solana Alta 12",
+            "city": "La Romana, Alicante",
+            "postalCode": "03669"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1091,
+          "ncLabel": "NC_1091",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-03-02",
+          "departure": "2027-02-28",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "950",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "950",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1295,
+          "ncLabel": "NC_1295",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-05-31",
+          "departure": "2027-05-29",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Ctra/ San Vicente , 10",
+            "city": "Trapagaran (Vizcaya)",
+            "postalCode": "48510",
+            "prepaidAmount": "905",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Ctra San Vicente 10",
+            "city": "Trapaga",
+            "postalCode": "48510",
+            "prepaidAmount": "905.00",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Ctra/ San Vicente , 10",
+            "city": "Trapagaran (Vizcaya)",
+            "postalCode": "48510",
+            "prepaidAmount": "905.00",
+            "hasDeposit": true
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "905.00",
+            "addressComplete": true,
+            "addressLine1": "Ctra San Vicente 10",
+            "city": "Trapaga",
+            "postalCode": "48510"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1365,
+          "ncLabel": "NC_1365",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-05-15",
+          "departure": "2027-05-13",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Ctra/ San Vicente , 10",
+            "city": "Trapagaran (Vizcaya)",
+            "postalCode": "48510",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Ctra/ San Vicente , 10",
+            "city": "Trapagaran (Vizcaya)",
+            "postalCode": "48510",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1413,
+          "ncLabel": "NC_1413",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-05-21",
+          "departure": "2027-05-19",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "calle Pluma 13 P02 B",
+            "city": "Leganés, Madrid",
+            "postalCode": "28914",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Calle del Tenis 2 Bloque 3 Planta 4",
+            "city": "Leganés",
+            "postalCode": "28914",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "calle Pluma 13 P02 B",
+            "city": "Leganés, Madrid",
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Calle del Tenis 2 Bloque 3 Planta 4",
+            "city": "Leganés",
+            "postalCode": "28914"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1566,
+          "ncLabel": "NC_1566",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1567,
+          "ncLabel": "NC_1567",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1568,
+          "ncLabel": "NC_1568",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1569,
+          "ncLabel": "NC_1569",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1570,
+          "ncLabel": "NC_1570",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1571,
+          "ncLabel": "NC_1571",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1572,
+          "ncLabel": "NC_1572",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1573,
+          "ncLabel": "NC_1573",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1575,
+          "ncLabel": "NC_1575",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "960",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "960",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1646,
+          "ncLabel": "NC_1646",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1661,
+          "ncLabel": "NC_1661",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-07-10",
+          "departure": "2027-07-08",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avda. de Leganés 54",
+            "city": "Alcorcón",
+            "postalCode": "28923",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Francisco Ribera, 5 Portal 13 4A",
+            "city": "Leganés",
+            "postalCode": "28918",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avda. de Leganés 54",
+            "city": "Alcorcón",
+            "postalCode": "28923",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Francisco Ribera, 5 Portal 13 4A",
+            "city": "Leganés",
+            "postalCode": "28918"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1778,
+          "ncLabel": "NC_1778",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-08-28",
+          "departure": "2026-11-29",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Calle Monte Perdido 8",
+            "city": "Cuarte de Huerva",
+            "postalCode": "50410",
+            "prepaidAmount": "1095",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Calle Monte Perdido 8",
+            "city": "Cuarte de Huerva",
+            "postalCode": "50410",
+            "prepaidAmount": "1095",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1095",
+            "hasDeposit": true
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1095",
+            "addressComplete": true,
+            "addressLine1": "Calle Monte Perdido 8",
+            "city": "Cuarte de Huerva",
+            "postalCode": "50410"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1814,
+          "ncLabel": "NC_1814",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-06",
+          "departure": "2027-01-31",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Almazora 59 - 1",
+            "city": "Castellón De La Plana/castelló De La Plana",
+            "postalCode": "12005",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Almazora 59 - 1",
+            "city": "Castellón De La Plana/castelló De La Plana",
+            "postalCode": "12005",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Almazora 59 - 1",
+            "city": "Castellón De La Plana/castelló De La Plana",
+            "postalCode": "12005"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1890,
+          "ncLabel": "NC_1890",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1891,
+          "ncLabel": "NC_1891",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1892,
+          "ncLabel": "NC_1892",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1941,
+          "ncLabel": "NC_1941",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 2083,
+          "ncLabel": "NC_2083",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-10-05",
+          "departure": "2026-11-05",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Triq Dun Gwakkin Schembri 31",
+            "city": "QORMI",
+            "postalCode": "QRM 1010",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Triq Dun Gwakkin Schembri 31",
+            "city": "QORMI",
+            "postalCode": "QRM 1010",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Triq Dun Gwakkin Schembri 31",
+            "city": "QORMI",
+            "postalCode": "QRM 1010"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 2084,
+          "ncLabel": "NC_2084",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-10-05",
+          "departure": "2026-11-05",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "calle Pineta 1i, Nave 9, Polígono Valdeconsejo",
+            "city": "Cuarte de Huerva, Zaragoza",
+            "postalCode": "50410",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "calle Pineta 1i, Nave 9, Polígono Valdeconsejo",
+            "city": "Cuarte de Huerva, Zaragoza",
+            "postalCode": "50410"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 2085,
+          "ncLabel": "NC_2085",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-10-05",
+          "departure": "2026-11-05",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        }
+      ]
+    },
+    "missingBillingAddress": {
+      "count": 15,
+      "recoverableFromHmOrCust": 0,
+      "stillMissingAfterLookup": 15,
+      "ncs": [
+        {
+          "nc": 1091,
+          "ncLabel": "NC_1091",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-03-02",
+          "departure": "2027-02-28",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "950",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "950",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1566,
+          "ncLabel": "NC_1566",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1567,
+          "ncLabel": "NC_1567",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1568,
+          "ncLabel": "NC_1568",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1569,
+          "ncLabel": "NC_1569",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1570,
+          "ncLabel": "NC_1570",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1571,
+          "ncLabel": "NC_1571",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1572,
+          "ncLabel": "NC_1572",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1573,
+          "ncLabel": "NC_1573",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1575,
+          "ncLabel": "NC_1575",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "960",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "960",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1646,
+          "ncLabel": "NC_1646",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "Seguimiento Leasing",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "1275",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "HouseMonk",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": true,
+            "prepaidAmount": "1275",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1890,
+          "ncLabel": "NC_1890",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1891,
+          "ncLabel": "NC_1891",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1902,
+          "ncLabel": "NC_1902",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-26",
+          "departure": "2026-11-21",
+          "source": "HouseMonk",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "N06831556 | 15030564056",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "647.50",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "N06831556 | 15030564056",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "647.50",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": "N06831556 | 15030564056",
+            "hasDeposit": true,
+            "prepaidAmount": "647.50",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 2082,
+          "ncLabel": "NC_2082",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-10-05",
+          "departure": "2026-11-05",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "B50844109 | 61378776X",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "665",
+            "hasDeposit": true
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "B50844109 | 61378776X",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": "665",
+            "hasDeposit": true
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": "B50844109 | 61378776X",
+            "hasDeposit": true,
+            "prepaidAmount": "665",
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": true,
+            "missingDeposit": false
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        }
+      ]
+    },
+    "missingDeposit": {
+      "count": 13,
+      "recoverableFromHmOrCust": 0,
+      "stillMissingAfterLookup": 13,
+      "ncs": [
+        {
+          "nc": 1060,
+          "ncLabel": "NC_1060",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-03-02",
+          "departure": "2027-02-28",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Calle Partida Solana Alta 12",
+            "city": "La Romana, Alicante",
+            "postalCode": "03669",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Calle Partida Solana Alta 12",
+            "city": "La Romana, Alicante",
+            "postalCode": "03669",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Calle Partida Solana Alta 12",
+            "city": "La Romana, Alicante",
+            "postalCode": "03669"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1318,
+          "ncLabel": "NC_1318",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-05-01",
+          "departure": "2027-04-29",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": "B19778901",
+            "addressComplete": true,
+            "addressLine1": "Paseo Pocoma 5 Avenida, número 1, Bloque D, Escalera 4",
+            "city": "A Coruña",
+            "postalCode": "15190",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": "B19778901",
+            "addressComplete": true,
+            "addressLine1": "Paseo Pocoma 5 Avenida numero 1 Bloque D Escalera 4",
+            "city": "A Coruña",
+            "postalCode": "15190",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": "B19778901",
+            "addressComplete": true,
+            "addressLine1": "Paseo Pocoma 5 Avenida, número 1, Bloque D, Escalera 4",
+            "city": "A Coruña",
+            "postalCode": "15190",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": "B19778901",
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Paseo Pocoma 5 Avenida numero 1 Bloque D Escalera 4",
+            "city": "A Coruña",
+            "postalCode": "15190"
+          },
+          "v2Gaps": {
+            "missingDni": false,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1365,
+          "ncLabel": "NC_1365",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-05-15",
+          "departure": "2027-05-13",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Ctra/ San Vicente , 10",
+            "city": "Trapagaran (Vizcaya)",
+            "postalCode": "48510",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Ctra/ San Vicente , 10",
+            "city": "Trapagaran (Vizcaya)",
+            "postalCode": "48510",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1413,
+          "ncLabel": "NC_1413",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-05-21",
+          "departure": "2027-05-19",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "calle Pluma 13 P02 B",
+            "city": "Leganés, Madrid",
+            "postalCode": "28914",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Calle del Tenis 2 Bloque 3 Planta 4",
+            "city": "Leganés",
+            "postalCode": "28914",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "calle Pluma 13 P02 B",
+            "city": "Leganés, Madrid",
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Calle del Tenis 2 Bloque 3 Planta 4",
+            "city": "Leganés",
+            "postalCode": "28914"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1661,
+          "ncLabel": "NC_1661",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-07-10",
+          "departure": "2027-07-08",
+          "source": "extraction sandbox",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avda. de Leganés 54",
+            "city": "Alcorcón",
+            "postalCode": "28923",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Francisco Ribera, 5 Portal 13 4A",
+            "city": "Leganés",
+            "postalCode": "28918",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avda. de Leganés 54",
+            "city": "Alcorcón",
+            "postalCode": "28923",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Francisco Ribera, 5 Portal 13 4A",
+            "city": "Leganés",
+            "postalCode": "28918"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1814,
+          "ncLabel": "NC_1814",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-06",
+          "departure": "2027-01-31",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Almazora 59 - 1",
+            "city": "Castellón De La Plana/castelló De La Plana",
+            "postalCode": "12005",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Almazora 59 - 1",
+            "city": "Castellón De La Plana/castelló De La Plana",
+            "postalCode": "12005",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Almazora 59 - 1",
+            "city": "Castellón De La Plana/castelló De La Plana",
+            "postalCode": "12005"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1890,
+          "ncLabel": "NC_1890",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1891,
+          "ncLabel": "NC_1891",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": false,
+            "addressLine1": "Calle Tomás Redondo 2",
+            "city": null,
+            "postalCode": null
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": true,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1892,
+          "ncLabel": "NC_1892",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 1941,
+          "ncLabel": "NC_1941",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-09-15",
+          "departure": "2027-09-13",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 2083,
+          "ncLabel": "NC_2083",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-10-05",
+          "departure": "2026-11-05",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Triq Dun Gwakkin Schembri 31",
+            "city": "QORMI",
+            "postalCode": "QRM 1010",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Triq Dun Gwakkin Schembri 31",
+            "city": "QORMI",
+            "postalCode": "QRM 1010",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Triq Dun Gwakkin Schembri 31",
+            "city": "QORMI",
+            "postalCode": "QRM 1010"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 2084,
+          "ncLabel": "NC_2084",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-10-05",
+          "departure": "2026-11-05",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "calle Pineta 1i, Nave 9, Polígono Valdeconsejo",
+            "city": "Cuarte de Huerva, Zaragoza",
+            "postalCode": "50410",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "calle Pineta 1i, Nave 9, Polígono Valdeconsejo",
+            "city": "Cuarte de Huerva, Zaragoza",
+            "postalCode": "50410"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        },
+        {
+          "nc": 2085,
+          "ncLabel": "NC_2085",
+          "b2b": true,
+          "stayPhase": "current",
+          "arrival": "2026-10-05",
+          "departure": "2026-11-05",
+          "source": "B2B extraction",
+          "v2": {
+            "source": "V2",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "houseMonk": {
+            "source": "HouseMonk",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049",
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "customers": {
+            "source": "Customers",
+            "present": true,
+            "documentNumber": null,
+            "addressComplete": false,
+            "addressLine1": null,
+            "city": null,
+            "postalCode": null,
+            "prepaidAmount": null,
+            "hasDeposit": false
+          },
+          "mergedLookup": {
+            "order": [
+              "HouseMonk",
+              "Customers",
+              "V2"
+            ],
+            "documentNumber": null,
+            "hasDeposit": false,
+            "prepaidAmount": null,
+            "addressComplete": true,
+            "addressLine1": "Avenida Monasterio de Silos 24 F",
+            "city": "Madrid",
+            "postalCode": "28049"
+          },
+          "v2Gaps": {
+            "missingDni": true,
+            "missingBillingAddress": false,
+            "missingDeposit": true
+          },
+          "recoverableViaHmCust": {
+            "dni": false,
+            "billingAddress": false,
+            "deposit": false
+          }
+        }
+      ]
+    }
+  }
+}
