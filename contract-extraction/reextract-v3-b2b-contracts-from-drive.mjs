@@ -24,6 +24,7 @@ import {
   findBestUploadForNc,
   ncLabel,
 } from './contract-drive-nc-upload.mjs';
+import { parseNcNumbersFromQuery } from './parse-nc-query.mjs';
 import { extractClientCompanyFromContract, isIndividualDeOtraParte } from './b2b-de-otra-parte-extract.mjs';
 import {
   COMPANY_HEADERS,
@@ -86,13 +87,8 @@ function blankToNull(value) {
 function parseNcFilterArg(argv) {
   const ncArg = argv.find((a) => a.startsWith('--nc='));
   if (!ncArg) return null;
-  return new Set(
-    ncArg
-      .slice(5)
-      .split(/[,;\s]+/)
-      .map((s) => Number(s.replace(/^NC_/i, '')))
-      .filter(Number.isFinite),
-  );
+  const ncs = parseNcNumbersFromQuery(ncArg.slice(5));
+  return ncs.length ? new Set(ncs) : null;
 }
 
 function rowMatchesNc(row, nc) {
@@ -248,7 +244,15 @@ export async function runV3B2bContractReextract(options = {}) {
   }
 
   let targets = [...ncSet].sort((a, b) => a - b);
-  if (ncFilter?.size) targets = targets.filter((nc) => ncFilter.has(nc));
+  if (ncFilter?.size) {
+    const filtered = targets.filter((nc) => ncFilter.has(nc));
+    if (filtered.length) targets = filtered;
+    else {
+      console.warn(
+        `ncFilter matched 0 NCs (filter=${JSON.stringify([...ncFilter].slice(0, 20))}); using full allowlist`,
+      );
+    }
+  }
   targets = targets.slice(0, limit);
 
   const uploads = filterDriveExtractableUploads(uploadsRaw);

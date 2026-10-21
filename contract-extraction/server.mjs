@@ -18,6 +18,7 @@ import { driveHealthLines, handleDriveHttp } from '../contract-uploading/drive-h
 import { runReextractRentMismatch } from './reextract-rent-mismatch.mjs';
 import { runChamariCompanyReextract } from './reextract-chamari-company-from-drive.mjs';
 import { runV3B2bContractReextract } from './reextract-v3-b2b-contracts-from-drive.mjs';
+import { parseNcNumbersFromQuery } from './parse-nc-query.mjs';
 
 const port = Number(process.env.PORT) || 3000;
 
@@ -229,11 +230,7 @@ function parseDriveAiOptions(reqUrl) {
 
 function parseChamariReextractOptions(reqUrl) {
   const query = new URL(reqUrl, 'http://127.0.0.1').searchParams;
-  const ncRaw = query.get('nc') || query.get('ncs') || '';
-  const ncs = ncRaw
-    .split(/[,;\s]+/)
-    .map((s) => Number(s.trim().replace(/^NC_/i, '')))
-    .filter(Number.isFinite);
+  const ncs = parseNcNumbersFromQuery(query.get('nc') || query.get('ncs') || '');
   return {
     dryRun: query.get('dry_run') === '1',
     ncFilter: ncs.length ? new Set(ncs) : null,
@@ -242,11 +239,7 @@ function parseChamariReextractOptions(reqUrl) {
 
 function parseV3B2bReextractOptions(reqUrl) {
   const query = new URL(reqUrl, 'http://127.0.0.1').searchParams;
-  const ncRaw = query.get('nc') || query.get('ncs') || '';
-  const ncs = ncRaw
-    .split(/[,;\s]+/)
-    .map((s) => Number(s.trim().replace(/^NC_/i, '')))
-    .filter(Number.isFinite);
+  const ncs = parseNcNumbersFromQuery(query.get('nc') || query.get('ncs') || '');
   const limitRaw = query.get('limit');
   return {
     dryRun: query.get('dry_run') === '1',
