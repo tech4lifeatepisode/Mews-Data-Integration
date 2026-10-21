@@ -176,7 +176,11 @@ async function upsertCompanyFromParsed(sb, parsed, upload, dryRun) {
   };
   for (const header of COMPANY_HEADERS) record[header] = blankToNull(companyRow[header]);
   if (dryRun) return true;
-  const { data: existing } = await sb.from(COMPANIES_EXT).select('id').eq('Company Name(*)', name).limit(1);
+  const { data: existing } = await sb
+    .from(COMPANIES_EXT)
+    .select('id')
+    .filter('Company Name(*)', 'eq', name)
+    .limit(1);
   if (existing?.length) return false;
   const { error } = await sb.from(COMPANIES_EXT).insert(record);
   if (error) throw error;
@@ -218,29 +222,29 @@ export async function runV3B2bContractReextract(options = {}) {
     maxRetries: 0,
   });
 
-  let v3Rows = [];
-  try {
-    v3Rows = await fetchAll(sb, V3_B2B, 'nc_number');
-  } catch (e) {
-    console.warn(
-      `Could not read ${V3_B2B} (using v3-b2b-nc-allowlist.json):`,
-      e instanceof Error ? e.message : e,
-    );
-  }
-
   const uploadsRaw = await fetchAll(
     sb,
     'contract_drive_uploads',
     'id, drive_name, storage_path, storage_bucket, mime_type, size_bytes, file_format, nc_number, ai_extraction, status, item_type',
   );
 
-  const ncSet = new Set();
-  for (const row of v3Rows) {
-    const nc = Number(row.nc_number);
-    if (Number.isFinite(nc)) ncSet.add(nc);
-  }
+  const ncSet = new Set(loadBundledV3B2bNcs());
   if (!ncSet.size) {
-    for (const nc of loadBundledV3B2bNcs()) ncSet.add(nc);
+    throw new Error(`Missing ${V3_B2B_NC_ALLOWLIST_JSON} — cannot determine V3 B2B NC list`);
+  }
+  if (process.env.V3_B2B_REEXTRACT_NCS_FROM_TABLE === 'true') {
+    try {
+      const v3Rows = await fetchAll(sb, V3_B2B, 'nc_number');
+      for (const row of v3Rows) {
+        const nc = Number(row.nc_number);
+        if (Number.isFinite(nc)) ncSet.add(nc);
+      }
+    } catch (e) {
+      console.warn(
+        `Optional ${V3_B2B} nc_number read failed (using allowlist only):`,
+        e instanceof Error ? e.message : e,
+      );
+    }
   }
 
   let targets = [...ncSet].sort((a, b) => a - b);
@@ -253,6 +257,7 @@ export async function runV3B2bContractReextract(options = {}) {
     JSON.stringify(
       {
         dryRun,
+        ncSource: 'v3-b2b-nc-allowlist.json',
         v3B2bNcs: ncSet.size,
         targets: targets.length,
         sample: targets.slice(0, 12),
