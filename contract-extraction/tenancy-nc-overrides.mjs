@@ -287,6 +287,26 @@ function splitPipeField(raw) {
   return c.split(/\s*\|\s*/).map((p) => clean(p)).filter(Boolean);
 }
 
+/** HouseMonk: Tenant Type/ID often pipe-separated; names/emails/phones often comma-separated. */
+function tenantColumnsFromRow(tenancyRow) {
+  const types = splitPipeField(tenancyRow['Tenant Type']);
+  const n = Math.max(types.length, 1);
+  const splitMixed = (raw) => {
+    const c = clean(raw);
+    if (!c) return [];
+    if (/\s\|\s/.test(c) || (c.includes('|') && !c.includes(','))) return splitPipeField(c);
+    if (n > 1 && c.includes(',')) return c.split(/\s*,\s*/).map((p) => clean(p)).filter(Boolean);
+    return [c];
+  };
+  return {
+    types: types.length ? types : ['Individual'],
+    ids: splitMixed(tenancyRow['Tenant ID']),
+    names: splitMixed(tenancyRow['Tenant Name']),
+    emails: splitMixed(tenancyRow['Tenant Email']),
+    phones: splitMixed(tenancyRow['Tenant Phone Number']),
+  };
+}
+
 function firstPipePart(raw) {
   const parts = splitPipeField(raw);
   return parts[0] || clean(raw) || null;
@@ -304,9 +324,61 @@ let cachedLookupPath = null;
 
 const EMPTY_TENANCY_LOOKUP = Object.freeze({
   byNc: new Map(),
+  byNcDoor: new Map(),
+  rowsByNc: new Map(),
   byTenantId: new Map(),
   rows: [],
 });
+
+/** Match Mews room / HouseMonk Door (0129, 129, -1049). */
+export function doorLookupKeys(raw) {
+  const s = clean(raw);
+  if (!s) return [];
+  const keys = new Set([s]);
+  if (/^-?\d+$/.test(s)) {
+    const n = parseInt(s, 10);
+    keys.add(String(n));
+    if (n >= 0) keys.add(String(n).padStart(4, '0'));
+    if (s.startsWith('0') && s.length > 1) keys.add(s.replace(/^0+/, '') || '0');
+  }
+  return [...keys];
+}
+
+function parseIsoOrDmyDate(raw) {
+  const c = clean(raw);
+  if (!c) return null;
+  const iso = c.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (iso) return `${iso[1]}-${iso[2]}-${iso[3]}`;
+  return parseDdMmYyyy(c);
+}
+
+export function shouldPreferIndividualB2bGuest(tenancyRow, customerCtx) {
+  if (!tenancyRow) return true;
+  const st = clean(tenancyRow['Tenancy Status']).toLowerCase();
+  if (st === 'occupied' || st === 'shifted') return true;
+  const today = (process.env.AUDIT_TODAY || new Date().toISOString().slice(0, 10)).slice(0, 10);
+  const arr = parseIsoOrDmyDate(customerCtx?.['Arrival Date(*)']);
+  const dep = parseIsoOrDmyDate(customerCtx?.['Departure Date(*)']);
+  if (arr && dep && arr <= today && dep >= today) return true;
+  return false;
+}
+
+function pickB2bGuestIndices(tenancyRow, preferIndividual) {
+  const { types: tenantTypes, ids: tenantIds } = tenantColumnsFromRow(tenancyRow);
+  const n = Math.max(tenantTypes.length, tenantIds.length, 1);
+  let companyIdx = -1;
+  let individualIdx = -1;
+  for (let i = 0; i < n; i++) {
+    const typ = (tenantTypes[i] || 'Individual').toLowerCase();
+    if (typ === 'company' && companyIdx < 0) companyIdx = i;
+    else if (typ !== 'company' && individualIdx < 0) individualIdx = i;
+  }
+  if (preferIndividual && individualIdx >= 0) return { guestIdx: individualIdx, companyIdx };
+  if (!preferIndividual && companyIdx >= 0 && individualIdx < 0) return { guestIdx: companyIdx, companyIdx };
+  if (individualIdx >= 0) return { guestIdx: individualIdx, companyIdx };
+  if (companyIdx >= 0) return { guestIdx: companyIdx, companyIdx };
+  return { guestIdx: 0, companyIdx: companyIdx >= 0 ? companyIdx : -1 };
+}
 
 function normalizeTenantId(id) {
   return clean(id).toUpperCase().replace(/\s/g, '');
@@ -351,6 +423,8 @@ function readTenancyTable(csvPath) {
   const ncIdx = header.lastIndexOf('NC');
   const rows = [];
   const byNc = new Map();
+  const byNcDoor = new Map();
+  const rowsByNc = new Map();
   const byTenantId = new Map();
 
   for (let r = 1; r < table.length; r++) {
@@ -362,7 +436,15 @@ function readTenancyTable(csvPath) {
     const ncRaw = clean(cells[ncIdx >= 0 ? ncIdx : cells.length - 1]);
     if (ncRaw && /^\d+$/.test(ncRaw)) {
       const nc = Number(ncRaw);
-      if (!byNc.has(nc)) byNc.set(nc, row);
+      const prevNc = byNc.get(nc);
+      byNc.set(nc, !prevNc || tenancyRowPrefer(row, prevNc) ? row : prevNc);
+      if (!rowsByNc.has(nc)) rowsByNc.set(nc, []);
+      rowsByNc.get(nc).push(row);
+      for (const dk of doorLookupKeys(row.Door)) {
+        const key = `${nc}|${dk}`;
+        const prevDoor = byNcDoor.get(key);
+        byNcDoor.set(key, !prevDoor || tenancyRowPrefer(row, prevDoor) ? row : prevDoor);
+      }
     }
 
     for (const id of splitPipeField(row['Tenant ID'])) {
@@ -372,7 +454,7 @@ function readTenancyTable(csvPath) {
       if (!prev || tenancyRowPrefer(row, prev)) byTenantId.set(key, row);
     }
   }
-  return { byNc, byTenantId, rows };
+  return { byNc, byNcDoor, rowsByNc, byTenantId, rows };
 }
 
 function resolveTenancyCsvPath(preferred = DEFAULT_TENANCY_CSV) {
@@ -437,8 +519,31 @@ function scoreTenancyMatch(tenancyRow, customer) {
 
 /** Resolve HouseMonk tenancy row for a V2 customer (NC column, tenant ID, then name + arrival). */
 export function resolveTenancyForCustomer(nc, customer, lookup = loadTenancyLookup()) {
+  const n = Number(nc);
+  for (const dk of doorLookupKeys(customer?.['Allocated Room Number'])) {
+    const byDoor = lookup.byNcDoor?.get(`${n}|${dk}`);
+    if (byDoor) return byDoor;
+  }
+
+  const ncRows = lookup.rowsByNc?.get(n) || [];
+  if (ncRows.length > 1 && clean(customer?.['Allocated Room Number'])) {
+    for (const row of ncRows) {
+      const rowKeys = new Set(doorLookupKeys(row.Door));
+      for (const dk of doorLookupKeys(customer['Allocated Room Number'])) {
+        if (rowKeys.has(dk)) return row;
+      }
+    }
+  }
+  if (ncRows.length) {
+    let best = ncRows[0];
+    for (const row of ncRows) {
+      if (tenancyRowPrefer(row, best)) best = row;
+    }
+    return best;
+  }
+
   const byNc = lookup.byNc || lookup;
-  if (byNc instanceof Map && byNc.get(Number(nc))) return byNc.get(Number(nc));
+  if (byNc instanceof Map && byNc.get(n)) return byNc.get(n);
 
   const doc = normalizeTenantId(customer['Document Number']);
   if (doc && lookup.byTenantId?.get(doc)) return lookup.byTenantId.get(doc);
@@ -572,6 +677,74 @@ export function mewsPatchFromTenancy(tenancyRow, customerCtx = null) {
   return patch;
 }
 
+/** Company billing fields only (never guest document). */
+export function mewsB2bCompanyPatchFromTenancy(tenancyRow) {
+  if (!tenancyRow) return {};
+  const patch = {};
+  const { types: tenantTypes, ids: tenantIds, names: tenantNames } = tenantColumnsFromRow(tenancyRow);
+  for (let i = 0; i < tenantIds.length; i++) {
+    if ((tenantTypes[i] || 'Individual').toLowerCase() !== 'company') continue;
+    const cid = tenantIds[i];
+    const cname = clean(tenantNames[i]);
+    if (isSpanishCompanyTaxId(cid)) patch['Tax Identification Number'] = cid;
+    if (cname) {
+      patch['Partner Company'] = cname;
+      patch['Company Id'] = cname;
+    }
+    return patch;
+  }
+  for (let i = 0; i < tenantIds.length; i++) {
+    if (!isSpanishCompanyTaxId(tenantIds[i])) continue;
+    patch['Tax Identification Number'] = tenantIds[i];
+    const cname = clean(tenantNames[i]);
+    if (cname) {
+      patch['Partner Company'] = cname;
+      patch['Company Id'] = cname;
+    }
+    break;
+  }
+  return patch;
+}
+
+/** B2B guest row: individual worker when in-house; company placeholder when future Booked-only. */
+export function mewsB2bGuestPatchFromTenancy(tenancyRow, customerCtx = null, options = {}) {
+  if (!tenancyRow) return {};
+  const preferIndividual =
+    options.preferIndividual ?? shouldPreferIndividualB2bGuest(tenancyRow, customerCtx);
+  const { ids: tenantIds, names: tenantNames, emails, phones } = tenantColumnsFromRow(tenancyRow);
+  const { guestIdx, companyIdx } = pickB2bGuestIndices(tenancyRow, preferIndividual);
+  const patch = {};
+
+  const name = clean(tenantNames[guestIdx] ?? tenantNames[0]);
+  if (name) {
+    const parts = name.split(/\s+/).filter(Boolean);
+    if (parts.length >= 2) {
+      patch['First Name'] = parts[0];
+      patch['Last Name(*)'] = parts.slice(1).join(' ');
+    } else patch['Last Name(*)'] = name;
+  }
+
+  const gid = tenantIds[guestIdx] ?? tenantIds[0];
+  if (gid) {
+    const useAsGuestDoc = guestIdx !== companyIdx || !isSpanishCompanyTaxId(gid);
+    if (useAsGuestDoc || !preferIndividual) {
+      patch['Document Number'] = gid;
+      patch['Document Type'] = documentTypeForId(gid);
+    }
+  }
+
+  const emailRaw = emails[guestIdx] ?? emails[0];
+  const email = pickEmailFromTenantField(emailRaw);
+  if (email) patch.Email = email;
+  const phone = clean(phones[guestIdx] ?? phones[0]);
+  if (phone) patch.Telephone = phone;
+
+  const door = clean(tenancyRow.Door);
+  if (door) patch['Allocated Room Number'] = door.replace(/^0+(?=\d)/, '') || door;
+
+  return patch;
+}
+
 export function manualOverrideForNc(nc) {
   return TENANCY_MANUAL_BY_NC[Number(nc)] || null;
 }
@@ -632,7 +805,7 @@ export function applyTenancyAndManualFills(out, nc, tenancyLookup, options = {})
 export function applyB2bTenancyGuestFields(row, nc, lookup = loadTenancyLookup()) {
   const tenancyRow = resolveTenancyForCustomer(nc, row, lookup);
   if (!tenancyRow) return row;
-  const patch = mewsPatchFromTenancy(tenancyRow, row);
+  const patch = mewsB2bGuestPatchFromTenancy(tenancyRow, row);
   const out = { ...row };
   for (const key of TENANCY_GUEST_MEWS_FIELDS) {
     if (patch[key] != null && !isBlankVal(patch[key])) out[key] = clean(patch[key]);

@@ -1,7 +1,7 @@
 import { bestCompanyMatch, clean, normName } from './company-match-utils.mjs';
 import { stripChamariFromCompanyRow } from './chamari-strip.mjs';
 import { isChamariEntity } from './chamari-strip.mjs';
-import { mewsPatchFromTenancy } from './tenancy-nc-overrides.mjs';
+import { mewsB2bCompanyPatchFromTenancy, mewsPatchFromTenancy } from './tenancy-nc-overrides.mjs';
 
 export function companyNameFromSeguimientoLabel(label) {
   const c = clean(label);
@@ -71,7 +71,7 @@ export function reapplyB2bCompanyOnCustomer(out, nc, { seg, cust, hm, companiesE
   const preferredName = companyNameFromSeguimientoLabel(
     clean(seg?.['Partner Company']) || clean(seg?.['Company Id']) || clean(cust?.['Partner Company']),
   );
-  const tenancyPatch = mewsPatchFromTenancy(tenancyRow);
+  const tenancyPatch = mewsB2bCompanyPatchFromTenancy(tenancyRow);
   const matched = pickCompaniesExtractMatch([out, cust, hm, seg], companiesExtract, preferredName);
 
   const companyName =
@@ -95,10 +95,6 @@ export function reapplyB2bCompanyOnCustomer(out, nc, { seg, cust, hm, companiesE
     null;
   if (tax && !isChamariEntity(tax)) {
     out['Tax Identification Number'] = tax;
-    if (!clean(out['Document Number']) || isChamariEntity(out['Document Number'])) {
-      out['Document Number'] = tax;
-      out['Document Type'] = 'TaxIdentificationNumber';
-    }
   }
 
   if (matched) {
