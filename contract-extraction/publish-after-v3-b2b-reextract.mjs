@@ -9,12 +9,18 @@ import { fileURLToPath } from 'url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 
-const STEPS = [
+const ALL_STEPS = [
   'propagate-customers-ext-multi-nc.mjs',
   'build-upload-final-format-customers.mjs',
   'upload-v2-mews-import-19-10-2026.mjs',
   'upload-v3-b2b-mews-import-20-10-2026.mjs',
 ];
+
+function stepsForRun() {
+  if (process.env.PUBLISH_SKIP_PROPAGATE === '1') return ALL_STEPS.slice(1);
+  if (process.env.PUBLISH_V2_V3_ONLY === '1') return ALL_STEPS.slice(2);
+  return ALL_STEPS;
+}
 
 function runNodeScript(scriptName) {
   const scriptPath = path.join(here, scriptName);
@@ -45,6 +51,7 @@ function runNodeScript(scriptName) {
 
 export async function runPublishAfterV3B2bReextract() {
   const stepResults = [];
+  const STEPS = stepsForRun();
   for (const script of STEPS) {
     stepResults.push(await runNodeScript(script));
   }

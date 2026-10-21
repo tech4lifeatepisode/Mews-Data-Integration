@@ -8,9 +8,10 @@ import { fileURLToPath } from 'url';
 import { createClient } from '@supabase/supabase-js';
 import { isB2bReservation } from './b2b-reservation-detect.mjs';
 import {
-  buildActiveB2bNcSet,
+  buildV3B2bNcSet,
   indexMissingGroupCodeNcs,
   isFilledMewsField,
+  isCurrentOrFutureByDeparture,
   MIN_DEPARTURE_DATE,
 } from './b2b-active-nc.mjs';
 import { sanitizeV3B2bCustomerRow } from './v3-b2b-row-sanitize.mjs';
@@ -262,20 +263,16 @@ const hmByNc = indexAllHmByNc(ffHm);
 const v2ByNc = new Map(v2Rows.map((r) => [Number(r.nc_number), r]));
 const missingGcNcs = indexMissingGroupCodeNcs(missingGc);
 
-const { activeB2bNcs, activeLifecycleByNc } = buildActiveB2bNcSet({
+const { ncSet, activeLifecycleByNc } = buildV3B2bNcSet({
   lifecycleRows,
   custByNc,
+  custExtByNc,
+  segByNc,
+  v2Rows,
   missingGroupCodeNcs: missingGcNcs,
+  isB2bReservation,
+  shouldExcludeNc: shouldExcludeNcFromV2,
 });
-
-const ncSet = new Set(activeB2bNcs);
-for (const r of v2Rows) {
-  const nc = Number(r.nc_number);
-  if (!isB2bReservation(nc, r, segByNc.get(nc))) continue;
-  if (!activeLifecycleByNc.has(nc) || missingGcNcs.has(nc)) continue;
-  if (shouldExcludeNcFromV2(nc)) continue;
-  ncSet.add(nc);
-}
 
 const customersOut = [];
 const skippedNoCompany = [];
@@ -293,7 +290,15 @@ for (const nc of [...ncSet].sort((a, b) => a - b)) {
     base['Departure Date(*)'] = lifecycle.check_out_date || base['Departure Date(*)'];
     base['Arrival Date(*)'] = lifecycle.check_in_date || base['Arrival Date(*)'];
   }
-  if (!keepCurrentOrFutureReservation(base)) continue;
+  const ext = custExtByNc.get(nc);
+  if (
+    !keepCurrentOrFutureReservation(base) &&
+    !isCurrentOrFutureByDeparture(cust) &&
+    !isCurrentOrFutureByDeparture(ext) &&
+    !isCurrentOrFutureByDeparture(seg)
+  ) {
+    continue;
+  }
 
   const row = sanitizeV3B2bCustomerRow(stripMeta({ ...base, nc_number: nc }), {
     customersFinal: cust,

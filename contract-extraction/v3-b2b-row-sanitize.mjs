@@ -6,11 +6,14 @@ import { applyMewsImportReadyFields } from './mews-import-ready.mjs';
 import { reapplyB2bCompanyOnCustomer } from './v2-b2b-company-build.mjs';
 import { isExtractionArtifactField } from './v3-b2c-row-sanitize.mjs';
 import {
+  applyB2bTenancyGuestFields,
   loadTenancyLookup,
-  mewsPatchFromTenancy,
   resolveTenancyForCustomer,
 } from './tenancy-nc-overrides.mjs';
-import { applyContractExtractionOverlay } from './contract-extraction-overlay.mjs';
+import {
+  applyContractExtractionOverlay,
+  CONTRACT_B2B_COMMERCIAL_FIELDS,
+} from './contract-extraction-overlay.mjs';
 
 function isFilledMewsField(v) {
   const c = clean(v);
@@ -81,7 +84,9 @@ export function sanitizeV3B2bCustomerRow(row, ctx) {
 
   let out = { ...row };
   const cust = customersFinal || customersExt;
-  if (customersExt) out = applyContractExtractionOverlay(out, customersExt);
+  if (customersExt) {
+    out = applyContractExtractionOverlay(out, customersExt, { fields: CONTRACT_B2B_COMMERCIAL_FIELDS });
+  }
 
   if (isExtractionArtifactField(out.Sex)) out.Sex = null;
   if (isExtractionArtifactField(out['Nationality Code'])) out['Nationality Code'] = null;
@@ -95,8 +100,17 @@ export function sanitizeV3B2bCustomerRow(row, ctx) {
   applyOperationalGuestFields(out, { hm, lifecycle });
 
   const nc = Number(out.nc_number);
-  const tenancyRow = resolveTenancyForCustomer(nc, out, loadTenancyLookup());
-  Object.assign(out, mewsPatchFromTenancy(tenancyRow));
+  const tenancyLookup = loadTenancyLookup();
+  out = applyB2bTenancyGuestFields(out, nc, tenancyLookup);
+  const tenancyRow = resolveTenancyForCustomer(nc, out, tenancyLookup);
+  if (tenancyRow && /carabanchel/i.test(clean(tenancyRow.Property))) {
+    if (!isFilledMewsField(out['Address Line 1'])) {
+      const door = clean(tenancyRow.Door);
+      out['Address Line 1'] = door ? `The Carabanchel Episode, unit ${door}` : 'The Carabanchel Episode';
+    }
+    setIfEmpty(out, 'City', 'Madrid');
+    setIfEmpty(out, 'Country Code', 'ES');
+  }
 
   reapplyB2bCompanyOnCustomer(out, nc, {
     seg,

@@ -86,3 +86,72 @@ export function buildActiveB2bNcSet({ lifecycleRows, custByNc, missingGroupCodeN
   }
   return { activeB2bNcs: out, activeLifecycleByNc: activeByNc };
 }
+
+function parseDepartureIso(row) {
+  const raw = clean(row?.['Departure Date(*)'] || row?.['Departure Date']);
+  if (!raw || raw === '/') return null;
+  const iso = raw.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (iso) return `${iso[1]}-${iso[2]}-${iso[3]}`;
+  const dmy = raw.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (dmy) {
+    const [, d, mo, y] = dmy;
+    return `${y}-${mo.padStart(2, '0')}-${d.padStart(2, '0')}`;
+  }
+  return null;
+}
+
+export function isCurrentOrFutureByDeparture(row, minDeparture = MIN_DEPARTURE_DATE) {
+  const dep = parseDepartureIso(row);
+  if (!dep) return false;
+  return dep >= minDeparture;
+}
+
+/**
+ * All B2B NCs for V3: lifecycle-active B2B plus Seguimiento/V2/custExt rows with future checkout.
+ * Does not require an active lifecycle row for every NC.
+ */
+export function buildV3B2bNcSet({
+  lifecycleRows,
+  custByNc,
+  custExtByNc = new Map(),
+  segByNc = new Map(),
+  v2Rows = [],
+  missingGroupCodeNcs = new Set(),
+  isB2bReservation,
+  shouldExcludeNc,
+}) {
+  const { activeB2bNcs, activeLifecycleByNc } = buildActiveB2bNcSet({
+    lifecycleRows,
+    custByNc,
+    missingGroupCodeNcs,
+  });
+  const ncSet = new Set(activeB2bNcs);
+
+  for (const [nc, seg] of segByNc) {
+    if (missingGroupCodeNcs.has(nc) || shouldExcludeNc?.(nc)) continue;
+    const cust = custByNc.get(nc) || custExtByNc.get(nc);
+    if (!isB2bReservation(nc, cust || seg, seg)) continue;
+    if (!isB2bNcFromCustomerContract(nc, cust) && !/b2b/i.test(clean(seg?.['Business Segment']))) continue;
+    if (isCurrentOrFutureByDeparture(seg) || isCurrentOrFutureByDeparture(cust) || isCurrentOrFutureByDeparture(custExtByNc.get(nc))) {
+      ncSet.add(nc);
+    }
+  }
+
+  for (const r of v2Rows) {
+    const nc = Number(r.nc_number);
+    if (!Number.isFinite(nc) || missingGroupCodeNcs.has(nc) || shouldExcludeNc?.(nc)) continue;
+    const seg = segByNc.get(nc);
+    if (!isB2bReservation(nc, r, seg)) continue;
+    if (isCurrentOrFutureByDeparture(r) || isCurrentOrFutureByDeparture(custByNc.get(nc)) || isCurrentOrFutureByDeparture(custExtByNc.get(nc))) {
+      ncSet.add(nc);
+    }
+  }
+
+  for (const [nc, cust] of custExtByNc) {
+    if (missingGroupCodeNcs.has(nc) || shouldExcludeNc?.(nc)) continue;
+    if (!isB2bNcFromCustomerContract(nc, custByNc.get(nc) || cust)) continue;
+    if (isCurrentOrFutureByDeparture(cust)) ncSet.add(nc);
+  }
+
+  return { ncSet, activeLifecycleByNc };
+}

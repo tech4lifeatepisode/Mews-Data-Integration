@@ -23,7 +23,10 @@ import { mapRowToMewsIncludedProducts } from './mews-product-map.mjs';
 import { applyMewsStayRateAndMonthlyPricing } from './mews-stay-rate-and-products-format.mjs';
 import { applyMewsImportReadyFields } from './mews-import-ready.mjs';
 import { applyUnitActualValueCategory, loadUnitActualValueByNc } from './nc-unit-actual-value.mjs';
-import { applyContractExtractionOverlay } from './contract-extraction-overlay.mjs';
+import {
+  applyContractExtractionOverlay,
+  CONTRACT_B2B_COMMERCIAL_FIELDS,
+} from './contract-extraction-overlay.mjs';
 
 const SRC_CUSTOMERS = 'Final_Format_All_Fields_Match_Mews_Import_19_10_2026';
 const SRC_COMPANIES = 'Final_Format_All_Fields_Match_Mews_Import_Companies_19_10_2026';
@@ -255,7 +258,14 @@ function enrichCustomerRow(row, nc, cust, hm, seg, company, companiesExtract, cu
   const moneyOrder = inHouseB2b ? [hm, cust, row, seg] : [row, seg, cust, hm];
 
   let out = { ...row, nc_number: nc };
-  if (customersExt) out = applyContractExtractionOverlay(out, customersExt);
+  if (customersExt) {
+    const overlayFields = b2b ? CONTRACT_B2B_COMMERCIAL_FIELDS : undefined;
+    out = applyContractExtractionOverlay(
+      out,
+      customersExt,
+      overlayFields ? { fields: overlayFields } : {},
+    );
+  }
 
   if (b2b) applyB2bGuestAndCompany(out, row, hm, cust, seg, company);
   else {
@@ -345,7 +355,7 @@ function enrichCustomerRow(row, nc, cust, hm, seg, company, companiesExtract, cu
   }
 
   applyMandatoryGapFills(out, b2b, company, companyExtract);
-  applyTenancyAndManualFills(out, nc, tenancyLookup);
+  applyTenancyAndManualFills(out, nc, tenancyLookup, { forceB2bGuestFromTenancy: b2b });
   stripChamariFromCustomerRow(out);
   if (b2b) {
     reapplyB2bCompanyOnCustomer(out, nc, {

@@ -5,8 +5,8 @@ function isFilled(v) {
   return Boolean(c && c !== '/' && c !== '-');
 }
 
-/** Contract fields from Customers_Contracts_Extraction_12_10_2026 override stale V2/HM values. */
-export const CONTRACT_EXTRACTION_FIELDS = [
+/** B2B: commercial / stay fields from contract re-extract (guest PII comes from Tenancy CSV). */
+export const CONTRACT_B2B_COMMERCIAL_FIELDS = [
   'Arrival Date(*)',
   'Departure Date(*)',
   'Allocated Rate',
@@ -17,6 +17,12 @@ export const CONTRACT_EXTRACTION_FIELDS = [
   'Tax Identification Number',
   'Allocated Room Category(*)',
   'Included Products',
+  'Companions',
+];
+
+/** Contract fields from Customers_Contracts_Extraction_12_10_2026 override stale V2/HM values. */
+export const CONTRACT_EXTRACTION_FIELDS = [
+  ...CONTRACT_B2B_COMMERCIAL_FIELDS,
   'Email',
   'First Name',
   'Last Name(*)',
@@ -30,15 +36,15 @@ export const CONTRACT_EXTRACTION_FIELDS = [
   'Postal Code',
   'Country Code',
   'Nationality Code',
-  'Companions',
   'Sex',
   'Birth Date',
 ];
 
-export function applyContractExtractionOverlay(row, customersExtRow) {
+export function applyContractExtractionOverlay(row, customersExtRow, options = {}) {
   if (!customersExtRow) return row;
+  const fields = options.fields || CONTRACT_EXTRACTION_FIELDS;
   const out = { ...row };
-  for (const key of CONTRACT_EXTRACTION_FIELDS) {
+  for (const key of fields) {
     if (isFilled(customersExtRow[key])) out[key] = clean(customersExtRow[key]);
   }
   return out;

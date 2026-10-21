@@ -7,10 +7,39 @@ import { fileURLToPath } from 'url';
 import { clean } from './room-number-to-category.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-export const DEFAULT_TENANCY_CSV = path.join(
+/** Shipped copy for Render; local dev may use External Data Sources via fallback. */
+export const DEFAULT_TENANCY_CSV = path.join(here, 'data', 'Tenancy-14-10-2026-044225.csv');
+const TENANCY_CSV_FALLBACK = path.join(
   here,
   '../contract-analysis/External Data Sources/Tenancy-14-10-2026-044225.csv',
 );
+
+export const TENANCY_GUEST_MEWS_FIELDS = [
+  'First Name',
+  'Last Name(*)',
+  'Second Last Name',
+  'Email',
+  'Telephone',
+  'Document Number',
+  'Document Type',
+  'Allocated Room Number',
+];
+
+/** When B2B guest is forced from tenancy, do not overwrite contract commercial fields. */
+const TENANCY_B2B_COMMERCIAL_SKIP = new Set([
+  'Partner Company',
+  'Company Id',
+  'Tax Identification Number',
+  'Arrival Date(*)',
+  'Departure Date(*)',
+  'Allocated Rate',
+  'Per Night Prices',
+  'Prepaid Amount',
+  'Allocated Room Category(*)',
+  'Included Products',
+  'Adult Count(*)',
+  'Child Count(*)',
+]);
 
 /** NC → manual billing / lifecycle overrides (user-confirmed HouseMonk profiles). */
 export const TENANCY_MANUAL_BY_NC = {
@@ -346,9 +375,22 @@ function readTenancyTable(csvPath) {
   return { byNc, byTenantId, rows };
 }
 
+function resolveTenancyCsvPath(preferred = DEFAULT_TENANCY_CSV) {
+  const candidates = [
+    clean(process.env.TENANCY_CSV),
+    preferred,
+    DEFAULT_TENANCY_CSV,
+    TENANCY_CSV_FALLBACK,
+  ].filter(Boolean);
+  for (const p of candidates) {
+    if (fs.existsSync(p)) return p;
+  }
+  return candidates[0] || DEFAULT_TENANCY_CSV;
+}
+
 /** Full tenancy indexes: NC, tenant ID, and all rows (for name/date match). */
 export function loadTenancyLookup(csvPath = DEFAULT_TENANCY_CSV) {
-  const resolved = clean(process.env.TENANCY_CSV) || csvPath;
+  const resolved = resolveTenancyCsvPath(csvPath);
   if (cachedLookup && cachedLookupPath === resolved) return cachedLookup;
   if (!fs.existsSync(resolved)) {
     console.warn(
@@ -362,6 +404,7 @@ export function loadTenancyLookup(csvPath = DEFAULT_TENANCY_CSV) {
   cachedLookupPath = resolved;
   return cachedLookup;
 }
+
 
 export function loadTenancyByNc(csvPath = DEFAULT_TENANCY_CSV) {
   return loadTenancyLookup(csvPath).byNc;
@@ -544,7 +587,8 @@ function isBlankVal(v) {
   return c === '/' || c === '-' || c === '.';
 }
 
-export function applyTenancyAndManualFills(out, nc, tenancyLookup) {
+export function applyTenancyAndManualFills(out, nc, tenancyLookup, options = {}) {
+  const { forceB2bGuestFromTenancy = false } = options;
   const manual = manualOverrideForNc(nc);
   const lookup =
     tenancyLookup?.rows != null
@@ -554,6 +598,11 @@ export function applyTenancyAndManualFills(out, nc, tenancyLookup) {
   const fromTenancy = mewsPatchFromTenancy(tenancy, out);
   for (const [k, v] of Object.entries(fromTenancy)) {
     if (v == null || isBlankVal(v)) continue;
+    if (forceB2bGuestFromTenancy && TENANCY_B2B_COMMERCIAL_SKIP.has(k)) continue;
+    if (forceB2bGuestFromTenancy && TENANCY_GUEST_MEWS_FIELDS.includes(k)) {
+      out[k] = v;
+      continue;
+    }
     if (isBlankVal(out[k])) out[k] = v;
   }
   if (manual && !manual.excludeFromV2) {
@@ -575,6 +624,18 @@ export function applyTenancyAndManualFills(out, nc, tenancyLookup) {
     for (const [k, v] of Object.entries(integraBilling())) {
       if (isBlankVal(out[k])) out[k] = v;
     }
+  }
+  return out;
+}
+
+/** B2B guest identity + room from HouseMonk tenancy export (overrides contract extraction guest fields). */
+export function applyB2bTenancyGuestFields(row, nc, lookup = loadTenancyLookup()) {
+  const tenancyRow = resolveTenancyForCustomer(nc, row, lookup);
+  if (!tenancyRow) return row;
+  const patch = mewsPatchFromTenancy(tenancyRow, row);
+  const out = { ...row };
+  for (const key of TENANCY_GUEST_MEWS_FIELDS) {
+    if (patch[key] != null && !isBlankVal(patch[key])) out[key] = clean(patch[key]);
   }
   return out;
 }
