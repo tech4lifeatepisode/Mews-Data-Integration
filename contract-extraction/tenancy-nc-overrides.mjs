@@ -363,6 +363,11 @@ export function shouldPreferIndividualB2bGuest(tenancyRow, customerCtx) {
   return false;
 }
 
+function isB2bCompanyIndividualTenancyRow(row) {
+  const types = splitPipeField(row['Tenant Type']).map((t) => t.toLowerCase());
+  return types.includes('company') && types.some((t) => t !== 'company');
+}
+
 function pickB2bGuestIndices(tenancyRow, preferIndividual) {
   const { types: tenantTypes, ids: tenantIds } = tenantColumnsFromRow(tenancyRow);
   const n = Math.max(tenantTypes.length, tenantIds.length, 1);
@@ -520,12 +525,26 @@ function scoreTenancyMatch(tenancyRow, customer) {
 /** Resolve HouseMonk tenancy row for a V2 customer (NC column, tenant ID, then name + arrival). */
 export function resolveTenancyForCustomer(nc, customer, lookup = loadTenancyLookup()) {
   const n = Number(nc);
+  const ncRows = lookup.rowsByNc?.get(n) || [];
+  const b2bDualRows = ncRows.filter(isB2bCompanyIndividualTenancyRow);
+  if (b2bDualRows.length === 1) return b2bDualRows[0];
+  if (b2bDualRows.length > 1) {
+    for (const dk of doorLookupKeys(customer?.['Allocated Room Number'])) {
+      for (const row of b2bDualRows) {
+        if (doorLookupKeys(row.Door).includes(dk)) return row;
+      }
+    }
+    let best = b2bDualRows[0];
+    for (const row of b2bDualRows) {
+      if (tenancyRowPrefer(row, best)) best = row;
+    }
+    return best;
+  }
+
   for (const dk of doorLookupKeys(customer?.['Allocated Room Number'])) {
     const byDoor = lookup.byNcDoor?.get(`${n}|${dk}`);
     if (byDoor) return byDoor;
   }
-
-  const ncRows = lookup.rowsByNc?.get(n) || [];
   if (ncRows.length > 1 && clean(customer?.['Allocated Room Number'])) {
     for (const row of ncRows) {
       const rowKeys = new Set(doorLookupKeys(row.Door));
@@ -537,7 +556,10 @@ export function resolveTenancyForCustomer(nc, customer, lookup = loadTenancyLook
   if (ncRows.length) {
     let best = ncRows[0];
     for (const row of ncRows) {
-      if (tenancyRowPrefer(row, best)) best = row;
+      const rowB2b = isB2bCompanyIndividualTenancyRow(row);
+      const bestB2b = isB2bCompanyIndividualTenancyRow(best);
+      if (rowB2b && !bestB2b) best = row;
+      else if (rowB2b === bestB2b && tenancyRowPrefer(row, best)) best = row;
     }
     return best;
   }
