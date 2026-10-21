@@ -34,6 +34,7 @@ import {
 } from './extraction sandbox/sandbox-common.mjs';
 import {
   extractB2bContract,
+  ncsFromLabel,
   toB2bCompanyRow,
   toB2bCustomerRows,
 } from './extraction sandbox/extract-b2b.mjs';
@@ -361,6 +362,22 @@ export async function runV3B2bContractReextract(options = {}) {
 
       const record = customerRecordFromRow(row, upload, extractionMode);
       const counts = await upsertCustomersForNc(sb, nc, record, dryRun);
+
+      const siblingNcs = [
+        ...new Set(
+          ncsFromLabel(`${upload.storage_path || ''} ${upload.drive_name || ''}`).filter(
+            (n) => n !== nc && ncSet.has(n),
+          ),
+        ),
+      ];
+      for (const sibling of siblingNcs) {
+        const siblingRecord = customerRecordFromRow(
+          { ...row, 'Group Code': ncLabel(sibling), 'Internal Guest Notes': ncLabel(sibling) },
+          upload,
+          extractionMode,
+        );
+        await upsertCustomersForNc(sb, sibling, siblingRecord, dryRun);
+      }
 
       await writeLog(
         sb,

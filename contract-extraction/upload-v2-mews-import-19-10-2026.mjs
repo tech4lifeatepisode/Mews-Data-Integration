@@ -23,12 +23,14 @@ import { mapRowToMewsIncludedProducts } from './mews-product-map.mjs';
 import { applyMewsStayRateAndMonthlyPricing } from './mews-stay-rate-and-products-format.mjs';
 import { applyMewsImportReadyFields } from './mews-import-ready.mjs';
 import { applyUnitActualValueCategory, loadUnitActualValueByNc } from './nc-unit-actual-value.mjs';
+import { applyContractExtractionOverlay } from './contract-extraction-overlay.mjs';
 
 const SRC_CUSTOMERS = 'Final_Format_All_Fields_Match_Mews_Import_19_10_2026';
 const SRC_COMPANIES = 'Final_Format_All_Fields_Match_Mews_Import_Companies_19_10_2026';
 const V2_CUSTOMERS = 'V2_Final_Format_All_Fields_Match_Mews_Import_19_10_2026';
 const V2_COMPANIES = 'V2_Final_Format_All_Fields_Match_Mews_Import_Companies_19_10_2026';
 const FF_CUSTOMERS = 'Final_Format_Customers_Contracts_Extraction_15_10_2026';
+const CUSTOMERS_EXT = 'Customers_Contracts_Extraction_12_10_2026';
 const FF_HM = 'Final_Format_HouseMonk_15_10_2026';
 const FF_SEG = 'Final_Format_Seguimiento_15_10_2026';
 const COMPANIES_EXTRACTION = 'Companies_Extraction_12_10_2026';
@@ -243,7 +245,7 @@ function applyAddressFromSources(out, sources) {
   }
 }
 
-function enrichCustomerRow(row, nc, cust, hm, seg, company, companiesExtract) {
+function enrichCustomerRow(row, nc, cust, hm, seg, company, companiesExtract, customersExt = null) {
   const b2b = isB2bReservation(nc, row, seg);
   const inHouseB2b = b2b && isCurrentStay(row);
   const guestOrder = b2b ? [hm, cust, seg, row] : [row, cust, hm, seg];
@@ -252,7 +254,8 @@ function enrichCustomerRow(row, nc, cust, hm, seg, company, companiesExtract) {
   const dateOrder = [row, seg, cust, hm];
   const moneyOrder = inHouseB2b ? [hm, cust, row, seg] : [row, seg, cust, hm];
 
-  const out = { ...row, nc_number: nc };
+  let out = { ...row, nc_number: nc };
+  if (customersExt) out = applyContractExtractionOverlay(out, customersExt);
 
   if (b2b) applyB2bGuestAndCompany(out, row, hm, cust, seg, company);
   else {
@@ -477,7 +480,7 @@ if (!Object.keys(roomMap).length) {
   process.exit(1);
 }
 
-const [mewsRows, companyRows, ffCust, ffHm, ffSeg, companiesExtract, unitActualByNc] = await Promise.all([
+const [mewsRows, companyRows, ffCust, ffHm, ffSeg, companiesExtract, unitActualByNc, custExtRows] = await Promise.all([
   fetchAll(SRC_CUSTOMERS),
   fetchAll(SRC_COMPANIES),
   fetchAll(FF_CUSTOMERS, { orderByNc: false }),
@@ -485,9 +488,11 @@ const [mewsRows, companyRows, ffCust, ffHm, ffSeg, companiesExtract, unitActualB
   fetchAll(FF_SEG, { orderByNc: false }),
   fetchAll(COMPANIES_EXTRACTION, { orderByNc: false }),
   loadUnitActualValueByNc(),
+  fetchAll(CUSTOMERS_EXT, { orderByNc: false }).catch(() => []),
 ]);
 
 const custByNc = indexFirstByNc(ffCust);
+const custExtByNc = indexFirstByNc(custExtRows);
 const hmByNc = indexFirstByNc(ffHm);
 const segByNc = indexFirstByNc(ffSeg);
 const companyByNc = new Map(companyRows.map((r) => [Number(r.nc_number), r]));
@@ -503,7 +508,16 @@ const customersEnriched = mewsRows.map((row) => {
   const company = companyByNc.get(nc);
   const b2b = isB2bReservation(nc, row, seg);
   if (b2b && hm && clean(hm['Last Name(*)'])) b2bGuestFromHm++;
-  const enriched = enrichCustomerRow(row, nc, cust, hm, seg, company, companiesExtract);
+  const enriched = enrichCustomerRow(
+    row,
+    nc,
+    cust,
+    hm,
+    seg,
+    company,
+    companiesExtract,
+    custExtByNc.get(nc),
+  );
   if (categoryForRoomNumber(enriched['Allocated Room Number'], roomMap)) roomCategoryMapped++;
   return enriched;
 });

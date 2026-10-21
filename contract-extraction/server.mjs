@@ -18,6 +18,7 @@ import { driveHealthLines, handleDriveHttp } from '../contract-uploading/drive-h
 import { runReextractRentMismatch } from './reextract-rent-mismatch.mjs';
 import { runChamariCompanyReextract } from './reextract-chamari-company-from-drive.mjs';
 import { runV3B2bContractReextract } from './reextract-v3-b2b-contracts-from-drive.mjs';
+import { runPublishAfterV3B2bReextract } from './publish-after-v3-b2b-reextract.mjs';
 import { parseNcNumbersFromQuery } from './parse-nc-query.mjs';
 
 const port = Number(process.env.PORT) || 3000;
@@ -139,6 +140,24 @@ async function safeRunV3B2bContracts(label, options = {}) {
     return { ok: true, ...result };
   } catch (error) {
     console.error(`[${label}] V3 B2B contract re-extract failed:`, error);
+    return { ok: false, error: error instanceof Error ? error.message : String(error) };
+  } finally {
+    extractionRunning = false;
+  }
+}
+
+async function safeRunPublishV3B2bAfterReextract(label) {
+  if (extractionRunning) {
+    console.warn(`[${label}] Extraction already running, skip.`);
+    return { ok: false, skipped: true, message: 'already_running' };
+  }
+  extractionRunning = true;
+  try {
+    const result = await runPublishAfterV3B2bReextract();
+    console.log(`[${label}] V3 B2B publish pipeline finished:`, result);
+    return result;
+  } catch (error) {
+    console.error(`[${label}] V3 B2B publish pipeline failed:`, error);
     return { ok: false, error: error instanceof Error ? error.message : String(error) };
   } finally {
     extractionRunning = false;
@@ -344,6 +363,7 @@ function extractionHealthLines() {
     `  POST/GET /extract-b2b — B2B ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE} and ${B2B_COMPANIES_TABLE}.\n` +
     '  POST/GET /extract-chamari-companies — re-extract De otra parte client company for NCs with CHAMARI/B42861468 (?nc=1006,1142 optional; ?dry_run=1).\n' +
     '  POST/GET /extract-v3-b2b-contracts — full contract AI re-extract for every NC in V3_Final_B2B_All_Fields_Match_Mews_Import_20_10_2026 from Google Drive (?nc= optional; ?limit= batch size; ?dry_run=1). Set SUPABASE_STORAGE_FOLDER=Google Drive on Render.\n' +
+    '  POST/GET /publish-v3-b2b-after-reextract — propagate multi-NC 12_10 rows, rebuild FF 15_10, V2, and V3 B2B tables (no OpenAI; needs SUPABASE_SERVICE_ROLE_KEY).\n' +
     `  Log table ${DRIVE_EXTRACTION_LOG_TABLE}.\n` +
     '  AUTO_EXTRACT_FROM_STORAGE=true: on boot, extract-all for one folder.\n' +
     '  AUTO_NC_OCR_RERUN_FROM_STORAGE=true: on boot, extract-nc-rerun-all.\n' +
@@ -396,6 +416,33 @@ const server = http.createServer(async (req, res) => {
 
   if (url === '/extract-v3-b2b-contracts' && (req.method === 'POST' || req.method === 'GET')) {
     handleExtractRequest(req, res, 'v3-b2b-contracts');
+    return;
+  }
+
+  if (url === '/publish-v3-b2b-after-reextract' && (req.method === 'POST' || req.method === 'GET')) {
+    if (!checkExtractAuth(req)) {
+      res.writeHead(401, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({ ok: false, error: 'unauthorized' }));
+      return;
+    }
+    if (!process.env.SUPABASE_SERVICE_ROLE_KEY && !process.env.SUPABASE_SECRET_KEY) {
+      res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({ ok: false, error: 'SUPABASE_SERVICE_ROLE_KEY not set' }));
+      return;
+    }
+    res.writeHead(202, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(
+      JSON.stringify({
+        ok: true,
+        accepted: true,
+        message:
+          'Publish pipeline started: propagate multi-NC → FF 15_10 → V2_Final_Format → V3_Final_B2B',
+        mode: 'publish-v3-b2b-after-reextract',
+      }),
+    );
+    setImmediate(() => {
+      safeRunPublishV3B2bAfterReextract('http').catch((e) => console.error(e));
+    });
     return;
   }
 

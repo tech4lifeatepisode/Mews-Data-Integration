@@ -10,6 +10,7 @@ import {
   mewsPatchFromTenancy,
   resolveTenancyForCustomer,
 } from './tenancy-nc-overrides.mjs';
+import { applyContractExtractionOverlay } from './contract-extraction-overlay.mjs';
 
 function isFilledMewsField(v) {
   const c = clean(v);
@@ -78,8 +79,9 @@ export function sanitizeV3B2bCustomerRow(row, ctx) {
     companiesExtract = [],
   } = ctx || {};
 
-  const out = { ...row };
+  let out = { ...row };
   const cust = customersFinal || customersExt;
+  if (customersExt) out = applyContractExtractionOverlay(out, customersExt);
 
   if (isExtractionArtifactField(out.Sex)) out.Sex = null;
   if (isExtractionArtifactField(out['Nationality Code'])) out['Nationality Code'] = null;

@@ -1,6 +1,8 @@
 /**
  * Pick the best contract file in Supabase Storage (Google Drive folder) for an NC.
  */
+import { ncsFromLabel } from './extraction sandbox/extract-b2b.mjs';
+
 const DEFAULT_FOLDER = (process.env.SUPABASE_STORAGE_FOLDER ||
   process.env.SUPABASE_UPLOAD_FOLDER ||
   'Google Drive').replace(/^\/+|\/+$/g, '');
@@ -25,6 +27,7 @@ export function uploadScore(u, nc, folder = DEFAULT_FOLDER) {
   if (Number(u.nc_number) === nc) score += 40;
   else if (blob.includes(label.toLowerCase())) score += 30;
   else if (new RegExp(`nc_0*${nc}(?:[^0-9]|$)`, 'i').test(blob)) score += 20;
+  else if (ncsFromLabel(blob).includes(nc)) score += 25;
   else return null;
 
   if (/\/02\.\s*contract\//i.test(pathS) || blob.includes('02. contract')) score += 50;
