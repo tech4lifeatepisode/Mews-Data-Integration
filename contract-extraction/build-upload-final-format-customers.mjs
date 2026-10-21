@@ -99,11 +99,19 @@ function csvEscape(value) {
 }
 
 function writeCsv(rows) {
+  if (process.env.FF_SKIP_CSV_EXPORT === '1') return null;
   const lines = [DATA_COLUMNS.join(',')];
   for (const row of rows) {
     lines.push(DATA_COLUMNS.map((h) => csvEscape(row[h])).join(','));
   }
-  fs.writeFileSync(csvOut, `\uFEFF${lines.join('\r\n')}`, 'utf8');
+  try {
+    fs.mkdirSync(path.dirname(csvOut), { recursive: true });
+    fs.writeFileSync(csvOut, `\uFEFF${lines.join('\r\n')}`, 'utf8');
+    return csvOut;
+  } catch (e) {
+    console.warn(`CSV export skipped (${csvOut}):`, e instanceof Error ? e.message : e);
+    return null;
+  }
 }
 
 function toInsertRow(row) {
@@ -138,7 +146,9 @@ const asOfIso = AS_OF.slice(0, 10);
 const all = await fetchAll(SOURCE_TABLE);
 const kept = all.filter((row) => isCurrentOrFuture(row, asOfIso));
 const exportRows = kept.map(toExportRow);
-writeCsv(exportRows);
+
+await uploadRows(kept);
+const csvWritten = writeCsv(exportRows);
 
 console.log(
   JSON.stringify(
@@ -149,7 +159,7 @@ console.log(
       sourceRows: all.length,
       currentOrFutureRows: kept.length,
       excludedPast: all.length - kept.length,
-      csv: csvOut,
+      csv: csvWritten,
       note: 'Multiple current/future rows per guest are kept (no dedupe).',
     },
     null,
@@ -157,5 +167,4 @@ console.log(
   ),
 );
 
-await uploadRows(kept);
 console.log(`Uploaded ${kept.length} rows to public.${TARGET_TABLE}`);
