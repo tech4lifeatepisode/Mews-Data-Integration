@@ -271,6 +271,13 @@ function parseDdMmYyyy(raw) {
 }
 
 let cachedLookup = null;
+let cachedLookupPath = null;
+
+const EMPTY_TENANCY_LOOKUP = Object.freeze({
+  byNc: new Map(),
+  byTenantId: new Map(),
+  rows: [],
+});
 
 function normalizeTenantId(id) {
   return clean(id).toUpperCase().replace(/\s/g, '');
@@ -341,10 +348,19 @@ function readTenancyTable(csvPath) {
 
 /** Full tenancy indexes: NC, tenant ID, and all rows (for name/date match). */
 export function loadTenancyLookup(csvPath = DEFAULT_TENANCY_CSV) {
-  if (cachedLookup && csvPath === DEFAULT_TENANCY_CSV) return cachedLookup;
-  const lookup = readTenancyTable(csvPath);
-  if (csvPath === DEFAULT_TENANCY_CSV) cachedLookup = lookup;
-  return lookup;
+  const resolved = clean(process.env.TENANCY_CSV) || csvPath;
+  if (cachedLookup && cachedLookupPath === resolved) return cachedLookup;
+  if (!fs.existsSync(resolved)) {
+    console.warn(
+      `Tenancy CSV missing (${resolved}); using empty lookup. TENANCY_MANUAL_BY_NC overrides still apply.`,
+    );
+    cachedLookup = EMPTY_TENANCY_LOOKUP;
+    cachedLookupPath = resolved;
+    return cachedLookup;
+  }
+  cachedLookup = readTenancyTable(resolved);
+  cachedLookupPath = resolved;
+  return cachedLookup;
 }
 
 export function loadTenancyByNc(csvPath = DEFAULT_TENANCY_CSV) {
