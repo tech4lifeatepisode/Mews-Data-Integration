@@ -5,20 +5,24 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { createClient } from '@supabase/supabase-js';
-import {
-  isB2bContractAuthoritativeNc,
-  loadAllB2bNcs,
-} from './b2b-contract-authoritative.mjs';
+import { isB2bReservation, B2B_NCS } from './b2b-reservation-detect.mjs';
+import { pickGuestEmail } from './guest-email-utils.mjs';
 import { rowReferencesChamari, stripChamariFromCompanyRow, stripChamariFromCustomerRow } from './chamari-strip.mjs';
 import { buildV2CompanyRow, reapplyB2bCompanyOnCustomer } from './v2-b2b-company-build.mjs';
 import { bestCompanyMatch, isLikelyCompanyLabel } from './company-match-utils.mjs';
 import { categoryForRoomNumber, clean, loadRoomNumberCategoryMap } from './room-number-to-category.mjs';
+import { applyMewsRoomAndCategoryStandards, formatAllocatedRoomNumber } from './mews-room-format.mjs';
 import {
   applyTenancyAndManualFills,
   loadTenancyLookup,
   resolveTenancyForCustomer,
   shouldExcludeNcFromV2,
 } from './tenancy-nc-overrides.mjs';
+import { applyPersonCountFills } from './mews-person-count.mjs';
+import { mapRowToMewsIncludedProducts } from './mews-product-map.mjs';
+import { applyMewsStayRateAndMonthlyPricing } from './mews-stay-rate-and-products-format.mjs';
+import { applyMewsImportReadyFields } from './mews-import-ready.mjs';
+import { applyUnitActualValueCategory, loadUnitActualValueByNc } from './nc-unit-actual-value.mjs';
 
 const SRC_CUSTOMERS = 'Final_Format_All_Fields_Match_Mews_Import_19_10_2026';
 const SRC_COMPANIES = 'Final_Format_All_Fields_Match_Mews_Import_Companies_19_10_2026';
@@ -29,7 +33,6 @@ const FF_HM = 'Final_Format_HouseMonk_15_10_2026';
 const FF_SEG = 'Final_Format_Seguimiento_15_10_2026';
 const COMPANIES_EXTRACTION = 'Companies_Extraction_12_10_2026';
 
-const B2B_NCS = loadAllB2bNcs();
 const roomMap = loadRoomNumberCategoryMap();
 const tenancyLookup = loadTenancyLookup();
 
@@ -167,14 +170,6 @@ function keepCurrentOrFutureReservation(row) {
   return dep >= MIN_DEPARTURE_DATE;
 }
 
-function isB2bReservation(nc, row, seg) {
-  if (isB2bContractAuthoritativeNc(nc, B2B_NCS)) return true;
-  if (clean(row['Business Segment']).toUpperCase() === 'B2B') return true;
-  if (clean(seg?.['Business Segment']).toUpperCase() === 'B2B') return true;
-  if (clean(row.Source) === 'Seguimiento Leasing' && isLikelyCompanyLabel(row['Last Name(*)'])) return true;
-  return false;
-}
-
 function roomNumberForSources(b2b, row, seg, hm, cust) {
   if (b2b) {
     return firstNonEmpty(
@@ -270,33 +265,34 @@ function enrichCustomerRow(row, nc, cust, hm, seg, company, companiesExtract) {
   setIfEmpty(out, 'Document Number', firstNonEmpty(...identityOrder.map((r) => r?.['Document Number'])));
   setIfEmpty(out, 'Document Type', firstNonEmpty(...identityOrder.map((r) => r?.['Document Type'])));
 
-  const emailCandidates = [
-    ...guestOrder.map((r) => normalizeEmailField(r?.Email)),
-    company ? normalizeEmailField(company['Invoicing Email']) : null,
-  ].filter(Boolean);
-  if (emailCandidates.length) {
-    out.Email = emailCandidates[0];
-  } else if (isBlankMews(out.Email)) {
-    out.Email = null;
-  }
+  const pickedEmail = pickGuestEmail(
+    normalizeEmailField,
+    ...guestOrder.map((r) => r?.Email),
+    company?.['Invoicing Email'],
+    out.Email,
+  );
+  if (pickedEmail) out.Email = pickedEmail;
+  else if (isBlankMews(out.Email)) out.Email = null;
 
   setIfEmpty(out, 'Arrival Date(*)', firstNonEmpty(...dateOrder.map((r) => r?.['Arrival Date(*)'])));
   setIfEmpty(out, 'Departure Date(*)', firstNonEmpty(...dateOrder.map((r) => r?.['Departure Date(*)'])));
 
-  setIfEmpty(out, 'Person Counts(*)', firstNonEmpty(...guestOrder.map((r) => r?.['Person Counts(*)'])));
   setIfEmpty(out, 'Child Count(*)', firstNonEmpty(...guestOrder.map((r) => r?.['Child Count(*)'])));
-  setIfEmpty(out, 'Adult Count(*)', firstNonEmpty(...guestOrder.map((r) => r?.['Adult Count(*)'])));
+  setIfEmpty(
+    out,
+    'Adult Count(*)',
+    firstNonEmpty(...guestOrder.flatMap((r) => [r?.['Adult Count(*)'], r?.['Person Counts(*)']])),
+  );
 
   if (!clean(out['Child Count(*)'])) out['Child Count(*)'] = '0';
-  if (!clean(out['Person Counts(*)']) && clean(out['Adult Count(*)'])) {
-    out['Person Counts(*)'] = out['Adult Count(*)'];
-  }
+  out['Person Counts(*)'] = null;
 
   setIfEmpty(out, 'Allocated Rate', firstNonEmpty(...moneyOrder.map((r) => r?.['Allocated Rate'])));
   setIfEmpty(out, 'Per Night Prices', firstNonEmpty(row['Per Night Prices'], out['Allocated Rate']));
   setIfEmpty(out, 'Prepaid Amount', firstNonEmpty(...moneyOrder.map((r) => r?.['Prepaid Amount'])));
 
-  const roomNum = roomNumberForSources(b2b, row, seg, hm, cust);
+  const roomNumRaw = roomNumberForSources(b2b, row, seg, hm, cust);
+  const roomNum = roomNumRaw ? formatAllocatedRoomNumber(roomNumRaw) || roomNumRaw : null;
   if (roomNum) out['Allocated Room Number'] = roomNum;
   const mappedCat = categoryForRoomNumber(roomNum, roomMap);
   if (mappedCat) out['Allocated Room Category(*)'] = mappedCat;
@@ -365,6 +361,7 @@ function enrichCustomerRow(row, nc, cust, hm, seg, company, companiesExtract) {
   out['Internal Guest Notes'] = code;
 
   sanitizePlaceholders(out);
+  applyPersonCountFills(out, cust, hm, seg, row);
   return out;
 }
 
@@ -480,13 +477,14 @@ if (!Object.keys(roomMap).length) {
   process.exit(1);
 }
 
-const [mewsRows, companyRows, ffCust, ffHm, ffSeg, companiesExtract] = await Promise.all([
+const [mewsRows, companyRows, ffCust, ffHm, ffSeg, companiesExtract, unitActualByNc] = await Promise.all([
   fetchAll(SRC_CUSTOMERS),
   fetchAll(SRC_COMPANIES),
   fetchAll(FF_CUSTOMERS, { orderByNc: false }),
   fetchAll(FF_HM, { orderByNc: false }),
   fetchAll(FF_SEG, { orderByNc: false }),
   fetchAll(COMPANIES_EXTRACTION, { orderByNc: false }),
+  loadUnitActualValueByNc(),
 ]);
 
 const custByNc = indexFirstByNc(ffCust);
@@ -516,6 +514,14 @@ const customersOut = customersEnriched
   .filter((r) => keepCurrentOrFutureReservation(r) && !shouldExcludeNcFromV2(r.nc_number))
   .map((r) => {
     stripChamariFromCustomerRow(r);
+    applyMewsRoomAndCategoryStandards(r, roomMap);
+    applyUnitActualValueCategory(r, unitActualByNc);
+    const cust = custByNc.get(Number(r.nc_number));
+    applyPersonCountFills(r, cust);
+    const products = mapRowToMewsIncludedProducts(r, cust);
+    if (products) r['Included Products'] = products;
+    applyMewsStayRateAndMonthlyPricing(r);
+    applyMewsImportReadyFields(r);
     return r;
   });
 const keptNc = new Set(customersOut.map((r) => Number(r.nc_number)));

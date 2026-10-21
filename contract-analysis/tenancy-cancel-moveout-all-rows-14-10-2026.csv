@@ -1,0 +1,452 @@
+﻿NC,Contract ID,Tenancy Status,Cancellation Reason,Tenant Name,Tenant ID,Door,Property,Contract Start Date,Contract End Date,Move out date,Tenant Rent,lifecycle_flag
+1397,12387,Shifted,,Sofia Lopez Clatayud,7410,3019,The Carabanchel Episode,16/05/2026,15/06/2026,15/06/2026,1280,status_shifted|move_out_before_snapshot
+1397,14404,Shifted,,Pablo Lopez Mesa,05685675Y,3019,The Carabanchel Episode,16/05/2026,17/05/2026,17/05/2026,1280,status_shifted|move_out_before_snapshot
+1397,14405,Shifted,,Julia Calatayud Moscoso del Prado,05688145S,3019,The Carabanchel Episode,16/05/2026,17/05/2026,17/05/2026,1280,status_shifted|move_out_before_snapshot
+1397,14406,Shifted,,Blanca Lopez Calatayud,02025,3019,The Carabanchel Episode,16/05/2026,17/05/2026,17/05/2026,1280,status_shifted|move_out_before_snapshot
+1399,13337,Shifted,,Carla Rodriguez Casado,71791965H,2090,The Carabanchel Episode,07/09/2026,07/09/2026,07/09/2026,960,status_shifted|move_out_before_snapshot
+1399,13337,Shifted,,Carla Rodriguez Casado,71791965H,2090,The Carabanchel Episode,07/09/2026,07/09/2026,07/09/2026,960,status_shifted|move_out_before_snapshot
+1422,13334,Shifted,,Mohammed Balamane,C6W9XRPTR,2073,The Carabanchel Episode,01/08/2026,01/02/2027,05/08/2026,1105,status_shifted|move_out_before_snapshot
+1432,13373,Shifted,,Nayeli Ojeda Marin,49519837D,-1041,The Carabanchel Episode,01/09/2026,10/09/2026,10/09/2026,960,status_shifted|move_out_before_snapshot
+1432,13373,Shifted,,Nayeli Ojeda Marin,49519837D,-1041,The Carabanchel Episode,01/09/2026,10/09/2026,10/09/2026,960,status_shifted|move_out_before_snapshot
+1459,13263,Shifted,,Stella Rosello Mari,48230507J,3073,The Carabanchel Episode,28/08/2026,30/06/2027,31/08/2026,960,status_shifted|move_out_before_snapshot
+1459,13263,Shifted,,Stella Rosello Mari,48230507J,3073,The Carabanchel Episode,28/08/2026,30/06/2027,31/08/2026,960,status_shifted|move_out_before_snapshot
+1507,14541,Shifted,,Carlos Arturo Arismendi Castaño,AV541558,2021,The Carabanchel Episode,19/06/2026,22/06/2026,22/06/2026,955,status_shifted|move_out_before_snapshot
+1516,6781,Booked,,Jesus Galera Fuentes,27484775M,3090,The Carabanchel Episode,12/10/2026,12/12/2026,12/12/2026,1295,status_booked
+1520,14825,Booked,,Mohamed Saad Alami,QT2019463,2076,The Carabanchel Episode,20/09/2026,30/06/2027,30/06/2027,960,status_booked
+1529,13782,Shifted,,Yasin Mohamed Ahmed,45076497Q,3091,The Carabanchel Episode,12/10/2026,12/12/2026,12/10/2026,1295,status_shifted|move_out_before_snapshot
+1552,13567,Booked,,Marta Liu De La Huerga Alvarez,71471478J,3127,The Carabanchel Episode,01/10/2026,30/06/2027,30/06/2027,1100,status_booked
+1563,14479,Booked,,Gustavo Alfredo Rodriguez Santodomingo,06579093N,2018,The Carabanchel Episode,26/10/2026,27/11/2026,27/11/2026,1295,status_booked
+1605,14543,Booked,,2230 Management SL,B19894187,2033,The Carabanchel Episode,12/10/2026,12/12/2026,12/12/2026,1310,status_booked
+1606,14581,Booked,,Diya Aswani,NMPBH4FK9,2032,The Carabanchel Episode,01/11/2026,30/06/2027,30/06/2027,970,status_booked
+1609,14351,Shifted,,Yisser Teolinda Morales Bruno,RD9355846,121,The Carabanchel Episode,21/06/2026,29/07/2026,29/07/2026,1055,status_shifted|move_out_before_snapshot
+1609,16336,Shifted,,Abel Tomas D J Gonzalez Abreu,Z4201879Z,121,The Carabanchel Episode,21/06/2026,22/03/2027,02/07/2026,1055,status_shifted|move_out_before_snapshot
+1658,15409,Shifted,,Pedro Enrique Vazquez Fernandez,45278541M,4101,The Carabanchel Episode,16/07/2026,16/08/2026,16/08/2026,1295,status_shifted|move_out_before_snapshot
+1665,13866,Shifted,,Tharife Nabil Ahmad AL-Kuffash,S0735034,102,The Carabanchel Episode,30/08/2026,28/08/2027,31/08/2026,970,status_shifted|move_out_before_snapshot
+1670,15420,Booked,,Evelyn Tibichi,CNG0NR393,3146,The Carabanchel Episode,15/10/2026,31/08/2027,31/08/2027,975,status_booked
+1706,4623,Shifted,,Daniel Almeida,Z55737718,3116,The Carabanchel Episode,03/08/2026,01/08/2027,03/08/2026,970,status_shifted|move_out_before_snapshot
+1706,4623,Shifted,,Daniel Almeida,Z55737718,3116,The Carabanchel Episode,03/08/2026,01/08/2027,03/08/2026,970,status_shifted|move_out_before_snapshot
+1711,4627,Shifted,,Panna Pócsik,BU0777383,3125,The Carabanchel Episode,15/08/2026,15/02/2027,17/08/2026,1115,status_shifted|move_out_before_snapshot
+1725,18014,Under Notice,,"Florencia Contreras, Adrian Mere",AAN083130 | AAM289190,3137,The Carabanchel Episode,31/08/2026,31/10/2026,31/10/2026,48,status_under_notice
+1745,,Shifted,,Lola Nuñez Otero,77928052G,3098,The Carabanchel Episode,15/09/2026,22/09/2026,22/09/2026,1295,status_shifted|move_out_before_snapshot
+1760,16440,Shifted,,Arturo Torres Velazquez,28966913T,3116,The Carabanchel Episode,31/08/2026,30/06/2027,07/09/2026,970,status_shifted|move_out_before_snapshot
+1760,17441,Shifted,,Arturo Torres Velazquez,28966913T,2182,The Carabanchel Episode,31/08/2026,30/06/2027,06/10/2026,970,status_shifted|move_out_before_snapshot
+1777,8836,Booked,,Twisha Chitisha Patel,AD546945,5001,The Carabanchel Episode,16/11/2026,16/08/2027,16/08/2027,1040,status_booked
+1782,14314,Booked,,Max Bowler,143413863,3023,The Carabanchel Episode,24/10/2026,26/06/2027,26/06/2027,1125,status_booked
+1795,16875,Booked,,Alvaro Ruiz Carrasco,25616131L,3055,The Carabanchel Episode,29/10/2026,27/10/2027,27/10/2027,975,status_booked
+1795,16875,Booked,,Alvaro Ruiz Carrasco,25616131L,3055,The Carabanchel Episode,29/10/2026,27/10/2027,27/10/2027,975,status_booked
+1802,2469,Booked,,Issa Fares Asem,"RL4038393,",4003,The Carabanchel Episode,31/10/2026,29/09/2027,29/09/2027,1040,status_booked
+1812,14706,Booked,,"Lev Zavernin, Svetlana Kriakina",778144551 | 776238797,3046,The Carabanchel Episode,01/11/2026,02/12/2026,02/12/2026,1410,status_booked
+1828,,Under Notice,,Giovanna Aldonza Rios Lopez,G30172819,2041,The Carabanchel Episode,30/08/2026,30/10/2026,30/10/2026,48,status_under_notice
+1837,17125,Booked,,Fernando Padin Iglesias,50460510M,4036,The Carabanchel Episode,31/10/2026,09/08/2027,09/08/2027,975,status_booked
+1853,17300,Booked,,Pablo Munilla Jordan,73235907C,3171,The Carabanchel Episode,29/10/2026,31/08/2027,31/08/2027,975,status_booked
+1853,17300,Booked,,Pablo Munilla Jordan,73235907C,3171,The Carabanchel Episode,29/10/2026,31/08/2027,31/08/2027,975,status_booked
+1855,17404,Booked,,Anyi Daniela Castro Saldarriaga,Z0167210M,3117,The Carabanchel Episode,01/11/2026,29/10/2027,29/10/2027,970,status_booked
+1868,9101,Booked,,Sonia Anabela del Campillo,AAG491772,4042,The Carabanchel Episode,23/01/2027,21/01/2028,21/01/2028,1050,status_booked
+1869,17619,Booked,,"Yajure Reyes Walhams Wilmer, Lindsay Andreina Colina Flores",181297848 | 186587362,-1075,The Carabanchel Episode,01/01/2027,29/12/2027,29/12/2027,985,status_booked
+1872,17430,Shifted,,Manuela Ospina Henao,NTF527HC6,110,The Carabanchel Episode,07/09/2026,07/09/2026,07/09/2026,1115,status_shifted|move_out_before_snapshot
+1898,,Under Notice,,Angel Mariano Cabrera Vanegas,N23274772,1020,The Carabanchel Episode,30/09/2026,04/11/2026,04/11/2026,48,status_under_notice
+1901,17874,Booked,,Sheila Rosanna Cruz Suero,Z4414213N,-1034,The Carabanchel Episode,10/09/2026,10/03/2027,10/03/2027,1470,status_booked
+1905,18400,Booked,,Ana Silvia Peña de Lira,Z2461441D,3136,The Carabanchel Episode,28/02/2027,25/02/2028,25/02/2028,1050,status_booked
+1908,16561,Shifted,,Ibrahim Lotfi,22CH10816,4043,The Carabanchel Episode,11/09/2026,11/06/2027,15/09/2026,1030,status_shifted|move_out_before_snapshot
+1912,7231,Shifted,,"Gustavo Pazos Fernande, GOOD MOOD SERIES SL",44838692P | B67717538,1146,The Carabanchel Episode,14/09/2026,31/10/2026,20/09/2026,1295,status_shifted|move_out_before_snapshot
+1912,7231,Shifted,,"Gustavo Pazos Fernande, GOOD MOOD SERIES SL",44838692P | B67717538,1146,The Carabanchel Episode,14/09/2026,31/10/2026,20/09/2026,1295,status_shifted|move_out_before_snapshot
+1912,7231,Shifted,,"Gustavo Pazos Fernande, GOOD MOOD SERIES SL",44838692P | B67717538,1146,The Carabanchel Episode,14/09/2026,31/10/2026,20/09/2026,1295,status_shifted|move_out_before_snapshot
+1922,17439,Booked,,"Anna Calabrese, Alfredo Baiz",XDE848392 | YB2533205,4014,The Carabanchel Episode,14/12/2026,14/01/2027,14/01/2027,1410,status_booked
+1925,17756,Booked,,"Gustavo Antonio Barahona Pinto, Fanny Noemi Roman Perez",BO981245 | A9174255,2127,The Carabanchel Episode,22/10/2026,22/11/2026,22/11/2026,1410,status_booked
+1925,18401,Booked,,Marleny Rodriguez,YB4781721,4109,The Carabanchel Episode,14/11/2026,14/05/2027,14/05/2027,1125,status_booked
+1929,13327,Booked,,Neville Awelle,AK1201655,-1041,The Carabanchel Episode,25/10/2026,20/10/2027,20/10/2027,975,status_booked
+1934,14403,Booked,,Ramon Garcia Adamez Soto,34772152Q,1158,The Carabanchel Episode,20/09/2026,20/10/2026,20/10/2026,1295,status_booked
+1935,18222,Booked,,Sebastián Del Moral Mesa,26492131H,-1004,The Carabanchel Episode,21/10/2026,22/01/2027,22/01/2027,1125,status_booked
+1937,12879,Booked,,Diego Garcia Lozano,76057140G,1116,The Carabanchel Episode,10/10/2026,08/10/2027,08/10/2027,975,status_booked
+1939,14952,Booked,,Aidar Shapirov,0,1125,The Carabanchel Episode,17/09/2026,31/10/2026,31/10/2026,48,status_booked
+1943,18431,Booked,,Tifanny Salazar Tobon,BE4790509,1183,The Carabanchel Episode,28/10/2026,29/01/2027,29/01/2027,1125,status_booked
+1945,6690,Booked,,"Carlos Enrique Correa del Viso, Susana Alonso Sanz",46856468V | 02226023Z,-1085,The Carabanchel Episode,31/10/2026,31/07/2027,31/07/2027,975,status_booked
+1946,7228,Booked,,"Alyssa Keta, Andrea Elena Carvan",Z2969305x | Y2055051-S,2089,The Carabanchel Episode,15/10/2026,16/07/2027,16/07/2027,1300,status_booked
+1960,18137,Under Notice,,"Joao Pedro Caeiro Rosado da Silva Pissarra, Lorena De Castro Elias",CF877161 | GN581094,1003,The Carabanchel Episode,11/10/2026,10/11/2026,10/11/2026,48,status_under_notice
+2032,17582,Booked,,Julen Goñi Otamendi,45197370R,1102,The Carabanchel Episode,23/10/2026,23/07/2027,23/07/2027,940,status_booked
+2032,17582,Booked,,Julen Goñi Otamendi,45197370R,1102,The Carabanchel Episode,23/10/2026,23/07/2027,23/07/2027,940,status_booked
+2037,18275,Booked,,Viajes Puerta de Sevilla SL,B91555417,-1049,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2038,18301,Booked,,Viajes Puerta de Sevilla SL,B91555417,111,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2039,17883,Booked,,Viajes Puerta de Sevilla SL,B91555417,121,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2040,17865,Booked,,Viajes Puerta de Sevilla SL,B91555417,1185,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2041,18238,Booked,,Viajes Puerta de Sevilla SL,B91555417,-1043,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2047,18278,Booked,,Viajes Puerta de Sevilla SL,B91555417,3060,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2048,18365,Booked,,Viajes Puerta de Sevilla SL,B91555417,2019,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2049,18118,Booked,,Viajes Puerta de Sevilla SL,B91555417,0030,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2050,18117,Booked,,Viajes Puerta de Sevilla SL,B91555417,0029,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2051,18126,Booked,,Viajes Puerta de Sevilla SL,B91555417,0052,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2052,18125,Booked,,Viajes Puerta de Sevilla SL,B91555417,0051,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2053,18132,Booked,,Viajes Puerta de Sevilla SL,B91555417,0063,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2054,18120,Booked,,Viajes Puerta de Sevilla SL,B91555417,0048,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2055,18391,Booked,,Viajes Puerta de Sevilla SL,B91555417,2063,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2056,18287,Booked,,Viajes Puerta de Sevilla SL,B91555417,3098,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2057,,Booked,,Viajes Puerta de Sevilla SL,B91555417,0075,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2058,18111,Booked,,Viajes Puerta de Sevilla SL,B91555417,21,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2059,18108,Booked,,Viajes Puerta de Sevilla SL,B91555417,17,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2060,,Booked,,Viajes Puerta de Sevilla SL,B91555417,10,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2061,,Booked,,Viajes Puerta de Sevilla SL,B91555417,-1033,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2061,18245,Booked,,Viajes Puerta de Sevilla SL,B91555417,4025,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2061,18245,Booked,,Viajes Puerta de Sevilla SL,B91555417,4025,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2062,18247,Booked,,Viajes Puerta de Sevilla SL,B91555417,4022,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2062,18247,Booked,,Viajes Puerta de Sevilla SL,B91555417,4022,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2062,5390,Booked,,Viajes Puerta de Sevilla SL,B91555417,-1030,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2063,18205,Booked,,Viajes Puerta de Sevilla SL,B91555417,4018,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2063,18205,Booked,,Viajes Puerta de Sevilla SL,B91555417,4018,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2063,18393,Booked,,Viajes Puerta de Sevilla SL,B91555417,3068,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2064,18246,Booked,,Viajes Puerta de Sevilla SL,B91555417,4012,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2064,18246,Booked,,Viajes Puerta de Sevilla SL,B91555417,4012,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2064,18394,Booked,,Viajes Puerta de Sevilla SL,B91555417,1122,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2065,18249,Booked,,Viajes Puerta de Sevilla SL,B91555417,4029,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2065,18249,Booked,,Viajes Puerta de Sevilla SL,B91555417,4029,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2065,18395,Booked,,Viajes Puerta de Sevilla SL,B91555417,1127,The Carabanchel Episode,09/11/2026,09/12/2026,09/12/2026,1310,status_booked
+2074,,Booked,,Manuel Sierra Asensi,46875322B,1054,The Carabanchel Episode,05/10/2026,03/10/2027,03/10/2027,975,status_booked
+2074,17820,Booked,,Lyna Habibi,QH75712,4043,The Carabanchel Episode,05/10/2026,05/07/2028,05/07/2028,1040,status_booked
+2088,2283,Booked,,Cosmin Daniel Livadaru,059261543,5012,The Carabanchel Episode,20/10/2026,21/07/2027,21/07/2027,1040,status_booked
+2090,18427,Booked,,Filip Adam Beverwijk,NNDPL5L45,3043,The Carabanchel Episode,26/10/2026,25/08/2027,25/08/2027,975,status_booked
+2090,18427,Booked,,Filip Adam Beverwijk,NNDPL5L45,3043,The Carabanchel Episode,26/10/2026,25/08/2027,25/08/2027,975,status_booked
+2090,18427,Booked,,Filip Adam Beverwijk,NNDPL5L45,3043,The Carabanchel Episode,26/10/2026,25/08/2027,25/08/2027,975,status_booked
+2095,18271,Booked,,Dilan Boeer,C7NJL65X6,4104,The Carabanchel Episode,13/10/2026,31/07/2027,31/07/2027,940,status_booked
+2101,18389,Under Notice,,Astrid Matehius,A80751660,-1077,The Carabanchel Episode,08/10/2026,08/11/2026,08/11/2026,48,status_under_notice
+2104,18403,Booked,,"Jorge Rodríguez Revilla, Elizabeth Hurtado Ardaya",12404708A | 15460153J,3012,The Carabanchel Episode,01/12/2026,31/03/2027,31/03/2027,1125,status_booked
+2114,18510,Booked,,Marta Marcucci,O115473,135,The Carabanchel Episode,02/11/2026,02/12/2026,02/12/2026,1310,status_booked
+2115,14382,Booked,,Fadel Ben Ghith,AA487115,3070,The Carabanchel Episode,15/10/2026,31/08/2027,31/08/2027,940,status_booked
+2118,18527,Booked,,"Bryan Javier Hernandez Caballero, David Lopez Galvañ",54269217G | 48682913D,3058,The Carabanchel Episode,16/10/2026,05/12/2026,05/12/2026,1410,status_booked
+,,Booked,,"Luisa Daina Joya Avila, Luz Alexandra Romero Velandia",BA288867 | AY138053,0055,The Carabanchel Episode,18/09/2026,19/09/2026,19/09/2026,103,status_booked|move_out_before_snapshot
+,,Booked,,Juan Quinones,pedir,2086,The Carabanchel Episode Hotel,13/10/2025,14/10/2025,14/10/2025,110,status_booked|move_out_before_snapshot
+,,Shifted,,Tifanny Salazar Tobon,BE4790509,-1070,The Carabanchel Episode,28/12/2025,28/10/2026,31/07/2026,845,status_shifted|move_out_before_snapshot
+,,Shifted,,"Josefa Fernandez Trujillo, Vanesa Moreno Peris",22500091L | 44871119M,0066,The Carabanchel Episode,18/09/2026,19/09/2026,18/09/2026,103,status_shifted|move_out_before_snapshot
+,,Shifted,,Pawl Perez Sanchez,AT503004,2028,The Carabanchel Episode,17/01/2026,30/04/2026,30/04/2026,950,status_shifted|move_out_before_snapshot
+,,Shifted,,SIMONE CIBIN,CA38669LH,3027,The Carabanchel Episode,12/04/2026,12/05/2026,12/05/2026,1280,status_shifted|move_out_before_snapshot
+,,Shifted,,Meritxell Alexandra Provenza García,72910192P,3090,The Carabanchel Episode,03/12/2025,06/05/2026,06/05/2026,837,status_shifted|move_out_before_snapshot
+,10112,Shifted,,Tomás Cortés Flórez,53737760P,108,The Carabanchel Episode,16/02/2026,16/02/2026,16/02/2026,1103,status_shifted|move_out_before_snapshot
+,10148,Shifted,,Javier Blanco Martinez,71502858K,2046,The Carabanchel Episode,27/02/2026,29/03/2026,29/03/2026,1270,status_shifted|move_out_before_snapshot
+,1022,Shifted,,Orlain Alexis Arango Quintero,53904951N,4049,The Carabanchel Episode,15/07/2025,13/07/2026,13/07/2026,865,status_shifted|move_out_before_snapshot
+,10265,Shifted,,Francisco Almazán Guisado,50198510K,2045,The Carabanchel Episode,28/02/2026,30/09/2026,30/09/2026,950,status_shifted|move_out_before_snapshot
+,10270,Shifted,,Francisco Luís De La Barrera Cid,05283139Q,-1071,The Carabanchel Episode,10/10/2025,04/03/2026,04/03/2026,855,status_shifted|move_out_before_snapshot
+,10315,Shifted,,"Juan Manuel Oliva Garcia, Vivalloons, S.L",48419762R | B05536727,3105,The Carabanchel Episode Hotel,24/02/2026,25/02/2026,24/02/2026,77.6,status_shifted|move_out_before_snapshot
+,10328,Booked,,Michell Ernesto Munevar Rosero,8406,80,The Carabanchel Episode Hotel,28/02/2026,01/03/2026,01/03/2026,84.66,status_booked|move_out_before_snapshot
+,10359,Booked,,Alberto Castillejo Dominguez,8459,1108,The Carabanchel Episode Hotel,28/02/2026,01/03/2026,01/03/2026,88.74,status_booked|move_out_before_snapshot
+,10360,Booked,,Alvaro Martin Diaz de Teran,8460,2104,The Carabanchel Episode Hotel,01/03/2026,02/03/2026,02/03/2026,63.23,status_booked|move_out_before_snapshot
+,10370,Under Notice,,Francisco Almazán Guisado,50198510K,3015,The Carabanchel Episode,28/02/2026,29/11/2026,30/09/2026,855,status_under_notice|move_out_before_snapshot
+,10395,Shifted,,Sajin Chandra Sekar,C8549066,3016,The Carabanchel Episode,10/03/2026,12/03/2026,12/03/2026,855,status_shifted|move_out_before_snapshot
+,1042,Shifted,,Maigualida Torres,647066073,4069,The Carabanchel Episode,27/06/2025,03/12/2025,03/12/2025,1215,status_shifted|move_out_before_snapshot
+,10440,Booked,,Yuruanny Ortiz,8542,2153,The Carabanchel Episode Hotel,26/02/2026,27/02/2026,27/02/2026,89.1,status_booked|move_out_before_snapshot
+,10442,Booked,,Makuna Mazanashvili,8545,0082,The Carabanchel Episode Hotel,28/02/2026,02/03/2026,02/03/2026,77.21,status_booked|move_out_before_snapshot
+,10449,Shifted,,"Obras y Servicios Riquelme Gonzalez SL , Jose Ivan Riquelme Gonzalez",B54883335 | 74004611H,2076,The Carabanchel Episode,02/03/2026,04/03/2026,04/03/2026,950,status_shifted|move_out_before_snapshot
+,10460,Booked,,Magaly Cosentino,454565643,Monk team test,Node leasing team test,28/02/2026,01/03/2026,01/03/2026,200,status_booked|move_out_before_snapshot
+,10465,Shifted,,Sajin Chandra Sekar,C8549066,3181,The Carabanchel Episode,10/03/2026,10/03/2026,10/03/2026,855,status_shifted|move_out_before_snapshot
+,10471,Booked,,Magali Cosentino,2312212342,Monk team test,Node leasing team test,02/03/2026,03/03/2026,03/03/2026,230,status_booked|move_out_before_snapshot
+,10482,Booked,,Test2 Test2,pas677399378,Monk team test,Node leasing team test,03/03/2026,04/03/2026,04/03/2026,200,status_booked|move_out_before_snapshot
+,10495,Booked,,Test2 Test2,pas677399378,Monk team test,Node leasing team test,04/03/2026,05/03/2026,05/03/2026,200,status_booked|move_out_before_snapshot
+,10499,Shifted,,Smart Ibérica de Impulso Empresarial SCA,F90065418,3029,The Carabanchel Episode,31/01/2026,01/02/2026,01/02/2026,1117,status_shifted|move_out_before_snapshot
+,10502,Booked,,"Nerea Luzmila Romero Armijos, Celia Garcia Cubero",50244058Y | 49158637R,80,The Carabanchel Episode Hotel,01/03/2026,02/03/2026,02/03/2026,64.64,status_booked|move_out_before_snapshot
+,10507,Shifted,,"Doppelmayr Ibérica SAU , Ana Arminio",A28624641 | 47322354S,4095,The Carabanchel Episode,08/02/2026,30/04/2026,07/03/2026,1270,status_shifted|move_out_before_snapshot
+,10594,Shifted,,"Janice Batista de Oliveira Silva, Andre Muniz Da Silva",GB128098 | GB128095,1012,The Carabanchel Episode Hotel,14/03/2026,15/03/2026,14/03/2026,120,status_shifted|move_out_before_snapshot
+,10614,Shifted,,Jaime Jose Alarcon Alarcon,125329527,2055,The Carabanchel Episode,31/01/2026,14/06/2026,14/06/2026,1090,status_shifted|move_out_before_snapshot
+,1075,Shifted,,Bernadee Loni Mc Cartney,594408056,4102,The Carabanchel Episode,22/04/2025,01/06/2025,01/06/2025,970,status_shifted|move_out_before_snapshot
+,10753,Shifted,,María Garza Guillén,76918466A,4095,The Carabanchel Episode,11/03/2026,08/05/2026,08/05/2026,1245,status_shifted|move_out_before_snapshot
+,1078,Shifted,,Carlos Aguilar Lopez,79087712G,4105,The Carabanchel Episode,28/08/2025,31/07/2026,31/07/2026,875,status_shifted|move_out_before_snapshot
+,10788,Shifted,,Julio Di Napoli Monje,51128784Z,-1093,The Carabanchel Episode,06/04/2026,08/04/2026,08/04/2026,1095,status_shifted|move_out_before_snapshot
+,1079,Shifted,,Josef Hess Friedhelm,C5l8P366V,4106,The Carabanchel Episode,23/05/2025,23/08/2025,23/08/2025,985,status_shifted|move_out_before_snapshot
+,10855,Shifted,,Luis Carlos Nogeuira Teixeira,130231150ZX7,2083,The Carabanchel Episode Hotel,16/03/2026,20/03/2026,16/03/2026,68.68,status_shifted|move_out_before_snapshot
+,10873,Under Notice,,"Laurel Grace Stewart, Alexis Blu Shuffler, Joseana Beatriz Lara",A50757010 | P085659BI | P575460NG,4-1,ARIBAU 126: The Provenza Episode,09/06/2026,15/11/2026,15/11/2026,2800,status_under_notice
+,1088,Shifted,,Mohamed Taher Omer El Musraty,AD168740,4115,The Carabanchel Episode,04/06/2025,04/09/2025,04/09/2025,1250,status_shifted|move_out_before_snapshot
+,1094,Shifted,,Paloma Kishimoto,AAC997815,4121,The Carabanchel Episode,22/04/2025,10/06/2025,10/06/2025,845,status_shifted|move_out_before_snapshot
+,10951,Shifted,,Ivan Garcia Sanchez,47035520Z,0127,The Carabanchel Episode,27/12/2025,13/04/2026,13/04/2026,1270,status_shifted|move_out_before_snapshot
+,11171,Booked,,LEAD GUEST,30824723D,THM test,Node leasing team test,24/03/2026,25/03/2026,25/03/2026,300,status_booked|move_out_before_snapshot
+,11219,Booked,No Show - With No Invoice flow,LEAD GUEST,30824723D,THM test,Node leasing team test,25/03/2026,26/03/2026,26/03/2026,200,cancellation_reason|status_booked|move_out_before_snapshot
+,11237,Shifted,,"Yajure Reyes Walhams Wilmer, Lindsay Andreina Colina Flores",181297848 | 186587362,-1016,The Carabanchel Episode,31/03/2026,02/04/2026,02/04/2026,950,status_shifted|move_out_before_snapshot
+,11241,Shifted,,Jesús Alejandro Zambrano Contreras,Z3217525Z,4056,The Carabanchel Episode,24/04/2026,01/05/2026,01/05/2026,812,status_shifted|move_out_before_snapshot
+,1129,Shifted,,Mauro Alfredo Rivera Castillo,60429558W,5022,The Carabanchel Episode,01/06/2025,01/06/2025,01/06/2025,920,status_shifted|move_out_before_snapshot
+,11302,Shifted,,Integra Ascensores S.L,B83336891,2076,The Carabanchel Episode,16/02/2026,24/03/2026,16/02/2026,1270,status_shifted|move_out_before_snapshot
+,1133,Shifted,,Alexander Markovskiy,753190559,5026,The Carabanchel Episode,15/05/2025,23/10/2025,23/10/2025,920,status_shifted|move_out_before_snapshot
+,11337,Booked,,"Jorge Luis Martins Araujo, Silvia Gonzalez Fernandez",10861214Q | 10864294Z,2153,The Carabanchel Episode Hotel,17/04/2026,18/04/2026,18/04/2026,190,status_booked|move_out_before_snapshot
+,11364,Shifted,,"Mohamed Anouar Berrada Gouzi, Lamiaa Benhammou",25FC66513 | VT7389393,5007,The Carabanchel Episode,09/04/2026,09/04/2026,09/04/2026,1015,status_shifted|move_out_before_snapshot
+,11383,Booked,,Clara test,432,Carlos test,Node leasing team test,28/09/2026,31/01/2027,31/01/2027,922,status_booked
+,11393,Shifted,,Ricardo Del Olmo Ramirez,01926619R,0085,The Carabanchel Episode Hotel,27/03/2026,28/03/2026,27/03/2026,78.54,status_shifted|move_out_before_snapshot
+,11394,Shifted,,Ricardo Del Olmo Ramirez,01926619R,0084,The Carabanchel Episode Hotel,27/03/2026,28/03/2026,27/03/2026,78.54,status_shifted|move_out_before_snapshot
+,11414,Shifted,,Artem Yakub,32376138769,3104,The Carabanchel Episode Hotel,05/04/2026,08/04/2026,08/04/2026,116.96,status_shifted|move_out_before_snapshot
+,11421,Booked,,Adeolu Fagbire,B01624726,2154,The Carabanchel Episode Hotel,22/03/2026,23/03/2026,23/03/2026,4.49,status_booked|move_out_before_snapshot
+,1146,Shifted,,Rudra test),5627,Adriana test,Node leasing team test,20/03/2025,02/04/2025,02/04/2025,1500,status_shifted|move_out_before_snapshot
+,1152,Shifted,,Gonzalo FDEZ del Vallado,325643564653,4092,The Carabanchel Episode,03/04/2025,03/04/2025,03/04/2025,940,status_shifted|move_out_before_snapshot
+,1152,Shifted,,Gonzalo FDEZ del Vallado,325643564653,4092,The Carabanchel Episode,03/04/2025,03/04/2025,03/04/2025,940,status_shifted|move_out_before_snapshot
+,11605,Booked,,Maria Susana Roa Chejin,B1041638,2056,The Carabanchel Episode,21/10/2026,30/08/2027,30/08/2027,955,status_booked
+,11625,Shifted,,Amari Williams,562355343,2076,The Carabanchel Episode,28/05/2026,23/06/2026,23/06/2026,955,status_shifted|move_out_before_snapshot
+,11642,Shifted,,Leticia Fonseca Lobato,Z1256467M,4114,The Carabanchel Episode,01/05/2026,01/08/2026,01/08/2026,860,status_shifted|move_out_before_snapshot
+,11703,Shifted,,Blanca Lopez Calatayud,02025,3018,The Carabanchel Episode,16/05/2026,15/06/2026,15/06/2026,1280,status_shifted|move_out_before_snapshot
+,11804,Shifted,,"Carlos Gonzalez Guindero, Patricia Hermosin Sanchez",47631171B | 43559752Y,1009,The Carabanchel Episode Hotel,20/04/2026,20/04/2026,20/04/2026,99.8,status_shifted|move_out_before_snapshot
+,11883,Shifted,,Marco Chaiya White,PM8972445,5021,The Carabanchel Episode,20/10/2025,20/10/2025,20/10/2025,1460,status_shifted|move_out_before_snapshot
+,11972,Shifted,,Maria Fernanda Iñigo Herrera,Z2502007A,5030,The Carabanchel Episode,11/07/2025,21/07/2025,21/07/2025,1020,status_shifted|move_out_before_snapshot
+,12039,Shifted,,Global Relax S.L.,B45833100,0127,The Carabanchel Episode,27/12/2025,13/04/2026,18/03/2026,1270,status_shifted|move_out_before_snapshot
+,12154,Shifted,,Marleny Rodriguez,YB4781721,4071,The Carabanchel Episode,14/05/2026,19/05/2026,19/05/2026,1095,status_shifted|move_out_before_snapshot
+,12168,Booked,,Clara test,432,Clara test,Node leasing team test,05/05/2026,05/06/2026,05/06/2026,1280,status_booked|move_out_before_snapshot
+,12179,Booked,,Clara test,432,Vicente test,Node leasing team test,12/10/2026,31/12/2026,31/12/2026,1310,status_booked
+,12238,Shifted,,"Pablo Lopez Mesa, Julia Calatayud Mosocos Del Prado",05685675Y | 05688145S,0081,The Carabanchel Episode Hotel,10/05/2026,12/05/2026,10/05/2026,110.7,status_shifted|move_out_before_snapshot
+,1226,Shifted,,Lidia Roset Soler,PAD695579,4131,The Carabanchel Episode,19/05/2025,02/08/2025,02/08/2025,995,status_shifted|move_out_before_snapshot
+,12275,Booked,,Luis Test,2379,Luis Test,Node leasing team test,25/04/2026,26/07/2026,26/07/2026,1085,status_booked|move_out_before_snapshot
+,12346,Shifted,,Juliana Esther Soultan,24DF34500,2104,The Carabanchel Episode Hotel,04/05/2026,08/05/2026,04/05/2026,95.02,status_shifted|move_out_before_snapshot
+,12512,Booked,,Joshua Drozda,A54048662,4075,The Carabanchel Episode,20/10/2026,18/10/2027,18/10/2027,864,status_booked
+,1253,Shifted,,Ana Silvia Peña de Lira,Z2461441D,3126,The Carabanchel Episode,01/06/2025,01/06/2025,01/06/2025,765,status_shifted|move_out_before_snapshot
+,12566,Shifted,,Francisco Javier González Márquez,52119860C,3178,The Carabanchel Episode,24/01/2026,03/02/2026,03/02/2026,1440,status_shifted|move_out_before_snapshot
+,12581,Shifted,,Bo Zhou,EH0269699,0082,The Carabanchel Episode Hotel,28/04/2026,01/05/2026,01/05/2026,88.74,status_shifted|move_out_before_snapshot
+,13013,Shifted,,"Integra Ascensores S.L , Xiong Haolin, Luo Tailin",B83336891 | Z5358546B | Z5253008C,1039,The Carabanchel Episode,15/09/2026,23/09/2026,23/09/2026,1275,status_shifted|move_out_before_snapshot
+,1310,Shifted,move to another room,Jorge Barbado Esteban,49104711X,2111,The Carabanchel Episode,22/04/2025,21/10/2025,21/10/2025,755,cancellation_reason|status_shifted|move_out_before_snapshot
+,13150,Shifted,,"Protex Trading, S.L.",B22728901,3027,The Carabanchel Episode,12/04/2026,22/04/2026,22/04/2026,1280,status_shifted|move_out_before_snapshot
+,13252,Shifted,,Giacomo Martin,YB5504038,3128,The Carabanchel Episode,28/03/2026,31/03/2026,31/03/2026,1370,status_shifted|move_out_before_snapshot
+,13486,Shifted,,Nadine Beth,L86M6GGG7,1108,The Carabanchel Episode Hotel,19/09/2026,20/09/2026,19/09/2026,98.74,status_shifted|move_out_before_snapshot
+,13499,Shifted,,Veronica Guzman Sanchez,78875111S,0082,The Carabanchel Episode Hotel,27/05/2026,28/05/2026,27/05/2026,117,status_shifted|move_out_before_snapshot
+,1357,Shifted,,Camilo Londoño Perez,BD340630,3177,The Carabanchel Episode,31/05/2025,31/05/2025,31/05/2025,1215,status_shifted|move_out_before_snapshot
+,13634,Shifted,,Nattan Samuel Degefa,A45730408,1088,The Carabanchel Episode,05/02/2026,07/02/2026,07/02/2026,1440,status_shifted|move_out_before_snapshot
+,13684,Shifted,,"Zuzanna Anastazja Przybyłowicz, Daniel Mondragon Jimenez",EU9194658 | BC549634,1017,The Carabanchel Episode Hotel,08/06/2026,12/06/2026,08/06/2026,84.81,status_shifted|move_out_before_snapshot
+,1384,Shifted,,Mauro Alfredo Rivera Castillo,60429558W,5026,The Carabanchel Episode,01/06/2025,29/05/2026,29/05/2026,775,status_shifted|move_out_before_snapshot
+,13844,Shifted,,Amalia Dobre,BV1022170,3041,The Carabanchel Episode,29/05/2026,30/05/2026,30/05/2026,90,status_shifted|move_out_before_snapshot
+,1394,Shifted,,Erdogan Enes Sacli,Z2272038B,3173,The Carabanchel Episode,12/09/2025,02/06/2026,02/06/2026,905,status_shifted|move_out_before_snapshot
+,1418,Shifted,,Taylor Mendoza 2211859168,536980545,3104,The Carabanchel Episode Hotel,09/06/2025,12/06/2025,12/06/2025,88.28,status_shifted|move_out_before_snapshot
+,14245,Shifted,,"Helice Viajes SL , Estefania Iñan Abeleira",B80600059 | 53308324M,1045,The Carabanchel Episode Hotel,15/06/2026,19/06/2026,15/06/2026,104,status_shifted|move_out_before_snapshot
+,14247,Shifted,,"Helice Viajes SL , Maria Elena Mogena Bravo",B80600059 | 76024285Q,1035,The Carabanchel Episode Hotel,15/06/2026,19/06/2026,16/06/2026,104,status_shifted|move_out_before_snapshot
+,14400,Shifted,,Pablo Lopez Mesa,05685675Y,3018,The Carabanchel Episode,16/05/2026,17/05/2026,17/05/2026,1280,status_shifted|move_out_before_snapshot
+,14401,Shifted,,Julia Calatayud Moscoso del Prado,05688145S,3018,The Carabanchel Episode,16/05/2026,17/05/2026,17/05/2026,1280,status_shifted|move_out_before_snapshot
+,14402,Shifted,,Sofia Lopez Clatayud,7410,3018,The Carabanchel Episode,16/05/2026,17/05/2026,17/05/2026,1280,status_shifted|move_out_before_snapshot
+,14454,Shifted,,Maria Elena Mogena Bravo,76024285Q,2016,The Carabanchel Episode,16/06/2026,19/06/2026,18/06/2026,104,status_shifted|move_out_before_snapshot
+,1447,Shifted,,Ana Silvia Peña de Lira,Z2461441D,3126,The Carabanchel Episode,01/06/2025,01/03/2026,01/03/2026,765,status_shifted|move_out_before_snapshot
+,14470,Under Notice,,Bruna Tonelli Cury,GL570490,1-2,SARDENYA 246: The Monumental Episode,19/06/2026,18/10/2026,18/10/2026,2000,status_under_notice
+,14476,Booked,,Maria Jose Santos Martinez,71163185N,1104,The Carabanchel Episode Hotel,24/06/2026,25/06/2026,25/06/2026,116,status_booked|move_out_before_snapshot
+,14564,Shifted,,Emmanuel Oppong,G3193533,3150,The Carabanchel Episode Hotel,04/07/2026,06/07/2026,04/07/2026,97.32,status_shifted|move_out_before_snapshot
+,14635,Shifted,,Kevin Andres Perez Correa,Y5916647A,2028,The Carabanchel Episode,17/01/2026,21/01/2026,21/01/2026,950,status_shifted|move_out_before_snapshot
+,14702,Shifted,,Jackeline Maria Poveda Roa,Y6959872V,108,The Carabanchel Episode,29/06/2025,17/02/2026,17/02/2026,995,status_shifted|move_out_before_snapshot
+,14873,Shifted,,Randall Lee,142285421,1108,The Carabanchel Episode Hotel,19/07/2026,21/07/2026,20/07/2026,72.62,status_shifted|move_out_before_snapshot
+,14981,Shifted,,"Bella Smile VLC, S.L.",B55428775,121,The Carabanchel Episode,02/03/2026,03/03/2026,03/03/2026,855,status_shifted|move_out_before_snapshot
+,15009,Shifted,,"Alicia Noriega Rangel, Andres Agudo Castro",45555749V | 07255130X,2007,The Carabanchel Episode Hotel,06/08/2026,10/08/2026,06/08/2026,68.13,status_shifted|move_out_before_snapshot
+,15079,Shifted,,Emmanuel Oppong,G3193533,2016,The Carabanchel Episode,04/07/2026,06/07/2026,04/07/2026,97,status_shifted|move_out_before_snapshot
+,1544,Booked,,HouseMonk HubSpot test Please do not delete,ADK8947H6Z,146,The Carabanchel Episode,01/07/2025,15/10/2025,15/10/2025,850,status_booked|move_out_before_snapshot
+,15537,Booked,,Belen test,ds,Belen test,Node leasing team test,20/09/2026,13/09/2027,13/09/2027,912,status_booked
+,15685,Shifted,,"Ruben Polo Gonzalez, Ceneida Guayara Grisales",46707263J | 48041145X,2008,The Carabanchel Episode Hotel,18/09/2026,20/09/2026,20/09/2026,89.85,status_shifted|move_out_before_snapshot
+,1569,Shifted,,Ana Luiza Lofego,X6944527E,5014,The Carabanchel Episode,01/07/2025,29/06/2026,29/06/2026,920,status_shifted|move_out_before_snapshot
+,15730,Shifted,,Amaia Perez De Iriarte Navarlaz,73128223E,0083,The Carabanchel Episode Hotel,19/09/2026,20/09/2026,19/09/2026,89.25,status_shifted|move_out_before_snapshot
+,15820,Shifted,,"Saleja Muley Arri, Yasin Ben Saddik",45300833X | 45300833X,3101,The Carabanchel Episode Hotel,21/08/2026,26/08/2026,21/08/2026,67.56,status_shifted|move_out_before_snapshot
+,15881,Shifted,,Anais Noela Alvarez Gonzalez,45960070K,2079,The Carabanchel Episode Hotel,25/09/2026,27/09/2026,25/09/2026,105.4,status_shifted|move_out_before_snapshot
+,15951,Under Notice,,Jo Kassandra Balanay,P2549043B,2-1B,BORRELL 147: The Sant Antoni Episode,25/08/2026,17/10/2026,17/10/2026,675,status_under_notice
+,16144,Shifted,,"Elsa Brilhante Duart Gervasio, Sandra Carla Rodrigue Lopes",084781572ZY3 | 143535676ZW9,2104,The Carabanchel Episode Hotel,27/08/2026,30/08/2026,28/08/2026,70.01,status_shifted|move_out_before_snapshot
+,16560,Shifted,,"Jose Rui Almeida Gaspar, JOANA ISABEL REBELO NEVES COELHO GASPAR",091897262ZX9 | 091583675ZY9,1108,The Carabanchel Episode Hotel,17/08/2026,20/08/2026,18/08/2026,145.66,status_shifted|move_out_before_snapshot
+,16632,Shifted,,"Thais Tavío González, Javier Padron Lorenzo",78720994K | 78695295J,3109,The Carabanchel Episode Hotel,13/08/2026,16/08/2026,13/08/2026,76.67,status_shifted|move_out_before_snapshot
+,16822,Shifted,,Malena Fernanda Suarez Reyes,125642906,0041,The Carabanchel Episode Hotel,25/09/2026,26/09/2026,26/09/2026,184.88,status_shifted|move_out_before_snapshot
+,16870,Shifted,,"Petrina Prentoska, IVANA LEKOSKA",M0622425 | CA87846ZG,1045,The Carabanchel Episode Hotel,26/08/2026,29/08/2026,27/08/2026,106.2,status_shifted|move_out_before_snapshot
+,16879,Booked,,"Blanca Lopez Aguado, Lorenzo Zin",75922788H | CA97747GZZ,1010,The Carabanchel Episode Hotel,23/10/2026,25/10/2026,25/10/2026,122,status_booked
+,17150,Booked,,D.P.A. Distribuidora de Produtos para Agricultura Lda,PT500640432,1087,The Carabanchel Episode Hotel,05/10/2026,07/10/2026,07/10/2026,110,status_booked|move_out_before_snapshot
+,17241,Booked,,Jaime test,431,Jaime test,Node leasing team test,23/09/2026,23/10/2026,23/10/2026,1310,status_booked
+,17312,Under Notice,,"Jose Manuel Fernandes Melo, Jose Manuel Mendes Fernandes, Maria Goncalves Da Silva",300540612ZV5 | 096693797ZY7 | 17379,2157,The Carabanchel Episode Hotel,13/10/2026,17/10/2026,17/10/2026,132.88,status_under_notice
+,17313,Under Notice,,"Jose Manuel Fernandes Melo, Lara Maria Silva Fernandes",300540612ZV5 | 17377,2154,The Carabanchel Episode Hotel,13/10/2026,17/10/2026,17/10/2026,132.88,status_under_notice
+,17406,Shifted,,"Asociacion Madrid a Tempo , Gabriel Martin Louis Husson",G10611887 | L73KM21LH,1109,The Carabanchel Episode Hotel,01/09/2026,07/09/2026,02/09/2026,1,status_shifted|move_out_before_snapshot
+,17428,Booked,,Rodrigo Lima De Amorim,GE045691,2087,The Carabanchel Episode Hotel,08/10/2026,10/10/2026,10/10/2026,115,status_booked|move_out_before_snapshot
+,1761,Shifted,,Isabella Ariza Trujillo,BA207964,2092,The Carabanchel Episode,05/09/2025,05/06/2026,05/06/2026,775,status_shifted|move_out_before_snapshot
+,1768,Shifted,,Ricardo Luz de Medina Garcao Cabecas,CE723781,4101,The Carabanchel Episode,07/09/2025,07/06/2026,07/06/2026,875,status_shifted|move_out_before_snapshot
+,17680,Booked,,Clara test,432,Adriana test,Node leasing team test,21/10/2026,07/02/2027,07/02/2027,1125,status_booked
+,17739,Shifted,,"Nais Amalhoa Perez Blanco, Nais Graciela Blanco Useche",12458535X | 60592382D,2006,The Carabanchel Episode,12/09/2026,18/10/2026,16/09/2026,33.15,status_shifted|move_out_before_snapshot
+,17829,Booked,,Bernard Bernard,pedir,0086,The Carabanchel Episode Hotel,15/09/2026,16/09/2026,16/09/2026,1,status_booked|move_out_before_snapshot
+,1789,Shifted,,Manuel Esteve Tamarit,52735136T,4072,The Carabanchel Episode,07/07/2025,24/07/2025,24/07/2025,995,status_shifted|move_out_before_snapshot
+,17931,Booked,,Helsingin Saalem Seurakunta,FI28629935,2104,The Carabanchel Episode Hotel,09/11/2026,12/11/2026,12/11/2026,113,status_booked
+,17932,Booked,,Vincenzo Incontro,YD1562553,2105,The Carabanchel Episode Hotel,09/11/2026,12/11/2026,12/11/2026,103,status_booked
+,17989,Booked,,Rubén Medina Ramírez,43544740J,3109,The Carabanchel Episode Hotel,23/10/2026,25/10/2026,25/10/2026,124,status_booked
+,18088,Booked,,Rafael Andrade Vallejo,75796082L,3157,The Carabanchel Episode Hotel,23/10/2026,25/10/2026,25/10/2026,128,status_booked
+,18141,Under Notice,,"Raquel Díaz Díaz, Gustavo Adolfo Garcia Angel",54043594B | 43808752P,3109,The Carabanchel Episode Hotel,11/10/2026,14/10/2026,14/10/2026,130,status_under_notice
+,1823,Shifted,,Alan Isaac Romero Navarro,N10493050,5030,The Carabanchel Episode,11/07/2025,10/04/2026,10/04/2026,1020,status_shifted|move_out_before_snapshot
+,18266,Booked,,Gavin Peacock,563791596,2-3,LLULL 250: The Poblenou Episode,12/11/2026,24/01/2027,24/01/2027,2000,status_booked
+,18267,Booked,,DAY APARTMENT GROUP S.L.,46893162A,1-2,SARDENYA 246: The Monumental Episode,31/10/2026,31/01/2027,31/01/2027,2300,status_booked
+,18282,Booked,,Francesco Palma,YD2629447,2-1B,BORRELL 147: The Sant Antoni Episode,21/10/2026,20/12/2026,20/12/2026,600,status_booked
+,18350,Under Notice,,"Ramiro Severino Carracedo Castro, Ana Maria Vicente Casas",16254553Q | 16260494T,1101,The Carabanchel Episode Hotel,12/10/2026,15/10/2026,15/10/2026,123.64,status_under_notice
+,18436,Booked,,John Daniel Mulcahy,PU0277638,3109,The Carabanchel Episode Hotel,27/10/2026,30/10/2026,30/10/2026,100,status_booked
+,18437,Under Notice,,"Jesus Esquivel Roman, Marija Zuvela",PBA713898 | 241973229,0019,The Carabanchel Episode,,21/10/2026,21/10/2026,2,status_under_notice
+,18456,Under Notice,,"Anthony Hetherington, JULIE HETHERINGTON",149578336 | 150503390,1108,The Carabanchel Episode Hotel,14/10/2026,15/10/2026,15/10/2026,106.08,status_under_notice
+,18459,Booked,,Natividad León Hipólito,28757492V,1009,The Carabanchel Episode Hotel,13/10/2026,14/10/2026,14/10/2026,100,status_booked
+,18460,Under Notice,,Jose Vicente Martin Gallardo,37339103Y,2108,The Carabanchel Episode Hotel,13/10/2026,14/10/2026,14/10/2026,118.32,status_under_notice
+,18461,Under Notice,,Jose Andres Ayelo Ferriz,73995189A,3104,The Carabanchel Episode Hotel,13/10/2026,15/10/2026,15/10/2026,104.72,status_under_notice
+,18484,Under Notice,,Maria Franco Ruiz,77858273F,0028,The Carabanchel Episode,12/10/2026,14/10/2026,14/10/2026,1,status_under_notice
+,18517,Under Notice,,Niki Sadat Arezehgar,Y7227840N,5023,The Carabanchel Episode,14/10/2026,21/10/2026,21/10/2026,1,status_under_notice
+,18534,Under Notice,,"INGHO Facility Management, S.L. , SILVIA MIGUELES AGUILAR",B92586742 | 74945487X,1150,The Carabanchel Episode Hotel,13/10/2026,15/10/2026,15/10/2026,100,status_under_notice
+,18535,Under Notice,,"PUCHE BALDOMERO MORENO , INGHO Facility Management, S.L.",77182578Y | B92586742,1153,The Carabanchel Episode Hotel,13/10/2026,15/10/2026,15/10/2026,100,status_under_notice
+,18539,Under Notice,,"Juan Manuel Cassini De La Torre, INGHO Facility Management, S.L.",26803270J | B92586742,1157,The Carabanchel Episode Hotel,13/10/2026,15/10/2026,15/10/2026,100,status_under_notice
+,2100,Shifted,,Miguel Roces Fernández,53527548Q,4036,The Carabanchel Episode,12/10/2025,04/12/2025,04/12/2025,1205,status_shifted|move_out_before_snapshot
+,2127,Shifted,,Khadija Maimouni Biyari,PAG214898,2153,The Carabanchel Episode Hotel,18/07/2025,27/07/2025,27/07/2025,85,status_shifted|move_out_before_snapshot
+,2501,Booked,,LEAD GUEST,30824723D,THM test,Node leasing team test,22/03/2026,23/03/2026,23/03/2026,200,status_booked|move_out_before_snapshot
+,2503,Shifted,,Raquel Diaz Hernandez,44553775S,4031,The Carabanchel Episode,12/10/2025,04/12/2025,04/12/2025,1525,status_shifted|move_out_before_snapshot
+,2505,Shifted,,Antonio Peñas Rodriguez,52374602Z,1005,The Carabanchel Episode,01/10/2025,30/09/2026,30/09/2026,820,status_shifted|move_out_before_snapshot
+,2544,Booked,,Luis Shuaib,55821520Z,Paymaster,The Carabanchel Episode,08/09/2026,09/09/2026,09/09/2026,0,status_booked|move_out_before_snapshot
+,2551,Shifted,,Victor Sanchez Membibre,04621394G,3157,The Carabanchel Episode Hotel,14/08/2025,17/08/2025,14/08/2025,98.7,status_shifted|move_out_before_snapshot
+,2581,Shifted,,Mauro Miguel Rodriguez Muñoz,PAC523912,3145,The Carabanchel Episode,05/09/2025,12/09/2025,12/09/2025,1505,status_shifted|move_out_before_snapshot
+,2612,Shifted,,Manal Errahmouni Nouri,39958730W,0095,The Carabanchel Episode,01/09/2025,30/06/2026,30/06/2026,820,status_shifted|move_out_before_snapshot
+,2651,Shifted,,"Maria Angeles Lopez Deig, Jorge Juan Casals Ramos",39362044M | 39343816Q,2108,The Carabanchel Episode Hotel,13/11/2025,17/11/2025,13/11/2025,97.2,status_shifted|move_out_before_snapshot
+,2670,Shifted,,Diana Patricia Perez Piedrahita,Z2324291P,3177,The Carabanchel Episode,31/05/2025,31/05/2025,31/05/2025,1215,status_shifted|move_out_before_snapshot
+,2687,Shifted,,Maria Isabel Rodriguez Hinestrosa,BG733457,0005,The Carabanchel Episode,14/10/2025,14/11/2025,14/11/2025,1210,status_shifted|move_out_before_snapshot
+,2840,Shifted,,Sergei Lashko,551020287,-1049,The Carabanchel Episode,06/09/2025,06/01/2026,06/01/2026,1005,status_shifted|move_out_before_snapshot
+,2843,Shifted,,Fernanda Isabel Ayala Rodriguez,650357844,0030,The Carabanchel Episode,30/09/2025,31/07/2026,31/07/2026,905,status_shifted|move_out_before_snapshot
+,2963,Shifted,,Maria De Los Angeles Newland Barcelo,76086902G,4041,The Carabanchel Episode,31/08/2025,31/07/2026,31/07/2026,970,status_shifted|move_out_before_snapshot
+,3244,Shifted,,Miguel Angel Ortega Sanchez,43761103S,-1081,The Carabanchel Episode,12/10/2025,04/12/2025,04/12/2025,1105,status_shifted|move_out_before_snapshot
+,3324,Under Notice,,Valentina Veselinova Georgieva,388098832,4-1A,PROVIDENCIA 96: The Gracia Episode,09/10/2025,31/08/2026,31/08/2026,1150,status_under_notice|move_out_before_snapshot
+,3426,Shifted,,Petar Hranisavljevic,2424,2081,The Carabanchel Episode Hotel,12/09/2025,14/09/2025,12/09/2025,130.5,status_shifted|move_out_before_snapshot
+,3427,Shifted,,Rhiannon Winslow,1525559991,130,The Carabanchel Episode,01/10/2025,29/07/2026,29/07/2026,905,status_shifted|move_out_before_snapshot
+,3465,Shifted,,Eyad Mohamed Abdalaziz,A29331925,-1031,The Carabanchel Episode,16/09/2025,16/11/2025,16/09/2025,1505,status_shifted|move_out_before_snapshot
+,3499,Shifted,,Asmaa Hassan Dahab,A2726808,2080,The Carabanchel Episode Hotel,16/09/2025,19/09/2025,19/09/2025,130,status_shifted|move_out_before_snapshot
+,3627,Shifted,,Ishan Chauhan,P5112814,2105,The Carabanchel Episode Hotel,18/09/2025,20/09/2025,18/09/2025,105.75,status_shifted|move_out_before_snapshot
+,3684,Booked,,Clara test,432,Monk team test,Node leasing team test,29/11/2025,10/01/2026,10/01/2026,1230,status_booked|move_out_before_snapshot
+,3695,Shifted,,Victoria Gooseva,Y9520774F,149,The Carabanchel Episode,26/09/2025,24/10/2025,24/10/2025,1210,status_shifted|move_out_before_snapshot
+,3698,Shifted,,"Marcos Gonzalez Rodriguez, Cristina Belmonte Martinez",34988983A | 48459555G,3154,The Carabanchel Episode Hotel,28/11/2025,30/11/2025,28/11/2025,119.25,status_shifted|move_out_before_snapshot
+,3714,Shifted,,Mohamed Houssem Merati,309335333,5021,The Carabanchel Episode,20/10/2025,28/02/2026,28/02/2026,1460,status_shifted|move_out_before_snapshot
+,3815,Shifted,,Libio Encarnación Mateo,RD826941,2142,The Carabanchel Episode,26/09/2025,24/09/2026,24/09/2026,905,status_shifted|move_out_before_snapshot
+,3817,Shifted,,Pedro Enrique Vazquez Fernandez,45278541M,2118,The Carabanchel Episode,26/09/2025,11/11/2025,11/11/2025,1005,status_shifted|move_out_before_snapshot
+,3939,Shifted,,Eddy Moscoso,A12138005,2154,The Carabanchel Episode Hotel,27/09/2025,28/09/2025,27/09/2025,139.5,status_shifted|move_out_before_snapshot
+,3971,Booked,,Soo Min Erica An,AAJ318875,3-2,LLULL 250: The Poblenou Episode,20/10/2026,09/12/2026,09/12/2026,1950,status_booked
+,3979,Shifted,,Alma Estefania Peña de Lira,YZR42NFZG,4073,The Carabanchel Episode,30/09/2025,07/10/2025,07/10/2025,1190,status_shifted|move_out_before_snapshot
+,4061,Shifted,,Avishag Rachel Itzhak,32637854,80,The Carabanchel Episode Hotel,01/10/2025,03/10/2025,03/10/2025,175.5,status_shifted|move_out_before_snapshot
+,4101,Shifted,,Josel Alirio Alviarez Chacon,184439470,3141,The Carabanchel Episode,01/11/2025,02/08/2026,02/08/2026,845,status_shifted|move_out_before_snapshot
+,4135,Shifted,,Sergio Quintanilla Cantu,Z1867764P,4098,The Carabanchel Episode,17/10/2025,17/08/2026,17/08/2026,845,status_shifted|move_out_before_snapshot
+,4185,Shifted,,Albert Lazaro I Pubill,48097674M,3078,The Carabanchel Episode Hotel,05/10/2025,09/10/2025,09/10/2025,118.8,status_shifted|move_out_before_snapshot
+,4228,Shifted,,Muhammad Ahsan Saleem,GA1181055,2117,The Carabanchel Episode,07/10/2025,28/12/2025,28/12/2025,1005,status_shifted|move_out_before_snapshot
+,4229,Shifted,,Nuno De  Campos Miranda Garcia,13964421,1106,The Carabanchel Episode,15/10/2025,17/12/2025,17/12/2025,835,status_shifted|move_out_before_snapshot
+,4246,Shifted,,Casandra Espinosa Alonso,50211217D,1109,The Carabanchel Episode Hotel,06/10/2025,07/10/2025,06/10/2025,90,status_shifted|move_out_before_snapshot
+,4273,Shifted,,Zakaria El Kharraz,GC7648670,2158,The Carabanchel Episode,08/10/2025,08/10/2025,08/10/2025,920,status_shifted|move_out_before_snapshot
+,428,Shifted,,Oriana Karolina Davila Miranda,177896541,108,The Carabanchel Episode,29/06/2025,26/06/2026,26/06/2026,995,status_shifted|move_out_before_snapshot
+,430,Shifted,,Sebastian Benjamin Klaus,CFH4C1K21,110,The Carabanchel Episode,30/04/2025,28/03/2026,28/03/2026,885,status_shifted|move_out_before_snapshot
+,4375,Shifted,,Kexuan Liang,EK0633770,3145,The Carabanchel Episode,05/09/2025,12/09/2025,12/09/2025,1505,status_shifted|move_out_before_snapshot
+,4383,Shifted,,Fernando Padin Iglesias,50460510M,2122,The Carabanchel Episode,27/10/2025,24/02/2026,25/11/2025,1230,status_shifted|move_out_before_snapshot
+,4489,Shifted,,BESTOURS S.A.,A58432469,3084,The Carabanchel Episode Hotel,29/09/2025,15/10/2025,13/10/2025,135.63,status_shifted|move_out_before_snapshot
+,450,Shifted,,Fana Colette Harper-Tyson,R514495,130,The Carabanchel Episode,10/09/2025,09/10/2025,09/10/2025,1210,status_shifted|move_out_before_snapshot
+,451,Booked,,Carlos Navarro Castaño,79293773P,131,The Carabanchel Episode,01/10/2026,02/07/2027,02/07/2027,965,status_booked
+,4526,Shifted,,Felipe Cordero Fernandez,B01058617,0144,The Carabanchel Episode,18/10/2025,18/11/2025,18/11/2025,1330,status_shifted|move_out_before_snapshot
+,4531,Shifted,,Mustafa Sadik Jawad Al-Bayati,A20572532,2150,The Carabanchel Episode Hotel,22/10/2025,25/10/2025,25/10/2025,103.95,status_shifted|move_out_before_snapshot
+,4591,Shifted,,Javier Villafranca Solano,29222775X,2105,The Carabanchel Episode Hotel,14/10/2025,15/10/2025,14/10/2025,90,status_shifted|move_out_before_snapshot
+,4649,Shifted,,Cintia Tamara Rabago,AAI663550,1101,The Carabanchel Episode Hotel,22/10/2025,28/10/2025,28/10/2025,103.95,status_shifted|move_out_before_snapshot
+,4688,Shifted,,Zeyad Mohamed Abdalaziz,A31116757,-1031,The Carabanchel Episode,16/09/2025,16/11/2025,16/09/2025,1505,status_shifted|move_out_before_snapshot
+,4711,Shifted,,"Carlos Alberto Rodríguez Hernández, Ana Bertha Gomez de la Torre",N02213671 | G4301016,3178,The Carabanchel Episode,31/12/2025,29/12/2026,02/01/2026,1116,status_shifted|move_out_before_snapshot
+,4844,Shifted,,Nehir Karabulut,U33611896,-1027,The Carabanchel Episode,22/10/2025,24/01/2026,24/01/2026,920,status_shifted|move_out_before_snapshot
+,4846,Shifted,,José Luis Sotomayor Felguera,53220125B,0084,The Carabanchel Episode Hotel,20/10/2025,24/10/2025,20/10/2025,122.31,status_shifted|move_out_before_snapshot
+,4979,Shifted,,Giovanna Lisset Castro Bonilla,AW898084,2105,The Carabanchel Episode Hotel,20/10/2025,24/10/2025,22/10/2025,115.87,status_shifted|move_out_before_snapshot
+,5065,Shifted,,Gerard Carpinell Agustí,47922697N,2084,The Carabanchel Episode Hotel,24/10/2025,29/10/2025,25/10/2025,0,status_shifted|move_out_before_snapshot
+,5115,Shifted,,Victoriano Páez Vernalte,03832324H,2064,The Carabanchel Episode,01/11/2025,07/03/2026,07/03/2026,1020,status_shifted|move_out_before_snapshot
+,5248,Shifted,,David Andres Hernandez Bohorquez,Z1939944Z,2079,The Carabanchel Episode Hotel,29/10/2025,30/10/2025,29/10/2025,82.8,status_shifted|move_out_before_snapshot
+,5296,Shifted,,Ricardo Antonio Peña Silva,N11589041,4073,The Carabanchel Episode,30/09/2025,07/10/2025,07/10/2025,1190,status_shifted|move_out_before_snapshot
+,5301,Shifted,,Lluis Furnells Ribas,41535466L,2124,The Carabanchel Episode,31/10/2025,31/10/2025,31/10/2025,920,status_shifted|move_out_before_snapshot
+,5349,Shifted,,ESR Energy Solutions S.L,B67677708,4072,The Carabanchel Episode,07/07/2025,24/07/2025,24/07/2025,995,status_shifted|move_out_before_snapshot
+,5392,Shifted,,Neha Veera,A60551565,2107,The Carabanchel Episode,05/11/2025,06/11/2025,05/11/2025,130,status_shifted|move_out_before_snapshot
+,5425,Shifted,,Hodaifa Hattabi Kourtam,53569707Q,0041,The Carabanchel Episode Hotel,31/10/2025,02/11/2025,01/11/2025,110.25,status_shifted|move_out_before_snapshot
+,5426,Booked,,Rosi Paredes,pedir,80,The Carabanchel Episode Hotel,14/10/2025,15/10/2025,15/10/2025,90,status_booked|move_out_before_snapshot
+,5436,Shifted,,"María José Latre Campos, Grabriel Camin Jarnes",25140943B | 25133761M,2087,The Carabanchel Episode Hotel,08/11/2025,09/11/2025,09/11/2025,92.07,status_shifted|move_out_before_snapshot
+,5522,Booked,,Naum Ernesto Pérez España,no documento,3108,The Carabanchel Episode Hotel,01/12/2025,02/12/2025,02/12/2025,106.25,status_booked|move_out_before_snapshot
+,5654,Booked,,Berlin Vipuamuje Kamuzeuao,pedir,2086,The Carabanchel Episode Hotel,21/10/2025,22/10/2025,22/10/2025,160,status_booked|move_out_before_snapshot
+,5657,Booked,,Maria Zuluaga,pedir,2086,The Carabanchel Episode Hotel,22/10/2025,23/10/2025,23/10/2025,110.5,status_booked|move_out_before_snapshot
+,5662,Booked,,Yuber Duarte,pedir,2086,The Carabanchel Episode Hotel,23/10/2025,24/10/2025,24/10/2025,119,status_booked|move_out_before_snapshot
+,5689,Booked,,Yarima Vargas,pedir,80,The Carabanchel Episode Hotel,30/10/2025,31/10/2025,31/10/2025,90,status_booked|move_out_before_snapshot
+,5753,Shifted,,Deborah Terwey,53628591C,121,The Carabanchel Episode,02/03/2026,31/05/2026,31/05/2026,855,status_shifted|move_out_before_snapshot
+,5792,Shifted,,Ezsheinah Mae Duquiatan,P1616066C,1150,The Carabanchel Episode Hotel,06/12/2025,07/12/2025,06/12/2025,118.8,status_shifted|move_out_before_snapshot
+,5858,Booked,,CHENGXUE LI,pedir,3154,The Carabanchel Episode Hotel,21/11/2025,22/11/2025,22/11/2025,123.25,status_booked|move_out_before_snapshot
+,5873,Shifted,,"Natalia Rodríguez Valls, Segio Carneros Revuelta",78694840H | 47515971H,2109,The Carabanchel Episode Hotel,06/12/2025,10/12/2025,08/12/2025,135.68,status_shifted|move_out_before_snapshot
+,5909,Booked,,Jennifer Wilmary Gil Luna,pedir,2150,The Carabanchel Episode Hotel,11/11/2025,12/11/2025,12/11/2025,101.25,status_booked|move_out_before_snapshot
+,5942,Booked,,Ely Mahmoud Cheikh,pedir,1085,The Carabanchel Episode Hotel,16/11/2025,17/11/2025,17/11/2025,80.75,status_booked|move_out_before_snapshot
+,5996,Booked,,Alejandro Marquez Vazquez,pedir,80,The Carabanchel Episode Hotel,14/11/2025,15/11/2025,15/11/2025,139.5,status_booked|move_out_before_snapshot
+,6014,Booked,,Celio Fulane,pedir,1081,The Carabanchel Episode Hotel,16/11/2025,17/11/2025,17/11/2025,131.75,status_booked|move_out_before_snapshot
+,608,Shifted,,José Joaquín García Sánchez,76651359H,1146,The Carabanchel Episode,07/05/2025,05/05/2026,05/05/2026,865,status_shifted|move_out_before_snapshot
+,6124,Shifted,,Daniela Maria Marin Navarro,Z0939751E,0144,The Carabanchel Episode,18/10/2025,23/10/2025,23/10/2025,1330,status_shifted|move_out_before_snapshot
+,6139,Shifted,,Andrea Benítez Durán,G28494316,3010,The Carabanchel Episode,19/11/2025,18/09/2026,18/09/2026,920,status_shifted|move_out_before_snapshot
+,6141,Shifted,,Ricardo Manuel Filloy Fernandez,32828234V,3153,The Carabanchel Episode Hotel,20/11/2025,25/11/2025,20/11/2025,92,status_shifted|move_out_before_snapshot
+,6192,Booked,,Andres Gutierrez,pedir,1083,The Carabanchel Episode Hotel,22/11/2025,23/11/2025,23/11/2025,110.5,status_booked|move_out_before_snapshot
+,622,Under Notice,,"Nais Amalhoa Perez Blanco, Nais Graciela Blanco Useche",12458535X | 60592382D,1168,The Carabanchel Episode,16/09/2026,18/10/2026,18/10/2026,33.15,status_under_notice
+,6230,Booked,,RONALD GABRIEL TORO AMAYA,pedir,0086,The Carabanchel Episode Hotel,14/12/2025,15/12/2025,15/12/2025,73.95,status_booked|move_out_before_snapshot
+,625,Shifted,,Anna Malsagova,Y7414233J,1171,The Carabanchel Episode,22/04/2025,21/08/2025,21/08/2025,1015,status_shifted|move_out_before_snapshot
+,6310,Booked,,Jhonatan Tangarife Murcia,5127,2086,The Carabanchel Episode Hotel,24/11/2025,25/11/2025,25/11/2025,85.5,status_booked|move_out_before_snapshot
+,6370,Shifted,,"Michael Maverick Peña Martinez, Leonor Celeste Calderón Báez",XDF014367 | RD7548643,2079,The Carabanchel Episode Hotel,28/11/2025,06/12/2025,28/11/2025,100.41,status_shifted|move_out_before_snapshot
+,6372,Shifted,,Sara Shkirah,SUNB86535,2157,The Carabanchel Episode Hotel,25/11/2025,26/11/2025,25/11/2025,97.2,status_shifted|move_out_before_snapshot
+,6499,Booked,,Eliezer Cruz reina,pedir,1081,The Carabanchel Episode Hotel,26/11/2025,27/11/2025,27/11/2025,103.5,status_booked|move_out_before_snapshot
+,6500,Booked,,Eliezer Cruz reina,pedir,1083,The Carabanchel Episode Hotel,26/11/2025,27/11/2025,27/11/2025,103.5,status_booked|move_out_before_snapshot
+,6539,Shifted,,Guadalupe Pavón González,08882800Q,2081,The Carabanchel Episode Hotel,06/12/2025,08/12/2025,08/12/2025,146.25,status_shifted|move_out_before_snapshot
+,6563,Shifted,,"Cristian Alcahud Sanchez, Ciprian Razvan Ceapaliga",73668080T | 060303361,141,The Carabanchel Episode,11/01/2026,03/02/2026,03/02/2026,1320,status_shifted|move_out_before_snapshot
+,6583,Shifted,,Yesid Hernando Castaño Duque,AX277542,3105,The Carabanchel Episode Hotel,29/11/2025,01/12/2025,01/12/2025,214,status_shifted|move_out_before_snapshot
+,6603,Booked,,Gerson Moises Sanchez Lopez,5376,2150,The Carabanchel Episode Hotel,01/12/2025,02/12/2025,02/12/2025,72.25,status_booked|move_out_before_snapshot
+,6605,Shifted,,Angela Maria Parra Rodriguez,BH030626,3105,The Carabanchel Episode Hotel,29/11/2025,01/12/2025,30/11/2025,214,status_shifted|move_out_before_snapshot
+,6653,Shifted,,Ricardo Manuel Filloy Fernandez,32828234V,3108,The Carabanchel Episode Hotel,19/12/2025,22/12/2025,19/12/2025,80,status_shifted|move_out_before_snapshot
+,6657,Booked,Cancelada por cliente - BOOKING,Neil Zammit,pedir,1101,The Carabanchel Episode Hotel,09/04/2026,10/04/2026,10/04/2026,103.5,cancellation_reason|status_booked|move_out_before_snapshot
+,6658,Booked,Cancelada por cliente - BOOKING,Neil Zammit,pedir,1104,The Carabanchel Episode Hotel,09/04/2026,10/04/2026,10/04/2026,103.5,cancellation_reason|status_booked|move_out_before_snapshot
+,6659,Booked,Cancelada por cliente - BOOKING,Neil Zammit,pedir,1108,The Carabanchel Episode Hotel,09/04/2026,10/04/2026,10/04/2026,103.5,cancellation_reason|status_booked|move_out_before_snapshot
+,6660,Booked,Cancelada por cliente - BOOKING,Neil Zammit,pedir,1109,The Carabanchel Episode Hotel,09/04/2026,10/04/2026,10/04/2026,103.5,cancellation_reason|status_booked|move_out_before_snapshot
+,6744,Shifted,,Carlos Enrique Mata,A81131728,4069,The Carabanchel Episode,27/06/2025,01/07/2025,01/07/2025,1215,status_shifted|move_out_before_snapshot
+,6766,Shifted,,Jose Antonio Diaz San Miguel,10852181E,4031,The Carabanchel Episode,12/10/2025,04/12/2025,12/10/2025,1525,status_shifted|move_out_before_snapshot
+,6784,Shifted,,Lara Rondo Blanco,10888854X,4036,The Carabanchel Episode,12/10/2025,05/12/2025,12/10/2025,1205,status_shifted|move_out_before_snapshot
+,6806,Booked,,Nkengafac Robino,5517,3108,The Carabanchel Episode Hotel,05/12/2025,10/12/2025,10/12/2025,132.05,status_booked|move_out_before_snapshot
+,6815,Shifted,,Tifanny Salazar Tobon,BE4790509,-1085,The Carabanchel Episode,04/12/2025,02/01/2026,02/01/2026,845,status_shifted|move_out_before_snapshot
+,6821,Booked,,Diana Guevara,4384,1086,The Carabanchel Episode Hotel,01/11/2025,02/11/2025,02/11/2025,112.5,status_booked|move_out_before_snapshot
+,6824,Booked,,Ali Salisou Abdoul Chafiou Zakaria Bakasso Kadidja,pedir,3108,The Carabanchel Episode Hotel,10/01/2026,11/01/2026,11/01/2026,102,status_booked|move_out_before_snapshot
+,6839,Booked,,Maria Antonieta Gonzalez Salazar,pedir,1080,The Carabanchel Episode Hotel,06/11/2025,07/11/2025,07/11/2025,94.5,status_booked|move_out_before_snapshot
+,6864,Shifted,,Jorge Gordillo,44777827R,2081,The Carabanchel Episode Hotel,06/12/2025,08/12/2025,07/12/2025,146.25,status_shifted|move_out_before_snapshot
+,6872,Booked,,Vicente Calixto Quevedo Delgado,pedir,1087,The Carabanchel Episode Hotel,13/11/2025,14/11/2025,14/11/2025,103.5,status_booked|move_out_before_snapshot
+,6894,Booked,,DORCIA OSEI,Pedir,3157,The Carabanchel Episode Hotel,07/12/2025,08/12/2025,08/12/2025,140.25,status_booked|move_out_before_snapshot
+,6896,Booked,,Stefania Garcia,pedir,80,The Carabanchel Episode Hotel,08/12/2025,09/12/2025,09/12/2025,85,status_booked|move_out_before_snapshot
+,6923,Booked,,Cristian David Campo Zambrano,pedir,2150,The Carabanchel Episode Hotel,03/11/2025,04/11/2025,04/11/2025,80.75,status_booked|move_out_before_snapshot
+,6925,Booked,,Ximena Viana,pedir,3108,The Carabanchel Episode Hotel,05/11/2025,06/11/2025,06/11/2025,103.5,status_booked|move_out_before_snapshot
+,6930,Booked,,Lucas Diego De Souza Oliveira,pedir,1083,The Carabanchel Episode Hotel,09/12/2025,10/12/2025,10/12/2025,76.5,status_booked|move_out_before_snapshot
+,6931,Booked,,Tatiana Francisco,pedir,2086,The Carabanchel Episode Hotel,09/12/2025,10/12/2025,10/12/2025,93.15,status_booked|move_out_before_snapshot
+,6944,Booked,,Jesus Pvalle,pedir,1081,The Carabanchel Episode Hotel,08/11/2025,09/11/2025,09/11/2025,109.8,status_booked|move_out_before_snapshot
+,6949,Booked,,Felipe Herrera,pedir,1081,The Carabanchel Episode Hotel,28/11/2025,29/11/2025,29/11/2025,139.5,status_booked|move_out_before_snapshot
+,6951,Booked,,Judith EKE BILIRA,pedir,2150,The Carabanchel Episode Hotel,29/11/2025,30/11/2025,30/11/2025,139.5,status_booked|move_out_before_snapshot
+,7012,Booked,,VIAJE AL INSTANTE SAS,pedir,1101,The Carabanchel Episode Hotel,11/12/2025,12/12/2025,12/12/2025,78.3,status_booked|move_out_before_snapshot
+,7059,Booked,,Abdelhakim Hennous,5726,3154,The Carabanchel Episode Hotel,18/12/2025,19/12/2025,19/12/2025,76.5,status_booked|move_out_before_snapshot
+,7113,Booked,,MARIA YANCHAGUANO,5770,2086,The Carabanchel Episode Hotel,09/01/2026,10/01/2026,10/01/2026,80.75,status_booked|move_out_before_snapshot
+,7244,Booked,,DJEFFREY NTALAJA WA NTALAJA,pedir,0082,The Carabanchel Episode Hotel,15/01/2026,16/01/2026,16/01/2026,76.5,status_booked|move_out_before_snapshot
+,7262,Booked,,Daniela Alejandra Suarez Mendoza,pedir,2150,The Carabanchel Episode Hotel,17/12/2025,18/12/2025,18/12/2025,73.8,status_booked|move_out_before_snapshot
+,7264,Booked,,Benedict E E Reeves,PEDIR,1083,The Carabanchel Episode Hotel,19/12/2025,20/12/2025,20/12/2025,102,status_booked|move_out_before_snapshot
+,7269,Booked,,IBRAHIM RUPOK MD GOLAM,pedir,1101,The Carabanchel Episode Hotel,20/12/2025,21/12/2025,21/12/2025,144.5,status_booked|move_out_before_snapshot
+,7279,Booked,,Adamou Seydou Nouridine,pedir,1101,The Carabanchel Episode Hotel,25/12/2025,26/12/2025,26/12/2025,78.2,status_booked|move_out_before_snapshot
+,7379,Booked,,"Maria Morales, INMACULADA GALLARDO GARCIA",pedir | 28484480S,2083,The Carabanchel Episode Hotel,29/12/2025,30/12/2025,30/12/2025,97.75,status_booked|move_out_before_snapshot
+,7383,Booked,,Juan Esteban Osorno Rojas,pedir,0082,The Carabanchel Episode Hotel,24/12/2025,25/12/2025,25/12/2025,97.2,status_booked|move_out_before_snapshot
+,7417,Booked,,Marlin Mateus,pedir,3157,The Carabanchel Episode Hotel,24/12/2025,25/12/2025,25/12/2025,72.25,status_booked|move_out_before_snapshot
+,7438,Booked,,Noor Nayyef,pedir,3080,The Carabanchel Episode Hotel,25/12/2025,26/12/2025,26/12/2025,153.9,status_booked|move_out_before_snapshot
+,7447,Shifted,,Nour Eddine Far,313850978,3159,The Carabanchel Episode,10/04/2026,09/05/2026,09/05/2026,1280,status_shifted|move_out_before_snapshot
+,7467,Shifted,,Abdulmajeed Kanan,BT50709,2087,The Carabanchel Episode Hotel,29/12/2025,06/01/2026,01/01/2026,90.42,status_shifted|move_out_before_snapshot
+,7521,Booked,,Gabriel Oballos,6081,1080,The Carabanchel Episode Hotel,01/01/2026,02/01/2026,02/01/2026,108,status_booked|move_out_before_snapshot
+,7533,Booked,,Luis Guzman,pedir,3108,The Carabanchel Episode Hotel,27/12/2025,28/12/2025,28/12/2025,127.5,status_booked|move_out_before_snapshot
+,7539,Booked,,PAULINA SANCHEZ RICARDO,pedir,2150,The Carabanchel Episode Hotel,28/12/2025,29/12/2025,29/12/2025,93.5,status_booked|move_out_before_snapshot
+,7541,Booked,,CARLOS ANTONIO QUITO ALTAMIRANO,pedir,3154,The Carabanchel Episode Hotel,31/12/2025,01/01/2026,01/01/2026,170,status_booked|move_out_before_snapshot
+,7582,Shifted,,Montserrat Grandio Trigo,52099453Z,3178,The Carabanchel Episode,24/01/2026,24/04/2026,24/04/2026,1440,status_shifted|move_out_before_snapshot
+,7586,Booked,,Amine El Kassoiri,6113,2078,The Carabanchel Episode Hotel,02/01/2026,03/01/2026,03/01/2026,107.1,status_booked|move_out_before_snapshot
+,779,Shifted,,Fernando Padin Iglesias,50460510M,2158,The Carabanchel Episode,29/06/2025,29/06/2025,29/06/2025,1075,status_shifted|move_out_before_snapshot
+,7829,Shifted,,Angelica Patricia Bernal Ruiz,AT666554,4108,The Carabanchel Episode,31/01/2026,02/02/2026,02/02/2026,855,status_shifted|move_out_before_snapshot
+,7917,Shifted,,"Mark Stephen Quick, Lauren Elizabeth Holland",149390845 | 310595658,2104,The Carabanchel Episode Hotel,07/07/2026,14/07/2026,09/07/2026,105.04,status_shifted|move_out_before_snapshot
+,8015,Shifted,,Francisco Javier Gomez Soler,28771316H,4098,The Carabanchel Episode,10/03/2026,08/05/2026,08/05/2026,1245,status_shifted|move_out_before_snapshot
+,8078,Booked,,Hanastasia Madeen,pedir,3154,The Carabanchel Episode Hotel,14/01/2026,15/01/2026,15/01/2026,73.1,status_booked|move_out_before_snapshot
+,8139,Shifted,,Halil Karabulut,U33613217,2105,The Carabanchel Episode Hotel,15/01/2026,18/01/2026,18/01/2026,75.53,status_shifted|move_out_before_snapshot
+,8141,Shifted,,Tomás Cortés Flórez,53737760P,-1071,The Carabanchel Episode,21/01/2026,16/02/2026,16/02/2026,1103,status_shifted|move_out_before_snapshot
+,8195,Shifted,,Desiree Cabusas Andal,548245029,0077,The Carabanchel Episode Hotel,06/02/2026,09/02/2026,09/02/2026,89.1,status_shifted|move_out_before_snapshot
+,8222,Booked,,KATHERINE CAICEDO,pedir,2101,The Carabanchel Episode Hotel,26/01/2026,27/01/2026,27/01/2026,80.75,status_booked|move_out_before_snapshot
+,8232,Booked,,OTT INTERNATIONAL AFRICA,pedir,1079,The Carabanchel Episode Hotel,22/01/2026,23/01/2026,23/01/2026,110,status_booked|move_out_before_snapshot
+,8235,Booked,,Benie Nkuanga,pedir,2154,The Carabanchel Episode Hotel,19/01/2026,20/01/2026,20/01/2026,101.25,status_booked|move_out_before_snapshot
+,8245,Booked,,ADAMOU ABDOU MALIK,pedir,0086,The Carabanchel Episode Hotel,16/01/2026,17/01/2026,17/01/2026,97.75,status_booked|move_out_before_snapshot
+,8248,Booked,,Mwanjaa Rashidi,pedir,2150,The Carabanchel Episode Hotel,17/01/2026,18/01/2026,18/01/2026,97.2,status_booked|move_out_before_snapshot
+,8261,Booked,,Penda Coulibaly,pedir,0082,The Carabanchel Episode Hotel,27/01/2026,28/01/2026,28/01/2026,85.5,status_booked|move_out_before_snapshot
+,8327,Booked,,Mayamba Gedeon,pedir,80,The Carabanchel Episode Hotel,20/01/2026,21/01/2026,21/01/2026,110,status_booked|move_out_before_snapshot
+,8367,Shifted,,Nydia Rangel Cardenas,41707390H,3029,The Carabanchel Episode,31/01/2026,01/03/2026,01/03/2026,1117,status_shifted|move_out_before_snapshot
+,8382,Booked,,Adriano Nunes,pedir,3109,The Carabanchel Episode Hotel,26/01/2026,27/01/2026,27/01/2026,80.75,status_booked|move_out_before_snapshot
+,8395,Booked,,ANGELA MARIA ATEHORTUA PIEDRAHITA,pedir,2108,The Carabanchel Episode Hotel,22/01/2026,23/01/2026,23/01/2026,93.5,status_booked|move_out_before_snapshot
+,8491,Shifted,,"Paul Olatunde Olaniyan, Funke Mofesola Olaniyan",B50023199 | B50023198,3104,The Carabanchel Episode Hotel,09/04/2026,09/04/2026,09/04/2026,78.08,status_shifted|move_out_before_snapshot
+,8645,Shifted,,"Werner Stuwe Camargo, GRUSAMAR S.L.",L4WFK8HFZ | B83341933,1101,The Carabanchel Episode Hotel,26/01/2026,30/01/2026,26/01/2026,85,status_shifted|move_out_before_snapshot
+,8647,Booked,,Yeffri Albadan,pedir,80,The Carabanchel Episode Hotel,23/01/2026,24/01/2026,24/01/2026,106.25,status_booked|move_out_before_snapshot
+,8725,Booked,,Fatih Mertt,pedir,1101,The Carabanchel Episode Hotel,27/01/2026,28/01/2026,28/01/2026,68.4,status_booked|move_out_before_snapshot
+,8730,Booked,,Flavio Jose Ortiz Castro,PEDIR,2101,The Carabanchel Episode Hotel,28/01/2026,29/01/2026,29/01/2026,64.6,status_booked|move_out_before_snapshot
+,8731,Booked,,Flavio Jose Ortiz Castro,PEDIR,2104,The Carabanchel Episode Hotel,28/01/2026,29/01/2026,29/01/2026,76.95,status_booked|move_out_before_snapshot
+,8916,Booked,,Luis Zapian,pedir,3108,The Carabanchel Episode Hotel,28/01/2026,29/01/2026,29/01/2026,64.6,status_booked|move_out_before_snapshot
+,8975,Booked,,Estefania Posada Gomez,pedir,2101,The Carabanchel Episode Hotel,30/01/2026,31/01/2026,31/01/2026,76.95,status_booked|move_out_before_snapshot
+,9048,Booked,,Roberto Xol Tzalam,pedir,3109,The Carabanchel Episode Hotel,30/01/2026,31/01/2026,31/01/2026,70.25,status_booked|move_out_before_snapshot
+,9049,Booked,,David Lopez,pedir,1108,The Carabanchel Episode Hotel,31/01/2026,01/02/2026,01/02/2026,76.95,status_booked|move_out_before_snapshot
+,9050,Booked,,KAYODE PETER ILESANMI,pedir,2153,The Carabanchel Episode Hotel,31/01/2026,01/02/2026,01/02/2026,80.75,status_booked|move_out_before_snapshot
+,9123,Shifted,,Javier Simón  Paracuellos,73008031M,1153,The Carabanchel Episode Hotel,03/02/2026,04/02/2026,03/02/2026,81.23,status_shifted|move_out_before_snapshot
+,9207,Shifted,,Maria Carmen Heredia Moreno,50210600J,146,The Carabanchel Episode,03/02/2026,03/02/2026,03/02/2026,855,status_shifted|move_out_before_snapshot
+,924,Shifted,,Pauline Liu,369629008,3128,The Carabanchel Episode,28/03/2026,29/04/2026,29/04/2026,1370,status_shifted|move_out_before_snapshot
+,925,Shifted,,Erdogan Enes Sacli,Z2272038B,3129,The Carabanchel Episode,03/09/2025,12/09/2025,12/09/2025,905,status_shifted|move_out_before_snapshot
+,932,Shifted,,Ana Silvia Peña de Lira,Z2461441D,3136,The Carabanchel Episode,01/06/2025,01/06/2025,01/06/2025,765,status_shifted|move_out_before_snapshot
+,9400,Shifted,,Rodrigo Antonio Suarez Putzeys,55572327A,2162,The Carabanchel Episode,07/02/2026,07/03/2026,07/03/2026,1270,status_shifted|move_out_before_snapshot
+,9416,Shifted,,Mati Lucas Degefa,A18059805,1088,The Carabanchel Episode,05/02/2026,25/05/2026,25/05/2026,1440,status_shifted|move_out_before_snapshot
+,9459,Shifted,,Jesselle Ann Loria,P5778790A,0077,The Carabanchel Episode Hotel,06/02/2026,09/02/2026,06/02/2026,89.1,status_shifted|move_out_before_snapshot
+,9560,Booked,,Dilan Abahay Martinez Grisales,7689,3083,The Carabanchel Episode Hotel,10/02/2026,11/02/2026,11/02/2026,68.4,status_booked|move_out_before_snapshot
+,966,Shifted,,"ESR Energy Solutions S.L , David Garcia Gomez",B67677708 | 72685998H,3178,The Carabanchel Episode,21/05/2025,30/05/2025,30/05/2025,1215,status_shifted|move_out_before_snapshot
+,9675,Shifted,,Connie Moreno Jerez,A10826282,2105,The Carabanchel Episode Hotel,19/02/2026,25/02/2026,19/02/2026,76.5,status_shifted|move_out_before_snapshot
+,9695,Under Notice,,DAY APARTMENT GROUP S.L.,46893162A,2-3,LLULL 250: The Poblenou Episode,12/05/2026,11/11/2026,11/11/2026,2200,status_under_notice
+,9733,Shifted,,Adderly Jhonel Reyes Colonio,Z3974287F,2076,The Carabanchel Episode,16/02/2026,15/03/2026,15/03/2026,1270,status_shifted|move_out_before_snapshot
+,9930,Shifted,,Yliana Carolina Tapia Guzman,51266346J,3083,The Carabanchel Episode Hotel,15/02/2026,25/02/2026,25/02/2026,75.91,status_shifted|move_out_before_snapshot
+,9933,Shifted,,Lua Gallardo Tapia,Hija menor de edad,3083,The Carabanchel Episode Hotel,15/02/2026,25/02/2026,15/02/2026,75.91,status_shifted|move_out_before_snapshot
+,9974,Shifted,,"Adele Watson, Kevin Hope",132554867 | 132818345,3081,The Carabanchel Episode Hotel,07/07/2026,07/07/2026,07/07/2026,101.15,status_shifted|move_out_before_snapshot

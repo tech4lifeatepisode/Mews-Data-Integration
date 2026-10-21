@@ -21,6 +21,8 @@ export const TENANCY_MANUAL_BY_NC = {
     'Country Code': 'ES',
   },
   1047: {
+    excludeFromV2: true,
+    reason: 'Moved out',
     Email: 'schcolnikjorge3@gmail.com',
     Telephone: '+52 6121572704',
     'Address Line 1': 'Piramides 124',
@@ -50,6 +52,16 @@ export const TENANCY_MANUAL_BY_NC = {
     'Postal Code': '28001',
     'Country Code': 'ES',
   },
+  1307: {
+    Email: 'yumary@yumaryguerra.com',
+    Telephone: '+507 68670231',
+    'First Name': 'Yumary',
+    'Last Name(*)': 'Guerra Escalona',
+    'Address Line 1': 'Ph terramar san francisco',
+    City: 'Panamá',
+    'Postal Code': '0000',
+    'Country Code': 'PA',
+  },
   1313: {
     excludeFromV2: true,
     reason: 'HouseMonk cancelled',
@@ -76,6 +88,10 @@ export const TENANCY_MANUAL_BY_NC = {
   1571: integraBilling(),
   1572: integraBilling(),
   1573: integraBilling(),
+  1574: {
+    'Allocated Room Category(*)':
+      '1x The Comfort; 2 x The Two Bedroom (Double Single)',
+  },
   1575: {
     'Partner Company': 'OTIS Mobility SA',
     'Company Id': 'OTIS Mobility SA',
@@ -87,9 +103,27 @@ export const TENANCY_MANUAL_BY_NC = {
     'Document Type': 'TaxIdentificationNumber',
     'Tax Identification Number': 'A08015422',
   },
+  1505: {
+    excludeFromV2: true,
+    reason: 'HouseMonk moved out',
+  },
   1516: {
     excludeFromV2: true,
     reason: 'HouseMonk cancelled (desistimiento)',
+  },
+  1535: {
+    Email: 'jlgampu@gmail.com',
+    Telephone: '+34 606248038',
+    'First Name': 'Juan Luis',
+    'Last Name(*)': 'Garcia Ampudia',
+    'Document Number': '10860064Q',
+    'Document Type': 'IdentityCard',
+    'Address Line 1': 'Corin Tellado, 26, 1 b',
+    City: 'Gijón',
+    'Postal Code': '33204',
+    'Country Code': 'ES',
+    'Allocated Room Number': '1167',
+    'Nationality Code': 'ES',
   },
   1604: {
     excludeFromV2: true,
@@ -472,7 +506,6 @@ export function mewsPatchFromTenancy(tenancyRow, customerCtx = null) {
 
   const n = clean(tenancyRow['No of Tenants']);
   if (n && /^\d+$/.test(n)) {
-    patch['Person Counts(*)'] = n;
     patch['Adult Count(*)'] = n;
     patch['Child Count(*)'] = '0';
   }

@@ -17,7 +17,7 @@ import { runB2bDriveExtraction, B2B_COMPANIES_TABLE } from './extract-b2b-drive.
 import { driveHealthLines, handleDriveHttp } from '../contract-uploading/drive-http.mjs';
 import { runReextractRentMismatch } from './reextract-rent-mismatch.mjs';
 import { runChamariCompanyReextract } from './reextract-chamari-company-from-drive.mjs';
-import { runV3B2bContractReextract } from './reextract-v3-b2b-from-drive.mjs';
+import { runV3B2bContractReextract } from './reextract-v3-b2b-contracts-from-drive.mjs';
 
 const port = Number(process.env.PORT) || 3000;
 
@@ -134,7 +134,6 @@ async function safeRunV3B2bContracts(label, options = {}) {
       ok: result.ok,
       targetNcs: result.targetNcs,
       failed: result.failed,
-      rebuild: result.rebuild,
     });
     return { ok: true, ...result };
   } catch (error) {
@@ -248,10 +247,11 @@ function parseV3B2bReextractOptions(reqUrl) {
     .split(/[,;\s]+/)
     .map((s) => Number(s.trim().replace(/^NC_/i, '')))
     .filter(Number.isFinite);
+  const limitRaw = query.get('limit');
   return {
     dryRun: query.get('dry_run') === '1',
-    rebuild: query.get('rebuild') === '1' || query.get('rebuild') === 'true',
     ncFilter: ncs.length ? new Set(ncs) : null,
+    limit: limitRaw != null && limitRaw !== '' ? Number(limitRaw) : undefined,
   };
 }
 
@@ -273,7 +273,7 @@ function handleExtractRequest(req, res, mode) {
       : mode === 'chamari-companies'
         ? 'CHAMARI/B42861468 company re-extract from Google Drive contracts started (updates V2/V3/FF customer + V2 companies)'
       : mode === 'v3-b2b-contracts'
-        ? 'V3 B2B NC full contract re-extract from Google Drive started (updates Customers 12_10; ?rebuild=1 refreshes FF + V3 B2B table)'
+        ? 'Full contract re-extract for all NCs in V3_Final_B2B_All_Fields_Match_Mews_Import_20_10_2026 from Google Drive (updates Customers_Contracts_Extraction_12_10_2026)'
       : mode === 'missing-from-review'
         ? `Missing-from-review ai_extraction=Yes extraction started into ${CUSTOMERS_CONTRACTS_TABLE}`
         : mode === 'drive-ai'
@@ -350,7 +350,7 @@ function extractionHealthLines() {
     '  POST/GET /extract-rent-mismatch — re-read f) Precio / g) Descuento from Google Drive PDFs for NCs in Final_Format_Mismatch_Rent_15_10_2026; updates Final_Format customers + Customers_Contracts_Extraction_12_10_2026 Allocated Rate. ?force=1 reprocesses all; ?dry_run=1 no DB writes.\n' +
     `  POST/GET /extract-b2b — B2B ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE} and ${B2B_COMPANIES_TABLE}.\n` +
     '  POST/GET /extract-chamari-companies — re-extract De otra parte client company for NCs with CHAMARI/B42861468 (?nc=1006,1142 optional; ?dry_run=1).\n' +
-    '  POST/GET /extract-v3-b2b-contracts — full contract re-extract for all V3 B2B NCs from Google Drive (?rebuild=1; ?nc= optional; ?dry_run=1).\n' +
+    '  POST/GET /extract-v3-b2b-contracts — full contract AI re-extract for every NC in V3_Final_B2B_All_Fields_Match_Mews_Import_20_10_2026 from Google Drive (?nc= optional; ?limit= batch size; ?dry_run=1). Set SUPABASE_STORAGE_FOLDER=Google Drive on Render.\n' +
     `  Log table ${DRIVE_EXTRACTION_LOG_TABLE}.\n` +
     '  AUTO_EXTRACT_FROM_STORAGE=true: on boot, extract-all for one folder.\n' +
     '  AUTO_NC_OCR_RERUN_FROM_STORAGE=true: on boot, extract-nc-rerun-all.\n' +

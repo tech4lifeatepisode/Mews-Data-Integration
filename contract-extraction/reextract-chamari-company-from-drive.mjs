@@ -21,7 +21,6 @@ import {
   CUSTOMER_HEADERS,
 } from './extraction sandbox/sandbox-common.mjs';
 import { extractClientCompanyFromContract } from './b2b-de-otra-parte-extract.mjs';
-import { findContractUploadForNc, ncLabel as driveNcLabel } from './drive-contract-upload.mjs';
 import { toB2bCompanyRow } from './extraction sandbox/extract-b2b.mjs';
 
 const CUSTOMERS_EXT = 'Customers_Contracts_Extraction_12_10_2026';
@@ -37,6 +36,7 @@ const V2_COMPANIES_CANDIDATES = [
 
 const MAX_EXTRACT_BYTES = 25 * 1024 * 1024;
 const BUCKET = process.env.SUPABASE_STORAGE_BUCKET || 'Contracts';
+const FOLDER = (process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive').replace(/^\/+|\/+$/g, '');
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.join(here, '.env') });
@@ -64,7 +64,9 @@ function parseNcFilterArg(argv) {
   );
 }
 
-const ncLabel = driveNcLabel;
+function ncLabel(n) {
+  return `NC_${String(n).padStart(4, '0')}`;
+}
 
 function rowHasChamariCompany(row) {
   if (!row) return false;
@@ -85,6 +87,42 @@ async function fetchAll(table, select = '*') {
     if (data.length < 1000) break;
   }
   return rows;
+}
+
+function uploadScore(u, nc) {
+  const label = ncLabel(nc);
+  const pathS = String(u.storage_path || '');
+  const name = String(u.drive_name || '').toLowerCase();
+  const blob = `${pathS} ${name}`.toLowerCase();
+  if (!pathS.replace(/^\/+/, '').startsWith(FOLDER)) return null;
+  if (!pathS || u.mime_type === 'application/vnd.google-apps.folder') return null;
+  if (name === '.keep' || blob.includes('/.keep')) return null;
+  if (/payment|payments|renta|deposito|transferencia|justificante/.test(blob) && !/contract/.test(blob)) {
+    return null;
+  }
+
+  let score = 0;
+  if (Number(u.nc_number) === nc) score += 40;
+  else if (blob.includes(label.toLowerCase())) score += 30;
+  else if (new RegExp(`nc_0*${nc}(?:[^0-9]|$)`, 'i').test(blob)) score += 20;
+  else return null;
+
+  if (/\/02\.\s*contract\//i.test(pathS) || blob.includes('02. contract')) score += 50;
+  if (name.endsWith('.docx')) score += 35;
+  else if (name.endsWith('.pdf') && !name.includes('docx.pdf')) score += 25;
+  else if (name.endsWith('docx.pdf')) score += 10;
+  if (/\.(png|jpg|jpeg|webp|txt)$/.test(name)) score -= 40;
+  return score;
+}
+
+function findUploadForNc(uploads, nc) {
+  const scored = [];
+  for (const u of uploads) {
+    const score = uploadScore(u, nc);
+    if (score != null) scored.push({ u, score });
+  }
+  scored.sort((a, b) => b.score - a.score || (b.u.size_bytes || 0) - (a.u.size_bytes || 0));
+  return scored[0]?.u || null;
 }
 
 function companyPatchFromParsed(parsed) {
@@ -201,7 +239,7 @@ export async function runChamariCompanyReextract(options = {}) {
 
   const results = [];
   for (const nc of targets) {
-    const upload = findContractUploadForNc(uploadFiles, nc);
+    const upload = findUploadForNc(uploadFiles, nc);
     if (!upload) {
       results.push({ nc, status: 'no_upload' });
       continue;

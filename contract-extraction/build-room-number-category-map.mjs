@@ -11,15 +11,18 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(here, 'data', 'room-categories-19-10-2026');
 const OUT_JSON = path.join(here, 'room-number-to-category-19-10-2026.json');
 
+/** Later files win on duplicate keys — terrace lists must follow PMR so negatives map correctly. */
 const CATEGORY_FILES = [
+  ['The Two Bedrooms (Double Double)', 'the-two-bedrooms-double-double.txt'],
+  ['The Two Bedroom Rooftop', 'the-two-bedroom-rooftop.txt'],
+  ['The Two Bedroom with Terrace', 'the-two-bedroom-with-terrace.txt'],
+  ['The Two Bedroom (Double Single)', 'the-two-bedroom-double-single.txt'],
   ['The Comfort', 'the-comfort.txt'],
   ['The Rooftop', 'the-rooftop.txt'],
   ['The Standard', 'the-standard.txt'],
   ['The Standard PMR', 'the-standard-pmr.txt'],
   ['The Standard with Terrace PMR', 'the-standard-with-terrace-pmr.txt'],
-  ['The Two Bedroom (Double Single)', 'the-two-bedroom-double-single.txt'],
-  ['The Two Bedroom Rooftop', 'the-two-bedroom-rooftop.txt'],
-  ['The Two Bedrooms (Double Double)', 'the-two-bedrooms-double-double.txt'],
+  ['The Standard with Terrace', 'the-standard-with-terrace.txt'],
 ];
 
 const transcript =

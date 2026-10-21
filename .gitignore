@@ -18,6 +18,7 @@ analysis_report.json
 
 # One-off local Supabase/analysis scripts (keep tracked upload/build scripts)
 contract-extraction/tmp-*.mjs
+contract-extraction/tmp-*.pdf
 contract-uploading/tmp-*.mjs
 
 # Cursor agent transcripts (may contain secrets)
@@ -26,6 +27,21 @@ contract-uploading/tmp-*.mjs
 # Regenerated upload run summaries
 contract-extraction/mews-import-*-summary.json
 contract-extraction/v2-mews-import-*-summary.json
+contract-extraction/v3-mews-import-*-summary.json
+contract-extraction/v3-b2b-mews-import-*-summary.json
+contract-extraction/reextract-*-results.json
+contract-extraction/v3-b2c-customers-export-20-10-2026.csv
+contract-extraction/v3-b2b-customers-export-20-10-2026.csv
+contract-extraction/placeholder-email-audit-*.json
+contract-extraction/v2-wrong-*-audit.json
+contract-extraction/v2-wrong-doc-nc-b2b-classification.json
+contract-extraction/_audit_*.py
+contract-extraction/_classify_*.py
+contract-extraction/_empty_companies_header.csv
+contract-analysis/supabase-v3-b2c-customers-seed-20-10-2026.sql
+contract-analysis/supabase-v3-b2b-customers-seed-20-10-2026.sql
+contract-analysis/supabase-housemonk-tenancy-lifecycle-nc-seed-14-10-2026.sql
+contract-extraction/housemonk-tenancy-lifecycle-upload-summary.json
 contract-extraction/matching-across-final-format-*-summary.json
 
 # Excel workbooks (local review/migration; NC allowlist is tracked as CSV)

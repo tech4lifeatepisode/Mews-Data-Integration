@@ -37,6 +37,7 @@ export function categoryForRoomNumber(roomNumber, map) {
   if (!s) return null;
   let num = s;
   if (num.startsWith('--') && /^--\d+$/.test(num)) num = `-${num.slice(2)}`;
+
   for (const k of roomLookupKeys(num)) {
     if (map[k]) return map[k];
   }
