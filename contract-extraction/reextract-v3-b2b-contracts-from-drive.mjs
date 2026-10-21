@@ -272,10 +272,17 @@ export async function runV3B2bContractReextract(options = {}) {
   );
 
   const results = [];
-  for (const nc of targets) {
+  for (let i = 0; i < targets.length; i += 1) {
+    const nc = targets[i];
+    if (i > 0 && i % 10 === 0) {
+      console.log(
+        `V3 B2B re-extract: ${i} processed, ${targets.length - i} remaining (Drive-style batch progress)`,
+      );
+    }
     const upload = findBestUploadForNc(uploads, nc);
     if (!upload) {
       results.push({ nc, status: 'no_upload' });
+      console.error(`FAIL: (no upload) NC_${nc} — no contract file in Google Drive folder`);
       continue;
     }
 
@@ -369,7 +376,7 @@ export async function runV3B2bContractReextract(options = {}) {
           departure_date: record['Departure Date(*)'],
           unit: record['Allocated Room Category(*)'],
           customer_fields_filled: String(filledCount(row)),
-          key_fields_missing: useB2b ? '' : missingKeyFields(row, parsed).join(', '),
+          key_fields_missing: useB2b ? '' : missingKeyFields(row, parsed),
         },
         dryRun,
       );
@@ -384,7 +391,9 @@ export async function runV3B2bContractReextract(options = {}) {
         counts,
         companyInserted,
       });
-      console.log(`OK NC_${nc} [${extractionMode}]: ${fileName}`);
+      console.log(
+        `OK: ${upload.storage_path || fileName} (NC_${nc}, ${extractionMode}, updated=${counts.updated}, inserted=${counts.inserted})`,
+      );
     } catch (e) {
       const message = e instanceof Error ? e.message : String(e);
       await writeLog(
