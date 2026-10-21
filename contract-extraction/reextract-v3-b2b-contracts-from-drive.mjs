@@ -52,8 +52,16 @@ const BUCKET = process.env.SUPABASE_STORAGE_BUCKET || 'Contracts';
 const MAX_EXTRACT_BYTES = 25 * 1024 * 1024;
 
 const here = path.dirname(fileURLToPath(import.meta.url));
+const V3_B2B_NC_ALLOWLIST_JSON = path.join(here, 'v3-b2b-nc-allowlist.json');
 dotenv.config({ path: path.join(here, '.env') });
 dotenv.config({ path: path.join(here, 'extraction sandbox', '.env') });
+
+function loadBundledV3B2bNcs() {
+  if (!fs.existsSync(V3_B2B_NC_ALLOWLIST_JSON)) return [];
+  return JSON.parse(fs.readFileSync(V3_B2B_NC_ALLOWLIST_JSON, 'utf8'))
+    .map((n) => Number(n))
+    .filter(Number.isFinite);
+}
 
 function supabaseKey() {
   return (
@@ -210,19 +218,29 @@ export async function runV3B2bContractReextract(options = {}) {
     maxRetries: 0,
   });
 
-  const [v3Rows, uploadsRaw] = await Promise.all([
-    fetchAll(sb, V3_B2B, 'nc_number, Partner Company'),
-    fetchAll(
-      sb,
-      'contract_drive_uploads',
-      'id, drive_name, storage_path, storage_bucket, mime_type, size_bytes, file_format, nc_number, ai_extraction, status, item_type',
-    ),
-  ]);
+  let v3Rows = [];
+  try {
+    v3Rows = await fetchAll(sb, V3_B2B, 'nc_number');
+  } catch (e) {
+    console.warn(
+      `Could not read ${V3_B2B} (using v3-b2b-nc-allowlist.json):`,
+      e instanceof Error ? e.message : e,
+    );
+  }
+
+  const uploadsRaw = await fetchAll(
+    sb,
+    'contract_drive_uploads',
+    'id, drive_name, storage_path, storage_bucket, mime_type, size_bytes, file_format, nc_number, ai_extraction, status, item_type',
+  );
 
   const ncSet = new Set();
   for (const row of v3Rows) {
     const nc = Number(row.nc_number);
     if (Number.isFinite(nc)) ncSet.add(nc);
+  }
+  if (!ncSet.size) {
+    for (const nc of loadBundledV3B2bNcs()) ncSet.add(nc);
   }
 
   let targets = [...ncSet].sort((a, b) => a - b);
