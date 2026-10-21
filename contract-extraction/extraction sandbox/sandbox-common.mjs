@@ -207,9 +207,6 @@ export function mimeFromName(fileName) {
 export function prepareFileInput(fileBuffer, mimeType, filename) {
   const safeName = filename.replace(/[^a-zA-Z0-9._-]/g, '_');
   const base64 = fileBuffer.toString('base64');
-  // #region agent log
-  fetch('http://127.0.0.1:7786/ingest/4229d02c-1770-4fd5-9da6-3795ca151e32',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'002cbb'},body:JSON.stringify({sessionId:'002cbb',hypothesisId:'A',location:'sandbox-common.mjs:prepareFileInput',message:'base64 payload allocated',data:{bufferBytes:fileBuffer.length,base64Chars:base64.length,rss:process.memoryUsage().rss,heapUsed:process.memoryUsage().heapUsed},timestamp:Date.now()})}).catch(()=>{});
-  // #endregion
   if (mimeType === 'application/pdf' || mimeType === DOCX_MIME) {
     return {
       type: 'input_file',

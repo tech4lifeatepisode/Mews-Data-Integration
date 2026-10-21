@@ -16,6 +16,8 @@ import { runExtractFromSupabaseStorageUntilDone } from './extract-from-storage-b
 import { runB2bDriveExtraction, B2B_COMPANIES_TABLE } from './extract-b2b-drive.mjs';
 import { driveHealthLines, handleDriveHttp } from '../contract-uploading/drive-http.mjs';
 import { runReextractRentMismatch } from './reextract-rent-mismatch.mjs';
+import { runChamariCompanyReextract } from './reextract-chamari-company-from-drive.mjs';
+import { runV3B2bContractReextract } from './reextract-v3-b2b-from-drive.mjs';
 
 const port = Number(process.env.PORT) || 3000;
 
@@ -120,6 +122,51 @@ async function safeRunNcOcrRerunAll(label) {
   }
 }
 
+async function safeRunV3B2bContracts(label, options = {}) {
+  if (extractionRunning) {
+    console.warn(`[${label}] Extraction already running, skip.`);
+    return { ok: false, skipped: true, message: 'already_running' };
+  }
+  extractionRunning = true;
+  try {
+    const result = await runV3B2bContractReextract(options);
+    console.log(`[${label}] V3 B2B contract re-extract finished:`, {
+      ok: result.ok,
+      targetNcs: result.targetNcs,
+      failed: result.failed,
+      rebuild: result.rebuild,
+    });
+    return { ok: true, ...result };
+  } catch (error) {
+    console.error(`[${label}] V3 B2B contract re-extract failed:`, error);
+    return { ok: false, error: error instanceof Error ? error.message : String(error) };
+  } finally {
+    extractionRunning = false;
+  }
+}
+
+async function safeRunChamariCompanies(label, options = {}) {
+  if (extractionRunning) {
+    console.warn(`[${label}] Extraction already running, skip.`);
+    return { ok: false, skipped: true, message: 'already_running' };
+  }
+  extractionRunning = true;
+  try {
+    const result = await runChamariCompanyReextract(options);
+    console.log(`[${label}] CHAMARI company re-extract finished:`, {
+      ok: result.ok,
+      targetNcs: result.targetNcs,
+      failed: result.failed,
+    });
+    return { ok: true, ...result };
+  } catch (error) {
+    console.error(`[${label}] CHAMARI company re-extract failed:`, error);
+    return { ok: false, error: error instanceof Error ? error.message : String(error) };
+  } finally {
+    extractionRunning = false;
+  }
+}
+
 async function safeRunB2b(label) {
   if (extractionRunning) {
     console.warn(`[${label}] Extraction already running, skip.`);
@@ -181,6 +228,33 @@ function parseDriveAiOptions(reqUrl) {
   };
 }
 
+function parseChamariReextractOptions(reqUrl) {
+  const query = new URL(reqUrl, 'http://127.0.0.1').searchParams;
+  const ncRaw = query.get('nc') || query.get('ncs') || '';
+  const ncs = ncRaw
+    .split(/[,;\s]+/)
+    .map((s) => Number(s.trim().replace(/^NC_/i, '')))
+    .filter(Number.isFinite);
+  return {
+    dryRun: query.get('dry_run') === '1',
+    ncFilter: ncs.length ? new Set(ncs) : null,
+  };
+}
+
+function parseV3B2bReextractOptions(reqUrl) {
+  const query = new URL(reqUrl, 'http://127.0.0.1').searchParams;
+  const ncRaw = query.get('nc') || query.get('ncs') || '';
+  const ncs = ncRaw
+    .split(/[,;\s]+/)
+    .map((s) => Number(s.trim().replace(/^NC_/i, '')))
+    .filter(Number.isFinite);
+  return {
+    dryRun: query.get('dry_run') === '1',
+    rebuild: query.get('rebuild') === '1' || query.get('rebuild') === 'true',
+    ncFilter: ncs.length ? new Set(ncs) : null,
+  };
+}
+
 function handleExtractRequest(req, res, mode) {
   if (!checkExtractAuth(req)) {
     res.writeHead(401, { 'Content-Type': 'application/json; charset=utf-8' });
@@ -196,6 +270,10 @@ function handleExtractRequest(req, res, mode) {
   const message =
     mode === 'b2b'
       ? `B2B ai_extraction=Yes extraction started into ${DRIVE_EXTRACTION_TABLE} and ${B2B_COMPANIES_TABLE}`
+      : mode === 'chamari-companies'
+        ? 'CHAMARI/B42861468 company re-extract from Google Drive contracts started (updates V2/V3/FF customer + V2 companies)'
+      : mode === 'v3-b2b-contracts'
+        ? 'V3 B2B NC full contract re-extract from Google Drive started (updates Customers 12_10; ?rebuild=1 refreshes FF + V3 B2B table)'
       : mode === 'missing-from-review'
         ? `Missing-from-review ai_extraction=Yes extraction started into ${CUSTOMERS_CONTRACTS_TABLE}`
         : mode === 'drive-ai'
@@ -211,6 +289,10 @@ function handleExtractRequest(req, res, mode) {
   const modeKey =
     mode === 'b2b'
       ? 'extract-b2b'
+      : mode === 'chamari-companies'
+        ? 'extract-chamari-companies'
+      : mode === 'v3-b2b-contracts'
+        ? 'extract-v3-b2b-contracts'
       : mode === 'missing-from-review'
         ? 'extract-missing-from-review'
       : mode === 'drive-ai'
@@ -229,6 +311,12 @@ function handleExtractRequest(req, res, mode) {
   setImmediate(() => {
     if (mode === 'b2b') {
       safeRunB2b('http').catch((e) => console.error(e));
+    } else if (mode === 'chamari-companies') {
+      const chamariOpts = parseChamariReextractOptions(req.url);
+      safeRunChamariCompanies('http', chamariOpts).catch((e) => console.error(e));
+    } else if (mode === 'v3-b2b-contracts') {
+      const v3Opts = parseV3B2bReextractOptions(req.url);
+      safeRunV3B2bContracts('http', v3Opts).catch((e) => console.error(e));
     } else if (mode === 'missing-from-review') {
       safeRunMissingFromReview('http').catch((e) => console.error(e));
     } else if (mode === 'drive-ai') {
@@ -261,6 +349,8 @@ function extractionHealthLines() {
     `  POST/GET /extract-missing-from-review — allowlisted NCs with ai_extraction=Yes into ${CUSTOMERS_CONTRACTS_TABLE} (skip NCs already there).\n` +
     '  POST/GET /extract-rent-mismatch — re-read f) Precio / g) Descuento from Google Drive PDFs for NCs in Final_Format_Mismatch_Rent_15_10_2026; updates Final_Format customers + Customers_Contracts_Extraction_12_10_2026 Allocated Rate. ?force=1 reprocesses all; ?dry_run=1 no DB writes.\n' +
     `  POST/GET /extract-b2b — B2B ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE} and ${B2B_COMPANIES_TABLE}.\n` +
+    '  POST/GET /extract-chamari-companies — re-extract De otra parte client company for NCs with CHAMARI/B42861468 (?nc=1006,1142 optional; ?dry_run=1).\n' +
+    '  POST/GET /extract-v3-b2b-contracts — full contract re-extract for all V3 B2B NCs from Google Drive (?rebuild=1; ?nc= optional; ?dry_run=1).\n' +
     `  Log table ${DRIVE_EXTRACTION_LOG_TABLE}.\n` +
     '  AUTO_EXTRACT_FROM_STORAGE=true: on boot, extract-all for one folder.\n' +
     '  AUTO_NC_OCR_RERUN_FROM_STORAGE=true: on boot, extract-nc-rerun-all.\n' +
@@ -306,6 +396,16 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  if (url === '/extract-chamari-companies' && (req.method === 'POST' || req.method === 'GET')) {
+    handleExtractRequest(req, res, 'chamari-companies');
+    return;
+  }
+
+  if (url === '/extract-v3-b2b-contracts' && (req.method === 'POST' || req.method === 'GET')) {
+    handleExtractRequest(req, res, 'v3-b2b-contracts');
+    return;
+  }
+
   if (url === '/extract-drive-ai' && (req.method === 'POST' || req.method === 'GET')) {
     handleExtractRequest(req, res, 'drive-ai');
     return;
@@ -330,9 +430,6 @@ server.listen(port, '0.0.0.0', () => {
 
   const autoNcRerun = isEnvTruthy('AUTO_NC_OCR_RERUN_FROM_STORAGE');
   const autoExtract = isEnvTruthy('AUTO_EXTRACT_FROM_STORAGE');
-  // #region agent log
-  fetch('http://127.0.0.1:7786/ingest/4229d02c-1770-4fd5-9da6-3795ca151e32',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'002cbb'},body:JSON.stringify({sessionId:'002cbb',hypothesisId:'E',location:'server.mjs:listen',message:'boot extraction flags',data:{autoExtract,autoNcRerun,rss:process.memoryUsage().rss,heapUsed:process.memoryUsage().heapUsed},timestamp:Date.now()})}).catch(()=>{});
-  // #endregion
 
   if (autoNcRerun) {
     console.log(
