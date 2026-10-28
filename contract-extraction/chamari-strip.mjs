@@ -7,7 +7,9 @@ export function isChamariEntity(value) {
   if (!c) return false;
   if (normId(c) === CHAMARI_TAX) return true;
   const n = normName(c);
-  return n.includes('chamari');
+  if (n.includes('chamari')) return true;
+  if (n.includes('mre vi proyecto') || n.includes('mre vi proy')) return true;
+  return false;
 }
 
 const CUSTOMER_FIELDS = [

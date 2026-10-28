@@ -21,6 +21,7 @@ import {
   fileFormat,
   ncFromFileName,
 } from './extraction sandbox/extract.mjs';
+import { isChamariEntity, stripChamariFromCustomerRow } from './chamari-strip.mjs';
 
 /** Dots are not usable in PostgREST table names, so 12.10.2026 is written with underscores. */
 /** Legacy name in docs; production Supabase table is Customers_Contracts_Extraction_12_10_2026. */
@@ -145,12 +146,29 @@ async function downloadObject(supabase, bucket, objectPath) {
   return bytes;
 }
 
+function ncGroupCodeFromUpload(uploadRow, fileName) {
+  const raw =
+    uploadRow?.nc_number ??
+    ncFromFileName(fileName) ??
+    ncFromFileName(uploadRow?.storage_path || '') ??
+    '';
+  const n = Number(String(raw).replace(/^NC_/i, ''));
+  return Number.isFinite(n) ? `NC_${n}` : '';
+}
+
 function customerRecord(parsed, fileName, uploadRow) {
   const { row, tenancyDays, companions } = toCustomerRow(parsed, fileName);
+  const groupCode = ncGroupCodeFromUpload(uploadRow, fileName);
+  if (groupCode) {
+    row['Group Code'] = groupCode;
+    if (!row['Internal Guest Notes']) row['Internal Guest Notes'] = groupCode;
+  }
+  stripChamariFromCustomerRow(row);
   const company = toCompanyRow(parsed);
   if (company && !row['Tax Identification Number'] && company['Tax ID Number']) {
     row['Tax Identification Number'] = company['Tax ID Number'];
   }
+  if (isChamariEntity(row['Tax Identification Number'])) row['Tax Identification Number'] = null;
   const record = {
     storage_path: uploadRow.storage_path,
     drive_upload_id: uploadRow.id,
