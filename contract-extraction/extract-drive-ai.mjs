@@ -176,6 +176,7 @@ async function insertRow(supabase, table, record) {
  *   extractionTable?: string,
  *   ncAllowlist?: Set<string>,
  *   skipNcAlreadyInExtractionTable?: boolean,
+ *   skipAlreadyExtracted?: boolean,
  * }} [options]
  */
 export async function runDriveAiExtraction(options = {}) {
@@ -190,7 +191,12 @@ export async function runDriveAiExtraction(options = {}) {
   const folder = storageFolder();
   const bucketDefault = process.env.SUPABASE_STORAGE_BUCKET || 'Contracts';
   const limit = Math.max(1, Number(process.env.MAX_EXTRACTION_FILES) || 10);
-  const skipDone = isEnvTruthy('SKIP_ALREADY_EXTRACTED') || process.env.SKIP_ALREADY_EXTRACTED == null;
+  const skipDone =
+    options.skipAlreadyExtracted === false
+      ? false
+      : options.skipAlreadyExtracted === true
+        ? true
+        : isEnvTruthy('SKIP_ALREADY_EXTRACTED') || process.env.SKIP_ALREADY_EXTRACTED == null;
 
   const ncAlreadyExtracted =
     options.skipNcAlreadyInExtractionTable === true

@@ -111,7 +111,7 @@ async function safeRunMissingFromReview(label) {
   }
 }
 
-async function safeRunB2c2810UntilDone(label, { force = false } = {}) {
+async function safeRunB2c2810UntilDone(label, { fillGaps = false, reextractNc = false } = {}) {
   if (extractionRunning) {
     console.warn(`[${label}] Extraction already running, skip.`);
     return { ok: false, skipped: true, message: 'already_running' };
@@ -125,7 +125,10 @@ async function safeRunB2c2810UntilDone(label, { force = false } = {}) {
       console.warn(`[${label}] B2C table DDL via Postgres skipped/failed:`, ddl.error);
     }
     for (let round = 1; round <= maxRounds; round += 1) {
-      last = await runB2c2810DriveExtraction({ skipNcAlreadyInTable: !force });
+      last = await runB2c2810DriveExtraction({
+        skipNcAlreadyInTable: !reextractNc,
+        skipAlreadyExtracted: fillGaps || reextractNc ? false : undefined,
+      });
       console.log(`[${label}] B2C 28-10 round ${round}:`, last);
       if (last.pending === 0) break;
       if (last.success === 0 && last.failed === 0) break;
@@ -369,8 +372,10 @@ function handleExtractRequest(req, res, mode) {
     } else if (mode === 'missing-from-review') {
       safeRunMissingFromReview('http').catch((e) => console.error(e));
     } else if (mode === 'b2c-28-10') {
-      const force = new URL(req.url || '/', 'http://127.0.0.1').searchParams.get('force') === '1';
-      safeRunB2c2810UntilDone('http', { force }).catch((e) => console.error(e));
+      const query = new URL(req.url || '/', 'http://127.0.0.1').searchParams;
+      const fillGaps = query.get('force') === '1' || query.get('fill_gaps') === '1';
+      const reextractNc = query.get('reextract_nc') === '1';
+      safeRunB2c2810UntilDone('http', { fillGaps, reextractNc }).catch((e) => console.error(e));
     } else if (mode === 'drive-ai') {
       const driveOpts = parseDriveAiOptions(req.url);
       safeRunDriveAi('http', driveOpts).catch((e) => console.error(e));
@@ -399,7 +404,7 @@ function extractionHealthLines() {
     '  POST/GET /extract-nc-rerun-all — OCR rerun for filtered NCs across To Fill 1/2/Fill 3.\n' +
     `  POST/GET /extract-drive-ai — all ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE}. Optional ?nc=1796 (comma-separated) targets NCs into ${CUSTOMERS_CONTRACTS_TABLE}. Files over 25MB are skipped.\n` +
     `  POST/GET /extract-missing-from-review — allowlisted NCs with ai_extraction=Yes into ${CUSTOMERS_CONTRACTS_TABLE} (skip NCs already there).\n` +
-    `  POST/GET /extract-b2c-28-10-2026 — B2C upload batch (b2c-28-10-2026-nc-allowlist.json) into ${B2C_28_10_EXTRACTION_TABLE}; runs batches until pending=0. ?force=1 re-extracts NCs already in table.\n` +
+    `  POST/GET /extract-b2c-28-10-2026 — B2C batch into ${B2C_28_10_EXTRACTION_TABLE}; runs until pending=0. ?force=1 fill gaps (re-run files not yet in B2C table, ignore extraction log). ?reextract_nc=1 also re-process NCs already in table.\n` +
     '  POST/GET /extract-rent-mismatch — re-read f) Precio / g) Descuento from Google Drive PDFs for NCs in Final_Format_Mismatch_Rent_15_10_2026; updates Final_Format customers + Customers_Contracts_Extraction_12_10_2026 Allocated Rate. ?force=1 reprocesses all; ?dry_run=1 no DB writes.\n' +
     `  POST/GET /extract-b2b — B2B ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE} and ${B2B_COMPANIES_TABLE}.\n` +
     '  POST/GET /extract-chamari-companies — re-extract De otra parte client company for NCs with CHAMARI/B42861468 (?nc=1006,1142 optional; ?dry_run=1).\n' +

@@ -37,13 +37,14 @@ export async function ensureB2c2810ExtractionTable() {
   return applySqlFile('contract-analysis/supabase-customers-contracts-extraction-28-10-2026-b2c.sql');
 }
 
-/** @param {{ skipNcAlreadyInTable?: boolean }} [options] */
+/** @param {{ skipNcAlreadyInTable?: boolean, skipAlreadyExtracted?: boolean }} [options] */
 export async function runB2c2810DriveExtraction(options = {}) {
   const ncAllowlist = loadB2c2810NcAllowlist();
   return runDriveAiExtraction({
     extractionTable: B2C_28_10_EXTRACTION_TABLE,
     ncAllowlist,
     skipNcAlreadyInExtractionTable: options.skipNcAlreadyInTable !== false,
+    skipAlreadyExtracted: options.skipAlreadyExtracted,
   });
 }
 

@@ -25,6 +25,8 @@ if (!process.env.OPENAI_API_KEY) {
 }
 
 process.env.MAX_EXTRACTION_FILES = process.env.MAX_EXTRACTION_FILES || '8';
+const fillGaps = process.argv.includes('--fill-gaps') || process.argv.includes('--force');
+const reextractNc = process.argv.includes('--reextract-nc');
 
 const maxRounds = Number(process.env.B2C_EXTRACTION_MAX_ROUNDS) || 200;
 let round = 0;
@@ -33,7 +35,10 @@ let lastPending = Infinity;
 while (round < maxRounds) {
   round += 1;
   console.log(`\n=== B2C extraction round ${round} ===`);
-  const result = await runB2c2810DriveExtraction({ skipNcAlreadyInTable: true });
+  const result = await runB2c2810DriveExtraction({
+    skipNcAlreadyInTable: !reextractNc,
+    skipAlreadyExtracted: fillGaps || reextractNc ? false : undefined,
+  });
   console.log(JSON.stringify(result, null, 2));
   if (result.pending === 0 && result.success === 0 && result.failed === 0) break;
   if (result.pending === 0) break;
