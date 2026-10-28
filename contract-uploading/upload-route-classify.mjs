@@ -34,6 +34,7 @@ export function classifyPathCategory(routeSegments = [], storagePath = '') {
     if (!s) continue;
     if (/\bINFORMATION\b/.test(s) || /^01[\.\s]/.test(s.trim())) return 'Information';
     if (/\bCONTRACT\b/.test(s) && !/\bSUBCONTRACT\b/.test(s)) return 'Contracts';
+    if (/\bCONTRATO\b/.test(s)) return 'Contracts';
     if (
       /\bPAYMENT\b/.test(s) ||
       /\bDEPOSIT/.test(s) ||

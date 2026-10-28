@@ -19,6 +19,7 @@ export function classifyFolderSegment(segment) {
   ) {
     return 'contract';
   }
+  if (/^CONTRATO$/i.test(name.trim())) return 'contract';
   if (
     /\bINFORMATION\b/.test(upper) ||
     /\bINFORMAC/.test(upper) ||
