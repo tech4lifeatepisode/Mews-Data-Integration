@@ -5,6 +5,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { runDriveAiExtraction } from './extract-drive-ai.mjs';
+import { applySqlFile } from './apply-sql-via-pg.mjs';
 
 const transcript =
   'C:/Users/Claudio/.cursor/projects/c-Users-Claudio-Desktop-Mews-Data-Integration/agent-transcripts/002cbbd5-9013-420c-91e0-97c456b39aa7/002cbbd5-9013-420c-91e0-97c456b39aa7.jsonl';
@@ -30,6 +31,10 @@ export function loadB2c2810NcAllowlist() {
   const raw = JSON.parse(fs.readFileSync(ALLOWLIST_JSON, 'utf8'));
   const nums = (Array.isArray(raw) ? raw : raw.ncs || []).map((n) => String(n).trim()).filter(Boolean);
   return new Set([...new Set(nums)]);
+}
+
+export async function ensureB2c2810ExtractionTable() {
+  return applySqlFile('contract-analysis/supabase-customers-contracts-extraction-28-10-2026-b2c.sql');
 }
 
 /** @param {{ skipNcAlreadyInTable?: boolean }} [options] */

@@ -21,9 +21,12 @@ export async function applySqlViaPg(sql, options = {}) {
   if (process.env.SUPABASE_DB_URL) urls.push(process.env.SUPABASE_DB_URL);
   for (const pwd of candidates) {
     urls.push(`postgresql://postgres:${encodeURIComponent(pwd)}@db.${ref}.supabase.co:5432/postgres`);
-    urls.push(
-      `postgresql://postgres.${ref}:${encodeURIComponent(pwd)}@aws-0-eu-central-1.pooler.supabase.com:6543/postgres`,
-    );
+    urls.push(`postgresql://postgres:${encodeURIComponent(pwd)}@db.${ref}.supabase.co:6543/postgres`);
+    for (const region of ['eu-west-1', 'eu-west-2', 'eu-central-1']) {
+      urls.push(
+        `postgresql://postgres.${ref}:${encodeURIComponent(pwd)}@aws-0-${region}.pooler.supabase.com:6543/postgres`,
+      );
+    }
   }
 
   const seen = new Set();

@@ -22,6 +22,7 @@ import { runPublishAfterV3B2bReextract } from './publish-after-v3-b2b-reextract.
 import { parseNcNumbersFromQuery } from './parse-nc-query.mjs';
 import {
   runB2c2810DriveExtraction,
+  ensureB2c2810ExtractionTable,
   B2C_28_10_EXTRACTION_TABLE,
 } from './extract-b2c-28-10-2026.mjs';
 
@@ -119,6 +120,10 @@ async function safeRunB2c2810UntilDone(label, { force = false } = {}) {
   const maxRounds = Number(process.env.B2C_EXTRACTION_MAX_ROUNDS) || 200;
   let last = null;
   try {
+    const ddl = await ensureB2c2810ExtractionTable();
+    if (!ddl.ok) {
+      console.warn(`[${label}] B2C table DDL via Postgres skipped/failed:`, ddl.error);
+    }
     for (let round = 1; round <= maxRounds; round += 1) {
       last = await runB2c2810DriveExtraction({ skipNcAlreadyInTable: !force });
       console.log(`[${label}] B2C 28-10 round ${round}:`, last);
