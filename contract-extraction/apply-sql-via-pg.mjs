@@ -1,13 +1,28 @@
 import fs from 'fs';
-import pg from 'pg';
 
 const ref = 'jujvtuyksxkoclegjznb';
+
+async function loadPgClient() {
+  try {
+    const pg = (await import('pg')).default;
+    return pg.Client;
+  } catch (error) {
+    return {
+      error: error instanceof Error ? error.message : String(error),
+    };
+  }
+}
 
 /**
  * @param {string} sql
  * @param {{ passwordCandidates?: string[] }} [options]
  */
 export async function applySqlViaPg(sql, options = {}) {
+  const Client = await loadPgClient();
+  if (typeof Client !== 'function') {
+    return { ok: false, error: `pg not installed: ${Client.error}` };
+  }
+
   const candidates = [
     process.env.SUPABASE_DB_URL,
     process.env.SUPABASE_DB_PASSWORD,
@@ -34,7 +49,7 @@ export async function applySqlViaPg(sql, options = {}) {
   for (const connectionString of urls) {
     if (!connectionString || seen.has(connectionString)) continue;
     seen.add(connectionString);
-    const client = new pg.Client({ connectionString, ssl: { rejectUnauthorized: false } });
+    const client = new Client({ connectionString, ssl: { rejectUnauthorized: false } });
     try {
       await client.connect();
       await client.query(sql);
