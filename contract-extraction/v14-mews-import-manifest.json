@@ -1,0 +1,29 @@
+{
+  "source": "V5_Final_B2C_and_B2B + V5_Final_Companies (Supabase)",
+  "min_arrival": "2026-11-05",
+  "customers": 31,
+  "companies": 2,
+  "shared_emails_split": {},
+  "field_fixes": {
+    "company_name": [
+      {
+        "group_code": "NC_1777",
+        "column": "Partner Company",
+        "from": ". Twisha Chitisha Patel",
+        "to": "Twisha Chitisha Patel"
+      },
+      {
+        "group_code": "NC_1777",
+        "column": "Company Id",
+        "from": ". Twisha Chitisha Patel",
+        "to": "Twisha Chitisha Patel"
+      }
+    ]
+  },
+  "text_cleanup_count": 0,
+  "verify_problems": [],
+  "outputs": [
+    "C:\\Users\\Claudio\\Downloads\\V14_Full_Mews_import_V4_B2C_and_B2B_21_10_2026_combined.xlsx",
+    "C:\\Users\\Claudio\\Desktop\\Mews Data Integration\\Mews_import_V14_Full_V4_B2C_B2B_21_10_2026_combined.xlsx"
+  ]
+}

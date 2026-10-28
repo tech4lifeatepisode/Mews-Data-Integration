@@ -85,6 +85,21 @@ client_secret*.json
 **/.google-token.json
 contract-uploading/upload-checkpoint.json
 
+# Local contract upload batches (guest PDFs/DOCX — use Supabase Storage after upload)
+contract-uploading/Contracts to upload */
+
+# Local upload run reports
+contract-uploading/upload-*-report.json
+
+# Regenerated Mews export CSVs and reconcile backups
+contract-extraction/v*-export-21-10-2026.csv
+contract-extraction/backups/
+contract-extraction/audit-*-report.json
+contract-extraction/compare-*-report.json
+contract-extraction/reconcile-*-report.json
+contract-extraction/patch-*-report.json
+contract-extraction/patch-chamari-from-companies-extract-results.json
+
 # Local manual extraction/blinding (personal contract PDFs)
 **/Local Extraction and Blinding/*.pdf
 **/Local Extraction and Blinding/Locally Blinded/

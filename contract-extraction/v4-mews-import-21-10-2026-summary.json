@@ -1,0 +1,49 @@
+{
+  "v4CustomersTable": "V4_Final_B2C_and_B2B_All_Fields_Match_Mews_Import_21_10_2026",
+  "v4CompaniesTable": "V4_Final_Companies_Match_Mews_Import_21_10_2026",
+  "sourceB2cRows": 344,
+  "sourceB2bRows": 130,
+  "v4CustomerRows": 436,
+  "v4CompanyRows": 70,
+  "reservationsWithPartnerCompany": 112,
+  "b2bOverridesB2cOnNcOverlap": 38,
+  "overlapNcSample": [
+    767,
+    822,
+    828,
+    904,
+    951,
+    1068,
+    1086,
+    1133,
+    1274,
+    1309,
+    1322,
+    1326,
+    1372,
+    1422,
+    1499,
+    1554,
+    1582,
+    1607,
+    1642,
+    1662
+  ],
+  "v2CompanyRowsUsedForEnrichment": 156,
+  "customersUpload": {
+    "skipped": false,
+    "omitted": [],
+    "reason": null
+  },
+  "companiesUpload": {
+    "skipped": false,
+    "omitted": [],
+    "reason": null
+  },
+  "ddlCustomers": "C:\\Users\\Claudio\\Desktop\\Mews Data Integration\\contract-analysis\\supabase-v4-b2c-and-b2b-all-fields-match-mews-import-21-10-2026.sql",
+  "ddlCompanies": "C:\\Users\\Claudio\\Desktop\\Mews Data Integration\\contract-analysis\\supabase-v4-companies-match-mews-import-21-10-2026.sql",
+  "customersSeedSql": null,
+  "companiesSeedSql": null,
+  "localExportCustomersCsv": "C:\\Users\\Claudio\\Desktop\\Mews Data Integration\\contract-extraction\\v4-customers-export-21-10-2026.csv",
+  "localExportCompaniesCsv": "C:\\Users\\Claudio\\Desktop\\Mews Data Integration\\contract-extraction\\v4-companies-export-21-10-2026.csv"
+}

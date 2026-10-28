@@ -39,6 +39,8 @@ const ALIAS_TO_CANONICAL = new Map(
     ['the two bedroom (2+1)', 'The Two Bedroom (Double Single)'],
     ['2 bed (1/2)', 'The Two Bedroom (Double Single)'],
     ['2 bedroom (2+1)', 'The Two Bedroom (Double Single)'],
+    ['2 bedroom (double / single)', 'The Two Bedroom (Double Single)'],
+    ['2 bedroom (double/single)', 'The Two Bedroom (Double Single)'],
     ['2-bedroom 2-bathroom apartment', 'The Two Bedroom (Double Single)'],
     ['2bed roof', 'The Two Bedroom Rooftop'],
     ['the two bedroom rooftop', 'The Two Bedroom Rooftop'],

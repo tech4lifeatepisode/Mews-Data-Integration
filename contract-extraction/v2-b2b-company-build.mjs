@@ -1,7 +1,13 @@
 import { bestCompanyMatch, clean, normName } from './company-match-utils.mjs';
 import { stripChamariFromCompanyRow } from './chamari-strip.mjs';
 import { isChamariEntity } from './chamari-strip.mjs';
-import { mewsB2bCompanyPatchFromTenancy, mewsPatchFromTenancy } from './tenancy-nc-overrides.mjs';
+import { mewsB2bCompanyPatchFromTenancy } from './tenancy-nc-overrides.mjs';
+import {
+  applyResolvedB2bPartnerCompany,
+  isSallaRassullPlaceholderAddress,
+  pickCompaniesExtractByNc,
+  resolveB2bPartnerCompany,
+} from './b2b-partner-company-resolve.mjs';
 
 export function companyNameFromSeguimientoLabel(label) {
   const c = clean(label);
@@ -23,30 +29,46 @@ export function pickCompaniesExtractMatch(rows, companiesExtract, preferredName)
   return null;
 }
 
-export function buildV2CompanyRow(nc, { seg, cust, hm, customerRow, companiesExtract, tenancyRow, existingCompanyRow }) {
+export function buildV2CompanyRow(nc, { seg, cust, hm, customerRow, companiesExtract, tenancyRow, existingCompanyRow, customersExt }) {
+  const byNc = pickCompaniesExtractByNc(nc, companiesExtract);
   const preferredName = companyNameFromSeguimientoLabel(
-    clean(seg?.['Partner Company']) || clean(seg?.['Company Id']) || clean(customerRow?.['Partner Company']),
+    clean(byNc?.['Company Name(*)']) ||
+      clean(seg?.['Partner Company']) ||
+      clean(seg?.['Company Id']) ||
+      clean(customersExt?.['Partner Company']) ||
+      clean(customerRow?.['Partner Company']),
   );
 
-  const matched = pickCompaniesExtractMatch([customerRow, cust, hm, seg], companiesExtract, preferredName);
-  const tenancyPatch = mewsPatchFromTenancy(tenancyRow);
+  const matched = byNc || pickCompaniesExtractMatch([customerRow, cust, customersExt, hm, seg], companiesExtract, preferredName);
+  const tenancyPatch = mewsB2bCompanyPatchFromTenancy(tenancyRow);
 
   const row = {
     nc_number: nc,
     'Company Name(*)':
-      preferredName ||
+      (preferredName && !isChamariEntity(preferredName) ? preferredName : null) ||
       clean(existingCompanyRow?.['Company Name(*)']) ||
-      clean(tenancyPatch['Partner Company']) ||
       clean(matched?.['Company Name(*)']) ||
+      clean(tenancyPatch['Partner Company']) ||
       null,
     Telephone: clean(existingCompanyRow?.Telephone) || clean(matched?.Telephone) || null,
     'Contact Person': clean(existingCompanyRow?.['Contact Person']) || clean(matched?.['Contact Person']) || null,
     'Address Line 1':
-      clean(existingCompanyRow?.['Address Line 1']) || clean(matched?.['Address Line 1']) || null,
+      clean(existingCompanyRow?.['Address Line 1']) ||
+      (isSallaRassullPlaceholderAddress(matched) ? null : clean(matched?.['Address Line 1'])) ||
+      null,
     'Address Line 2': clean(existingCompanyRow?.['Address Line 2']) || clean(matched?.['Address Line 2']) || null,
-    City: clean(existingCompanyRow?.City) || clean(matched?.City) || null,
-    'Postal Code': clean(existingCompanyRow?.['Postal Code']) || clean(matched?.['Postal Code']) || null,
-    'Country Code': clean(existingCompanyRow?.['Country Code']) || clean(matched?.['Country Code']) || null,
+    City:
+      clean(existingCompanyRow?.City) ||
+      (isSallaRassullPlaceholderAddress(matched) ? null : clean(matched?.City)) ||
+      null,
+    'Postal Code':
+      clean(existingCompanyRow?.['Postal Code']) ||
+      (isSallaRassullPlaceholderAddress(matched) ? null : clean(matched?.['Postal Code'])) ||
+      null,
+    'Country Code':
+      clean(existingCompanyRow?.['Country Code']) ||
+      (isSallaRassullPlaceholderAddress(matched) ? null : clean(matched?.['Country Code'])) ||
+      null,
     'Tax ID Number':
       clean(existingCompanyRow?.['Tax ID Number']) ||
       clean(matched?.['Tax ID Number']) ||
@@ -67,46 +89,18 @@ export function buildV2CompanyRow(nc, { seg, cust, hm, customerRow, companiesExt
   return row;
 }
 
-export function reapplyB2bCompanyOnCustomer(out, nc, { seg, cust, hm, companiesExtract, tenancyRow }) {
-  const preferredName = companyNameFromSeguimientoLabel(
-    clean(seg?.['Partner Company']) || clean(seg?.['Company Id']) || clean(cust?.['Partner Company']),
-  );
+export function reapplyB2bCompanyOnCustomer(out, nc, { seg, cust, hm, companiesExtract, tenancyRow, customersExt, v2CompanyRow }) {
   const tenancyPatch = mewsB2bCompanyPatchFromTenancy(tenancyRow);
-  const matched = pickCompaniesExtractMatch([out, cust, hm, seg], companiesExtract, preferredName);
-
-  const companyName =
-    (preferredName && !isChamariEntity(preferredName) ? preferredName : null) ||
-    (clean(tenancyPatch['Partner Company']) && !isChamariEntity(tenancyPatch['Partner Company'])
-      ? clean(tenancyPatch['Partner Company'])
-      : null) ||
-    (clean(matched?.['Company Name(*)']) && !isChamariEntity(matched?.['Company Name(*)'])
-      ? clean(matched?.['Company Name(*)'])
-      : null);
-
-  if (companyName) {
-    out['Partner Company'] = companyName;
-    out['Company Id'] = companyName;
-  }
-
-  const tax =
-    clean(matched?.['Tax ID Number']) ||
-    clean(matched?.['Fiscal Identifier']) ||
-    clean(tenancyPatch['Tax Identification Number']) ||
-    null;
-  if (tax && !isChamariEntity(tax)) {
-    out['Tax Identification Number'] = tax;
-  }
-
-  if (matched) {
-    for (const [k, v] of [
-      ['Address Line 1', matched['Address Line 1']],
-      ['City', matched.City],
-      ['Postal Code', matched['Postal Code']],
-      ['Country Code', matched['Country Code']],
-    ]) {
-      if (!clean(out[k]) && clean(v)) out[k] = v;
-    }
-  }
-
+  const resolved = resolveB2bPartnerCompany(nc, {
+    customersExt,
+    cust,
+    seg,
+    hm,
+    out,
+    companiesExtract,
+    tenancyPatch,
+    v2CompanyRow,
+  });
+  applyResolvedB2bPartnerCompany(out, resolved);
   return out;
 }

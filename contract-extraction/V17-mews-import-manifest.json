@@ -1,0 +1,559 @@
+{
+  "source": "V6_Final_B2C_and_B2B + V6_Final_Companies (Supabase; NC_1147 Adult Count=2)",
+  "min_arrival": "2026-11-01",
+  "customers": 607,
+  "companies": 68,
+  "viajes_puerta_de_sevilla_prepayment": {
+    "count": 25,
+    "rows": [
+      {
+        "group_code": "NC_0954",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2037",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2038",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2039",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2040",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2041",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2047",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2048",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2049",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2050",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2051",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2052",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2053",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2054",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2055",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2056",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2057",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2058",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2059",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2060",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2061",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2062",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2063",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2064",
+        "prepaid": "655",
+        "type": "Deposit"
+      },
+      {
+        "group_code": "NC_2065",
+        "prepaid": "655",
+        "type": "Deposit"
+      }
+    ]
+  },
+  "shared_emails_split": {
+    "irene.delsol@ascensoresintegra.es": 12
+  },
+  "field_fixes": {
+    "company_name": [
+      {
+        "group_code": "NC_0904",
+        "column": "Partner Company",
+        "from": ". Ziadoon Naseer Mrebee Al-Fadhli",
+        "to": "Ziadoon Naseer Mrebee Al-Fadhli"
+      },
+      {
+        "group_code": "NC_0904",
+        "column": "Company Id",
+        "from": ". Ziadoon Naseer Mrebee Al-Fadhli",
+        "to": "Ziadoon Naseer Mrebee Al-Fadhli"
+      },
+      {
+        "group_code": "NC_1142",
+        "column": "Partner Company",
+        "from": ". Juan Felipe Flores Rodríguez",
+        "to": "Juan Felipe Flores Rodríguez"
+      },
+      {
+        "group_code": "NC_1142",
+        "column": "Company Id",
+        "from": ". Juan Felipe Flores Rodríguez",
+        "to": "Juan Felipe Flores Rodríguez"
+      },
+      {
+        "group_code": "NC_1361",
+        "column": "Partner Company",
+        "from": ". Francisco Javier Villanueva Márquez; y Dña. Laura Guadalupe Ramos Mejía",
+        "to": "Francisco Javier Villanueva Márquez; y Dña. Laura Guadalupe Ramos Mejía"
+      },
+      {
+        "group_code": "NC_1361",
+        "column": "Company Id",
+        "from": ". Francisco Javier Villanueva Márquez; y Dña. Laura Guadalupe Ramos Mejía",
+        "to": "Francisco Javier Villanueva Márquez; y Dña. Laura Guadalupe Ramos Mejía"
+      },
+      {
+        "group_code": "NC_1484",
+        "column": "Partner Company",
+        "from": ". Rubén Folgoso Lorenzo",
+        "to": "Rubén Folgoso Lorenzo"
+      },
+      {
+        "group_code": "NC_1484",
+        "column": "Company Id",
+        "from": ". Rubén Folgoso Lorenzo",
+        "to": "Rubén Folgoso Lorenzo"
+      },
+      {
+        "group_code": "NC_1496",
+        "column": "Partner Company",
+        "from": ". Erdogan Enes Saçlı",
+        "to": "Erdogan Enes Saçlı"
+      },
+      {
+        "group_code": "NC_1496",
+        "column": "Company Id",
+        "from": ". Erdogan Enes Saçlı",
+        "to": "Erdogan Enes Saçlı"
+      },
+      {
+        "group_code": "NC_1515",
+        "column": "Partner Company",
+        "from": ". Noah Litha Norbert Thurow",
+        "to": "Noah Litha Norbert Thurow"
+      },
+      {
+        "group_code": "NC_1515",
+        "column": "Company Id",
+        "from": ". Noah Litha Norbert Thurow",
+        "to": "Noah Litha Norbert Thurow"
+      },
+      {
+        "group_code": "NC_1550",
+        "column": "Partner Company",
+        "from": ". Antonio Manuel Luna Rodríguez",
+        "to": "Antonio Manuel Luna Rodríguez"
+      },
+      {
+        "group_code": "NC_1550",
+        "column": "Company Id",
+        "from": ". Antonio Manuel Luna Rodríguez",
+        "to": "Antonio Manuel Luna Rodríguez"
+      },
+      {
+        "group_code": "NC_1554",
+        "column": "Partner Company",
+        "from": ". Mirsha Emiliano Macklis Cota",
+        "to": "Mirsha Emiliano Macklis Cota"
+      },
+      {
+        "group_code": "NC_1554",
+        "column": "Company Id",
+        "from": ". Mirsha Emiliano Macklis Cota",
+        "to": "Mirsha Emiliano Macklis Cota"
+      },
+      {
+        "group_code": "NC_1582",
+        "column": "Partner Company",
+        "from": ". Mohammed Saeed Suleiman Al-Naamani",
+        "to": "Mohammed Saeed Suleiman Al-Naamani"
+      },
+      {
+        "group_code": "NC_1582",
+        "column": "Company Id",
+        "from": ". Mohammed Saeed Suleiman Al-Naamani",
+        "to": "Mohammed Saeed Suleiman Al-Naamani"
+      },
+      {
+        "group_code": "NC_1642",
+        "column": "Partner Company",
+        "from": ". Ziadoon Naseer Mrebee Al-Fadhli",
+        "to": "Ziadoon Naseer Mrebee Al-Fadhli"
+      },
+      {
+        "group_code": "NC_1642",
+        "column": "Company Id",
+        "from": ". Ziadoon Naseer Mrebee Al-Fadhli",
+        "to": "Ziadoon Naseer Mrebee Al-Fadhli"
+      },
+      {
+        "group_code": "NC_1665",
+        "column": "Partner Company",
+        "from": ".Tharife Nabil Ahmad AL-Khuffash",
+        "to": "Tharife Nabil Ahmad AL-Khuffash"
+      },
+      {
+        "group_code": "NC_1665",
+        "column": "Company Id",
+        "from": ".Tharife Nabil Ahmad AL-Khuffash",
+        "to": "Tharife Nabil Ahmad AL-Khuffash"
+      },
+      {
+        "group_code": "NC_1678",
+        "column": "Partner Company",
+        "from": ". Nicolas Martin Cucalon; y Dña. Emilia Fernanda Naranjo Escobar",
+        "to": "Nicolas Martin Cucalon; y Dña. Emilia Fernanda Naranjo Escobar"
+      },
+      {
+        "group_code": "NC_1678",
+        "column": "Company Id",
+        "from": ". Nicolas Martin Cucalon; y Dña. Emilia Fernanda Naranjo Escobar",
+        "to": "Nicolas Martin Cucalon; y Dña. Emilia Fernanda Naranjo Escobar"
+      },
+      {
+        "group_code": "NC_1686",
+        "column": "Partner Company",
+        "from": ". Jesús Deben León y Dña. Paula Ruíz Correro",
+        "to": "Jesús Deben León y Dña. Paula Ruíz Correro"
+      },
+      {
+        "group_code": "NC_1686",
+        "column": "Company Id",
+        "from": ". Jesús Deben León y Dña. Paula Ruíz Correro",
+        "to": "Jesús Deben León y Dña. Paula Ruíz Correro"
+      },
+      {
+        "group_code": "NC_1726",
+        "column": "Partner Company",
+        "from": ". Michael Eddy Chavez Bravo",
+        "to": "Michael Eddy Chavez Bravo"
+      },
+      {
+        "group_code": "NC_1726",
+        "column": "Company Id",
+        "from": ". Michael Eddy Chavez Bravo",
+        "to": "Michael Eddy Chavez Bravo"
+      },
+      {
+        "group_code": "NC_1767",
+        "column": "Partner Company",
+        "from": ". Danel Hills Aguirregomezcorta",
+        "to": "Danel Hills Aguirregomezcorta"
+      },
+      {
+        "group_code": "NC_1767",
+        "column": "Company Id",
+        "from": ". Danel Hills Aguirregomezcorta",
+        "to": "Danel Hills Aguirregomezcorta"
+      },
+      {
+        "group_code": "NC_1777",
+        "column": "Partner Company",
+        "from": ". Twisha Chitisha Patel",
+        "to": "Twisha Chitisha Patel"
+      },
+      {
+        "group_code": "NC_1777",
+        "column": "Company Id",
+        "from": ". Twisha Chitisha Patel",
+        "to": "Twisha Chitisha Patel"
+      },
+      {
+        "group_code": "NC_1782",
+        "column": "Partner Company",
+        "from": ". Max Bowler",
+        "to": "Max Bowler"
+      },
+      {
+        "group_code": "NC_1782",
+        "column": "Company Id",
+        "from": ". Max Bowler",
+        "to": "Max Bowler"
+      },
+      {
+        "group_code": "NC_1784",
+        "column": "Partner Company",
+        "from": ". Salla Rassull",
+        "to": "Salla Rassull"
+      },
+      {
+        "group_code": "NC_1784",
+        "column": "Company Id",
+        "from": ". Salla Rassull",
+        "to": "Salla Rassull"
+      },
+      {
+        "group_code": "NC_1785",
+        "column": "Partner Company",
+        "from": ". Enrique Caracciolo",
+        "to": "Enrique Caracciolo"
+      },
+      {
+        "group_code": "NC_1785",
+        "column": "Company Id",
+        "from": ". Enrique Caracciolo",
+        "to": "Enrique Caracciolo"
+      },
+      {
+        "group_code": "NC_1786",
+        "column": "Partner Company",
+        "from": ". Exequiel Caracciolo",
+        "to": "Exequiel Caracciolo"
+      },
+      {
+        "group_code": "NC_1786",
+        "column": "Company Id",
+        "from": ". Exequiel Caracciolo",
+        "to": "Exequiel Caracciolo"
+      },
+      {
+        "group_code": "NC_1792",
+        "column": "Partner Company",
+        "from": ". Nattan Samuel Degefa",
+        "to": "Nattan Samuel Degefa"
+      },
+      {
+        "group_code": "NC_1792",
+        "column": "Company Id",
+        "from": ". Nattan Samuel Degefa",
+        "to": "Nattan Samuel Degefa"
+      },
+      {
+        "group_code": "NC_1795",
+        "column": "Partner Company",
+        "from": ". Alvaro Ruiz Carrasco",
+        "to": "Alvaro Ruiz Carrasco"
+      },
+      {
+        "group_code": "NC_1795",
+        "column": "Company Id",
+        "from": ". Alvaro Ruiz Carrasco",
+        "to": "Alvaro Ruiz Carrasco"
+      },
+      {
+        "group_code": "NC_1806",
+        "column": "Partner Company",
+        "from": ". Lloyd Murphy",
+        "to": "Lloyd Murphy"
+      },
+      {
+        "group_code": "NC_1806",
+        "column": "Company Id",
+        "from": ". Lloyd Murphy",
+        "to": "Lloyd Murphy"
+      },
+      {
+        "group_code": "NC_1812",
+        "column": "Partner Company",
+        "from": ". Lev Zavernin",
+        "to": "Lev Zavernin"
+      },
+      {
+        "group_code": "NC_1812",
+        "column": "Company Id",
+        "from": ". Lev Zavernin",
+        "to": "Lev Zavernin"
+      },
+      {
+        "group_code": "NC_1823",
+        "column": "Partner Company",
+        "from": ". Caitlyn Marie Bautista",
+        "to": "Caitlyn Marie Bautista"
+      },
+      {
+        "group_code": "NC_1823",
+        "column": "Company Id",
+        "from": ". Caitlyn Marie Bautista",
+        "to": "Caitlyn Marie Bautista"
+      },
+      {
+        "group_code": "NC_1826",
+        "column": "Partner Company",
+        "from": ". Eder Mauricio Vela Sarmiento",
+        "to": "Eder Mauricio Vela Sarmiento"
+      },
+      {
+        "group_code": "NC_1826",
+        "column": "Company Id",
+        "from": ". Eder Mauricio Vela Sarmiento",
+        "to": "Eder Mauricio Vela Sarmiento"
+      },
+      {
+        "group_code": "NC_1845",
+        "column": "Partner Company",
+        "from": ". Gabriel Monteiro Junior",
+        "to": "Gabriel Monteiro Junior"
+      },
+      {
+        "group_code": "NC_1845",
+        "column": "Company Id",
+        "from": ". Gabriel Monteiro Junior",
+        "to": "Gabriel Monteiro Junior"
+      }
+    ],
+    "sex": [
+      {
+        "group_code": "NC_1065",
+        "column": "Sex",
+        "from": "Dña.",
+        "to": "Female"
+      },
+      {
+        "group_code": "NC_1535",
+        "column": "Sex",
+        "from": "D.",
+        "to": "Male"
+      }
+    ],
+    "birth_date": [
+      {
+        "group_code": "NC_1065",
+        "column": "Birth Date",
+        "from": "24 de Febrero de 2026",
+        "to": null
+      },
+      {
+        "group_code": "NC_1109",
+        "column": "Birth Date",
+        "from": "2026-03-05",
+        "to": null
+      },
+      {
+        "group_code": "NC_1330",
+        "column": "Birth Date",
+        "from": "2026-04-28",
+        "to": null
+      },
+      {
+        "group_code": "NC_1535",
+        "column": "Birth Date",
+        "from": "10 de julio de 2026",
+        "to": null
+      },
+      {
+        "group_code": "NC_1574",
+        "column": "Birth Date",
+        "from": "2026-09-07",
+        "to": null
+      },
+      {
+        "group_code": "NC_1589",
+        "column": "Birth Date",
+        "from": "2/4/2025 10:07:14 AM",
+        "to": null
+      }
+    ],
+    "telephone": [
+      {
+        "group_code": "NC_1065",
+        "column": "Telephone",
+        "from": "gdpr@node-living.com",
+        "to": null
+      },
+      {
+        "group_code": "NC_1589",
+        "column": "Telephone",
+        "from": "85.53.151.100",
+        "to": null
+      }
+    ],
+    "tax_id": [
+      {
+        "group_code": "NC_1582",
+        "column": "Tax Identification Number",
+        "from": ". Mohammed Saeed Suleiman Al-Naamani",
+        "to": null
+      },
+      {
+        "group_code": "NC_1678",
+        "column": "Tax Identification Number",
+        "from": "mes",
+        "to": null
+      },
+      {
+        "group_code": "NC_1782",
+        "column": "Tax Identification Number",
+        "from": "Pasaporte",
+        "to": null
+      }
+    ]
+  },
+  "text_cleanup_count": 18,
+  "verify_problems": [],
+  "outputs": [
+    "C:\\Users\\Claudio\\Downloads\\V17_Full_Mews_import_V6_B2C_and_B2B_21_10_2026_combined.xlsx",
+    "C:\\Users\\Claudio\\Desktop\\Mews Data Integration\\Mews_import_V17_Full_V6_B2C_B2B_21_10_2026_combined.xlsx"
+  ]
+}

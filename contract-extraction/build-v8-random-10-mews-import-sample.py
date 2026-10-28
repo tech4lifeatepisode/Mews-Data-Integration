@@ -221,7 +221,8 @@ def mews_import_ready(row: list, idx: dict[str, int]) -> None:
         return
     prepaid = row[prepaid_i]
     if prepaid is not None and str(prepaid).strip() and any(ch.isdigit() for ch in str(prepaid)):
-        row[prep_type_i] = PREPAYMENT_TYPE
+        if not row[prep_type_i] or not str(row[prep_type_i]).strip():
+            row[prep_type_i] = PREPAYMENT_TYPE
     else:
         row[prepaid_i] = None
         row[prep_type_i] = None

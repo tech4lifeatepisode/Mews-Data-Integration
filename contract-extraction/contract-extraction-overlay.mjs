@@ -1,4 +1,5 @@
 import { clean } from './company-match-utils.mjs';
+import { isChamariEntity } from './chamari-strip.mjs';
 
 function isFilled(v) {
   const c = clean(v);
@@ -45,7 +46,10 @@ export function applyContractExtractionOverlay(row, customersExtRow, options = {
   const fields = options.fields || CONTRACT_EXTRACTION_FIELDS;
   const out = { ...row };
   for (const key of fields) {
-    if (isFilled(customersExtRow[key])) out[key] = clean(customersExtRow[key]);
+    const val = customersExtRow[key];
+    if (!isFilled(val)) continue;
+    if (isChamariEntity(val)) continue;
+    out[key] = clean(val);
   }
   return out;
 }

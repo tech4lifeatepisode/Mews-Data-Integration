@@ -1,0 +1,4178 @@
+{
+  "v4Customers": 607,
+  "v4Companies": 68,
+  "v6Customers": 607,
+  "v6Companies": 68,
+  "rule": "if Arrival Date(*) <= 2026-11-05, set to 2026-11-01; else same as V4",
+  "arrivalsShifted": 573,
+  "arrivalsUnchangedAfterCutoff": 31,
+  "shiftedSample": [
+    {
+      "nc_number": 692,
+      "group_code": "NC_0692",
+      "guest": "Moad Sati",
+      "from": "2025-12-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 711,
+      "group_code": "NC_0711",
+      "guest": "Marcela Noelia",
+      "from": "2025-11-24",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 767,
+      "group_code": "NC_0767",
+      "guest": "Elvira Candeira Morera",
+      "from": "2025-12-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 805,
+      "group_code": "NC_0805",
+      "guest": "Solange Naboulet",
+      "from": "2026-01-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 815,
+      "group_code": "NC_0815",
+      "guest": "Aleksandr Novozhilov",
+      "from": "2026-02-16",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 817,
+      "group_code": "NC_0817",
+      "guest": "Ana Silvia",
+      "from": "2026-03-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 822,
+      "group_code": "NC_0822",
+      "guest": "Gloria Viel",
+      "from": "2026-02-08",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 828,
+      "group_code": "NC_0828",
+      "guest": "Mohmad Raed Rafiq AlSaafen",
+      "from": "2026-02-08",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 837,
+      "group_code": "NC_0837",
+      "guest": "Enol Suárez",
+      "from": "2026-01-16",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 838,
+      "group_code": "NC_0838",
+      "guest": "Nahia Barandiarán",
+      "from": "2026-09-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 843,
+      "group_code": "NC_0843",
+      "guest": "Manuel Enrique Arteaga Pachon",
+      "from": "2026-02-22",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 845,
+      "group_code": "NC_0845",
+      "guest": "Carla Graciela",
+      "from": "2026-02-24",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 850,
+      "group_code": "NC_0850",
+      "guest": "David Bricio",
+      "from": "2025-12-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 853,
+      "group_code": "NC_0853",
+      "guest": "Safae Talhi",
+      "from": "2025-12-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 866,
+      "group_code": "NC_0866",
+      "guest": "Marisol Padilla",
+      "from": "2026-01-08",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 872,
+      "group_code": "NC_0872",
+      "guest": "Cristian Daniel",
+      "from": "2026-03-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 875,
+      "group_code": "NC_0875",
+      "guest": "Carlos Alberto Rodríguez Hernández",
+      "from": "2025-12-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 880,
+      "group_code": "NC_0880",
+      "guest": "Jesús González",
+      "from": "2026-04-29",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 887,
+      "group_code": "NC_0887",
+      "guest": "Rowan Saliba",
+      "from": "2026-02-25",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 891,
+      "group_code": "NC_0891",
+      "guest": "Ignacio Moliner",
+      "from": "2026-04-21",
+      "to": "2026-11-01"
+    }
+  ],
+  "warnings": [],
+  "apply": true,
+  "ddlCustomers": "C:\\Users\\Claudio\\Desktop\\Mews Data Integration\\contract-analysis\\supabase-v6-b2c-and-b2b-all-fields-match-mews-import-21-10-2026.sql",
+  "ddlCompanies": "C:\\Users\\Claudio\\Desktop\\Mews Data Integration\\contract-analysis\\supabase-v6-companies-match-mews-import-21-10-2026.sql",
+  "customersUpload": {
+    "skipped": false,
+    "omitted": [],
+    "reason": null
+  },
+  "companiesUpload": {
+    "skipped": false,
+    "omitted": [],
+    "reason": null
+  },
+  "shifted": [
+    {
+      "nc_number": 692,
+      "group_code": "NC_0692",
+      "guest": "Moad Sati",
+      "from": "2025-12-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 711,
+      "group_code": "NC_0711",
+      "guest": "Marcela Noelia",
+      "from": "2025-11-24",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 767,
+      "group_code": "NC_0767",
+      "guest": "Elvira Candeira Morera",
+      "from": "2025-12-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 805,
+      "group_code": "NC_0805",
+      "guest": "Solange Naboulet",
+      "from": "2026-01-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 815,
+      "group_code": "NC_0815",
+      "guest": "Aleksandr Novozhilov",
+      "from": "2026-02-16",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 817,
+      "group_code": "NC_0817",
+      "guest": "Ana Silvia",
+      "from": "2026-03-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 822,
+      "group_code": "NC_0822",
+      "guest": "Gloria Viel",
+      "from": "2026-02-08",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 828,
+      "group_code": "NC_0828",
+      "guest": "Mohmad Raed Rafiq AlSaafen",
+      "from": "2026-02-08",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 837,
+      "group_code": "NC_0837",
+      "guest": "Enol Suárez",
+      "from": "2026-01-16",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 838,
+      "group_code": "NC_0838",
+      "guest": "Nahia Barandiarán",
+      "from": "2026-09-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 843,
+      "group_code": "NC_0843",
+      "guest": "Manuel Enrique Arteaga Pachon",
+      "from": "2026-02-22",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 845,
+      "group_code": "NC_0845",
+      "guest": "Carla Graciela",
+      "from": "2026-02-24",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 850,
+      "group_code": "NC_0850",
+      "guest": "David Bricio",
+      "from": "2025-12-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 853,
+      "group_code": "NC_0853",
+      "guest": "Safae Talhi",
+      "from": "2025-12-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 866,
+      "group_code": "NC_0866",
+      "guest": "Marisol Padilla",
+      "from": "2026-01-08",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 872,
+      "group_code": "NC_0872",
+      "guest": "Cristian Daniel",
+      "from": "2026-03-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 875,
+      "group_code": "NC_0875",
+      "guest": "Carlos Alberto Rodríguez Hernández",
+      "from": "2025-12-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 880,
+      "group_code": "NC_0880",
+      "guest": "Jesús González",
+      "from": "2026-04-29",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 887,
+      "group_code": "NC_0887",
+      "guest": "Rowan Saliba",
+      "from": "2026-02-25",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 891,
+      "group_code": "NC_0891",
+      "guest": "Ignacio Moliner",
+      "from": "2026-04-21",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 894,
+      "group_code": "NC_0894",
+      "guest": "Antonio Álvarez",
+      "from": "2026-07-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 895,
+      "group_code": "NC_0895",
+      "guest": "Catalina Paz",
+      "from": "2026-02-24",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 897,
+      "group_code": "NC_0897",
+      "guest": "Javier García",
+      "from": "2026-05-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 898,
+      "group_code": "NC_0898",
+      "guest": "Lisa Mc Tigue",
+      "from": "2026-06-16",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 899,
+      "group_code": "NC_0899",
+      "guest": "Laura Joelle Laura Joelle",
+      "from": "2026-06-16",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 903,
+      "group_code": "NC_0903",
+      "guest": "Nikita Belyankov",
+      "from": "2026-02-20",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 904,
+      "group_code": "NC_0904",
+      "guest": "Fernando José Paulo",
+      "from": "2026-02-10",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 905,
+      "group_code": "NC_0905",
+      "guest": "María Begoña Etxenagusia Atutxa",
+      "from": "2026-01-11",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 908,
+      "group_code": "NC_0908",
+      "guest": "Gabriel-Iulian Dan",
+      "from": "2026-04-20",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 918,
+      "group_code": "NC_0918",
+      "guest": "Santiago Fidel",
+      "from": "2026-02-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 919,
+      "group_code": "NC_0919",
+      "guest": "John Jairo Ramirez",
+      "from": "2026-04-29",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 922,
+      "group_code": "NC_0922",
+      "guest": "Tomás Cortés Flórez",
+      "from": "2026-02-16",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 923,
+      "group_code": "NC_0923",
+      "guest": "Alexander Ruiz Rodriguez",
+      "from": "2026-09-06",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 930,
+      "group_code": "NC_0930",
+      "guest": "Javier Moreno Monsalve",
+      "from": "2026-02-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 932,
+      "group_code": "NC_0932",
+      "guest": "Ingrid Jacel",
+      "from": "2026-01-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 933,
+      "group_code": "NC_0933",
+      "guest": "Panagiota Bompoli",
+      "from": "2026-02-14",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 935,
+      "group_code": "NC_0935",
+      "guest": "Carmen Merchán",
+      "from": "2026-01-22",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 936,
+      "group_code": "NC_0936",
+      "guest": "Gina Saray",
+      "from": "2026-02-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 942,
+      "group_code": "NC_0942",
+      "guest": "Angelica Patricia Bernal Ruiz",
+      "from": "2026-02-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 948,
+      "group_code": "NC_0948",
+      "guest": "Josefina Soto Fux",
+      "from": "2026-07-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 950,
+      "group_code": "NC_0950",
+      "guest": "Uros Pavlovic",
+      "from": "2026-07-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 951,
+      "group_code": "NC_0951",
+      "guest": "Laurie Marie Fortin",
+      "from": "2026-02-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 953,
+      "group_code": "NC_0953",
+      "guest": "Alhasan Murtadha",
+      "from": "2026-01-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 954,
+      "group_code": "NC_0954",
+      "guest": "Carlos Sierra González",
+      "from": "2026-01-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 955,
+      "group_code": "NC_0955",
+      "guest": "Tatiyan Chebet Koskei",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 956,
+      "group_code": "NC_0956",
+      "guest": "Peter Crawley",
+      "from": "2026-02-22",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 957,
+      "group_code": "NC_0957",
+      "guest": "Mattia Marchesa",
+      "from": "2026-02-18",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 965,
+      "group_code": "NC_0965",
+      "guest": "Francisco Rivas",
+      "from": "2026-02-03",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 973,
+      "group_code": "NC_0973",
+      "guest": "Rogelio José Riestra",
+      "from": "2026-03-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 974,
+      "group_code": "NC_0974",
+      "guest": "José Antonio Riestra",
+      "from": "2026-03-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 975,
+      "group_code": "NC_0975",
+      "guest": "Valentín Serrano",
+      "from": "2026-02-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 980,
+      "group_code": "NC_0980",
+      "guest": "Marco Augusto",
+      "from": "2026-02-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 981,
+      "group_code": "NC_0981",
+      "guest": "Wing Ho Tang",
+      "from": "2026-02-14",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 989,
+      "group_code": "NC_0989",
+      "guest": "Alberto Fernández",
+      "from": "2026-09-23",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 991,
+      "group_code": "NC_0991",
+      "guest": "Erbin del Risco",
+      "from": "2026-05-08",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 992,
+      "group_code": "NC_0992",
+      "guest": "Eduardo José Petit",
+      "from": "2026-02-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 995,
+      "group_code": "NC_0995",
+      "guest": "Anshul Kanda",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1004,
+      "group_code": "NC_1004",
+      "guest": "Nikolai Maximovich",
+      "from": "2026-06-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1006,
+      "group_code": "NC_1006",
+      "guest": "Juan Antonio Gomez Rodriguez",
+      "from": "2026-09-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1007,
+      "group_code": "NC_1007",
+      "guest": "Linda Katerine",
+      "from": "2026-02-14",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1010,
+      "group_code": "NC_1010",
+      "guest": "NIshika NIshika",
+      "from": "2026-09-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1011,
+      "group_code": "NC_1011",
+      "guest": "Ahmed Anes",
+      "from": "2026-02-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1012,
+      "group_code": "NC_1012",
+      "guest": "Raquel Bencomo Diaz",
+      "from": "2026-08-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1013,
+      "group_code": "NC_1013",
+      "guest": "Steven Enrique Espinoza dos Reis",
+      "from": "2026-05-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1022,
+      "group_code": "NC_1022",
+      "guest": "Abdalrhman Mohammed",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1024,
+      "group_code": "NC_1024",
+      "guest": "El Ibrahimi Lina",
+      "from": "2026-08-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1025,
+      "group_code": "NC_1025",
+      "guest": "Patricia Peinado",
+      "from": "2026-04-21",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1026,
+      "group_code": "NC_1026",
+      "guest": "Cinthia González",
+      "from": "2026-03-22",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1027,
+      "group_code": "NC_1027",
+      "guest": "Alba Poza",
+      "from": "2026-04-20",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1031,
+      "group_code": "NC_1031",
+      "guest": "Twisha Chitisha",
+      "from": "2026-02-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1032,
+      "group_code": "NC_1032",
+      "guest": "Rojina Boroughani",
+      "from": "2026-02-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1037,
+      "group_code": "NC_1037",
+      "guest": "Francisco Luís De La Barrera Cid",
+      "from": "2025-03-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1038,
+      "group_code": "NC_1038",
+      "guest": "Serene Farhat",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1042,
+      "group_code": "NC_1042",
+      "guest": "Javier Gómez",
+      "from": "2026-05-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1043,
+      "group_code": "NC_1043",
+      "guest": "Gazal Haytham",
+      "from": "2026-05-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1048,
+      "group_code": "NC_1048",
+      "guest": "José Iván Heredia",
+      "from": "2026-02-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1049,
+      "group_code": "NC_1049",
+      "guest": "Lennyra Helena",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1053,
+      "group_code": "NC_1053",
+      "guest": "Mireia Guillén Ortega",
+      "from": "2026-08-29",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1054,
+      "group_code": "NC_1054",
+      "guest": "María Fernanda Iñigo",
+      "from": "2026-04-11",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1055,
+      "group_code": "NC_1055",
+      "guest": "Robbie Meijer",
+      "from": "2026-05-18",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1058,
+      "group_code": "NC_1058",
+      "guest": "Francisco Emilio",
+      "from": "2026-02-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1059,
+      "group_code": "NC_1059",
+      "guest": "Claudia Marcela Salcedo",
+      "from": "2026-02-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1060,
+      "group_code": "NC_1060",
+      "guest": "Jose Ivan Riquelme Gonzalez",
+      "from": "2026-03-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1062,
+      "group_code": "NC_1062",
+      "guest": "Ryan Guy Kayombya",
+      "from": "2026-07-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1063,
+      "group_code": "NC_1063",
+      "guest": "Ionut Marcos",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1065,
+      "group_code": "NC_1065",
+      "guest": "Sandra Tresancos",
+      "from": "2026-08-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1066,
+      "group_code": "NC_1066",
+      "guest": "Ekaterina Sergeevna",
+      "from": "2026-03-21",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1068,
+      "group_code": "NC_1068",
+      "guest": "Sonia Anabela del Campillo",
+      "from": "2026-04-17",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1069,
+      "group_code": "NC_1069",
+      "guest": "Jordi Joan Moya Rosello",
+      "from": "2026-08-29",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1071,
+      "group_code": "NC_1071",
+      "guest": "Marcos Antonio Cortés",
+      "from": "2026-03-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1073,
+      "group_code": "NC_1073",
+      "guest": "Daniel Porras",
+      "from": "2026-05-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1074,
+      "group_code": "NC_1074",
+      "guest": "Stefano Giuseppe Restuccia",
+      "from": "2026-03-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1077,
+      "group_code": "NC_1077",
+      "guest": "Mauricio Javier",
+      "from": "2026-02-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1078,
+      "group_code": "NC_1078",
+      "guest": "Diego Alberto Lares Barboza",
+      "from": "2026-05-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1085,
+      "group_code": "NC_1085",
+      "guest": "Leticia Ana Moreno",
+      "from": "2026-03-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1086,
+      "group_code": "NC_1086",
+      "guest": "Marvin David Escobar Escobar",
+      "from": "2026-02-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1090,
+      "group_code": "NC_1090",
+      "guest": "Antonio Jose Dias De Fraga Brum",
+      "from": "2026-06-18",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1091,
+      "group_code": "NC_1091",
+      "guest": "Bella Smile VLC, S.L.",
+      "from": "2026-03-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1096,
+      "group_code": "NC_1096",
+      "guest": "Geraldine Lucia Geraldine Lucia",
+      "from": "2026-08-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1098,
+      "group_code": "NC_1098",
+      "guest": "Manuel Clemente Cubero Rodriguez",
+      "from": "2026-09-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1100,
+      "group_code": "NC_1100",
+      "guest": "Elisa Raquel Torre",
+      "from": "2026-08-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1109,
+      "group_code": "NC_1109",
+      "guest": "María José Gabriel Valerio",
+      "from": "2026-04-04",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1111,
+      "group_code": "NC_1111",
+      "guest": "Alessandro de Angelis",
+      "from": "2026-03-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1116,
+      "group_code": "NC_1116",
+      "guest": "Catalina Santa",
+      "from": "2026-05-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1117,
+      "group_code": "NC_1117",
+      "guest": "Sajin Chandra Sekar",
+      "from": "2026-01-11",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1123,
+      "group_code": "NC_1123",
+      "guest": "Luis Guillermo Paredes",
+      "from": "2026-03-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1124,
+      "group_code": "NC_1124",
+      "guest": "María Guadalupe Gómez",
+      "from": "2026-06-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1126,
+      "group_code": "NC_1126",
+      "guest": "Ana Lucía Palacio",
+      "from": "2026-03-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1131,
+      "group_code": "NC_1131",
+      "guest": "Khalil Anane",
+      "from": "2026-06-14",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1133,
+      "group_code": "NC_1133",
+      "guest": "Lorena Paola Perez Oyola",
+      "from": "2026-07-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1135,
+      "group_code": "NC_1135",
+      "guest": "Eleazar Iván Gómez",
+      "from": "2026-06-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1136,
+      "group_code": "NC_1136",
+      "guest": "Ayoub El",
+      "from": "2026-03-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1139,
+      "group_code": "NC_1139",
+      "guest": "Caroline Da Silva",
+      "from": "2026-04-23",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1141,
+      "group_code": "NC_1141",
+      "guest": "Roger Gabriel",
+      "from": "2026-05-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1142,
+      "group_code": "NC_1142",
+      "guest": "Juan Felipe Flores Rodriguez",
+      "from": "2026-09-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1144,
+      "group_code": "NC_1144",
+      "guest": "Fateme Mahdikani",
+      "from": "2026-03-18",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1145,
+      "group_code": "NC_1145",
+      "guest": "Diana-Mihaela Man",
+      "from": "2026-04-21",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1147,
+      "group_code": "NC_1147",
+      "guest": "Jorge S.L.",
+      "from": "2026-06-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1149,
+      "group_code": "NC_1149",
+      "guest": "Natalia Nocua Pinto",
+      "from": "2026-10-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1155,
+      "group_code": "NC_1155",
+      "guest": "Mario Dominguez",
+      "from": "2026-09-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1157,
+      "group_code": "NC_1157",
+      "guest": "Diego Salado Garcia-Parra",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1158,
+      "group_code": "NC_1158",
+      "guest": "Zein Almoien",
+      "from": "2026-08-25",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1161,
+      "group_code": "NC_1161",
+      "guest": "Pilar Jauregi",
+      "from": "2026-07-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1165,
+      "group_code": "NC_1165",
+      "guest": "Viktoriia Vasilevskaia",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1172,
+      "group_code": "NC_1172",
+      "guest": "Jose Angel Lopez Ruiz",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1173,
+      "group_code": "NC_1173",
+      "guest": "Juan Morales Hernández",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1176,
+      "group_code": "NC_1176",
+      "guest": "Diana Marcela",
+      "from": "2026-03-25",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1177,
+      "group_code": "NC_1177",
+      "guest": "Leticia Fonseca",
+      "from": "2026-05-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1178,
+      "group_code": "NC_1178",
+      "guest": "Jesús Alejandro Zambrano Contreras",
+      "from": "2026-04-24",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1184,
+      "group_code": "NC_1184",
+      "guest": "Santiago José",
+      "from": "2026-05-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1185,
+      "group_code": "NC_1185",
+      "guest": "Giseth Chaid",
+      "from": "2026-07-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1187,
+      "group_code": "NC_1187",
+      "guest": "Walhams Wilmer",
+      "from": "2026-03-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1194,
+      "group_code": "NC_1194",
+      "guest": "María Susana",
+      "from": "2026-10-21",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1199,
+      "group_code": "NC_1199",
+      "guest": "Jose Luis Collado",
+      "from": "2026-03-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1200,
+      "group_code": "NC_1200",
+      "guest": "Mohamed Anouar",
+      "from": "2026-04-09",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1201,
+      "group_code": "NC_1201",
+      "guest": "Chiara Lerda",
+      "from": "2026-04-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1202,
+      "group_code": "NC_1202",
+      "guest": "Santiago Vidal",
+      "from": "2026-04-19",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1204,
+      "group_code": "NC_1204",
+      "guest": "Javier Molina",
+      "from": "2026-03-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1207,
+      "group_code": "NC_1207",
+      "guest": "Lina Malki",
+      "from": "2026-05-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1208,
+      "group_code": "NC_1208",
+      "guest": "Elizabeth Mabel Molina Torres",
+      "from": "2026-03-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1210,
+      "group_code": "NC_1210",
+      "guest": "Mustapha Bakhtari",
+      "from": "2026-06-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1212,
+      "group_code": "NC_1212",
+      "guest": "Nataly del Carmen Arnedo",
+      "from": "2026-03-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1214,
+      "group_code": "NC_1214",
+      "guest": "Amari Williams",
+      "from": "2026-06-23",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1222,
+      "group_code": "NC_1222",
+      "guest": "Rafaela Boa Morte",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1223,
+      "group_code": "NC_1223",
+      "guest": "Sandra Liliana",
+      "from": "2026-04-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1226,
+      "group_code": "NC_1226",
+      "guest": "Nicolás Blandón Solarte",
+      "from": "2026-05-06",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1230,
+      "group_code": "NC_1230",
+      "guest": "Jhonathan Reyes Perrino",
+      "from": "2026-04-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1233,
+      "group_code": "NC_1233",
+      "guest": "Alex James Mclaughlin",
+      "from": "2026-08-22",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1234,
+      "group_code": "NC_1234",
+      "guest": "Joseph El - Hachem",
+      "from": "2026-08-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1235,
+      "group_code": "NC_1235",
+      "guest": "Alan Misael",
+      "from": "2026-06-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1236,
+      "group_code": "NC_1236",
+      "guest": "Othman Badr",
+      "from": "2026-04-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1237,
+      "group_code": "NC_1237",
+      "guest": "Cristina Rodríguez",
+      "from": "2026-05-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1242,
+      "group_code": "NC_1242",
+      "guest": "Javier Moreno",
+      "from": "2026-06-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1245,
+      "group_code": "NC_1245",
+      "guest": "Santiago Tomas Pasteris",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1248,
+      "group_code": "NC_1248",
+      "guest": "Maria Magdalena",
+      "from": "2026-04-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1253,
+      "group_code": "NC_1253",
+      "guest": "Manuel Leza",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1254,
+      "group_code": "NC_1254",
+      "guest": "Bruna de Catro",
+      "from": "2026-07-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1255,
+      "group_code": "NC_1255",
+      "guest": "Dalva Gabriella",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1256,
+      "group_code": "NC_1256",
+      "guest": "Ali Cherif",
+      "from": "2026-08-17",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1270,
+      "group_code": "NC_1270",
+      "guest": "Amin Taherian",
+      "from": "2026-05-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1271,
+      "group_code": "NC_1271",
+      "guest": "Eusebio Victoria",
+      "from": "2026-05-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1272,
+      "group_code": "NC_1272",
+      "guest": "Sara Colume Azzouzi Idrissi",
+      "from": "2026-08-23",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1273,
+      "group_code": "NC_1273",
+      "guest": "Jackeline María",
+      "from": "2026-06-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1274,
+      "group_code": "NC_1274",
+      "guest": "Aranzazu Abellan Gonzalez",
+      "from": "2026-05-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1275,
+      "group_code": "NC_1275",
+      "guest": "Luisa María Loo",
+      "from": "2026-07-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1277,
+      "group_code": "NC_1277",
+      "guest": "Gabriel Reyes",
+      "from": "2026-04-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1279,
+      "group_code": "NC_1279",
+      "guest": "Mónica Camacho",
+      "from": "2026-04-17",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1281,
+      "group_code": "NC_1281",
+      "guest": "Eneko Gutierrez",
+      "from": "2026-04-14",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1284,
+      "group_code": "NC_1284",
+      "guest": "Juan José González",
+      "from": "2026-05-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1290,
+      "group_code": "NC_1290",
+      "guest": "Mayara Maresca",
+      "from": "2026-07-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1292,
+      "group_code": "NC_1292",
+      "guest": "Joaquín García",
+      "from": "2026-05-06",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1293,
+      "group_code": "NC_1293",
+      "guest": "Ana Isabel Horno",
+      "from": "2026-07-25",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1295,
+      "group_code": "NC_1295",
+      "guest": "Pedro Ruiz Navas",
+      "from": "2026-05-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1301,
+      "group_code": "NC_1301",
+      "guest": "Gabriela Carmen Gomez Galvez",
+      "from": "2026-05-19",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1302,
+      "group_code": "NC_1302",
+      "guest": "Elvis Eduardo",
+      "from": "2026-09-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1304,
+      "group_code": "NC_1304",
+      "guest": "Neel Sanjay Raja",
+      "from": "2026-07-16",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1306,
+      "group_code": "NC_1306",
+      "guest": "Nehemiah Zi",
+      "from": "2026-10-10",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1307,
+      "group_code": "NC_1307",
+      "guest": "Yumary Guerra Escalona",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1308,
+      "group_code": "NC_1308",
+      "guest": "Maybe Gamalu",
+      "from": "2026-06-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1309,
+      "group_code": "NC_1309",
+      "guest": "Marleny Rodriguez",
+      "from": "2026-05-14",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1310,
+      "group_code": "NC_1310",
+      "guest": "Paulette Mosqueira",
+      "from": "2026-08-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1316,
+      "group_code": "NC_1316",
+      "guest": "Joshua Drozda",
+      "from": "2026-10-20",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1318,
+      "group_code": "NC_1318",
+      "guest": "Jose Manuel Pazos Fernandez",
+      "from": "2026-05-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1319,
+      "group_code": "NC_1319",
+      "guest": "Federico Pedroza",
+      "from": "2026-08-20",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1321,
+      "group_code": "NC_1321",
+      "guest": "Zyad Ahmed Basha Aboubasha",
+      "from": "2026-08-23",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1322,
+      "group_code": "NC_1322",
+      "guest": "Francisco Javier Sanchez Mazo",
+      "from": "2026-05-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1326,
+      "group_code": "NC_1326",
+      "guest": "Víctor David Manzanares",
+      "from": "2026-08-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1328,
+      "group_code": "NC_1328",
+      "guest": "Ardeshir Cordero Alvarado",
+      "from": "2026-09-29",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1330,
+      "group_code": "NC_1330",
+      "guest": "Alex Federico Salinas",
+      "from": "2026-05-22",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1335,
+      "group_code": "NC_1335",
+      "guest": "Andrea Tejeda",
+      "from": "2026-08-21",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1336,
+      "group_code": "NC_1336",
+      "guest": "Diego Saez De Urabain Azon",
+      "from": "2026-08-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1337,
+      "group_code": "NC_1337",
+      "guest": "Carlos Navarro Castaño",
+      "from": "2026-10-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1341,
+      "group_code": "NC_1341",
+      "guest": "Diego Williams",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1343,
+      "group_code": "NC_1343",
+      "guest": "Zeina Mahdy Hamed",
+      "from": "2026-08-25",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1344,
+      "group_code": "NC_1344",
+      "guest": "Hana Mohamed",
+      "from": "2026-08-25",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1345,
+      "group_code": "NC_1345",
+      "guest": "María Franco",
+      "from": "2026-08-29",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1351,
+      "group_code": "NC_1351",
+      "guest": "Orlain Alexis",
+      "from": "2026-07-14",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1352,
+      "group_code": "NC_1352",
+      "guest": "Sophia dos Santos",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1355,
+      "group_code": "NC_1355",
+      "guest": "Noor Chebbi",
+      "from": "2026-08-24",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1356,
+      "group_code": "NC_1356",
+      "guest": "Diego Andrés Carmona",
+      "from": "2026-05-06",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1358,
+      "group_code": "NC_1358",
+      "guest": "Alexander Kristian",
+      "from": "2026-05-11",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1361,
+      "group_code": "NC_1361",
+      "guest": "Francisco Javier Villanueva Marquez",
+      "from": "2026-06-06",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1363,
+      "group_code": "NC_1363",
+      "guest": "María Cerezo",
+      "from": "2026-05-17",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1365,
+      "group_code": "NC_1365",
+      "guest": "Ahmed Mihit Bartal",
+      "from": "2026-05-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1366,
+      "group_code": "NC_1366",
+      "guest": "Alcione Teixeira Djalo",
+      "from": "2026-05-22",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1367,
+      "group_code": "NC_1367",
+      "guest": "Evelin Marrero",
+      "from": "2026-05-08",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1369,
+      "group_code": "NC_1369",
+      "guest": "Anna Nardelli Jimeno",
+      "from": "2026-10-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1371,
+      "group_code": "NC_1371",
+      "guest": "Ricardo Sanchez",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1372,
+      "group_code": "NC_1372",
+      "guest": "Danilto Danilto De Toni De Toni",
+      "from": "2026-05-16",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1377,
+      "group_code": "NC_1377",
+      "guest": "Carla Chaumeil",
+      "from": "2026-06-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1380,
+      "group_code": "NC_1380",
+      "guest": "Eliot Vegad Vega",
+      "from": "2026-05-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1382,
+      "group_code": "NC_1382",
+      "guest": "Camila Alejandra",
+      "from": "2026-09-04",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1387,
+      "group_code": "NC_1387",
+      "guest": "Carla de La Paz",
+      "from": "2026-10-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1389,
+      "group_code": "NC_1389",
+      "guest": "Yisselh Escobar Cedeno",
+      "from": "2026-06-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1392,
+      "group_code": "NC_1392",
+      "guest": "José Martín",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1393,
+      "group_code": "NC_1393",
+      "guest": "Santiago Castro",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1395,
+      "group_code": "NC_1395",
+      "guest": "Helen Araujo Goncalves",
+      "from": "2026-05-21",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1396,
+      "group_code": "NC_1396",
+      "guest": "Valeria Michelle",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1399,
+      "group_code": "NC_1399",
+      "guest": "Carla Rodriguez",
+      "from": "2026-09-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1400,
+      "group_code": "NC_1400",
+      "guest": "Ricardo Daniel Hernández",
+      "from": "2026-05-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1401,
+      "group_code": "NC_1401",
+      "guest": "Alberto Guzmán",
+      "from": "2026-05-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1403,
+      "group_code": "NC_1403",
+      "guest": "Francisca Paz León Sepulveda",
+      "from": "2026-10-06",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1408,
+      "group_code": "NC_1408",
+      "guest": "Marcelo Henrique de Alencar Costa",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1413,
+      "group_code": "NC_1413",
+      "guest": "Maria Alejandra Paez Martinez",
+      "from": "2026-05-21",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1414,
+      "group_code": "NC_1414",
+      "guest": "Hugo Valeiras Alvarez",
+      "from": "2026-08-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1416,
+      "group_code": "NC_1416",
+      "guest": "Jose Nicolas Monteagudo Lopez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1417,
+      "group_code": "NC_1417",
+      "guest": "Elisur Hernández Galván",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1419,
+      "group_code": "NC_1419",
+      "guest": "María Teresa Peña García",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1420,
+      "group_code": "NC_1420",
+      "guest": "Gisela Ariana",
+      "from": "2026-08-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1422,
+      "group_code": "NC_1422",
+      "guest": "Mohammed Balamane",
+      "from": "2026-08-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1423,
+      "group_code": "NC_1423",
+      "guest": "Alexander Miguel",
+      "from": "2026-05-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1425,
+      "group_code": "NC_1425",
+      "guest": "Danalee Maiceylynn",
+      "from": "2026-08-24",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1426,
+      "group_code": "NC_1426",
+      "guest": "Juanita Garzon Ariza",
+      "from": "2026-09-20",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1429,
+      "group_code": "NC_1429",
+      "guest": "Jonatan Laborda Lopez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1430,
+      "group_code": "NC_1430",
+      "guest": "Loreto Cáceres",
+      "from": "2026-09-20",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1431,
+      "group_code": "NC_1431",
+      "guest": "Edha Nine Kashyap",
+      "from": "2026-08-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1432,
+      "group_code": "NC_1432",
+      "guest": "Nayeli Ojeda Marin",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1433,
+      "group_code": "NC_1433",
+      "guest": "Isabel Couselo Vázquez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1434,
+      "group_code": "NC_1434",
+      "guest": "Juan Moral Macias",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1435,
+      "group_code": "NC_1435",
+      "guest": "Patricia Sarmiento Rivero",
+      "from": "2026-10-04",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1437,
+      "group_code": "NC_1437",
+      "guest": "Jose Antonio Espinola Madrid",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1438,
+      "group_code": "NC_1438",
+      "guest": "Jaime Morán Pellitero",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1442,
+      "group_code": "NC_1442",
+      "guest": "Jose De Juan De Juan",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1449,
+      "group_code": "NC_1449",
+      "guest": "Borja Alonso Alonso",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1450,
+      "group_code": "NC_1450",
+      "guest": "Jesús Bautista",
+      "from": "2026-05-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1452,
+      "group_code": "NC_1452",
+      "guest": "María Martínez",
+      "from": "2026-09-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1453,
+      "group_code": "NC_1453",
+      "guest": "José Luis Tomás Roca",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1459,
+      "group_code": "NC_1459",
+      "guest": "Stella Roselló",
+      "from": "2026-08-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1464,
+      "group_code": "NC_1464",
+      "guest": "Ramón Cordoba",
+      "from": "2026-06-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1468,
+      "group_code": "NC_1468",
+      "guest": "Malak Messour Messour",
+      "from": "2026-06-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1470,
+      "group_code": "NC_1470",
+      "guest": "Andrés María Nieto",
+      "from": "2026-08-10",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1471,
+      "group_code": "NC_1471",
+      "guest": "Damián Granado Benítez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1473,
+      "group_code": "NC_1473",
+      "guest": "Ana Luiza",
+      "from": "2026-06-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1477,
+      "group_code": "NC_1477",
+      "guest": "María Elena Pérez",
+      "from": "2026-06-24",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1479,
+      "group_code": "NC_1479",
+      "guest": "Amalia Dobre",
+      "from": "2026-05-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1484,
+      "group_code": "NC_1484",
+      "guest": "Ruben Folgoso Lorenzo",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1485,
+      "group_code": "NC_1485",
+      "guest": "Alba Maria Alou Luengo",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1492,
+      "group_code": "NC_1492",
+      "guest": "Anna Malsagova",
+      "from": "2026-07-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1493,
+      "group_code": "NC_1493",
+      "guest": "Alfonso Garcia Eiriz",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1496,
+      "group_code": "NC_1496",
+      "guest": "Erdogan Enes Sacli",
+      "from": "2026-06-03",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1497,
+      "group_code": "NC_1497",
+      "guest": "Sussy Yolanda Torres",
+      "from": "2026-06-04",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1499,
+      "group_code": "NC_1499",
+      "guest": "Adriana Maria Aleman Aguirre",
+      "from": "2026-06-04",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1500,
+      "group_code": "NC_1500",
+      "guest": "Karla Denisse",
+      "from": "2026-09-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1501,
+      "group_code": "NC_1501",
+      "guest": "Collin Pickett Miranda",
+      "from": "2026-08-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1502,
+      "group_code": "NC_1502",
+      "guest": "Borja Suárez",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1506,
+      "group_code": "NC_1506",
+      "guest": "Miguel Ángel Gómez",
+      "from": "2026-07-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1507,
+      "group_code": "NC_1507",
+      "guest": "Roman Khachatryan",
+      "from": "2026-06-17",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1509,
+      "group_code": "NC_1509",
+      "guest": "Henry Charles Cornwell",
+      "from": "2026-07-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1510,
+      "group_code": "NC_1510",
+      "guest": "Alejandro Rueda",
+      "from": "2026-07-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1511,
+      "group_code": "NC_1511",
+      "guest": "Max Elias",
+      "from": "2026-06-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1512,
+      "group_code": "NC_1512",
+      "guest": "Abraham López",
+      "from": "2026-06-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1513,
+      "group_code": "NC_1513",
+      "guest": "Sergio Ortega Hernandez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1514,
+      "group_code": "NC_1514",
+      "guest": "Pilar Lamas Barja",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1515,
+      "group_code": "NC_1515",
+      "guest": "Noah Litha Norbert Wilson Thurow",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1516,
+      "group_code": "NC_1516",
+      "guest": "Jesus Galera Fuentes",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1517,
+      "group_code": "NC_1517",
+      "guest": "Patricia Bernal Gonzalez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1518,
+      "group_code": "NC_1518",
+      "guest": "Alejandro Chanca Cornejo",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1519,
+      "group_code": "NC_1519",
+      "guest": "Adrian Boza Ivern",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1520,
+      "group_code": "NC_1520",
+      "guest": "Mohamed Saad Alami",
+      "from": "2026-09-20",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1522,
+      "group_code": "NC_1522",
+      "guest": "Yolanda Lirola Vélez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1523,
+      "group_code": "NC_1523",
+      "guest": "Francisco Javier Guirao Moreno",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1525,
+      "group_code": "NC_1525",
+      "guest": "Marta Callejo",
+      "from": "2026-06-10",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1526,
+      "group_code": "NC_1526",
+      "guest": "Roberto Muñoz Ramirez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1529,
+      "group_code": "NC_1529",
+      "guest": "Yasin Mohamed Ahmed",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1532,
+      "group_code": "NC_1532",
+      "guest": "Miguel Gomez Pena",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1533,
+      "group_code": "NC_1533",
+      "guest": "Christian Lopez Irving",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1534,
+      "group_code": "NC_1534",
+      "guest": "Ricardo Sancho Rodriguez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1535,
+      "group_code": "NC_1535",
+      "guest": "Juan Luis Garcia Ampudia",
+      "from": "2026-09-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1536,
+      "group_code": "NC_1536",
+      "guest": "Eva Segura",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1538,
+      "group_code": "NC_1538",
+      "guest": "Oscar Higuera Medina",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1539,
+      "group_code": "NC_1539",
+      "guest": "Antonio Tiebo Abal",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1541,
+      "group_code": "NC_1541",
+      "guest": "Malak Amr Mohsen Hamza",
+      "from": "2026-08-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1543,
+      "group_code": "NC_1543",
+      "guest": "Ricardo Fernandez Reguera",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1544,
+      "group_code": "NC_1544",
+      "guest": "Jorge Gallego",
+      "from": "2026-07-22",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1550,
+      "group_code": "NC_1550",
+      "guest": "Antonio Manuel Luna Rodríguez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1551,
+      "group_code": "NC_1551",
+      "guest": "Ignacio Fernández",
+      "from": "2026-08-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1552,
+      "group_code": "NC_1552",
+      "guest": "Marta Liu",
+      "from": "2026-10-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1554,
+      "group_code": "NC_1554",
+      "guest": "Mirsha Emiliano Macklis Cota",
+      "from": "2026-09-03",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1556,
+      "group_code": "NC_1556",
+      "guest": "Fernando Corchero Martin",
+      "from": "2026-09-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1557,
+      "group_code": "NC_1557",
+      "guest": "Miguel Angel Gomez Gordo",
+      "from": "2026-09-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1558,
+      "group_code": "NC_1558",
+      "guest": "Heliodoro Gomez Maroto",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1559,
+      "group_code": "NC_1559",
+      "guest": "Mohamed Mostafa",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1560,
+      "group_code": "NC_1560",
+      "guest": "Marcos Navarro Delgado",
+      "from": "2026-09-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1563,
+      "group_code": "NC_1563",
+      "guest": "Gustavo Alfredo Rodriguez Santodomingo",
+      "from": "2026-10-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1565,
+      "group_code": "NC_1565",
+      "guest": "Gong Hongwei",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1566,
+      "group_code": "NC_1566",
+      "guest": "Liang Maoxin",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1567,
+      "group_code": "NC_1567",
+      "guest": "Tang Manluo",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1568,
+      "group_code": "NC_1568",
+      "guest": "BEI MO",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1569,
+      "group_code": "NC_1569",
+      "guest": "Zhang Dengke",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1570,
+      "group_code": "NC_1570",
+      "guest": "Jiang Fei",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1571,
+      "group_code": "NC_1571",
+      "guest": "Lin Xiaobo",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1572,
+      "group_code": "NC_1572",
+      "guest": "Deng Guangyi",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1573,
+      "group_code": "NC_1573",
+      "guest": "Xiong Haolin",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1574,
+      "group_code": "NC_1574",
+      "guest": "XINYANG KOU",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1575,
+      "group_code": "NC_1575",
+      "guest": "CHAOMING BI",
+      "from": "2026-09-19",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1578,
+      "group_code": "NC_1578",
+      "guest": "Naiara Dieguez",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1579,
+      "group_code": "NC_1579",
+      "guest": "Ricardo Lorenzo Martinez Alvarez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1581,
+      "group_code": "NC_1581",
+      "guest": "Uxía Alonso",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1582,
+      "group_code": "NC_1582",
+      "guest": "Mohamemed Saeed Suleiman Al-Naamani",
+      "from": "2026-07-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1583,
+      "group_code": "NC_1583",
+      "guest": "Yisela Espitia",
+      "from": "2026-08-14",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1585,
+      "group_code": "NC_1585",
+      "guest": "Alonso Ayllon Román",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1587,
+      "group_code": "NC_1587",
+      "guest": "Jaime Suárez Rodríguez",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1589,
+      "group_code": "NC_1589",
+      "guest": "Francisco Javier Pinto",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1590,
+      "group_code": "NC_1590",
+      "guest": "Diego Tomas Barber Franced",
+      "from": "2026-10-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1595,
+      "group_code": "NC_1595",
+      "guest": "David Illescas Martinez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1596,
+      "group_code": "NC_1596",
+      "guest": "Franziska Schradi",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1597,
+      "group_code": "NC_1597",
+      "guest": "Alfonso Lopez Noya",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1598,
+      "group_code": "NC_1598",
+      "guest": "Gybran Alexander Lara Calle",
+      "from": "2026-08-17",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1600,
+      "group_code": "NC_1600",
+      "guest": "Metin Toprak",
+      "from": "2026-08-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1605,
+      "group_code": "NC_1605",
+      "guest": "Antonio Medrano Ballesteros",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1607,
+      "group_code": "NC_1607",
+      "guest": "Carlos Arturo Arismendi Castaño",
+      "from": "2026-06-19",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1608,
+      "group_code": "NC_1608",
+      "guest": "Jade Veerle Soeters",
+      "from": "2026-08-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1610,
+      "group_code": "NC_1610",
+      "guest": "Iván Díaz",
+      "from": "2026-06-24",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1612,
+      "group_code": "NC_1612",
+      "guest": "Amin Hossein",
+      "from": "2026-06-24",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1613,
+      "group_code": "NC_1613",
+      "guest": "Ángela Pacreu Cabeza",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1616,
+      "group_code": "NC_1616",
+      "guest": "Elena Hualda Aguado",
+      "from": "2026-07-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1618,
+      "group_code": "NC_1618",
+      "guest": "Marcos Alvar Bestilleiro",
+      "from": "2026-09-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1619,
+      "group_code": "NC_1619",
+      "guest": "Álvaro Vázquez",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1622,
+      "group_code": "NC_1622",
+      "guest": "Manuel Luis Jones Camacho",
+      "from": "2026-09-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1623,
+      "group_code": "NC_1623",
+      "guest": "Jose Alberto Marcilla Martínez",
+      "from": "2026-09-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1624,
+      "group_code": "NC_1624",
+      "guest": "Javier Del Rio Torcal",
+      "from": "2026-09-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1625,
+      "group_code": "NC_1625",
+      "guest": "Agustin Sastre Bort",
+      "from": "2026-09-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1627,
+      "group_code": "NC_1627",
+      "guest": "María del Mar",
+      "from": "2026-08-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1628,
+      "group_code": "NC_1628",
+      "guest": "Jorge Jimeno Saiz",
+      "from": "2026-09-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1630,
+      "group_code": "NC_1630",
+      "guest": "Goncalo Lince Biburguer Mariares de Vasconcelos",
+      "from": "2026-07-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1633,
+      "group_code": "NC_1633",
+      "guest": "Andres Rodriguez",
+      "from": "2026-08-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1634,
+      "group_code": "NC_1634",
+      "guest": "Maryam Yousif",
+      "from": "2026-08-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1636,
+      "group_code": "NC_1636",
+      "guest": "Violeta Fernández",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1638,
+      "group_code": "NC_1638",
+      "guest": "Miguel Angel Molina Hidalgo",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1639,
+      "group_code": "NC_1639",
+      "guest": "Alejandro Pardo Garcia",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1640,
+      "group_code": "NC_1640",
+      "guest": "Ruben Matilla Gonzalez",
+      "from": "2026-09-29",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1642,
+      "group_code": "NC_1642",
+      "guest": "Ziadoon Naseer Mrebee Al Fadhli",
+      "from": "2026-08-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1645,
+      "group_code": "NC_1645",
+      "guest": "Norah Pozza",
+      "from": "2026-09-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1646,
+      "group_code": "NC_1646",
+      "guest": "WANGSONG ZHANG",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1652,
+      "group_code": "NC_1652",
+      "guest": "Paula Vera",
+      "from": "2026-09-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1653,
+      "group_code": "NC_1653",
+      "guest": "Pedro Fernández",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1654,
+      "group_code": "NC_1654",
+      "guest": "Miguel Ángel Martín",
+      "from": "2026-09-10",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1655,
+      "group_code": "NC_1655",
+      "guest": "Isabella Nunez Rodriguez",
+      "from": "2026-10-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1656,
+      "group_code": "NC_1656",
+      "guest": "Roberto Hortal Garcia",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1657,
+      "group_code": "NC_1657",
+      "guest": "Javier Lopez Perez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1661,
+      "group_code": "NC_1661",
+      "guest": "Pedro Solina Molinero",
+      "from": "2026-07-10",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1662,
+      "group_code": "NC_1662",
+      "guest": "Alejandro Dimas Cruz Quintana",
+      "from": "2026-08-29",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1663,
+      "group_code": "NC_1663",
+      "guest": "Karima Nahal",
+      "from": "2026-07-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1664,
+      "group_code": "NC_1664",
+      "guest": "Verónica Callón González",
+      "from": "2026-08-08",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1665,
+      "group_code": "NC_1665",
+      "guest": "Tharife Nabil Ahmad AL-Kuffash",
+      "from": "2026-08-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1667,
+      "group_code": "NC_1667",
+      "guest": "Ricardo Martín",
+      "from": "2026-09-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1668,
+      "group_code": "NC_1668",
+      "guest": "Jack Ethan Locke",
+      "from": "2026-07-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1669,
+      "group_code": "NC_1669",
+      "guest": "Martina Carrera",
+      "from": "2026-10-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1670,
+      "group_code": "NC_1670",
+      "guest": "Evelyn Tibichi",
+      "from": "2026-10-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1671,
+      "group_code": "NC_1671",
+      "guest": "Abdulla Abdulaziz",
+      "from": "2026-08-06",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1672,
+      "group_code": "NC_1672",
+      "guest": "Gregorio Leaño Debal",
+      "from": "2026-07-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1673,
+      "group_code": "NC_1673",
+      "guest": "Shepherd Chitiyo",
+      "from": "2026-07-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1674,
+      "group_code": "NC_1674",
+      "guest": "Raul Pérez Morcillo",
+      "from": "2026-10-11",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1676,
+      "group_code": "NC_1676",
+      "guest": "Felix Arranz Antoranz",
+      "from": "2026-10-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1677,
+      "group_code": "NC_1677",
+      "guest": "Gabriela Marín",
+      "from": "2026-09-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1678,
+      "group_code": "NC_1678",
+      "guest": "Nicolas Cucalon Costa",
+      "from": "2026-08-11",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1679,
+      "group_code": "NC_1679",
+      "guest": "Gino Fabricio",
+      "from": "2026-08-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1682,
+      "group_code": "NC_1682",
+      "guest": "Andrés Fernando Veiga",
+      "from": "2026-09-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1683,
+      "group_code": "NC_1683",
+      "guest": "Andrés Yecid",
+      "from": "2026-10-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1685,
+      "group_code": "NC_1685",
+      "guest": "Pamela Alejandra",
+      "from": "2026-07-17",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1686,
+      "group_code": "NC_1686",
+      "guest": "Jesus Deben Leon",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1687,
+      "group_code": "NC_1687",
+      "guest": "César Brieva",
+      "from": "2026-08-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1688,
+      "group_code": "NC_1688",
+      "guest": "Husain Alnajjar Ali",
+      "from": "2026-08-19",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1690,
+      "group_code": "NC_1690",
+      "guest": "Jaime Garteiz Goxeascoa Rodriguez",
+      "from": "2026-08-25",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1692,
+      "group_code": "NC_1692",
+      "guest": "Rosana García",
+      "from": "2026-09-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1693,
+      "group_code": "NC_1693",
+      "guest": "Eduardo Del Castillo González",
+      "from": "2026-10-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1695,
+      "group_code": "NC_1695",
+      "guest": "Adnan Hable",
+      "from": "2026-08-25",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1699,
+      "group_code": "NC_1699",
+      "guest": "Evgeniia Chistiakova",
+      "from": "2026-07-20",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1700,
+      "group_code": "NC_1700",
+      "guest": "Jennifer Katherine",
+      "from": "2026-09-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1701,
+      "group_code": "NC_1701",
+      "guest": "Niki Sadat Arezehgar",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1702,
+      "group_code": "NC_1702",
+      "guest": "Yaiza Blanco Porras",
+      "from": "2026-09-14",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1704,
+      "group_code": "NC_1704",
+      "guest": "Manuel Daniel Trigo Varela",
+      "from": "2026-07-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1705,
+      "group_code": "NC_1705",
+      "guest": "Arihan Suzet Rojas Nieto",
+      "from": "2026-07-22",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1706,
+      "group_code": "NC_1706",
+      "guest": "Daniel Almeida",
+      "from": "2026-08-03",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1707,
+      "group_code": "NC_1707",
+      "guest": "Pablo Ortega Perez",
+      "from": "2026-08-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1708,
+      "group_code": "NC_1708",
+      "guest": "Esteban López López",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1709,
+      "group_code": "NC_1709",
+      "guest": "Daniel Meana",
+      "from": "2026-09-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1710,
+      "group_code": "NC_1710",
+      "guest": "Sebastian Leon Cañon",
+      "from": "2026-08-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1711,
+      "group_code": "NC_1711",
+      "guest": "Panna Pócsik",
+      "from": "2026-08-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1712,
+      "group_code": "NC_1712",
+      "guest": "Stefan Radu Petrescu",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1713,
+      "group_code": "NC_1713",
+      "guest": "Ismael Gago Prado",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1716,
+      "group_code": "NC_1716",
+      "guest": "Isabella Ariza Trujillo",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1717,
+      "group_code": "NC_1717",
+      "guest": "Jorge Rodríguez",
+      "from": "2026-08-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1719,
+      "group_code": "NC_1719",
+      "guest": "Oscar Rivera",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1720,
+      "group_code": "NC_1720",
+      "guest": "Rebeca Pascual",
+      "from": "2026-08-10",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1723,
+      "group_code": "NC_1723",
+      "guest": "Tabu Mohungoo",
+      "from": "2026-09-09",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1724,
+      "group_code": "NC_1724",
+      "guest": "Martina Petrova",
+      "from": "2026-09-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1726,
+      "group_code": "NC_1726",
+      "guest": "Michael Eddy Chavez Bravo",
+      "from": "2026-08-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1727,
+      "group_code": "NC_1727",
+      "guest": "Alvaro Morales Carracedo",
+      "from": "2026-09-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1731,
+      "group_code": "NC_1731",
+      "guest": "Pablo Muñoz Abiega",
+      "from": "2026-08-03",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1753,
+      "group_code": "NC_1753",
+      "guest": "Alonso Vela",
+      "from": "2026-08-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1754,
+      "group_code": "NC_1754",
+      "guest": "Manuel Antonio Africano Alvarez Arias",
+      "from": "2026-08-24",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1755,
+      "group_code": "NC_1755",
+      "guest": "Syed Mohammed Fateh Aga",
+      "from": "2026-08-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1756,
+      "group_code": "NC_1756",
+      "guest": "Claudia Torrubia Campa",
+      "from": "2026-09-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1760,
+      "group_code": "NC_1760",
+      "guest": "Arturo Torres Velazquez",
+      "from": "2026-10-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1761,
+      "group_code": "NC_1761",
+      "guest": "Luca Arrowsmith",
+      "from": "2026-08-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1762,
+      "group_code": "NC_1762",
+      "guest": "Iván Pérez",
+      "from": "2026-09-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1763,
+      "group_code": "NC_1763",
+      "guest": "Julia Maria Diaz",
+      "from": "2026-10-04",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1764,
+      "group_code": "NC_1764",
+      "guest": "Anastasiia Vedmina",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1765,
+      "group_code": "NC_1765",
+      "guest": "Nils Lang",
+      "from": "2026-08-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1767,
+      "group_code": "NC_1767",
+      "guest": "Danel Hills Aguirregomezcorta",
+      "from": "2026-10-09",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1771,
+      "group_code": "NC_1771",
+      "guest": "Vincent Marini",
+      "from": "2026-09-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1772,
+      "group_code": "NC_1772",
+      "guest": "Noe Fernandez Vivancos",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1773,
+      "group_code": "NC_1773",
+      "guest": "Fana Colette Harper-Tyson",
+      "from": "2026-08-10",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1774,
+      "group_code": "NC_1774",
+      "guest": "Silvia Mayo",
+      "from": "2026-09-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1775,
+      "group_code": "NC_1775",
+      "guest": "Hind El",
+      "from": "2026-08-29",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1778,
+      "group_code": "NC_1778",
+      "guest": "Ana Arminio",
+      "from": "2026-08-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1780,
+      "group_code": "NC_1780",
+      "guest": "Andrea Benítez",
+      "from": "2026-09-19",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1781,
+      "group_code": "NC_1781",
+      "guest": "Selma Mekhfi",
+      "from": "2026-08-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1782,
+      "group_code": "NC_1782",
+      "guest": "Max Bowler",
+      "from": "2026-10-24",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1783,
+      "group_code": "NC_1783",
+      "guest": "Daniela Castillo Alba",
+      "from": "2026-09-25",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1784,
+      "group_code": "NC_1784",
+      "guest": "Salla Rassull",
+      "from": "2026-09-09",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1785,
+      "group_code": "NC_1785",
+      "guest": "Enrique Caracciolo",
+      "from": "2026-09-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1786,
+      "group_code": "NC_1786",
+      "guest": "Exequiel Caracciolo",
+      "from": "2026-09-09",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1788,
+      "group_code": "NC_1788",
+      "guest": "Fernando de Valdes Garcia San Miguel",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1790,
+      "group_code": "NC_1790",
+      "guest": "Miryam Patricia",
+      "from": "2026-08-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1791,
+      "group_code": "NC_1791",
+      "guest": "Patricia Alexandra",
+      "from": "2026-09-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1792,
+      "group_code": "NC_1792",
+      "guest": "Nattan Samuel Degefa",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1793,
+      "group_code": "NC_1793",
+      "guest": "Jacinto Manuel García",
+      "from": "2026-08-20",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1795,
+      "group_code": "NC_1795",
+      "guest": "Alvaro Ruiz Carrasco",
+      "from": "2026-10-29",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1797,
+      "group_code": "NC_1797",
+      "guest": "Ginés Noales",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1799,
+      "group_code": "NC_1799",
+      "guest": "Laura Valentina Cuervo",
+      "from": "2026-09-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1800,
+      "group_code": "NC_1800",
+      "guest": "Reka Juszku",
+      "from": "2026-08-24",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1802,
+      "group_code": "NC_1802",
+      "guest": "Issa Fares Asem",
+      "from": "2026-10-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1806,
+      "group_code": "NC_1806",
+      "guest": "Lloyd Murphy",
+      "from": "2026-08-21",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1810,
+      "group_code": "NC_1810",
+      "guest": "Saif Talal Mohamed Sulaiman",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1811,
+      "group_code": "NC_1811",
+      "guest": "Yanis Costa H Vivier",
+      "from": "2026-08-24",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1814,
+      "group_code": "NC_1814",
+      "guest": "Andres Nicolas Prisiceanu Moraru",
+      "from": "2026-09-06",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1815,
+      "group_code": "NC_1815",
+      "guest": "Isabel Chatcha",
+      "from": "2026-09-14",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1816,
+      "group_code": "NC_1816",
+      "guest": "Andrés Murillo",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1819,
+      "group_code": "NC_1819",
+      "guest": "Jimena Prieto Mangas",
+      "from": "2026-09-06",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1822,
+      "group_code": "NC_1822",
+      "guest": "Fatima Romero Bastante",
+      "from": "2026-09-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1823,
+      "group_code": "NC_1823",
+      "guest": "Caitlyn Bautista",
+      "from": "2026-09-03",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1826,
+      "group_code": "NC_1826",
+      "guest": "Eder Mauricio Sarmiento Vela",
+      "from": "2026-08-21",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1829,
+      "group_code": "NC_1829",
+      "guest": "Julia Sánchez",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1831,
+      "group_code": "NC_1831",
+      "guest": "Mireya Nuñez Manchado",
+      "from": "2026-10-03",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1833,
+      "group_code": "NC_1833",
+      "guest": "Jose Ramon Benito Martins",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1834,
+      "group_code": "NC_1834",
+      "guest": "Juan Carlos Iañez Díez",
+      "from": "2026-09-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1835,
+      "group_code": "NC_1835",
+      "guest": "Carlos Aguilar",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1836,
+      "group_code": "NC_1836",
+      "guest": "Ana Lopez",
+      "from": "2026-08-29",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1837,
+      "group_code": "NC_1837",
+      "guest": "Fernando Padin",
+      "from": "2026-10-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1840,
+      "group_code": "NC_1840",
+      "guest": "Maria Elisavet Stasinopoulou",
+      "from": "2026-08-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1842,
+      "group_code": "NC_1842",
+      "guest": "Maria Teresa Hernandez",
+      "from": "2026-08-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1844,
+      "group_code": "NC_1844",
+      "guest": "George Mihai Roman",
+      "from": "2026-09-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1845,
+      "group_code": "NC_1845",
+      "guest": "Gabriel Monteiro Junior",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1846,
+      "group_code": "NC_1846",
+      "guest": "Sohaib El Nel",
+      "from": "2026-08-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1847,
+      "group_code": "NC_1847",
+      "guest": "Abel Taveras",
+      "from": "2026-08-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1850,
+      "group_code": "NC_1850",
+      "guest": "Vilmaris Andreina Justo",
+      "from": "2026-08-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1851,
+      "group_code": "NC_1851",
+      "guest": "Sandra Nadia",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1852,
+      "group_code": "NC_1852",
+      "guest": "Emma Le Guillou",
+      "from": "2026-09-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1853,
+      "group_code": "NC_1853",
+      "guest": "Pablo Munilla Jordan",
+      "from": "2026-10-29",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1857,
+      "group_code": "NC_1857",
+      "guest": "Denis Orlov",
+      "from": "2026-09-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1858,
+      "group_code": "NC_1858",
+      "guest": "Sara García",
+      "from": "2026-09-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1859,
+      "group_code": "NC_1859",
+      "guest": "Alexander Sergeevich Kurenev",
+      "from": "2026-09-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1860,
+      "group_code": "NC_1860",
+      "guest": "Emilie Aileen Lecarte Borja",
+      "from": "2026-09-03",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1861,
+      "group_code": "NC_1861",
+      "guest": "Jose Daniel",
+      "from": "2026-09-03",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1862,
+      "group_code": "NC_1862",
+      "guest": "Antonio Peñas",
+      "from": "2026-09-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1864,
+      "group_code": "NC_1864",
+      "guest": "Tyleen Teresa McDonald",
+      "from": "2026-09-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1866,
+      "group_code": "NC_1866",
+      "guest": "Ghalyah Salem",
+      "from": "2026-09-25",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1867,
+      "group_code": "NC_1867",
+      "guest": "Daniel Arauzo Carrera",
+      "from": "2026-09-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1871,
+      "group_code": "NC_1871",
+      "guest": "Laura Valero",
+      "from": "2026-09-10",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1872,
+      "group_code": "NC_1872",
+      "guest": "Manuela Ospina",
+      "from": "2026-09-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1877,
+      "group_code": "NC_1877",
+      "guest": "Serena Fioriti",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1878,
+      "group_code": "NC_1878",
+      "guest": "Héctor Raúl Orozco Leal",
+      "from": "2026-09-04",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1880,
+      "group_code": "NC_1880",
+      "guest": "Pranit Ad Thakkar",
+      "from": "2026-09-21",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1881,
+      "group_code": "NC_1881",
+      "guest": "Majd Hijazi",
+      "from": "2026-09-20",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1882,
+      "group_code": "NC_1882",
+      "guest": "Damini Guillan",
+      "from": "2026-09-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1883,
+      "group_code": "NC_1883",
+      "guest": "Santiago Pelaez",
+      "from": "2026-09-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1886,
+      "group_code": "NC_1886",
+      "guest": "Marta Lloret I Vila",
+      "from": "2026-10-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1889,
+      "group_code": "NC_1889",
+      "guest": "Daniel Focsa",
+      "from": "2026-09-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1890,
+      "group_code": "NC_1890",
+      "guest": "Jia Junfu",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1891,
+      "group_code": "NC_1891",
+      "guest": "Chen Xiandeng",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1892,
+      "group_code": "NC_1892",
+      "guest": "Hong Weijie",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1893,
+      "group_code": "NC_1893",
+      "guest": "Fernando Villamor Coedo",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1894,
+      "group_code": "NC_1894",
+      "guest": "Latrell Tissen",
+      "from": "2026-09-09",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1895,
+      "group_code": "NC_1895",
+      "guest": "Eva Emelyanova",
+      "from": "2026-09-09",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1897,
+      "group_code": "NC_1897",
+      "guest": "Haseeb Michael",
+      "from": "2026-09-11",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1900,
+      "group_code": "NC_1900",
+      "guest": "Naylibeth Gabriela",
+      "from": "2026-09-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1901,
+      "group_code": "NC_1901",
+      "guest": "Sheila Rosanna Cruz",
+      "from": "2026-09-10",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1902,
+      "group_code": "NC_1902",
+      "guest": "Luis Gerardo Ávila Macías",
+      "from": "2026-09-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1904,
+      "group_code": "NC_1904",
+      "guest": "José Luis Consuegra",
+      "from": "2026-09-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1908,
+      "group_code": "NC_1908",
+      "guest": "Ibrahim Lotfi",
+      "from": "2026-09-11",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1919,
+      "group_code": "NC_1919",
+      "guest": "Jose Manuel",
+      "from": "2026-09-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1920,
+      "group_code": "NC_1920",
+      "guest": "Mentor Zaberxhaj",
+      "from": "2026-09-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1922,
+      "group_code": "NC_1922",
+      "guest": "Rania Ines",
+      "from": "2026-09-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1923,
+      "group_code": "NC_1923",
+      "guest": "Estefanía Zoe González",
+      "from": "2026-09-18",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1924,
+      "group_code": "NC_1924",
+      "guest": "Gustavo Antonio Barahona Pinto",
+      "from": "2026-10-22",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1929,
+      "group_code": "NC_1929",
+      "guest": "Neville Awelle",
+      "from": "2026-10-25",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1930,
+      "group_code": "NC_1930",
+      "guest": "Diana Huerta",
+      "from": "2026-09-19",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1931,
+      "group_code": "NC_1931",
+      "guest": "Daniel Rodriguez Escribano",
+      "from": "2026-09-21",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1933,
+      "group_code": "NC_1933",
+      "guest": "Carmen Blanco",
+      "from": "2026-09-20",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1935,
+      "group_code": "NC_1935",
+      "guest": "Sebastián Del Moral Mesa",
+      "from": "2026-10-21",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1936,
+      "group_code": "NC_1936",
+      "guest": "Maria Angeles Perez San Roman",
+      "from": "2026-09-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1937,
+      "group_code": "NC_1937",
+      "guest": "Rodrigo Antonio Suarez Putzeys",
+      "from": "2026-09-19",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1938,
+      "group_code": "NC_1938",
+      "guest": "Diego Garcia Lozano",
+      "from": "2026-10-10",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1939,
+      "group_code": "NC_1939",
+      "guest": "Almudena Maria Gonzalez Requejo",
+      "from": "2026-10-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1943,
+      "group_code": "NC_1943",
+      "guest": "Tifanny Salazar Tobon",
+      "from": "2026-10-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1944,
+      "group_code": "NC_1944",
+      "guest": "Yajayra Lesly",
+      "from": "2026-10-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1945,
+      "group_code": "NC_1945",
+      "guest": "Carlos Enrique Correa",
+      "from": "2026-10-31",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1946,
+      "group_code": "NC_1946",
+      "guest": "Alyssa Keta",
+      "from": "2026-10-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1947,
+      "group_code": "NC_1947",
+      "guest": "Carlos Fel Regueras Gutierrez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1948,
+      "group_code": "NC_1948",
+      "guest": "José Manuel Lumbreras",
+      "from": "2026-09-20",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1949,
+      "group_code": "NC_1949",
+      "guest": "Joaquín Ramírez",
+      "from": "2026-10-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1950,
+      "group_code": "NC_1950",
+      "guest": "Juliana Beltrán",
+      "from": "2026-10-09",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1951,
+      "group_code": "NC_1951",
+      "guest": "Nora Isabel Mendoza",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1952,
+      "group_code": "NC_1952",
+      "guest": "Miroslava Potocek",
+      "from": "2026-09-29",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1957,
+      "group_code": "NC_1957",
+      "guest": "Susana García",
+      "from": "2026-09-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1958,
+      "group_code": "NC_1958",
+      "guest": "Edgar Manuel",
+      "from": "2026-10-09",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1959,
+      "group_code": "NC_1959",
+      "guest": "Adin Leobardo Abrica Cortes",
+      "from": "2026-10-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 1960,
+      "group_code": "NC_1960",
+      "guest": "Joao Pedro Caeiro Rosado da Silva Pissarra",
+      "from": "2026-10-11",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2031,
+      "group_code": "NC_2031",
+      "guest": "Alejandro Pinzón Pulido",
+      "from": "2026-09-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2032,
+      "group_code": "NC_2032",
+      "guest": "Julen Goñi Otamendi",
+      "from": "2026-10-23",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2034,
+      "group_code": "NC_2034",
+      "guest": "Libio Encarnación Mateo",
+      "from": "2026-09-27",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2067,
+      "group_code": "NC_2067",
+      "guest": "Lenny Jay",
+      "from": "2026-10-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2070,
+      "group_code": "NC_2070",
+      "guest": "Pedro Ramón Rodríguez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2072,
+      "group_code": "NC_2072",
+      "guest": "Roberto Pezzali",
+      "from": "2026-09-30",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2073,
+      "group_code": "NC_2073",
+      "guest": "Laura Leticia",
+      "from": "2026-10-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2074,
+      "group_code": "NC_2074",
+      "guest": "Manuel Sierra Asensi",
+      "from": "2026-10-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2075,
+      "group_code": "NC_2075",
+      "guest": "Lyna Habibi",
+      "from": "2026-10-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2077,
+      "group_code": "NC_2077",
+      "guest": "Sharif Reazul Arefin",
+      "from": "2026-10-06",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2079,
+      "group_code": "NC_2079",
+      "guest": "Yesmina Yazek",
+      "from": "2026-10-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2080,
+      "group_code": "NC_2080",
+      "guest": "Guadalupe Cuestas",
+      "from": "2026-09-28",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2081,
+      "group_code": "NC_2081",
+      "guest": "Melody Zafar Gholizadeh",
+      "from": "2026-10-01",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2082,
+      "group_code": "NC_2082",
+      "guest": "Jhon Esneider Florez Florez",
+      "from": "2026-10-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2083,
+      "group_code": "NC_2083",
+      "guest": "Andres David Castro Galeano",
+      "from": "2026-10-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2084,
+      "group_code": "NC_2084",
+      "guest": "Juan David Ceballos Buitrago",
+      "from": "2026-10-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2085,
+      "group_code": "NC_2085",
+      "guest": "Caranorte Ingenieros SL",
+      "from": "2026-10-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2088,
+      "group_code": "NC_2088",
+      "guest": "Cosmin Daniel Livadaru",
+      "from": "2026-10-20",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2089,
+      "group_code": "NC_2089",
+      "guest": "Santiago Agudelo",
+      "from": "2026-10-05",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2090,
+      "group_code": "NC_2090",
+      "guest": "Filip Adam Beverwijk",
+      "from": "2026-10-26",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2091,
+      "group_code": "NC_2091",
+      "guest": "Bernardo Alfonso Torres Mosquera",
+      "from": "2026-10-08",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2092,
+      "group_code": "NC_2092",
+      "guest": "Eduardo Vazquez Talavera",
+      "from": "2026-10-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2093,
+      "group_code": "NC_2093",
+      "guest": "Amandine Ferreira Do Vale",
+      "from": "2026-10-11",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2094,
+      "group_code": "NC_2094",
+      "guest": "Reem Adnan A. Alshaheen",
+      "from": "2026-10-09",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2095,
+      "group_code": "NC_2095",
+      "guest": "Dilan Boeer",
+      "from": "2026-10-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2096,
+      "group_code": "NC_2096",
+      "guest": "Sergio Quintanilla Cantu",
+      "from": "2026-10-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2097,
+      "group_code": "NC_2097",
+      "guest": "Ana Paula Antonini",
+      "from": "2026-10-07",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2098,
+      "group_code": "NC_2098",
+      "guest": "Esteban Cruz Gonzalez",
+      "from": "2026-10-09",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2099,
+      "group_code": "NC_2099",
+      "guest": "Patrick Labrijn",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2101,
+      "group_code": "NC_2101",
+      "guest": "Astrid Matehius",
+      "from": "2026-10-08",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2102,
+      "group_code": "NC_2102",
+      "guest": "Luisa Fernanda Valbuena Rodríguez",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2105,
+      "group_code": "NC_2105",
+      "guest": "Daniel Chen",
+      "from": "2026-10-12",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2107,
+      "group_code": "NC_2107",
+      "guest": "Joaquim Tomas Ribera",
+      "from": "2026-10-04",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2108,
+      "group_code": "NC_2108",
+      "guest": "Maria Teresa Drago Abellon",
+      "from": "2026-10-11",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2109,
+      "group_code": "NC_2109",
+      "guest": "Gabriel Blanquez De La Fuente",
+      "from": "2026-10-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2110,
+      "group_code": "NC_2110",
+      "guest": "Luis Guillermo Paredes Hernández",
+      "from": "2026-10-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2111,
+      "group_code": "NC_2111",
+      "guest": "Eleni Straitouri",
+      "from": "2026-10-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2112,
+      "group_code": "NC_2112",
+      "guest": "Pietro Chesús",
+      "from": "2026-10-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2113,
+      "group_code": "NC_2113",
+      "guest": "Nicholas Gregory Lacey",
+      "from": "2026-10-13",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2114,
+      "group_code": "NC_2114",
+      "guest": "Marta Marcucci",
+      "from": "2026-11-02",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2115,
+      "group_code": "NC_2115",
+      "guest": "Fadel Ben Ghith",
+      "from": "2026-10-15",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2117,
+      "group_code": "NC_2117",
+      "guest": "Alejandro Múñoz",
+      "from": "2026-10-09",
+      "to": "2026-11-01"
+    },
+    {
+      "nc_number": 2118,
+      "group_code": "NC_2118",
+      "guest": "Bryan Javier Hernandez",
+      "from": "2026-10-16",
+      "to": "2026-11-01"
+    }
+  ]
+}

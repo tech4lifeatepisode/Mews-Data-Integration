@@ -214,7 +214,8 @@ export function driveHealthLines() {
     '  POST/GET /drive/reconcile-ai?sync_id= — fix ai_extraction for every file row in a sync\n' +
     '  POST/GET /drive/reconcile-ai?all=1 — fix ai_extraction for all Contracts files (NC_0574+)\n' +
     '  POST/GET /drive/sync-migration — upload NCs with green F + B2C/B2B2C in migration xlsx\n' +
-    '  POST/GET /drive/sync-missing-from-review — upload NCs not on review sheets (644 allowlist)\n'
+    '  POST/GET /drive/sync-missing-from-review — upload NCs not on review sheets (644 allowlist)\n' +
+    '  POST/GET /drive/sync-allowlist?ncs=2091,2102 — upload only listed NC folders from Drive\n'
   );
 }
 
@@ -1006,6 +1007,48 @@ export async function handleDriveHttp(req, res) {
           const message = error instanceof Error ? error.message : String(error);
           lastSync = { ok: false, message, at: new Date().toISOString() };
           console.error('Drive sync failed:', message);
+        })
+        .finally(() => {
+          syncRunning = false;
+        });
+      return true;
+    }
+
+    if (url === '/drive/sync-allowlist' && (req.method === 'POST' || req.method === 'GET')) {
+      const bodyText = req.method === 'POST' ? await readBody(req) : '';
+      if (!checkSyncAuth(req, bodyText)) {
+        sendJson(res, 401, { ok: false, error: 'unauthorized' });
+        return true;
+      }
+      const query = new URL(raw, 'http://localhost').searchParams;
+      const fromQuery = query.get('ncs') || query.get('nc');
+      const fromBody = new URLSearchParams(bodyText || '').get('ncs');
+      const rawList = (fromQuery || fromBody || '').trim();
+      const numbers = rawList
+        .split(/[,;\s]+/)
+        .map((s) => parseInt(s.replace(/\D/g, ''), 10))
+        .filter((n) => Number.isFinite(n) && n > 0);
+      const allowlist = new Set(numbers.map(String));
+      if (allowlist.size === 0) {
+        sendJson(res, 400, { ok: false, error: 'missing_ncs', hint: 'Use ?ncs=2091,2102 or form field ncs=' });
+        return true;
+      }
+      if (syncRunning) {
+        sendJson(res, 409, { ok: false, error: 'sync_already_running' });
+        return true;
+      }
+      syncRunning = true;
+      const started = `Allowlist sync started for ${allowlist.size} NC(s)`;
+      sendJson(res, 202, { ok: true, accepted: true, message: started, ncs: [...allowlist] });
+      syncDriveToSupabase({ allowlist, allowlistLabel: 'sync-allowlist-query' })
+        .then((stats) => {
+          lastSync = { ok: true, message: JSON.stringify(stats), at: new Date().toISOString() };
+          console.log('Drive allowlist sync finished', stats);
+        })
+        .catch((error) => {
+          const message = error instanceof Error ? error.message : String(error);
+          lastSync = { ok: false, message, at: new Date().toISOString() };
+          console.error('Drive allowlist sync failed:', message);
         })
         .finally(() => {
           syncRunning = false;

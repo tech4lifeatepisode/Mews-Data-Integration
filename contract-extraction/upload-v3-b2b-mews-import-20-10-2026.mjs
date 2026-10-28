@@ -19,8 +19,14 @@ import { applyMewsRoomAndCategoryStandards } from './mews-room-format.mjs';
 import { loadRoomNumberCategoryMap, clean } from './room-number-to-category.mjs';
 import { shouldExcludeNcFromV2 } from './tenancy-nc-overrides.mjs';
 import { applyUnitActualValueCategory, loadUnitActualValueByNc } from './nc-unit-actual-value.mjs';
+import { isChamariEntity } from './chamari-strip.mjs';
 
 const V2_CUSTOMERS = 'V2_Final_Format_All_Fields_Match_Mews_Import_19_10_2026';
+const V2_COMPANIES_CANDIDATES = [
+  process.env.V2_COMPANIES_TABLE,
+  'V2_Final_Format_All_Fields_Match_Mews_Import_Companies_19_10_2026',
+  'V2_Final_Format_All_Fields_Match_Mews_Import_Companies_19_10_20',
+].filter(Boolean);
 const V3_B2B_CUSTOMERS = 'V3_Final_B2B_All_Fields_Match_Mews_Import_20_10_2026';
 const LIFECYCLE = 'HouseMonk_Tenancy_Lifecycle_NC_14_10_2026';
 const FF_HM = 'Final_Format_HouseMonk_15_10_2026';
@@ -123,6 +129,18 @@ function skeletonFromHmAndLifecycle(nc, hm, lifecycle, cust) {
     'Allocated Rate': hm?.['Allocated Rate'] ?? cust?.['Allocated Rate'] ?? null,
     'Currency Code': 'EUR',
   };
+}
+
+async function fetchV2CompanyRows() {
+  for (const table of V2_COMPANIES_CANDIDATES) {
+    try {
+      const rows = await fetchAll(table);
+      if (rows.length) return rows;
+    } catch {
+      /* try next table name */
+    }
+  }
+  return [];
 }
 
 async function fetchAll(table, { orderByNc = true } = {}) {
@@ -244,6 +262,7 @@ const [
   companiesExtract,
   missingGc,
   unitActualByNc,
+  v2CompanyRows,
 ] = await Promise.all([
   fetchAll(V2_CUSTOMERS),
   fetchAll(LIFECYCLE),
@@ -254,6 +273,7 @@ const [
   fetchAll(COMPANIES_EXTRACTION, { orderByNc: false }).catch(() => []),
   fetchAll(MISSING_GC, { orderByNc: false }).catch(() => []),
   loadUnitActualValueByNc(),
+  fetchV2CompanyRows(),
 ]);
 
 const segByNc = indexFirstByNc(ffSeg);
@@ -261,6 +281,7 @@ const custByNc = indexFirstByNc(ffCust);
 const custExtByNc = indexFirstByNc(custExt);
 const hmByNc = indexAllHmByNc(ffHm);
 const v2ByNc = new Map(v2Rows.map((r) => [Number(r.nc_number), r]));
+const v2CompanyByNc = new Map(v2CompanyRows.map((r) => [Number(r.nc_number), r]));
 const missingGcNcs = indexMissingGroupCodeNcs(missingGc);
 
 const { ncSet, activeLifecycleByNc } = buildV3B2bNcSet({
@@ -307,6 +328,7 @@ for (const nc of [...ncSet].sort((a, b) => a - b)) {
     seg,
     lifecycle,
     companiesExtract,
+    v2CompanyRow: v2CompanyByNc.get(nc),
   });
 
   if (!clean(row['Last Name(*)']) && !clean(row['First Name'])) {
@@ -315,7 +337,9 @@ for (const nc of [...ncSet].sort((a, b) => a - b)) {
   }
   if (!isFilledMewsField(row['Partner Company']) && !isFilledMewsField(row['Company Id'])) {
     skippedNoCompany.push(nc);
-    continue;
+    row['Partner Company'] = null;
+    row['Company Id'] = null;
+    if (isChamariEntity(row['Tax Identification Number'])) row['Tax Identification Number'] = null;
   }
 
   applyMewsRoomAndCategoryStandards(row, roomMap);

@@ -4,6 +4,8 @@ import { applyPersonCountFills } from './mews-person-count.mjs';
 import { applyMewsStayRateAndMonthlyPricing } from './mews-stay-rate-and-products-format.mjs';
 import { applyMewsImportReadyFields } from './mews-import-ready.mjs';
 import { reapplyB2bCompanyOnCustomer } from './v2-b2b-company-build.mjs';
+import { stripChamariFromCustomerRow } from './chamari-strip.mjs';
+import { clearSallaRassullPlaceholderGuestFields } from './b2b-partner-company-resolve.mjs';
 import { isExtractionArtifactField } from './v3-b2c-row-sanitize.mjs';
 import {
   applyB2bTenancyGuestFields,
@@ -80,13 +82,15 @@ export function sanitizeV3B2bCustomerRow(row, ctx) {
     seg = null,
     lifecycle = null,
     companiesExtract = [],
+    v2CompanyRow = null,
   } = ctx || {};
 
-  let out = { ...row };
+  let out = clearSallaRassullPlaceholderGuestFields({ ...row });
   const cust = customersFinal || customersExt;
   if (customersExt) {
     out = applyContractExtractionOverlay(out, customersExt, { fields: CONTRACT_B2B_COMMERCIAL_FIELDS });
   }
+  out = clearSallaRassullPlaceholderGuestFields(out);
 
   if (isExtractionArtifactField(out.Sex)) out.Sex = null;
   if (isExtractionArtifactField(out['Nationality Code'])) out['Nationality Code'] = null;
@@ -114,15 +118,15 @@ export function sanitizeV3B2bCustomerRow(row, ctx) {
 
   reapplyB2bCompanyOnCustomer(out, nc, {
     seg,
-    cust: cust || customersFinal,
+    cust: customersFinal || cust,
+    customersExt,
     hm,
     companiesExtract,
     tenancyRow,
+    v2CompanyRow,
   });
 
-  setIfEmpty(out, 'Partner Company', cust?.['Partner Company']);
-  setIfEmpty(out, 'Company Id', cust?.['Company Id'] || cust?.['Partner Company']);
-  setIfEmpty(out, 'Tax Identification Number', cust?.['Tax Identification Number']);
+  stripChamariFromCustomerRow(out);
 
   const mapped = mapRowToMewsIncludedProducts(out, cust || customersFinal);
   if (mapped) out['Included Products'] = mapped;
@@ -133,6 +137,6 @@ export function sanitizeV3B2bCustomerRow(row, ctx) {
 
   nullBlankMewsFields(out, ['Partner Company', 'Company Id', 'Tax Identification Number']);
 
-  out.Source = 'B2B contract + HouseMonk';
-  return out;
+  out.Source = null;
+  stripChamariFromCustomerRow(out);
 }

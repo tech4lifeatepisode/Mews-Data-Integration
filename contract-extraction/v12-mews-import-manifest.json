@@ -1,0 +1,33 @@
+{
+  "packages": [
+    {
+      "label": "full",
+      "path": "C:\\Users\\Claudio\\Downloads\\V12_Full_Mews_import_V4_B2C_and_B2B_21_10_2026_combined.xlsx",
+      "customers": 607,
+      "companies": 68,
+      "prepaymentDeposit": 605
+    },
+    {
+      "label": "importable_arrival_gte_2026-10-21",
+      "path": "C:\\Users\\Claudio\\Downloads\\V12_Importable_Mews_import_V4_B2C_and_B2B_21_10_2026_combined.xlsx",
+      "customers": 49,
+      "companies": 5,
+      "prepaymentDeposit": 49
+    },
+    {
+      "label": "full_repo",
+      "path": "C:\\Users\\Claudio\\Desktop\\Mews Data Integration\\Mews_import_V12_Full_V4_B2C_B2B_21_10_2026_combined.xlsx",
+      "customers": 607,
+      "companies": 68,
+      "prepaymentDeposit": 605
+    },
+    {
+      "label": "importable_repo",
+      "path": "C:\\Users\\Claudio\\Desktop\\Mews Data Integration\\Mews_import_V12_Importable_V4_B2C_B2B_21_10_2026_combined.xlsx",
+      "customers": 49,
+      "companies": 5,
+      "prepaymentDeposit": 49
+    }
+  ],
+  "sanitizedCustomerRows": 607
+}

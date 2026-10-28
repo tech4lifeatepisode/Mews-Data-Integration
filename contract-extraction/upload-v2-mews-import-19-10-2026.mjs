@@ -361,6 +361,7 @@ function enrichCustomerRow(row, nc, cust, hm, seg, company, companiesExtract, cu
     reapplyB2bCompanyOnCustomer(out, nc, {
       seg,
       cust,
+      customersExt,
       hm,
       companiesExtract,
       tenancyRow: resolveTenancyForCustomer(nc, out, tenancyLookup),

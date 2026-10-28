@@ -45,7 +45,9 @@ export function applyMewsImportReadyFields(row) {
 
   const prepaid = clean(row['Prepaid Amount']);
   if (prepaid && /\d/.test(prepaid)) {
-    row['Prepayment Type'] = MEWS_PREPAYMENT_TYPE_DEPOSIT;
+    if (!clean(row['Prepayment Type'])) {
+      row['Prepayment Type'] = MEWS_PREPAYMENT_TYPE_DEPOSIT;
+    }
   } else {
     row['Prepaid Amount'] = null;
     row['Prepayment Type'] = null;
@@ -53,6 +55,9 @@ export function applyMewsImportReadyFields(row) {
 
   row['Arrival Time'] = null;
   row['Departure Time'] = null;
+
+  row.Source = null;
+  row['Business Segment'] = null;
 
   return row;
 }

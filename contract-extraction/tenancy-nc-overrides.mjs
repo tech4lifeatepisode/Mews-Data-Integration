@@ -239,7 +239,7 @@ function integraBilling() {
   };
 }
 
-function parseCsvRows(text) {
+export function parseCsvRows(text) {
   const rows = [];
   let row = [];
   let field = '';
@@ -288,7 +288,7 @@ function splitPipeField(raw) {
 }
 
 /** HouseMonk: Tenant Type/ID often pipe-separated; names/emails/phones often comma-separated. */
-function tenantColumnsFromRow(tenancyRow) {
+export function tenantColumnsFromRow(tenancyRow) {
   const types = splitPipeField(tenancyRow['Tenant Type']);
   const n = Math.max(types.length, 1);
   const splitMixed = (raw) => {
@@ -312,7 +312,7 @@ function firstPipePart(raw) {
   return parts[0] || clean(raw) || null;
 }
 
-function parseDdMmYyyy(raw) {
+export function parseDdMmYyyy(raw) {
   const c = clean(raw);
   const m = c.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
   if (!m) return null;
@@ -385,11 +385,11 @@ function pickB2bGuestIndices(tenancyRow, preferIndividual) {
   return { guestIdx: 0, companyIdx: companyIdx >= 0 ? companyIdx : -1 };
 }
 
-function normalizeTenantId(id) {
+export function normalizeTenantId(id) {
   return clean(id).toUpperCase().replace(/\s/g, '');
 }
 
-function normNameToken(s) {
+export function normNameToken(s) {
   return clean(s)
     .toLowerCase()
     .normalize('NFD')
@@ -564,11 +564,11 @@ export function resolveTenancyForCustomer(nc, customer, lookup = loadTenancyLook
     return best;
   }
 
-  const byNc = lookup.byNc || lookup;
-  if (byNc instanceof Map && byNc.get(n)) return byNc.get(n);
-
   const doc = normalizeTenantId(customer['Document Number']);
   if (doc && lookup.byTenantId?.get(doc)) return lookup.byTenantId.get(doc);
+
+  const byNc = lookup.byNc || lookup;
+  if (byNc instanceof Map && byNc.get(n)) return byNc.get(n);
 
   let best = null;
   let bestScore = 0;
@@ -583,7 +583,7 @@ export function resolveTenancyForCustomer(nc, customer, lookup = loadTenancyLook
   return null;
 }
 
-function pickEmailFromTenantField(raw) {
+export function pickEmailFromTenantField(raw) {
   const c = clean(raw);
   if (!c) return null;
   const part = c
@@ -593,14 +593,28 @@ function pickEmailFromTenantField(raw) {
   return part ? part.toLowerCase() : null;
 }
 
-function isSpanishCompanyTaxId(id) {
-  return /^[A-Z]\d{7,8}[A-Z0-9]?$/i.test(clean(id));
+/** Spanish company CIF with valid control character (passports like N09699830 share the shape). */
+export function isSpanishCompanyTaxId(id) {
+  const c = clean(id).toUpperCase();
+  const m = c.match(/^([ABCDEFGHJNPQRSUVW])(\d{7})([0-9A-J])$/);
+  if (!m) return false;
+  const digits = m[2].split('').map(Number);
+  let sum = 0;
+  digits.forEach((d, i) => {
+    if (i % 2 === 0) {
+      const x = d * 2;
+      sum += Math.floor(x / 10) + (x % 10);
+    } else sum += d;
+  });
+  const control = (10 - (sum % 10)) % 10;
+  return m[3] === String(control) || m[3] === 'JABCDEFGHI'[control];
 }
 
-function documentTypeForId(id) {
+/** Mews document types for guests (Mews rejects TaxIdentificationNumber). */
+export function documentTypeForId(id) {
   const c = clean(id);
   if (!c) return 'IdentityCard';
-  if (isSpanishCompanyTaxId(c)) return 'TaxIdentificationNumber';
+  if (/^\d{8}[A-Z]$/i.test(c) || /^[XYZ]\d{7}[A-Z]$/i.test(c)) return 'IdentityCard';
   if (/^[A-Z0-9]{6,12}$/i.test(c) && /[A-Z]/i.test(c) && /\d/.test(c)) return 'Passport';
   return 'IdentityCard';
 }
