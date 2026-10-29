@@ -1,0 +1,7 @@
+{
+  "description": "NCs that still need contract AI on Render (no usable Reservation Notes after local notes fallback).",
+  "nc_numbers": [
+    2037, 2038, 2039, 2040, 2041, 2047, 2048, 2049, 2050, 2051, 2052, 2053, 2054, 2055,
+    2056, 2057, 2058, 2059, 2060, 2061, 2062, 2063, 2064, 2065
+  ]
+}

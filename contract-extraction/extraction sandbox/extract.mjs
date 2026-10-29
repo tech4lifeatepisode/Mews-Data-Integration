@@ -22,6 +22,8 @@ import {
   prepareFileInput,
   text,
 } from './sandbox-common.mjs';
+import { mapRowToMewsIncludedProducts } from '../mews-product-map.mjs';
+import { formatIncludedProductsPlusSpacing } from '../mews-stay-rate-and-products-format.mjs';
 
 export {
   COMPANY_HEADERS,
@@ -213,6 +215,22 @@ function buildReservationNotes(parsed, tenancyDays) {
   return lines.join(' | ');
 }
 
+/** Meal/parking lines from AI → Mews catalog names; discounts from discount_text / notes. */
+function mewsIncludedProductsFromRow(row) {
+  const mapped = mapRowToMewsIncludedProducts(row, null);
+  if (!mapped) return cleanIncludedProducts(row['Included Products']);
+  return mapped
+    .split(';')
+    .map((part) => formatIncludedProductsPlusSpacing(part.trim()))
+    .filter(Boolean)
+    .join('; ');
+}
+
+function cleanIncludedProducts(value) {
+  const c = text(value);
+  return c || '';
+}
+
 export function toCustomerRow(parsed, fileName) {
   const row = blankRow(CUSTOMER_HEADERS);
   const people = Math.max(1, Number(parsed.number_of_people) || 1);
@@ -260,6 +278,8 @@ export function toCustomerRow(parsed, fileName) {
   row['Partner Company'] = text(parsed.company_name);
   row.Source = 'extraction sandbox';
   row['Channel number'] = path.basename(fileName);
+  const mewsProducts = mewsIncludedProductsFromRow(row);
+  if (mewsProducts) row['Included Products'] = mewsProducts;
   return { row, tenancyDays, companions };
 }
 

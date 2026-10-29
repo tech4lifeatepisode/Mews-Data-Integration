@@ -16,6 +16,7 @@ import { runExtractFromSupabaseStorageUntilDone } from './extract-from-storage-b
 import { runB2bDriveExtraction, B2B_COMPANIES_TABLE } from './extract-b2b-drive.mjs';
 import { driveHealthLines, handleDriveHttp } from '../contract-uploading/drive-http.mjs';
 import { runReextractRentMismatch } from './reextract-rent-mismatch.mjs';
+import { runReextractRentProductsV6V7 } from './reextract-rent-products-v6-v7.mjs';
 import { runChamariCompanyReextract } from './reextract-chamari-company-from-drive.mjs';
 import { runV3B2bContractReextract } from './reextract-v3-b2b-contracts-from-drive.mjs';
 import { runPublishAfterV3B2bReextract } from './publish-after-v3-b2b-reextract.mjs';
@@ -267,6 +268,41 @@ async function safeRunReextractRentMismatch(label, options = {}) {
   }
 }
 
+function parseReextractRentProductsV6V7Options(reqUrl) {
+  const query = new URL(reqUrl || '/', 'http://localhost').searchParams;
+  const ncs = parseNcNumbersFromQuery(query);
+  const limitRaw = query.get('limit');
+  return {
+    dryRun: query.get('dry_run') === '1' || query.get('dryRun') === '1',
+    notesOnly: query.get('notes_only') === '1' || query.get('notesOnly') === '1',
+    retryErrors: query.get('retry_errors') === '1' || query.get('retryErrors') === '1',
+    ncFilter: ncs.length ? new Set(ncs) : null,
+    limit: limitRaw != null && limitRaw !== '' ? Number(limitRaw) : undefined,
+  };
+}
+
+async function safeRunReextractRentProductsV6V7(label, options = {}) {
+  if (extractionRunning) {
+    console.warn(`[${label}] Extraction already running, skip.`);
+    return { ok: false, skipped: true, message: 'already_running' };
+  }
+  extractionRunning = true;
+  try {
+    const result = await runReextractRentProductsV6V7(options);
+    console.log(`[${label}] V6/V7 rent+products re-extraction finished:`, {
+      updated: result.updated,
+      targetRows: result.targetRows,
+      errors: result.errors,
+    });
+    return result;
+  } catch (error) {
+    console.error(`[${label}] V6/V7 rent+products re-extraction failed:`, error);
+    return { ok: false, error: error instanceof Error ? error.message : String(error) };
+  } finally {
+    extractionRunning = false;
+  }
+}
+
 function parseDriveAiOptions(reqUrl) {
   const query = new URL(reqUrl || '/', 'http://localhost').searchParams;
   const ncRaw = query.get('nc') || query.get('ncs') || '';
@@ -330,6 +366,8 @@ function handleExtractRequest(req, res, mode) {
         ? 'Drive ai_extraction=Yes extraction started until every pending file is saved'
         : mode === 'rent-mismatch'
           ? 'Rent f)/g) re-extraction for Final_Format_Mismatch_Rent NCs started (updates Allocated Rate on Final_Format customers)'
+        : mode === 'rent-products-v6-v7'
+          ? 'Rent equation + Mews Included Products re-extraction for NCs in V6 ∪ V7 (12_10 + 28_10 B2C extraction tables only)'
         : mode === 'nc-rerun-all'
           ? 'OCR rerun (filtered NCs across To Fill 1, To Fill 2, Fill 3) started in background'
           : mode === 'all'
@@ -351,6 +389,8 @@ function handleExtractRequest(req, res, mode) {
         ? 'extract-drive-ai'
         : mode === 'rent-mismatch'
           ? 'extract-rent-mismatch'
+        : mode === 'rent-products-v6-v7'
+          ? 'extract-rent-products-v6-v7'
         : mode === 'nc-rerun-all'
           ? 'extract-nc-rerun-all'
           : mode === 'all'
@@ -382,6 +422,9 @@ function handleExtractRequest(req, res, mode) {
     } else if (mode === 'rent-mismatch') {
       const rentOpts = parseReextractRentMismatchOptions(req.url);
       safeRunReextractRentMismatch('http', rentOpts).catch((e) => console.error(e));
+    } else if (mode === 'rent-products-v6-v7') {
+      const v67Opts = parseReextractRentProductsV6V7Options(req.url);
+      safeRunReextractRentProductsV6V7('http', v67Opts).catch((e) => console.error(e));
     } else if (mode === 'nc-rerun-all') {
       safeRunNcOcrRerunAll('http').catch((e) => console.error(e));
     } else if (mode === 'all') {
@@ -406,6 +449,7 @@ function extractionHealthLines() {
     `  POST/GET /extract-missing-from-review — allowlisted NCs with ai_extraction=Yes into ${CUSTOMERS_CONTRACTS_TABLE} (skip NCs already there).\n` +
     `  POST/GET /extract-b2c-28-10-2026 — B2C batch into ${B2C_28_10_EXTRACTION_TABLE}; runs until pending=0. ?force=1 fill gaps (re-run files not yet in B2C table, ignore extraction log). ?reextract_nc=1 also re-process NCs already in table.\n` +
     '  POST/GET /extract-rent-mismatch — re-read f) Precio / g) Descuento from Google Drive PDFs for NCs in Final_Format_Mismatch_Rent_15_10_2026; updates Final_Format customers + Customers_Contracts_Extraction_12_10_2026 Allocated Rate. ?force=1 reprocesses all; ?dry_run=1 no DB writes.\n' +
+    '  POST/GET /extract-rent-products-v6-v7 — B2C contract AI for NCs in V6 ∪ V7; updates Allocated Rate (equation) + Included Products on 12_10 + 28_10 B2C tables. ?nc= comma list; ?dry_run=1; ?notes_only=1; ?retry_errors=1 (uses summary log on disk); ?limit=.\n' +
     `  POST/GET /extract-b2b — B2B ai_extraction=Yes files from ${process.env.SUPABASE_STORAGE_FOLDER || 'Google Drive'} into ${DRIVE_EXTRACTION_TABLE} and ${B2B_COMPANIES_TABLE}.\n` +
     '  POST/GET /extract-chamari-companies — re-extract De otra parte client company for NCs with CHAMARI/B42861468 (?nc=1006,1142 optional; ?dry_run=1).\n' +
     '  POST/GET /extract-v3-b2b-contracts — full contract AI re-extract for every NC in V3_Final_B2B_All_Fields_Match_Mews_Import_20_10_2026 from Google Drive (?nc= optional; ?limit= batch size; ?dry_run=1). Set SUPABASE_STORAGE_FOLDER=Google Drive on Render.\n' +
@@ -509,6 +553,11 @@ const server = http.createServer(async (req, res) => {
 
   if (url === '/extract-rent-mismatch' && (req.method === 'POST' || req.method === 'GET')) {
     handleExtractRequest(req, res, 'rent-mismatch');
+    return;
+  }
+
+  if (url === '/extract-rent-products-v6-v7' && (req.method === 'POST' || req.method === 'GET')) {
+    handleExtractRequest(req, res, 'rent-products-v6-v7');
     return;
   }
 
