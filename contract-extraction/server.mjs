@@ -339,13 +339,32 @@ function parseV3B2bReextractOptions(reqUrl) {
   };
 }
 
+function hasSupabaseServiceKey() {
+  return !!(process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SECRET_KEY);
+}
+
 function handleExtractRequest(req, res, mode) {
   if (!checkExtractAuth(req)) {
     res.writeHead(401, { 'Content-Type': 'application/json; charset=utf-8' });
     res.end(JSON.stringify({ ok: false, error: 'unauthorized' }));
     return;
   }
-  if (!process.env.OPENAI_API_KEY) {
+
+  const rentProductsOpts =
+    mode === 'rent-products-v6-v7' ? parseReextractRentProductsV6V7Options(req.url) : null;
+
+  if (mode === 'rent-products-v6-v7' && !hasSupabaseServiceKey()) {
+    res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(
+      JSON.stringify({
+        ok: false,
+        error: 'SUPABASE_SERVICE_ROLE_KEY or SUPABASE_SECRET_KEY not set on Render',
+      }),
+    );
+    return;
+  }
+
+  if (!rentProductsOpts?.notesOnly && !process.env.OPENAI_API_KEY) {
     res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
     res.end(JSON.stringify({ ok: false, error: 'OPENAI_API_KEY not set' }));
     return;

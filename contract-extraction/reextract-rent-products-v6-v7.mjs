@@ -39,7 +39,7 @@ const transcript =
   'C:/Users/Claudio/.cursor/projects/c-Users-Claudio-Desktop-Mews-Data-Integration/agent-transcripts/002cbbd5-9013-420c-91e0-97c456b39aa7/002cbbd5-9013-420c-91e0-97c456b39aa7.jsonl';
 if (fs.existsSync(transcript)) {
   const text = fs.readFileSync(transcript, 'utf8');
-  if (!process.env.SUPABASE_SECRET_KEY) {
+  if (!process.env.SUPABASE_SERVICE_ROLE_KEY && !process.env.SUPABASE_SECRET_KEY) {
     const sb = [...text.matchAll(/sb_secret_[A-Za-z0-9_\-]+/g)].at(-1)?.[0];
     if (sb) process.env.SUPABASE_SECRET_KEY = sb;
   }
@@ -49,6 +49,23 @@ if (fs.existsSync(transcript)) {
   }
 }
 process.env.SUPABASE_URL ||= 'https://jujvtuyksxkoclegjznb.supabase.co';
+
+export function supabaseServiceKey() {
+  return (
+    process.env.SUPABASE_SERVICE_ROLE_KEY ||
+    process.env.SUPABASE_SECRET_KEY ||
+    process.env.SUPABASE_KEY ||
+    ''
+  );
+}
+
+export function createSupabaseAdminClient() {
+  const key = supabaseServiceKey();
+  if (!key) {
+    throw new Error('SUPABASE_SERVICE_ROLE_KEY or SUPABASE_SECRET_KEY required');
+  }
+  return createClient(process.env.SUPABASE_URL, key);
+}
 
 function ncFromRow(row) {
   const m = clean(row['Group Code']).match(/NC_0*(\d+)/i);
@@ -270,7 +287,7 @@ export async function runReextractRentProductsV6V7(options = {}) {
   }
 
   if (!notesOnly && !process.env.OPENAI_API_KEY) throw new Error('OPENAI_API_KEY required');
-  const sb = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
+  const sb = createSupabaseAdminClient();
   const client = notesOnly
     ? null
     : new OpenAI({ apiKey: process.env.OPENAI_API_KEY, timeout: 5 * 60 * 1000, maxRetries: 0 });
